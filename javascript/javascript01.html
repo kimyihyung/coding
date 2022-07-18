@@ -170,7 +170,7 @@
 }
 </code></pre>
           </div>
-          <h2>02. 변수 : 데이터 저장 : 데이터 연결</h2>
+          <h2>02. 변수 : 데이터 저장 + 데이터 연결</h2>
           <div class="code">
             <pre><code class="language-js">{
     let x = 100;
@@ -188,15 +188,32 @@
 }
 </code></pre>
           </div>
-          <h2>04. 변수 : 종류 (지역변수 + 전역변수)
-            //변수, 배열, 객체 --> 함수(실행문)</h2>
+          <h2>03. 변수 : 데이터 저장 + 데이터 변경 + 데이터 추가</h2>
+          <div class="code">
+            <pre><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+
+    x += 300; // x = x + 300
+    y += 400; // x = x + 400
+    y += "jquery";
+
+    document.write("<br>03. 변수<br>");
+    document.write(x, "<br>");
+    document.write(y, "<br>");
+    document.write(z, "<br>");
+}
+</code></pre>
+          </div>
+          <h2>04. 변수 : 종류 (지역변수 + 전역변수)</h2>
           <div class="code">
             <pre><code class="language-js">{
     let x = 100; //전역변수
     let y = 200;
 
     function func() {
-        let x = 100; //지역변수
+        let x = 100; //지역변수 : 함수 안에서만
         let y = 200;
 
         x = 300; //지역변수 x에 값이 100에서 300변경 (앞의 let x를 없애면 전역변수의 x의 100이 300으로)
@@ -209,7 +226,7 @@
 }
 </code></pre>
         </div>
-        <h2>05. 상수 : 데이터 저장 + 데이터 변경 (+)</h2>
+        <h2>05. 상수 : 데이터 저장 + 데이터 변경 X</h2>
           <div class="code">
             <pre><code class="language-js">{
     const x = 100;
@@ -300,7 +317,7 @@
         document.write(z, "<br>");
       }
 
-      //02. 변수 : 데이터 저장 : 데이터 연결
+      //02. 변수 : 데이터 저장 + 데이터 연결
       {
         let x = 100;
         let y = 200;
@@ -351,7 +368,7 @@
         func();
       }
 
-      //05. 상수 : 데이터 저장 + 데이터 변경 (+)
+      //05. 상수 : 데이터 저장 + 데이터 변경 X
       {
         const x = 100;
         const y = 200;
