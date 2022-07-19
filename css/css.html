@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HTML 기초</title>
+  <title>CSS</title>
 
   <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet" />
   <style>
@@ -137,7 +137,7 @@
 
 <body>
   <header id="header">
-    <h1>HTML</h1>
+    <h1>CSS</h1>
     <nav>
       <ul>
         <li><a href="#">기초</a></li>
@@ -159,29 +159,34 @@
     <article class="article">
         <h2>CSS 단위</h2>
         <p>글자 크기를 명시하지 않을 경우 16px 기본 값.</p><br>
+
         <h3>px</h3>
         <p>해상도에 따라 상대적으로 달라지는 기본 단위입니다.</p>
         <p class="box" style="font-size: 12px;">
             font-size: 12px;
         </p><br>
+
         <h3>%</h3>
         <p>부모 요소의 글자 크기를 100% 기준으로 계산한 % 단위입니다.</p>
         <p class="box" style="font-size: 150%;">
             font-size: 150%;
         </p>
         <p>특별한 설정이 없다면 16px이 100%가 되므로, 150%는 24px이 됩니다. 만약 부모 요소가 10px이었다면 150%는 15px이 될 것입니다.</p><br>
+
         <h3>em</h3>
         <p>부모 요소의 글자 100% 기준으로 계산한 크기를 100 분의 1단위입니다.</p>
         <p class="box" style="font-size: 1.5em;">
             font-size: 1.5em;
         </p>
         <p>특별한 설정이 없다면 16px이 1em이 됩니다.</p><br>
+
         <h3>rem</h3>
         <p>최상의 요소의 크기를 100% 기준으로 계산합니다. <br>
            즉 root, html 요소를 뜻하므로, html에서 지정한 글자 크기가 1rem 이 됨니다</p>
         <p class="box" style="font-size: 1.5rem;">
             font-size: 1.5rem;
-        </p>
+        </p><br>
+        
         <h3>vw, vh</h3>
         <p>vw는 뷰포트 너비값의 100분의 1단위입니다.<br>
             vh는 뷰포트 높이값의 100분의 1단위입니다.</p>
