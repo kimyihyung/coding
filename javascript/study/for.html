@@ -58,7 +58,7 @@ for( let i=0; i&it;100; i++ ){
 </code></pre>
             </div>
 
-            <h3 class="t_tit2">1부터 100까지 출력하기</h3>
+            <h3 class="t_tit2">//1부터 100까지 출력하기</h3>
             <div class="t_code">
 <pre><code>1부터 100까지 출력하기
 for( let i=1; i&it;=100; i++ ){
@@ -70,7 +70,7 @@ for( let i=1; i&it;=100; i++ ){
             <h3 class="t_tit2">1부터 100까지 출력하기(짝수)</h3>
             <p class="t_desc">짝수로 출력할 때는 증가값을 2로 해주면 됩니다.</p>
             <div class="t_code">
-<pre><code>1부터 100까지 출력하기(짝수)
+<pre><code>//1부터 100까지 출력하기(짝수)
 for( let i=2; i&it;=100; i+=2 ){
     document.write(i)
 };
@@ -81,21 +81,21 @@ for( let i=2; i&it;=100; i+=2 ){
             <p class="t_desc">중첩 for문을 이용해서 테이블을 만들 수 있습니다.</p>
             <div class="t_code">
 <pre><code class="language-js">//for문을 이용해서 테이블 출력하기(100칸)
-    let table = "&lt;table&gt;";
+let table = "&lt;table&gt;";
 
-        for( let i=0; i&lt;10; i++ ){
-                table += "&lt;tr&gt;";
+    for( let i=0; i&lt;10; i++ ){
+            table += "&lt;tr&gt;";
 
-            for(let j=0; j&lt;10; j++){
-                table += "&lt;td&gt;ㅎㅎㅎ&lt;/td&gt;";
-            }
-
-            table += "&lt;/tr&gt;";
+        for(let j=0; j&lt;10; j++){
+            table += "&lt;td&gt;ㅎㅎㅎ&lt;/td&gt;";
         }
 
-        table += "&lt;/table&gt;";
+        table += "&lt;/tr&gt;";
+    }
 
-    document.write(table);
+    table += "&lt;/table&gt;";
+
+document.write(table);
 </code></pre>
             </div>
             <div class="t_result">
