@@ -1,17 +1,29 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Javasript&lt;/title&gt;
-    &lt;!-- 1. 외부 파일로 로드하는 방법 --&gt;
-    &lt;script type="text/Javasript" src="js/script.js"&gt;&lt;/script&gt;
-    &lt;!-- 2. script 태그 사이에 기술하는 방법 --&gt;
-    &lt;script&gt;
-        document.write("Javasript");
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 3. 태그에 직접 기술하는 방법 --&gt;
-    &lt;a href="#" onclick="alert('Javasript')"&gt;&lt;/a&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<script>
+const arr = [100,200,300,400,500];
+
+forEach((){}); //이용해서 값을 출력해주세요    
+arr.forEach(function(el){
+document.write(el);
+//console.log(el)
+});
+
+num.forEach(function(element,index,array){
+  document.write(element);
+  document.write(index);
+  document.write(array);
+});
+
+
+//forEach map 같게 불러냄. 콜백 안에 function
+
+arr.map(function(el){
+  document.write(el);
+  //console.log(el)
+});
+
+  arr.map(function(element,index,array){
+    document.write(element);
+    document.write(index);
+    document.write(array);
+  });
+  </script>
