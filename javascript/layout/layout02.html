@@ -4,58 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃</title>
-    <!-- 
-        float 레이아웃 (반응형)
-        flex 레이아웃 (반응형)
-        grid 레이아웃 (반응형)
-     -->
-     <style>
-         * {
-             margin: 0;
-         }
-         body {
-             background-color: #E8F5E9;
-         }
-         #wrap {
-             width: 1200px;
-             margin: 0 auto; /* 블록구조를 가운데 정렬 */
-         }
-         #header {
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        body {
+            background-color: #E8F5E9;
+        }
+        #wrap {
             width: 1200px;
-            height: 100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "nav nav nav"
+                "aside section article"
+                "footer footer footer"
+            ;
+            grid-template-columns: 25% 50% 25%;
+            grid-template-rows: 100px 100px 780px 100px;
+        }
+        #header {
+            grid-area: header;
             background-color: #C8E6C9;
-         }
-         #nav {
-            width: 1200px;
-            height: 100px;
+        }
+        #nav {
+            grid-area: nav;
             background-color: #A5D6A7;
-         }
-         #aside {
-            width: 400px;
-            height: 780px;
+        }
+        #aside {
+            grid-area: aside;
             background-color: #81C784;
-            float: left;
-         }
-         #section {
-            width: 800px;
-            height: 780px;
+        }
+        #section {
+            grid-area: section;
             background-color: #66BB6A;
-            float: left;
-         }
-         #aside2 {
-            width: 800px;
-            height: 780px;
+        }
+        #article {
+            grid-area: article;
             background-color: #4CAF50;
-            float: right;
-         }
-         #footer {
-            width: 1200px;
-            height: 100px;
+        }
+        #footer {
+            grid-area: footer;
             background-color: #43A047;
-            clear: both;
-         }
-     </style>
+        }
+        @media (max-width: 1200px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            #wrap {
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            #wrap {
+            grid-template-areas: 
+                "header header header"
+                "nav nav nav"
+                "aside aside aside"
+                "section section section"
+                "article article article"
+                "footer footer footer"
+            ;
+            grid-template-columns: 25% 50% 25%;
+            grid-template-rows: 100px 100px 200px 430px 150px 100px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="wrap">
@@ -63,7 +81,7 @@
         <div id="nav"></div>
         <div id="aside"></div>
         <div id="section"></div>
-        <div id="aside2"></div>
+        <div id="article"></div>
         <div id="footer"></div>
     </div>
 </body>
