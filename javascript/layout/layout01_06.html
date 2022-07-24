@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃</title>
+    <title>레이아웃 유형01</title>
      <style>
         * {
             margin: 0;
+            padding: 0;
         }
         body {
             background-color: #FFF3E0;
@@ -20,8 +21,7 @@
                 "header header"
                 "nav nav"
                 "aside section"
-                "footer footer"
-            ;
+                "footer footer";
             grid-template-columns: 30% 70% ;
             grid-template-rows: 100px 100px 780px 100px;
         }
@@ -57,15 +57,13 @@
         }
         @media (max-width: 480px) {
             #wrap {
-                width: 100%;
                 grid-template-areas: 
-                "header header"
-                "nav nav"
-                "aside aside"
-                "section section"
-                "footer footer"
-            ;
-            grid-template-columns: 30% 70% ;
+                "header"
+                "nav"
+                "aside"
+                "section"
+                "footer";
+            grid-template-columns: 100% ;     /* 가로 100% */    
             grid-template-rows: 100px 100px 300px 480px 100px;
             }
         }
@@ -79,5 +77,8 @@
         <section id="section"></section>
         <footer id="footer"></footer>
     </div> 
+    <!-- 
+        layout01_06 : grid 방식 반응형
+     -->
 </body>
 </html>
