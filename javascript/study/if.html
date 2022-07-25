@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : for문</title>
+    <title>자바스크립트 : 조건문</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
     
@@ -47,13 +47,38 @@
                 반복적으로 실행시키는 문법을 말합니다. 
                 반복문에는 while문, do while문, for문이 있으며 for문을 가장 많이 사용합니다.
             </p>
-
-            <h3 class="t_tit">while문</h3>
-            <p class="t_box">
-                for ( 초기값; 조건식; 증감값 ){<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;실행문<br>
-                }
-            </p>
+            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="OJvjpoX" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/OJvjpoX">
+                Untitled</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+ 
+            <hr>
+            
+            <h3 class="t_tit">제어문</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>분류</th>
+                        <th>제어문</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">조건문</td>
+                        <td>if, switch</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">반복문</td>
+                        <td>while, do while, for</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">중지, 건너뛰기</td>
+                        <td>break, continue</td>
+                    </tr>
+                </tbody>
+            </table>
 
             <h3 class="t_tit">do while문</h3>
             <p class="t_box">
@@ -102,12 +127,7 @@ for( let i=2; i&it;=100; i+=2 ){
             <h3 class="t_tit2">1부터 100까지 출력하기(5의 배수)</h3>
             <p class="t_desc"></p>
             <div class="t_code">
-<pre><code>//1부터 100까지 출력하기(5의 배수)
-for ( let i=1; i&it;=100; i++ ){
-    if ( i % 5 == 0 ) {
-        document.write("<span style='color: blue'>"+i+"</span>");
-    }
-}
+<pre><code>
 </code></pre>
             </div>
             <div class="result">
@@ -121,15 +141,7 @@ for ( let i=1; i&it;=100; i++ ){
         <h3 class="t_tit2">1부터 100까지 출력하기(5의 배수는 빨간색, 7의 배수는 파란색)</h3>
             <p class="t_desc"></p>
             <div class="t_code">
-<pre><code>//1부터 100까지 출력하기(5의 배수는 빨간색, 7의 배수는 파란색)
-for ( let i=1; i&it;=100; i++ ){
-    if ( i % 5 == 0 ) {
-        document.write("<span style='color: blue'>"+i+"</span>");
-    }
-    if ( i % 7 == 0 ) {
-        document.write("<span style='color: red'>"+i+"</span>");
-    }
-}
+<pre><code>
 </code></pre>
             </div>
             <div class="result">
@@ -143,14 +155,7 @@ for ( let i=1; i&it;=100; i++ ){
         <h3 class="t_tit2">구구단 출력하기</h3>
             <p class="t_desc"></p>
             <div class="t_code">
-<pre><code>//for문을 이용한 구구단
-for( let i=2; i&it;=9; i++ ){
-    for( let j=1; j&it;=9; j++ ){
-        let sum = i * j;
-        document.write(i + " * " + j + "=" + sum);
-        document.write("<br>");
-    }
-}
+<pre><code>
 </code></pre>
             </div>
             <div class="result">
