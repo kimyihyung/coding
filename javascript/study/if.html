@@ -41,18 +41,10 @@
 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">반복문</h2>
+            <h2 class="t_tit">조건문</h2>
             <p class="t_desc">
-                반복문은 프로그램에서 필요한 결과 값을 도출하기 위해 실행문의 순서를
-                반복적으로 실행시키는 문법을 말합니다. 
-                반복문에는 while문, do while문, for문이 있으며 for문을 가장 많이 사용합니다.
+                특정 조건 만족 시(true) 실행하는 명령. 조건문은 if문, switch문이 있습니다.
             </p>
-            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="OJvjpoX" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/OJvjpoX">
-                Untitled</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-              </p>
-              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
  
             <hr>
             
@@ -80,146 +72,134 @@
                 </tbody>
             </table>
 
-            <h3 class="t_tit">do while문</h3>
-            <p class="t_box">
-                for ( 초기값; 조건식; 증감값 ){<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;실행문<br>
-                }
-            </p>
-
-            <h3 class="t_tit">for문</h3>
-            <p class="t_box">
-                for ( 초기값; 조건식; 증감값 ){<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;실행문<br>
-                }
-            </p>
-
             <hr>
 
-            <h3 class="t_tit2">0부터 99까지 출력하기</h3>
+            <h3 class="t_tit2">01_ if문</h3>
+            <p class="t_desc">if문에는 3가지 형식이 있습니다.</p>
+            <p class="t_box">
+                if (조건식) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; 실행문;<br>}
+            </p>
+            <p class="t_box">
+                if (조건식) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; 실행문1;<br>} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;실행문2;<br>}
+            </p>
+            <p class="t_box">
+                if (조건식) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp; 실행문1;<br>} else if(조건식2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;실행문2;<br>}else {<br>
+                실행문3;<br>}
+            </p>
+            <!-- <p class="codepen" data-height="500" data-default-tab="js,result" data-slug-hash="MWVvbZd" data-user="parkhyeonshin" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/parkhyeonshin/pen/MWVvbZd">
+                if문</a> by Parkhyeonshin (<a href="https://codepen.io/parkhyeonshin">@parkhyeonshin</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+            </p>
+            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js">
+            </script> --><!--코드팬-->
+            <p class="t_desc">if문 안에 if문을 중첩하여 사용할 수 있습니다.</p>
+            <p class="t_box">
+                if(조건식1){<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;if(조건식2){<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+                }
+            </p>
             <div class="t_code">
-<pre><code>//0부터 99까지 출력하기
-for( let i=0; i&it;100; i++ ){
-    document.write(i)
-};
-</code></pre>
-            </div>
-
-            <h3 class="t_tit2">//1부터 100까지 출력하기</h3>
-            <div class="t_code">
-<pre><code>//1부터 100까지 출력하기
-for( let i=1; i&it;=100; i++ ){
-    document.write(i)
-};
-</code></pre>
-            </div>
-
-            <h3 class="t_tit2">1부터 100까지 출력하기(짝수)</h3>
-            <p class="t_desc">짝수로 출력할 때는 증가값을 2로 해주면 됩니다.</p>
-            <div class="t_code">
-<pre><code>//1부터 100까지 출력하기(짝수)
-for( let i=2; i&it;=100; i+=2 ){
-    document.write(i)
-};
-</code></pre>
-            </div>
-
-            <h3 class="t_tit2">1부터 100까지 출력하기(5의 배수)</h3>
-            <p class="t_desc"></p>
-            <div class="t_code">
-<pre><code>
-</code></pre>
-            </div>
-            <div class="result">
-                <details>
-                    <summary>결과 보기</summary>
-                    <div class="sample01_result"></div>
-                </details>
-            </div>
-        </div>
-
-        <h3 class="t_tit2">1부터 100까지 출력하기(5의 배수는 빨간색, 7의 배수는 파란색)</h3>
-            <p class="t_desc"></p>
-            <div class="t_code">
-<pre><code>
-</code></pre>
-            </div>
-            <div class="result">
-                <details>
-                    <summary>결과 보기</summary>
-                    <div class="sample01_result"></div>
-                </details>
-            </div>
-        </div>
-
-        <h3 class="t_tit2">구구단 출력하기</h3>
-            <p class="t_desc"></p>
-            <div class="t_code">
-<pre><code>
-</code></pre>
-            </div>
-            <div class="result">
-                <details>
-                    <summary>결과 보기</summary>
-                    <div class="sample01_result"></div>
-                </details>
-            </div>
-        </div>
-            
-
-            <h3 class="t_tit2">for문을 이용해서 테이블 출력하기</h3>
-            <p class="t_desc">중첩 for문을 이용해서 테이블을 만들 수 있습니다.</p>
-            <div class="t_code">
-<pre><code class="language-js">//for문을 이용해서 테이블 출력하기(100칸)
-let table = "&lt;table&gt;";
-
-    for( let i=0; i&lt;10; i++ ){
-            table += "&lt;tr&gt;";
-
-        for(let j=0; j&lt;10; j++){
-            table += "&lt;td&gt;ㅎㅎㅎ&lt;/td&gt;";
+<pre><code class="language-js">&lt;!DDOCTYPE HTML&gt;
+&lt;html lang="ko"&gt;
+&lt;haed&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;if 문&lt;/title&gt;
+    &lt;script&gt;
+        var html = Number(prompt('html 점수입력', ''));
+        var css = Number(prompt('css 점수입력', ''));
+        var javascript = Number(prompt('javascript 점수입력', ''));
+        var avg = (html + css javascript) /3;
+        var comment;
+        if (avg &gt;= 60) {
+            if (html &lt; 40) {
+                comment = 'HTML' + '40점 미만 불합격';
+            } else if (css &lt; 40) {
+                comment = 'CSS' + '40점 미만 불합격';
+            } else if (javascript &lt; 40) {
+                commnet = 'JAVASCRIPT' + '40점 미만 불합격';
+            } else {
+                comment = '평균' + avg + '점 합격';
+            }
+        } else {
+            comment = '평균' + 'avg' + '점 불합격';
         }
-
-        table += "&lt;/tr&gt;";
-    }
-
-    table += "&lt;/table&gt;";
-
-document.write(table);
+        documnet.write(commnet);
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
             </div>
-            <div class="t_result">
-                <details>
-                    <summary>결과확인</summary>
-                    <div class="result01">
-                        
+            <div class="result">
+                <details>   
+                    <summary>결과보기</summary>
+                    <div class="sample03_result">
+                        평균 90점 합격 / 평균 59점 불합격
                     </div>
                 </details>
-                <style>
-                    .testTable tr td {
-                        border: 1px solid #000;
-                    }
-                </style>
-                <script>
-              let table = "<table class='testTable'>";
+            </div>
+            <hr>
 
-            for( let i=0; i<10; i++ ){
-                    table += "<tr>";
-
-                for(let j=0; j<10; j++){
-                    table += "<td>ㅎ</td>";
-                }
-
-                table += "</tr>";
+            <h3 class="t_tit2">02_ switch문</h3>
+            <p class="t_desc">switch(값)의 값과 case의 값들을 하나씩 비교하여 일치하는 case를 실행시켜 줍니다.<br>
+            if문과 다르게 특정조건에 만족했을 때 블록{}을 스스로 빠져나가지 못하므로 break명령어를 주어 블록을 빠져 나가도록 합니다.
+            </p>
+            <p class="t_box">
+                switch(값) {<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;case값1 : <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;case값2 : <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;default : <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;실행문;<br>}
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">&lt;!DDOCTYPE HTML&gt;
+    &lt;html lang="ko"&gt;
+    &lt;haed&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;switch 문&lt;/title&gt;
+        &lt;script&gt;
+            var classification = prompt('아동, 청소년, 성인 중 선택 입력','');
+            switch (classification){
+                case '아동':
+                    classification += ': 입장료 무료':
+                    break;
+                case '청소년':
+                    classification += ': 입장료 2,000원':
+                    break;
+                case '성인':
+                    classification += ': 입장료 5,000원':
+                    break;
+                default:
+                    classification = '입력 값을 다시 확인하세요':
             }
-
-            table += "</table>";
-
-        document.querySelector(".result01").innerHTML = table;
-                </script>
-            </div>   
+            document.write(classification);
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+            </div>
+            <div class="result">
+                <details>   
+                    <summary>결과보기</summary>
+                    <div class="sample03_result">
+                        청소년 : 입장료 2,000원
+                    </div>
+                </details>
+            </div>
         </div>
-    </main>
     <!-- //main -->
 
     <footer id="footer">
@@ -230,98 +210,6 @@ document.write(table);
     <script src="../assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
-    </script>
-
-    <script>
-        //for문 이용해서 1~100까지 출력 (5의 배수, 7의 배수)
-        {
-            for ( let i=1; i<=100; i++ ){
-                if ( i % 5 == 0 ) {
-                    document.write("<span style='color: blue'>"+i+"</span>");
-                }
-                if ( i % 7 == 0 ) {
-                    document.write("<span style='color: red'>"+i+"</span>");
-                }
-            }
-        }
-
-        document.write("<br>");
-
-        //for문을 이용해서 1~100까지 출력(짝수는 빨간색, 홀수는 파란색)
-        {
-            // for ( let i=1; i<=100; i++ ){
-            //     if ( i % 2 == 0 ) {
-            //         document.write("<span style='color: red'>"+i+"</span>");
-            //     } else {
-            //         document.write("<span style='color: blue'>"+i+"</span>");
-            //     }
-            // }
-        }
-        //for문을 이용해서 1~100까지 출력(짝수는 빨간색, 홀수는 파란색) : 조건부 연산자
-        {
-            for ( let i=1; i<=100; i++ ){
-                (i % 2 == 0) ? document.write("<span style='color: red'>"+i+"</span>") : document.write("<span style='color: blue'>"+i+"</span>");
-            }
-        }
-
-        document.write("<br>");
-
-        //for문을 이용해서 구구단 
-        // (2, 3, 4, 5, 6, 7, 8, 9) 8번 반복
-        // (1, , 3, 4, 5, 6, 7, 8, 9) 9번 반복
-
-        // 앞에거 한번 실행 되면 그 다음거 실행하는 2단 실행하고 그 다음 단으로 넘어가는
-
-        // i * J = sum
-
-        //2 * 1 = 2       3 * 1 = 3       4 * 1 = 4
-        //2 * 2 = 4
-        //2 * 3 = 6 
-        //2 * 4 = 8 
-        //2 * 5 = 10 
-        //2 * 6 = 12 
-        //2 * 7 = 14 
-        //2 * 8 = 16
-        //2 * 9 = 18
-
-        //위에 적힌것이 몇단인지
-        for( let i=2; i<=9; i++ ){
-            for( let j=1; j<=9; j++ ){
-                let sum = i * j;
-                document.write(i + " * " + j + "=" + sum);
-                document.write("<br>");
-            }
-        }
-
-        //for문을 이용해서 테이블 만들기
-        {
-            //데이터 타입(자료형) 원시형데이터 / 객체 데이터
-            // let table = 1;       //숫자
-            // let table1 = "1";    //문자
-            // let table2 = true;   //불린(true, false)
-            // let table3 = [];     //배열
-            // let table4 = {};     //객체
-            // let table5 = null;   //특수값(null, undeifned)
-
-            let table = "<table class='testTable'>";
-
-            for( let i=1; i<=10; i++){
-                table += "<tr>";
-
-                for ( let j=1; j<=10; j++ ){
-                    table += "<td>"+i+"</td>";
-                }    
-
-                table += "</tr>";
-            }
-
-            //10번 반복(for문)
-
-            table += "</table>";
-
-            document.write(table)
-        }
-
     </script>
 </body>
 </html>
