@@ -1,117 +1,402 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>자바스크립트 : 데이터 실행하기</title>
 
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+
+</head>
+<body>
     <header id="header">
-      <h1><a href="index.html">Javascript</a></h1>
-      <nav class="header_nav">
+    <h1><a href="index.html">Javascript</a></h1>
+    <nav class="header_nav">
         <ul>
-          <li><a href="javascript01.html">데이터 저장하기</a></li>
-          <li><a href="javascript02.html">데이터 불러오기</a></li>
-          <li class="active"><a href="javascript03.html">데이터 실행하기</a></li>
-          <li><a href="javascript04.html">데이터 제어하기</a></li>
+        <li><a href="javascript01.html">데이터 저장하기</a></li>
+        <li><a href="javascript02.html">데이터 불러오기</a></li>
+        <li class="active"><a href="javascript03.html">데이터 실행하기</a></li>
+        <li><a href="javascript04.html">데이터 제어하기</a></li>
         </ul>
         <ul>
-          <li><a href="javascript05.html">문자열 객체</a></li>
-          <li><a href="javascript06.html">배열 객체</a></li>
-          <li><a href="javascript07.html">수학 객체</a></li>
-          <li><a href="javascript08.html">숫자 객체</a></li>
-          <li><a href="javascript09.html">브라우저 객체</a></li>
-          <li><a href="javascript10.html">요소 객체</a></li>
-          <li><a href="javascript11.html">이벤트 객체</a></li>
-      </ul>
-      <ul class="study">
-          <li><a href="basic.html">기본 규칙</a></li>
-          <li><a href="operator.html">연산자</a></li>
-          <li><a href="for.html">반복문</a></li>
-          <li><a href="if.html">조건문</a></li>
-          <li><a href="type.html">데이터 타입</a></li>
-      </ul>
-      </nav>
+        <li><a href="javascript05.html">문자열 객체</a></li>
+        <li><a href="javascript06.html">배열 객체</a></li>
+        <li><a href="javascript07.html">수학 객체</a></li>
+        <li><a href="javascript08.html">숫자 객체</a></li>
+        <li><a href="javascript09.html">브라우저 객체</a></li>
+        <li><a href="javascript10.html">요소 객체</a></li>
+        <li><a href="javascript11.html">이벤트 객체</a></li>
+    </ul>
+    <ul class="study">
+        <li><a href="basic.html">기본 규칙</a></li>
+        <li><a href="operator.html">연산자</a></li>
+        <li><a href="for.html">반복문</a></li>
+        <li><a href="if.html">조건문</a></li>
+        <li><a href="type.html">데이터 타입</a></li>
+        <li><a href="function.html">함수</a></li>
+    </ul>
+    </nav>
     </header>
     <!-- //header -->
 
     <main id="main">
-      <div class="main_menu">
+    <div class="main_menu">
         <ul>
-          <li><a href="#sample01">01. 선언적 함수</a></li>
-          <li><a href="#sample02">02. 익명 함수</a></li>
-          <li><a href="#sample03">03. 매개변수 함수</a></li>
-          <li><a href="#sample04">04. 리턴값 함수</a></li>
-          <li><a href="#sample05">05. 화살표 함수 : 선언적 함수</a></li>
-          <li><a href="#sample06">06. 화살표 함수 : 익명 함수</a></li>
-          <li><a href="#sample07">07. 화살표 함수 : 매개변수 함수</a></li>
-          <li><a href="#sample08">08. 화살표 함수 : 리턴값 함수</a></li>
-          <li>
+        <li><a href="#sample01">01. 선언적 함수</a></li>
+        <li><a href="#sample02">02. 익명 함수</a></li>
+        <li><a href="#sample03">03. 매개변수 함수</a></li>
+        <li><a href="#sample04">04. 리턴값 함수</a></li>
+        <li><a href="#sample05">05. 화살표 함수 : 선언적 함수</a></li>
+        <li><a href="#sample06">06. 화살표 함수 : 익명 함수</a></li>
+        <li><a href="#sample07">07. 화살표 함수 : 매개변수 함수</a></li>
+        <li><a href="#sample08">08. 화살표 함수 : 리턴값 함수</a></li>
+        <li>
             <a href="#sample09"
-              >09. 화살표 함수 : 믹명 함수 + 매개변수 + 리턴값</a
+            >09. 화살표 함수 : 믹명 함수 + 매개변수 + 리턴값</a
             >
-          </li>
-          <li>
+        </li>
+        <li>
             <a href="#sample10"
-              >10. 화살표 함수 : 믹명 함수 + 매개변수 + 리턴값 + 괄호 생략</a
+            >10. 화살표 함수 : 믹명 함수 + 매개변수 + 리턴값 + 괄호 생략</a
             >
-          </li>
-          <li>
+        </li>
+        <li>
             <a href="#sample11"
-              >11. 화살표 함수 : 믹명 함수 + 매개변수 + 리턴값 + 괄호 생략 +
-              리턴 생략</a
+            >11. 화살표 함수 : 믹명 함수 + 매개변수 + 리턴값 + 괄호 생략 +
+            리턴 생략</a
             >
-          </li>
-          <li>
+        </li>
+        <li>
             <a href="#sample12"
-              >12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 +
-              리턴 생략</a
+            >12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 +
+            리턴 생략</a
             >
-          </li>
-          <li><a href="#sample13">13. 내부 함수</a></li>
-          <li><a href="#sample14">14. 즉시 실행 함수</a></li>
-          <li><a href="#sample15">15. 파라미터 함수</a></li>
-          <li><a href="#sample16">16. 아규먼트 함수</a></li>
-          <li><a href="#sample17">17. 제귀함수</a></li>
-          <li><a href="#sample18">18. 콜백함수</a></li>
-          <li><a href="#sample19">19. 콜백함수 : 반복문</a></li>
-          <li><a href="#sample20">20. 콜백함수 : 동기/비동기</a></li>
-          <li>
+        </li>
+        <li><a href="#sample13">13. 내부 함수</a></li>
+        <li><a href="#sample14">14. 즉시 실행 함수</a></li>
+        <li><a href="#sample15">15. 파라미터 함수</a></li>
+        <li><a href="#sample16">16. 아규먼트 함수</a></li>
+        <li><a href="#sample17">17. 제귀함수</a></li>
+        <li><a href="#sample18">18. 콜백함수</a></li>
+        <li><a href="#sample19">19. 콜백함수 : 반복문</a></li>
+        <li><a href="#sample20">20. 콜백함수 : 동기/비동기</a></li>
+        <li>
             <a href="#sample21"
-              >21. 함수 유형 : 함수와 매개변수를 이용한 형태</a
+            >21. 함수 유형 : 함수와 매개변수를 이용한 형태</a
             >
-          </li>
-          <li>
+        </li>
+        <li>
             <a href="#sample22">22. 함수 유형 : 함수와 변수를 이용한 형태</a>
-          </li>
-          <li>
+        </li>
+        <li>
             <a href="#sample23"
-              >23. 함수 유형 : 함수와 배열,객체를 이용한 형태</a
+            >23. 함수 유형 : 함수와 배열,객체를 이용한 형태</a
             >
-          </li>
-          <li>
+        </li>
+        <li>
             <a href="#sample24"
-              >24. 함수 유형 : 객체 안에 변수와 함수를 이용한 형태</a
+            >24. 함수 유형 : 객체 안에 변수와 함수를 이용한 형태</a
             >
-          </li>
-          <li><a href="#sample25">25. 함수 유형 : 객체 생성자 함수</a></li>
-          <li><a href="#sample26">26. 함수 유형 : 프로토타입 함수</a></li>
-          <li><a href="#sample27">27. 함수 유형 : 객체 리터럴 함수</a></li>
-          <li><a href="#sample28">28. 클래스</a></li>
-          <li><a href="#sample29">29. 클래스 상속</a></li>
+        </li>
+        <li><a href="#sample25">25. 함수 유형 : 객체 생성자 함수</a></li>
+        <li><a href="#sample26">26. 함수 유형 : 프로토타입 함수</a></li>
+        <li><a href="#sample27">27. 함수 유형 : 객체 리터럴 함수</a></li>
+        <li><a href="#sample28">28. 클래스</a></li>
+        <li><a href="#sample29">29. 클래스 상속</a></li>
         </ul>
-      </div>
-      <div class="main script"></div>
-      <div class="main desc"></div>
+    </div>
+
+    <div class="main_sample">
+        <div id="sample01" class="sample">
+            <h3>01. 선언적 함수</h3>
+            <p>변수는 데이터를 저장할 뿐만 아니라 저장되어 있는 데이터를 호출할 수도 있습니다.</p>
+            <div class="script">
+<pre><code class="language-js">function func(){
+    document.write("함수가 실행되었습니다.1");
+    }
+func();
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample01_result">
+                    함수가 실행되었습니다.1
+                    </div>
+                </details>
+            </div>
+        </div>
+        <!-- //sample01 -->
+
+            <div id="sample02" class="sample">
+            <h3>02. 익명 함수</h3>
+            <p>상수는 이미 선언한 경우 값을 재지정할 수 없습니다. 다음은 상수를 선언하고 호출하는 방법입니다.</p>
+            <div class="script">
+<pre><code class="language-js">const func = function(){
+    document.write("함수가 실행되었습니다.2");
+    }
+func();
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample02_result">
+                    함수가 실행되었습니다.2
+                    </div>
+                </details>
+            </div>
+        </div>
+        <!-- //sample02 -->
+
+        <div id="sample03" class="sample">
+            <h3>03. 매개변수 함수</h3>
+            <p>배열에는 하나 이상의 값을 저장할 수 있습니다. 다음은 배열에 저장된 값을 불러오는 방법입니다.</p>
+            <div class="script">
+<pre><code class="language-js">function func(str){
+document.write(str);
+}
+func("함수가 실행되었습니다.3"); 
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample03_result">
+                    함수가 실행되었습니다.3
+                    </div>
+                </details>
+            </div>
+        </div>
+        <!-- //sample03 -->
+
+        <div id="sample04" class="sample">
+                <h3>04. 리턴값 함수</h3>
+                <p>2차 배열은 배열 안에 배열이 들어있는 배열을 말합니다. 다음은 2차 배열에 저장된 값을 불러오는 방법입니다.</p>
+                <div class="script">
+<pre><code class="language-js">function func(){
+    const str = "함수가 실행되었습니다.4";
+    return str;
+    }
+document.write(func());
+</code></pre>
+                </div>
+                <div class="result">
+                    <details>
+                        <summary>결과보기</summary>
+                        <div class="sample04_result">
+                        함수가 실행되었습니다.4
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample04 -->
+
+            <div id="sample05" class="sample">
+            <h3>05. 화살표 함수 : 선언적 함수</h3>
+            <p>배열은 그 안에 포함된 값의 갯수를 구할 수도 있습니다. 다음은 배열의 값의 갯수를 구하는 방법입니다.</p>
+            <div class="script">
+<pre><code class="language-js">func = () => document.write("함수가 실행되었습니다.5");
+
+func();
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample05_result">
+                    함수가 실행되었습니다.5
+                    </div>
+                </details>
+            </div>
+        </div>
+        <!-- //sample05 -->
+
+        <div id="sample06" class="sample">
+            <h3>06. 화살표 함수 : 익명 함수</h3>
+            <p>배열은 그 안에 포함된 값의 갯수를 구할 수도 있습니다. 다음은 배열의 값의 갯수를 구하는 방법입니다.</p>
+            <div class="script">
+<pre><code class="language-js">const func = () => document.write("함수가 실행되었습니다.6");
+
+func();
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample06_result">
+                    함수가 실행되었습니다.6
+                    </div>
+                </details>
+            </div>
+        </div>
+        <!-- //sample06 -->
+
+        <div id="sample07" class="sample">
+        <h3>07. 화살표 함수 : 매개변수 함수</h3>
+        <p>배열의 데이터를 element, index, array값을 불러옵니다.</p>
+        <div class="script">
+<pre><code class="language-js">func = str => document.write(str);
+
+func("함수가 실행되었습니다.7");
+</code></pre>                   
+        </div>
+        <div class="result">
+            <details>
+                <summary>결과보기</summary>
+                <div class="sample07_result">
+                함수가 실행되었습니다.7
+                </div>
+            </details>
+        </div>
+    </div>
+<!-- //sample07 -->
+
+    <div id="sample08" class="sample">
+        <h3>08. 화살표 함수 : 리턴값 함수</h3>
+        <p>배열에 있는 데이터를 요소 값으로 불러옵니다.</p>
+        <div class="script">
+<pre><code class="language-js">func = () => {
+    const str = "함수가 실행되었습니다.8";
+    return str;
+    }
+
+document.write(func());
+</code></pre>
+            </div>
+            <div class="result">
+                <details>
+                    <summary>결과보기</summary>
+                    <div class="sample08_result">
+                    함수가 실행되었습니다.8
+                </details>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- //sample08 -->
     </main>
     <!-- //main -->
 
     <footer id="footer">
-      <a heaf="6060789@naver.com">6060789@naver.com</a>
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
     </footer>
     <!-- //footer -->
-  </body>
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+        // 배열은 여러개, 객체는 키와 값
+        // 변수(데이터 저장), 배열(데이터 저장), 객체(데이터 저장, 내장 객체) --> 함수(실행문)(제어문)
+        // 01. 선언적 함수
+        {
+            // function func(){
+            //     document.write("함수가 실행되었습니다.1<br>");
+            // }
+            // func();
+        }
+
+        // 02. 익명 함수
+        {
+            //데이터 타입 (자료형) --> 타입스크립트
+            // const x = 100
+            // const x1 = "100"
+            // const x2 = []
+            // const x3 = {}
+            // const x4 = null, undefined
+            // const x5 = function(){}
+            // const x6 = true, false   --> 정리할때 써야함
+
+            // const func = function(){
+            //     document.write("함수가 실행되었습니다.2<br>");
+            // }
+            // func();
+        }
+
+        // 03. 매개변수 함수
+        // 변수 : 지역변수 + 전역변수 + 매개변수
+        {
+            // function func(str){
+            //     document.write(str);
+            // }
+            // func("함수가 실행되었습니다.3<br>");    //str 파라미터, 인자, 매개변수 = 변수를 넣어서 전달을 확인
+        }
+
+        // 04. 리턴값 함수
+        {
+            // function func(){
+            //     const str = "함수가 실행되었습니다.4<br>";
+            //     return str;
+            // }
+            // document.write(func());
+        }
+
+        //ECMAscript6(es6) 화살표 함수, let, const
+
+        //05. 화살표 함수(선언적 함수)
+        
+        {
+            // function func(){
+            //     document.write("함수가 실행되었습니다.1<br>");
+            // }
+
+            // func = () => {
+            //     document.write("함수가 실행되었습니다.5<br>");
+            // }
+
+            // func = () => document.write("함수가 실행되었습니다.5<br>");
+
+            // func();
+        }
+        //06. 화살표 함수(익명 함수)
+        {
+            // const func = function(){
+            //     document.write("함수가 실행되었습니다.6<br>");
+            // }
+
+            // const func () => {
+            //     document.write("함수가 실행되었습니다.6<br>");
+            // }
+
+            // const func = () => document.write("함수가 실행되었습니다.6<br>");
+
+            // func();
+        }
+        //07. 화살표 함수(매개변수 함수)
+        {
+            // function func(str){
+            //     document.write(str);
+            // }
+            // func("함수가 실행되었습니다.7<br>");
+
+        // func = (str) => {
+            //     document.write(str);
+            // }
+
+            // func = (str) => document.write(str);
+
+            // func = str => document.write(str);
+
+            // func("함수가 실행되었습니다.7<br>");
+        }
+        //08. 화살표 함수(리턴값 함수)
+        {
+            // function func(){
+            //     const str = "함수가 실행되었습니다.8<br>";
+            //     return str;
+            // }
+
+            // func = () => {
+            //     const str = "함수가 실행되었습니다.8<br>";
+            //     return str;
+            // }
+
+            // document.write(func());
+        }
+
+    </script>
+</body>
 </html>
