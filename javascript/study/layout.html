@@ -39,6 +39,18 @@
             <p class="t_box">
                 div태그는 block특성을 가지고 있기 때문에 세로 배치. 가로로 정렬시켜주는 것 float: left;입니다.<br>
                 하단의 보이지 않는 요소에 clear: both; 주게 되면 요소가 다시 보이게 됩니다.<br>
+                구조가 복잡해지면 overflow: hidden; 으로 주는 것이 좋으며 그보다도 <br>
+                clearfix를 주는 것이 좋습니다.<br>
+                /* clearfix */<br>
+                .clearfix::before,<br>
+                .clearfix::after {<br>
+                    content: '';<br>
+                    display: block;<br>
+                    line-height: 0;<br>
+                }<br>
+                .clearfix::after {<br>
+                    clear: both;<br>
+                }<br>
             </p>
             <br>
             <p><p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="MWVvmQx" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
@@ -116,7 +128,7 @@
 
             <br>
             <p>
-                <p class="codepen" data-height="600" data-default-tab="html,result" data-slug-hash="GRxvrYz" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="GRxvrYz" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
                     <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/GRxvrYz">
                     레이아웃1</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
                     on <a href="https://codepen.io">CodePen</a>.</span>
@@ -125,7 +137,7 @@
             </p>
             <br>
             <p>
-                <p class="codepen" data-height="600" data-default-tab="html,result" data-slug-hash="ExEvZOv" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="ExEvZOv" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
                     <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/ExEvZOv">
                     레이아웃2</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
                     on <a href="https://codepen.io">CodePen</a>.</span>
@@ -134,7 +146,7 @@
             </p>
             <br>
             <p>
-                <p class="codepen" data-height="600" data-default-tab="html,result" data-slug-hash="mdxMRQa" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="mdxMRQa" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
                     <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/mdxMRQa">
                     레이아웃3</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
                     on <a href="https://codepen.io">CodePen</a>.</span>
