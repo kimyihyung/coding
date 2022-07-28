@@ -295,7 +295,7 @@ document.write(func("함수가 실행되었습니다.9<br>"));
                 익명 함수, 매개 변수, 리턴값 사용할 수 있고, 매개변수가 하나라면 괄호()가 생략 가능합니다.
             </p>
             <div class="script">
-                <pre><code class="language-js">const func = (str) => {                   //변수가 하나라서 괄호()생략 가능
+                <pre><code class="language-js">const func = str => {                   //변수가 하나라서 괄호()생략 가능
 return str;
 }
 document.write(func("함수가 실행되었습니다.10<br>"));
@@ -544,7 +544,7 @@ document.write(func("함수가 실행되었습니다.12<br>"));
         }
         //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호 생략
         {
-            const func = (str) => {
+            const func = str => {
                 return str;
             }
             document.write(func("함수가 실행되었습니다.10<br>"))
