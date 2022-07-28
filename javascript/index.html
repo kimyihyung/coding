@@ -28,19 +28,20 @@
             font-family: "GmarketSans";
             text-align: center;
             padding: 2vw;
-            border: 8px solid blue;
+            border: 8px solid #0243f1;
             box-sizing: border-box;
             border-radius: 20px;
             position: relative;
         }
 
-        main::before {
+        main:before {
             content: "";
             border: 8px solid #50b5f9;
             position: absolute;
             left: 0;
             top: 0;
             width: calc(100% - 16px);
+            /* box-sizing: border-box; */
             height: calc(100vh - 32px);
             border-radius: 12px;
             z-index: -1;
@@ -48,7 +49,7 @@
 
         h1 {
             font-size: 8vw;
-            color: blue;
+            color: #0243f1;
             margin-bottom: 4vw;
             text-transform: capitalize;
         }
@@ -60,8 +61,8 @@
 
         nav ul li a {
             text-decoration: none;
-            border: 1px dashed blue;
-            color: blue;
+            border: 1px dashed #0243f1;
+            color: #0243f1;
             padding: 10px 24px;
             display: inline-block;
             margin: 6px 3px;
@@ -71,11 +72,11 @@
         }
 
         nav ul li a:hover {
-            background-color: blue;
+            background-color: #0243f1;
             color: #fff;
         }
 
-        /* dog */
+        /* dog  */
 
         .dog .wrap {
             width: 300px;
@@ -449,13 +450,13 @@
             border-radius: 50%;
         }
 
+        /* 모바일 */
         @media (max-width: 800px){
             h1 {
                 font-size: 40px;
             }
-            nav ul:nth-child(2) {
+            nav ul:nth-child(2){
                 display: none;
-                
             }
         }
     </style>
@@ -517,9 +518,8 @@
                 </defs>
             </svg>
 
-        </div>
-        <!-- //dog -->
-        <h1>JavaScript</h1>
+        </div> <!-- /dog -->
+        <h1>javaScript</h1>
         <nav>
             <ul>
                 <li><a href="javascript01.html">데이터 저장하기</a></li>
@@ -537,11 +537,10 @@
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
         </nav>
-
     </main>
-    <script scr=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js></script>
-    <script scr=https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script>
         var $eyes = $('.eyes'),
             $snout = $('.snout'),
@@ -680,6 +679,7 @@
 
 
         });
+
     </script>
 </body>
 
