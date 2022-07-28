@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        {
+        var kor = 90;
+        function getScore() {
+            kor = 100;   // 전연 변수
+            console.log(kor);   // 100     
+        }
+        getScore();
+        console.log(kor);   // 100
+        }
+
+        {
+        var kor = 90;
+        function getScore(){
+            var kor = 100;   // 지역 변수
+            console.log(kor);   // 100
+        }
+        getScore();
+        console.log(kor);   // 90
+        }
+
+        {
+            function getScore(){
+                var kor = 100;
+                console.log(kor);   // 100
+            }
+            getScore();
+            console.log(kor);   // 에러
+        }
+
+        {
+            var num = 10;
+            {
+                var num = 20;   // num은 전역 변수입니다.
+                console.log(num);  // 20
+            }
+            console.log(num);   // 20
+        }
+
+        {
+            let num = 10;
+            {
+                let num = 20;   // num은 지역 변수입니다.
+                console.log(num);  // 20
+            }
+            console.log(num);   // 10
+        }
+
+        {
+            const num = 10;
+            {
+                const num = 20;   // num은 지역 변수입니다.
+                console.log(num);  // 20
+            }
+            console.log(num);   // 10
+        }
+
+        {
+            var num = 10;
+            if (num === 10) {
+                var sum = 20;   //전역 변수
+            }
+            console.log(sum);   //20
+        }
+
+        {
+        let num = 10;
+        if (num === 10) {
+            let sum = 20;   //지역 변수
+        }
+        console.log(sum);   //에러
+        }
+
+    </script>
+</body>
+</html>

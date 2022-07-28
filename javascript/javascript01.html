@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dracula.css">
 </head>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
@@ -29,11 +31,13 @@
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul class="study">
-                <li><a href="basic.html">기본 규칙</a></li>
-                <li><a href="operator.html">연산자</a></li>
-                <li><a href="for.html">반복문</a></li>
-                <li><a href="if.html">조건문</a></li>
-                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
+                <li><a href="study/for.html">반복문</a></li>
+                <li><a href="study/if.html">조건문</a></li>
+                <li><a href="study/type.html">데이터 타입</a></li>
+                <li><a href="study/fuction.html">함수</a></li>
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
             </ul>
         </nav>
     </header>
@@ -69,7 +73,7 @@
                     이 저장소에는 숫자, 문자, 함수, 객체 등을 저장할 수 있습니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">var x = 100;      //변수 x에 100을 저장
+                    <pre><code lang="languige-js">var x = 100;      //변수 x에 100을 저장
 var y = 200;        //변수 y에 200을 저장
 var z ="javascript"     //변수 z에 문자열 "javascript"를 저장함
 
@@ -94,7 +98,7 @@ document,write(z)
                     이 저장소는 데이터를 저장, 변경할 수 있습니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">let x = 100;
+                    <pre><code lang="languige-js">let x = 100;
 let y = 200;
 let z = "javascript"
 
@@ -123,7 +127,7 @@ document.write(z)
                     이 저장소는 데이터를 저장, 변경, 추가할 수 있습니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">let x = 100;
+                    <pre><code lang="languige-js">let x = 100;
 let y = 200;
 let z = "javascript"
 
@@ -152,7 +156,7 @@ document.write(z)
                     지역변수는 함수 블록{} 내에서만 사용할 수 있습니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">let x = 100;        //전역변수
+                    <pre><code lang="languige-js">let x = 100;        //전역변수
 let y = 200;
 
 function func(){
@@ -200,7 +204,7 @@ document.write(z);     //undifined (or null) : 값이 정해져 있지 않을 �
                     상수는 데이터를 저장 할 수 있지만 변경 할 수 없으며, 이미 선언한 상수에 대해 중복해서 선언할 수 없습니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const x = 100;
+                    <pre><code lang="languige-js">const x = 100;
 const y = 200;
 const z = "javascript";
 
@@ -228,7 +232,7 @@ document.write(z)
                     배열은 여러개의 데이터를 저장할 수 있으며 표현 방법이 다양합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const arr = new Array();
+                    <pre><code lang="languige-js">const arr = new Array();
 arr[0] = 100;
 arr[1] = 200;
 arr[2] = "javascript";
@@ -253,7 +257,7 @@ document.write(arr[2]);
                     배열은 여러개의 데이터를 저장할 수 있으며 표현 방법이 다양합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const arr = new Array[100, 200, "javascript"];
+                    <pre><code lang="languige-js">const arr = new Array[100, 200, "javascript"];
 
 document.write(arr[0]);
 document.write(arr[1]);
@@ -275,7 +279,7 @@ document.write(arr[2]);
                     배열은 여러개의 데이터를 저장할 수 있으며 표현 방법이 다양합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const arr = [];
+                    <pre><code lang="languige-js">const arr = [];
 arr[0] = 100;
 arr[1] = 200;
 arr[2] = "javascript";
@@ -300,7 +304,7 @@ document.write(arr[2]);
                     배열은 여러개의 데이터를 저장할 수 있으며 표현 방법이 다양합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const arr = [100, 200, "javascript"];
+                    <pre><code lang="languige-js">const arr = [100, 200, "javascript"];
 
 document.write(arr[0]);
 document.write(arr[1]);
@@ -323,7 +327,7 @@ document.write(arr[2]);
                     객체의 데이터는 '이름: 값'의 쌍으로 이루어져 있으며, 이것을 속성이라고 합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const obj = new Object();
+                    <pre><code lang="languige-js">const obj = new Object();
 obj[0] = 100;
 obj[1] = 200;
 obj[2] = "javascript";
@@ -349,7 +353,7 @@ document.write(obj[2]);
                     객체의 데이터는 '이름: 값'의 쌍으로 이루어져 있으며, 이것을 속성이라고 합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const obj = new Object();
+                    <pre><code lang="languige-js">const obj = new Object();
         
 obj.a = 100;
 obj.b = 200;
@@ -376,7 +380,7 @@ document.write(obj.c);
                     객체의 데이터는 '이름: 값'의 쌍으로 이루어져 있으며, 이것을 속성이라고 합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const obj = {};
+                    <pre><code lang="languige-js">const obj = {};
 
 obj.a = 100;
 obj.b = 200;
@@ -403,7 +407,7 @@ document.write(obj.c);
                     객체의 데이터는 '이름: 값'의 쌍으로 이루어져 있으며, 이것을 속성이라고 합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const obj = {a:100, b:200, c:"javascript"};
+                    <pre><code lang="languige-js">const obj = {a:100, b:200, c:"javascript"};
 
 document.write(obj.a);
 document.write(obj.b);
@@ -426,7 +430,7 @@ document.write(obj.c);
                     객체의 데이터는 '이름: 값'의 쌍으로 이루어져 있으며, 이것을 속성이라고 합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const obj = [
+                    <pre><code lang="languige-js">const obj = [
     {a:100, b:200},
     {c:"javascript"}
 ];
@@ -452,7 +456,7 @@ document.write(obj[1].c);
                     객체의 데이터는 '이름: 값'의 쌍으로 이루어져 있으며, 이것을 속성이라고 합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const obj = {
+                    <pre><code lang="languige-js">const obj = {
     a: 100,
     b: [200, 300],
     c: {x: 400, y: 500},
@@ -483,7 +487,7 @@ document.write(obj.d);
                     객체의 데이터는 '이름: 값'의 쌍으로 이루어져 있으며, 이것을 속성이라고 합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const a = 100;
+                    <pre><code lang="languige-js">const a = 100;
 const b = 200;
 const c = "javascript";
 
@@ -510,7 +514,7 @@ document.write(obj.c);
                     객체의 데이터는 '이름: 값'의 쌍으로 이루어져 있으며, 이것을 속성이라고 합니다.
                 </p>
                 <div class="script">
-<pre><code lang="languige-js">const obj = {
+                    <pre><code lang="languige-js">const obj = {
     a : 100,
     b : [200, 300],
     c : {x:400, y:500},
@@ -584,7 +588,7 @@ obj.g();
             // document.write(y)
             // document.write(z)
 
-            document.querySelector(".sample01_result").innerHTML = x +"<br>"+ y +"<br>"+ z;
+            document.querySelector(".sample01_result").innerHTML = x + "<br>" + y + "<br>" + z;
         }
 
         //02
@@ -601,9 +605,9 @@ obj.g();
             //document.write(y)
             //document.write(z)
 
-            document.querySelector(".sample02_result").innerHTML = x +"<br>"+ y +"<br>"+ z;
+            document.querySelector(".sample02_result").innerHTML = x + "<br>" + y + "<br>" + z;
         }
-        
+
         //03
         {
             let x = 100;
@@ -618,28 +622,28 @@ obj.g();
             //document.write(y)
             //document.write(z)
 
-            document.querySelector(".sample03_result").innerHTML = x +"<br>"+ y +"<br>"+ z;
+            document.querySelector(".sample03_result").innerHTML = x + "<br>" + y + "<br>" + z;
         }
-    
+
         //04
         {
             let x = 100;        //전역변수
             let y = 200;
 
-            function func(){
+            function func() {
                 let x = 100;        //지역변수 : 함수 안에서만 작용
                 let z = "javascript";
                 x = 200;           //전역변수 : 100 -> 200
                 y = 300;           //전역변수 : 200 -> 300
-            
-            //document.write("함수 안", "<br>");
-            //document.write(x, "<br>");
-            //document.write(y, "<br>");
-            //document.write(z, "<br>");
+
+                //document.write("함수 안", "<br>");
+                //document.write(x, "<br>");
+                //document.write(y, "<br>");
+                //document.write(z, "<br>");
 
             }
             func();     //함수의 실행문
-        
+
             //document.write("함수 밖", "<br>");
             //document.write(x, "<br>");
             //document.write(y, "<br>");
@@ -655,14 +659,14 @@ obj.g();
             //x = 300;        //상수는 값을 변경할 수 없기 때문에 변경하는 코드를 적으면 오류가 발생
             //x = 400;
             //z = "jquary";
-            
+
             //document.write(x);
             //document.write(y);
             //document.write(z);
 
-            document.querySelector(".sample05_result").innerHTML = x +"<br>"+ y +"<br>"+ z;
+            document.querySelector(".sample05_result").innerHTML = x + "<br>" + y + "<br>" + z;
         }
-    
+
         //06
         {
             const arr = new Array();
@@ -674,8 +678,8 @@ obj.g();
             //document.write(arr[1]);
             //document.write(arr[2]);
 
-            document.querySelector(".sample06_result").innerHTML = arr[0] +"<br>"+ arr[1] +"<br>"+ arr[2];
-            
+            document.querySelector(".sample06_result").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
+
         }
 
         //07
@@ -686,7 +690,7 @@ obj.g();
             //document.write(arr[1]);
             //document.write(arr[2]);
 
-            document.querySelector(".sample07_result").innerHTML = arr[0] +"<br>"+ arr[1] +"<br>"+ arr[2];
+            document.querySelector(".sample07_result").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
         }
 
@@ -700,8 +704,8 @@ obj.g();
             //document.write(arr[0]);
             //document.write(arr[1]);
             //document.write(arr[2]);
-            
-            document.querySelector(".sample08_result").innerHTML = arr[0] +"<br>"+ arr[1] +"<br>"+ arr[2];
+
+            document.querySelector(".sample08_result").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
 
         }
 
@@ -713,9 +717,9 @@ obj.g();
             //document.write(arr[1]);
             //document.write(arr[2]);
 
-            document.querySelector(".sample09_result").innerHTML = arr[0] +"<br>"+ arr[1] +"<br>"+ arr[2];
+            document.querySelector(".sample09_result").innerHTML = arr[0] + "<br>" + arr[1] + "<br>" + arr[2];
         }
-    
+
         //10
         {
             const obj = new Object();
@@ -727,13 +731,13 @@ obj.g();
             //document.write(obj[1]);
             //document.write(obj[2]);
 
-            document.querySelector(".sample10_result").innerHTML = obj[0] +"<br>"+ obj[1] +"<br>"+ obj[2];
+            document.querySelector(".sample10_result").innerHTML = obj[0] + "<br>" + obj[1] + "<br>" + obj[2];
         }
 
         //11
         {
             const obj = new Object();
-            
+
             obj.a = 100;
             obj.b = 200;
             obj.c = "javascript";
@@ -742,7 +746,7 @@ obj.g();
             //document.write(obj.b);
             //document.write(obj.c);
 
-            document.querySelector(".sample11_result").innerHTML = obj.a +"<br>"+ obj.b +"<br>"+ obj.c;
+            document.querySelector(".sample11_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
 
         //12
@@ -757,32 +761,32 @@ obj.g();
             //document.write(obj.b);
             //document.write(obj.c);
 
-            document.querySelector(".sample12_result").innerHTML = obj.a +"<br>"+ obj.b +"<br>"+ obj.c;
+            document.querySelector(".sample12_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
 
         //13
         {
-            const obj = {a:100, b:200, c:"javascript"};
+            const obj = { a: 100, b: 200, c: "javascript" };
 
             //document.write(obj.a);
             //document.write(obj.b);
             //document.write(obj.c);
 
-            document.querySelector(".sample13_result").innerHTML = obj.a +"<br>"+ obj.b +"<br>"+ obj.c;
+            document.querySelector(".sample13_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
-    
+
         //14 객체 : 배열 속에 객체
         {
             const obj = [
-                {a:100, b:200},
-                {c:"javascript"}
+                { a: 100, b: 200 },
+                { c: "javascript" }
             ];
 
             //document.write(obj[0].a);
             //document.write(obj[0].b);
             //document.write(obj[1].c);
 
-            document.querySelector(".sample14_result").innerHTML = obj[0].a +"<br>"+ obj[0].b +"<br>"+ obj[1].c;
+            document.querySelector(".sample14_result").innerHTML = obj[0].a + "<br>" + obj[0].b + "<br>" + obj[1].c;
         }
 
         //15 객체 : 객체 속에 배열
@@ -790,7 +794,7 @@ obj.g();
             const obj = {
                 a: 100,
                 b: [200, 300],
-                c: {x: 400, y: 500},
+                c: { x: 400, y: 500 },
                 d: "javascript"
             };
 
@@ -801,7 +805,7 @@ obj.g();
             //document.write(obj.c.y);
             //document.write(obj.d);
 
-            document.querySelector(".sample15_result").innerHTML = obj.a +"<br>"+ obj.b[0] +"<br>"+ obj.b[1] +"<br>"+ obj.c.x +"<br>"+ obj.c.y +"<br>"+ obj.d;
+            document.querySelector(".sample15_result").innerHTML = obj.a + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>" + obj.d;
         }
 
         //16 객체 : 객체 속에 변수
@@ -816,24 +820,24 @@ obj.g();
             //document.write(obj.b);
             //document.write(obj.c);
 
-            document.querySelector(".sample16_result").innerHTML = obj.a +"<br>"+ obj.b +"<br>"+ obj.c;
+            document.querySelector(".sample16_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
-        
+
         //17 객체 : 객체 속에 함수
         {
             const obj = {
-                a : 100,
-                b : [200, 300],
-                c : {x:400, y:500},
-                d : "javascript",
-                e : function(){
+                a: 100,
+                b: [200, 300],
+                c: { x: 400, y: 500 },
+                d: "javascript",
+                e: function () {
                     document.write("자바스크립트가 실행되었습니다.")
                 },
-                f : function(){
-                    document.write( obj.d + "가 실행되었습니다.")
+                f: function () {
+                    document.write(obj.d + "가 실행되었습니다.")
                 },
-                g : function(){
-                    document.write( this.d + "가 실행되었습니다.")
+                g: function () {
+                    document.write(this.d + "가 실행되었습니다.")
                 }
             };
 
@@ -853,4 +857,5 @@ obj.g();
         }
     </script>
 </body>
+
 </html>
