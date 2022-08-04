@@ -182,18 +182,19 @@ body {
                             on <a href="https://codepen.io">CodePen</a>.</span>
                     </p>
                     <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-                    <h3 class="t_tit2">flex를 이용한 레이아웃</h3>
-                    <p class="t_desc2">
-                        각각의 자식 요소에 적용하는 것이 아니라 부모 요소에만 적용하면 된다. <br>
-                        display: flex; 아이템들을 더 이상 한 줄에 담을 여유 공간이 없을 때 아이템 줄바꿈을 결정 : (flex-wrap flex-wrap: wrap;)<br>
-                        방향 설정은 flex-direction으로 배치되는 축의 방향을 결정하는 속성. <br>
-                        row : 기본값으로, 아이템들이 가로(행) 방향으로 배치<br>
-                        row-reverse : 아이템들이 역순으로 가로 배치<br>
-                        column : 아이템들이 세로(열) 방향으로 배치<br>
-                        column-reverse : 아이템들이 역순으로 세로 배치
-                    </p>
-                    <div class="t_code">
-                        <pre><code class="language-css">* {
+                </div>
+                <h3 class="t_tit2">flex를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    각각의 자식 요소에 적용하는 것이 아니라 부모 요소에만 적용하면 된다. <br>
+                    display: flex; 아이템들을 더 이상 한 줄에 담을 여유 공간이 없을 때 아이템 줄바꿈을 결정 : (flex-wrap flex-wrap: wrap;)<br>
+                    방향 설정은 flex-direction으로 배치되는 축의 방향을 결정하는 속성. <br>
+                    row : 기본값으로, 아이템들이 가로(행) 방향으로 배치<br>
+                    row-reverse : 아이템들이 역순으로 가로 배치<br>
+                    column : 아이템들이 세로(열) 방향으로 배치<br>
+                    column-reverse : 아이템들이 역순으로 세로 배치
+                </p>
+                <div class="t_code">
+                    <pre><code class="language-css">* {
     margin: 0;
     padding: 0;
 }
@@ -289,27 +290,28 @@ body {
     }
 }
 </code></pre>
-                    </div>
-                    <h4 class="t_tit3">결과</h4>
-                    <div class="t_iframe">
-                        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ExEvzGx"
-                            data-user="kimyihyung"
-                            style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                            <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/ExEvzGx">
-                                    layout03-float</a> by kimyihyung (<a
-                                    href="https://codepen.io/kimyihyung">@kimyihyung</a>)
-                                on <a href="https://codepen.io">CodePen</a>.</span>
-                        </p>
-                        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-                        <h3 class="t_tit2">grid를 이용한 레이아웃</h3>
-                        <p class="t_desc2">
-                            display: grid; table처럼 행과 열 나누며 area를 정해주면 됩니다.<br>
-                            grid-template-rows : 명시적 행의 크기<br>
-                            grid-template-cloumns : 명시적 열의 크기<br>
-                            grid-template-areas : 영역 테이블 생성
-                        </p>
-                        <div class="t_code">
-                            <pre><code class="language-css">* {
+                </div>
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_iframe">
+                    <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ExEvzGx"
+                        data-user="kimyihyung"
+                        style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                        <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/ExEvzGx">
+                                layout03-float</a> by kimyihyung (<a
+                                href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
+                    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </div>
+                <h3 class="t_tit2">grid를 이용한 레이아웃</h3>
+                <p class="t_desc2">
+                    display: grid; table처럼 행과 열 나누며 area를 정해주면 됩니다.<br>
+                    grid-template-rows : 명시적 행의 크기<br>
+                    grid-template-cloumns : 명시적 열의 크기<br>
+                    grid-template-areas : 영역 테이블 생성
+                </p>
+                <div class="t_code">
+                    <pre><code class="language-css">* {
     margin: 0;
     padding: 0;
 }
@@ -398,22 +400,21 @@ body {
     }
 }
 </code></pre>
-                        </div>
-
-                        <h4 class="t_tit3">결과</h4>
-                        <div class="t_iframe">
-                            <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="wvmPmEE"
-                                data-user="kimyihyung"
-                                style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                                <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/wvmPmEE">
-                                        layout03-grid</a> by kimyihyung (<a
-                                        href="https://codepen.io/kimyihyung">@kimyihyung</a>)
-                                    on <a href="https://codepen.io">CodePen</a>.</span>
-                            </p>
-                            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-                        </div>
-                    </div>
                 </div>
+
+                <h4 class="t_tit3">결과</h4>
+                <div class="t_iframe">
+                    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="wvmPmEE"
+                        data-user="kimyihyung"
+                        style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                        <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/wvmPmEE">
+                                layout03-grid</a> by kimyihyung (<a
+                                href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
+                    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </div>
+            </div>
     </main>
     <!-- //header -->
 
