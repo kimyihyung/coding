@@ -1,38 +1,111 @@
 &lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
+
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;변수의 범위&lt;/title&gt;
-    &lt;script&gt;
-        // 함수의 전역변수
-        var sum1 = 10;
-        function add1() {
-            sum1 = 20;
-        }
-        add1();
-        console.log('전역' + sum1);
-        // 함수의 지역변수
-        var sum2 = 30;
-        function add2() {
-            var sum2 = 40;
-            console.log('지역' + sum2);
-        }
-        add2();
-        console.log('전역' + sum2);
-        // 블록의 지역변수
-        var num1 = 50;
-        if (num1 === 50)  {
-            var num1 = 60;
-        } 
-        console.log('전역' + num1);
-        let num2 = 70;
-        if (num2 === 70) {
-            let num2 = 80;
-            console.log('지역' + num2);
-        }
-        console.log('전역' + num2);
-    &lt;/script&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;퀴즈 이펙트&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="../assets/css/quiz.css"&gt;
+
+    &lt;link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet"&gt;
+    &lt;link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet"&gt;
+
 &lt;/head&gt;
+
 &lt;body&gt;
+    &lt;header id="header"&gt;
+        &lt;h1&gt;&lt;a href="../javascript01.html"&gt;Quiz&lt;/a&gt; &lt;em&gt;정답 확인하기 유형&lt;/em&gt;&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li class="active"&gt;&lt;a href="quizEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="quizEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="quizEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="quizEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="quizEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="quizEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;!-- //header --&gt;
+
+    &lt;main id="main"&gt;
+        &lt;div class="quiz__wrap"&gt;
+            &lt;div class="quiz"&gt;
+                &lt;span class="quiz__type"&gt;&lt;/span&gt;
+                &lt;h2 class="quiz__question"&gt;
+                    &lt;span class="number"&gt;&lt;/span&gt;
+                    &lt;div class="ask"&gt;&lt;/div&gt;
+                &lt;/h2&gt;
+                &lt;div class="quiz__view"&gt;
+                    &lt;div class="dog"&gt;
+                        &lt;div class="head"&gt;
+                            &lt;div class="ears"&gt;&lt;/div&gt;
+                            &lt;div class="face"&gt;&lt;/div&gt;
+                            &lt;div class="eyes"&gt;
+                                &lt;div class="teardrop"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="nose"&gt;&lt;/div&gt;
+                            &lt;div class="mouth"&gt;
+                                &lt;div class="tongue"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class="chin"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="body"&gt;
+                            &lt;div class="tail"&gt;&lt;/div&gt;
+                            &lt;div class="legs"&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="quiz__answer"&gt;
+                    &lt;button class="confirm"&gt;정답 확인하기&lt;/button&gt;
+                    &lt;div class="result"&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/main&gt;
+    &lt;!-- //main --&gt;
+
+    &lt;footer id="footer"&gt;
+        &lt;a href="mailto:kimlh3743@gmail.com"&gt;kimlh3743@gmail.com&lt;/a&gt;
+    &lt;/footer&gt;
+    &lt;!-- //footer --&gt;
+
+    &lt;script&gt;
+        //선택자 
+        const quizType = document.querySelector(".quiz__type");                  //퀴즈 종류
+        const quizNumber = document.querySelector(".quiz__question .number");    //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__question .ask");          //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz__answer .confirm");    //정답 확인 버튼
+        const quizResult = document.querySelector(".quiz__answer .result");      //정답 결과
+        const quizDog = document.querySelector(".quiz__view .dog");              //강아지
+        
+        //문제 정보
+        const answerType = "웹디자인기능사";
+        const answerNum = 1;
+        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
+        const answerResult = "연변대비";
+
+        //문제 출력
+        quizType.innerText = answerType;
+        quizNumber.innerText = answerNum + ". ";
+        quizAsk.innerText = answerAsk;
+        quizResult.innerText = answerResult;
+
+        //정답 숨기기
+        quizResult.style.display = "none";
+
+        //정답 확인
+        //정답 버튼을 클릭하면 //확인버튼 안보인게... 숨겨진 정답은 보이게...
+        //정답을 확인하면 강아지가 웃고 있어야함 // 클래스 like 추가함
+        quizConfirm.addEventListener("click", function(){
+            quizConfirm.style.display = "none";
+            quizResult.style.display = "block";
+            quizDog.classList.add("like");
+        });
+
+    &lt;/script&gt;
 &lt;/body&gt;
+
 &lt;/html&gt;

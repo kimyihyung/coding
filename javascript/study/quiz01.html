@@ -29,21 +29,26 @@
                 <li><a href="../javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul class="study">
-                <li class="active"><a href="basic.html">기본 규칙</a></li>
+                <li><a href="basic.html">기본 규칙</a></li>
                 <li><a href="operator.html">연산자</a></li>
                 <li><a href="for.html">반복문</a></li>
                 <li><a href="if.html">조건문</a></li>
                 <li><a href="type.html">데이터 타입</a></li>
                 <li><a href="function.html">함수</a></li>
                 <li><a href="var.html">지역변수/전역변수</a></li>
-                <li><a href="quiz01.html">웹디자인기능사 Quiz</a></li>
+                <li class="active"><a href="quiz01.html">웹디자인기능사 Quiz</a></li>
             </ul>
         </nav>
     </header>
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">기본 규칙</h2>
+            <h2 class="t_tit">웹디자인기능사</h2>
+            <iframe height="300" style="width: 100%;" scrolling="no" title="웹디자인기능사 quiz 01" src="https://codepen.io/kimyihyung/embed/yLKKPMP?default-tab=js%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                See the Pen <a href="https://codepen.io/kimyihyung/pen/yLKKPMP">
+                웹디자인기능사 quiz 01</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
             <p class="t_desc">
                 자바스크립트를 다루기 위해서는 기초적인 특징과 문법이 있습니다. 가장 기본이기 때문에 이 부분을 수지하고 자바스크립트를 <i>공부</i>해야합니다.
             </p>
@@ -130,23 +135,40 @@
             </p>
             <div class="t_code">
 <pre><code>
-&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Javasript&lt;/title&gt;
-    &lt;!-- 1. 외부 파일로 로드하는 방법 --&gt;
-    &lt;script type="text/Javasript" src="js/script.js"&gt;&lt;/script&gt;
-    &lt;!-- 2. script 태그 사이에 기술하는 방법 --&gt;
-    &lt;script&gt;
-        document.write("Javasript");
-    &lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;!-- 3. 태그에 직접 기술하는 방법 --&gt;
-    &lt;a href="#" onclick="alert('Javasript')"&gt;&lt;/a&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+&lt;script&gt;
+    //선택자 
+    const quizType = document.querySelector(".quiz__type");                  //퀴즈 종류
+    const quizNumber = document.querySelector(".quiz__question .number");    //퀴즈 번호
+    const quizAsk = document.querySelector(".quiz__question .ask");          //퀴즈 질문
+    const quizConfirm = document.querySelector(".quiz__answer .confirm");    //정답 확인 버튼
+    const quizResult = document.querySelector(".quiz__answer .result");      //정답 결과
+    const quizDog = document.querySelector(".quiz__view .dog");              //강아지
+    
+    //문제 정보
+    const answerType = "웹디자인기능사";
+    const answerNum = 1;
+    const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
+    const answerResult = "연변대비";
+
+    //문제 출력
+    quizType.innerText = answerType;
+    quizNumber.innerText = answerNum + ". ";
+    quizAsk.innerText = answerAsk;
+    quizResult.innerText = answerResult;
+
+    //정답 숨기기
+    quizResult.style.display = "none";
+
+    //정답 확인
+    //정답 버튼을 클릭하면 //확인버튼 안보인게... 숨겨진 정답은 보이게...
+    //정답을 확인하면 강아지가 웃고 있어야함 // 클래스 like 추가함
+    quizConfirm.addEventListener("click", function(){
+        quizConfirm.style.display = "none";
+        quizResult.style.display = "block";
+        quizDog.classList.add("like");
+    });
+
+&lt;/script&gt;
 </code></pre>
             </div>
 
