@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <title>자바스크립트 : 조건문</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
-    
+
 </head>
+
 <body>
     <header id="header">
         <h1><a href="../index.html">Javascript</a></h1>
@@ -46,7 +48,7 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">요소 선택</h2><br>
-            
+
             <h3 class="t_tit">요소를 직접 선택하는 메서드</h3>
             <table class="t_table">
                 <thead>
@@ -57,78 +59,86 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="ce">조건문</td>
-                        <td>if, switch</td>
+                        <td class="ce">getElementByld()</td>
+                        <td>document.getElementByld('content')일 경우 HTML 요소 중 id 속성이 'content'인 요소를 선택합니다.</td>
                     </tr>
                     <tr>
-                        <td class="ce">반복문</td>
-                        <td>while, do while, for</td>
+                        <td class="ce">getElementsByClassName()</td>
+                        <td>document.getElementsByClassName('menu')일 경우 HTML 요소 중 class명이 'menu'인 요소들을 선택합니다.</td>
                     </tr>
                     <tr>
-                        <td class="ce">중지, 건너뛰기</td>
-                        <td>break, continue</td>
-                    </tr><tr>
-                        <td class="ce">중지, 건너뛰기</td>
-                        <td>break, continue</td>
+                        <td class="ce">getElementsbyTagName()</td>
+                        <td>document.getElementsByName('ul')일 경우 HTML 요소 중 태그명이 'ul'인 요소들을 선택합니다.</td>
                     </tr>
                     <tr>
-                        <td class="ce">중지, 건너뛰기</td>
-                        <td>break, continue</td>
+                        <td class="ce">getElementsbyName()</td>
+                        <td>document.getElementsbyName('txt')일 경우 HTML 요소 중 name명이 'txt'인 요소들을 선택합니다.</td>
                     </tr>
                     <tr>
-                        <td class="ce">중지, 건너뛰기</td>
-                        <td>break, continue</td>
+                        <td class="ce">querySelector()</td>
+                        <td>요소의 선택 방법이 css 선택 방법과 같습니다. 선택된 요소 중 첫 번째 요소만 선택합니다. <br> document.querySelector('.lnb')
+                            <br> document.querySelector(div) <br> document.querySelector('#gnb li')</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">querySelectorAll</td>
+                        <td>querySelector()는 선택된 요소 중 첫 번째 요소만 선택하는 반면 querySeletorAll()는 모든 요소를 선택합니다.</td>
                     </tr>
                 </tbody>
             </table>
 
             <hr>
 
-            
+
             <div class="t_code">
-<pre><code class="language-js">&lt;!DDOCTYPE HTML&gt;
+<pre><code classs="js-language">&lt;!DOCTYPE html&gt;
 &lt;html lang="ko"&gt;
-&lt;haed&gt;
+&lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;if 문&lt;/title&gt;
+    &lt;title&gt;요소를 직접 선택하는 메서드&lt;/title&gt;
     &lt;script&gt;
-        var html = Number(prompt('html 점수입력', ''));
-        var css = Number(prompt('css 점수입력', ''));
-        var javascript = Number(prompt('javascript 점수입력', ''));
-        var avg = (html + css javascript) /3;
-        var comment;
-        if (avg &gt;= 60) {
-            if (html &lt; 40) {
-                comment = 'HTML' + '40점 미만 불합격';
-            } else if (css &lt; 40) {
-                comment = 'CSS' + '40점 미만 불합격';
-            } else if (javascript &lt; 40) {
-                commnet = 'JAVASCRIPT' + '40점 미만 불합격';
-            } else {
-                comment = '평균' + avg + '점 합격';
-            }
-        } else {
-            comment = '평균' + 'avg' + '점 불합격';
-        }
-        documnet.write(commnet);
+        window.onload = function() {
+                var list1 = document.querySelector('#box1 > ul > li');
+            var list2 = document.querySelectorAll('#box2 > ul > li');
+            console.log(list1);
+            console.log(list2);
+            // list1.style.background = "#ff6600";
+            // list2[0].style.background = "#ccc";
+            // list2.item(1).style.background = "#ddd";
+        };
     &lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
+    &lt;div id="box1"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;내용1&lt;/li&gt;
+            &lt;li&gt;내용2&lt;/li&gt;
+            &lt;li&gt;내용3&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div id="box2"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;내용4&lt;/li&gt;
+            &lt;li&gt;내용5&lt;/li&gt;
+            &lt;li&gt;내용6&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
 &lt;/body&gt;
-&lt;/html&gt;
+&lt;/html&gt;    
 </code></pre>
             </div>
-            
-    <!-- //main -->
+        </div>
 
-    <footer id="footer">
-        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
-    </footer>
-    <!-- //footer -->
+            <!-- //main -->
 
-    <script src="../assets/js/highlight.min.js"></script>
-    <script>
-        hljs.highlightAll();
-    </script>
+            <footer id="footer">
+                <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+            </footer>
+            <!-- //footer -->
+
+            <script src="../assets/js/highlight.min.js"></script>
+            <script>
+                hljs.highlightAll();
+            </script>
 </body>
+
 </html>
