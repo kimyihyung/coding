@@ -101,29 +101,29 @@
 
         //if문 써서 문제 결과 확인
 
-        quizConfirm.addEventListener("click", () => {
-
-            const userWord = quizInput.value;
-            answerResult = answerResult;
-
-            if (userWord == answerResult) {
-                quizView.classList.add("like");
-            } else {
-                quizView.classList.add("dislike");
-            }
-        });  
-
-        // quizConfirm.forEach(function (btn, num) {
-        //     btn.addEventListener("click", function (){
-        //         const userWord = quizInput[num].value;
+        quizConfirm.addEventListener("click", ()=>{
+            const userWord = quizInput.value;   //유저가 쓴 답이 사용자 정답
+            answerResult = answerResult;        //정답이 정답인지 
             
-        //     if (userWord == quizInput[num].answerResult){
-        //         quizView[num].classList.add("like");
+            if (userWord == answerResult) {
+                quizView.classList.add("like")
+            } else {
+                quizView.classList.add("dislike")
+            }
+
+        });
+
+        // quizConfirm.addEventListener("click", () => {
+
+        //     const userWord = quizInput.value;
+        //     answerResult = answerResult;
+
+        //     if (userWord == answerResult) {
+        //         quizView.classList.add("like");
         //     } else {
-        //         quizView[num].classList.add("dislike");
+        //         quizView.classList.add("dislike");
         //     }
-        //     })
-        // });   //3번
+        // });  
 
         // quizConfirm.addEventListener("click",() => {
             

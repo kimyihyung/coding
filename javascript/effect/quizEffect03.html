@@ -274,28 +274,41 @@
         //     alert("ddd")
         // });    //alert로 확인해 보는 것이 좋다. 정의되있지 않거나, 함수가 없을 때는 선택자를 의심해봐야함.
 
-        quizConfirm.forEach((btn, num) => {
+        quizConfirm.forEach((btn,num) => {
             btn.addEventListener("click", () => {
                 
-                //사용자 정답
-                const userWord = quizInput[num].value.toLowerCase().trim();   //소문자로 바꾸고, 여백을 없애준다.
+                const userWord = quizInput[num].value;
+                quizConfirm[num].style.display = "none";
 
-                //사용자 정답 == 문제 정답
-                if(userWord == quizInfo[num].answerResult){
-                    //정답
-                    // alert("정답")
+                if (userWord == quizInfo[num].answerResult) {
                     quizView[num].classList.add("like");
-                    quizConfirm[num].style.display = "none";
                 } else {
-                    //오답
-                    // alert("오답")
                     quizView[num].classList.add("dislike");
-                    quizConfirm[num].style.display = "none";
-                    quizResult[num].style.display = "block";
-                    quizInput[num].style.display = "none";
                 }
             })
         });
+        // quizConfirm.forEach((btn, num) => {
+        //     btn.addEventListener("click", () => {
+                
+        //         //사용자 정답
+        //         const userWord = quizInput[num].value.toLowerCase().trim();   //소문자로 바꾸고, 여백을 없애준다.
+
+        //         //사용자 정답 == 문제 정답
+        //         if(userWord == quizInfo[num].answerResult){
+        //             //정답
+        //             // alert("정답")
+        //             quizView[num].classList.add("like");
+        //             quizConfirm[num].style.display = "none";
+        //         } else {
+        //             //오답
+        //             // alert("오답")
+        //             quizView[num].classList.add("dislike");
+        //             quizConfirm[num].style.display = "none";
+        //             quizResult[num].style.display = "block";
+        //             quizInput[num].style.display = "none";
+        //         }
+        //     })
+        // });
 
     </script>
 </body>
