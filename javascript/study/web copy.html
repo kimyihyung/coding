@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>벡터와 비트맵</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <script src="../assets/js/highlight.min.js"></script>
+    
+</head>
+<body>
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">이미지 표현 방식</h2>
+            <p class="t_box">이미지 표현 방식인 <i>벡터와 비트맵</i> 방식을 알아봅시다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">벡터</h3>
+            <p class="t_desc2">
+                이미지에 표현되는 점에 대한 정보를 저장하여 이미지를 표현합니다.<br>
+                두 개의 점에 대한 정보를 갖고 있으면 선을 표현할 수 있고, 세 개 이상의 선에 대한 정보를 갖고 있으면 면을 형성할 수 있습니다.<br>
+                벡터 그래픽은 <i>기하학적 정보</i>와 선의 두께, 색상, 곡률 등의 정보를 이용하여 이미지를 표현하는 방식이다.
+            </p>
+            <br>
+            <p>벡터 방식의 종류</p>
+            <p class="t_box">
+                벡터 방식의 종류는 ai, eps, svg등이 대표적입니다.
+            </p>
+            <h3 class="t_tit2">비트맵</h3>
+            <p class="t_desc2">
+                특정 색상 값을 갖는 <i>점(픽셀)의 배열</i>로 이미지를 표현하는 방식입니다. 
+                대표적인 비트맵 그래픽인 jpg, gif, png 형식은 확대시에 이미지가 손상되는 현상이 발생합니다. 
+                고정된 크기의 틀에 픽셀이라는 단위로 점을 찍어서 이미지를 표현하기 때문에 원본 크기보다 이미지를 확대하면 이미지가 손상되는 결과가 발생합니다.
+            </p>
+            <br>
+            <p>비트맵 방식의 종류</p>
+            <p class="t_box">
+                png(투명도 처리 용량 증가), jpg(화려함 표현가능, 효과), gif(256가지 색상만 지원, 애니메이션 구현 가능),  webp(투명도와 효과가 가능하지만 용량이 적다)
+            </p>
+            <hr>
+            <h3 class="t_tit2">벡터와 비트맵 차이점</h3>
+            <p class="t_desc">벡터 방식과 비트맵 방식의 차이점입니다.</p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th class="ce"></th>
+                        <th class="ce">벡터</th>
+                        <th class="ce">비트맵</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">정의</td>
+                        <td>
+                            수학적인 함수 관계로 만든 그래픽 이미지
+                        </td>
+                        <td>
+                            정사각형의 픽셀에 저장된 비트 정보의 집합
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">확대</td>
+                        <td>
+                            뚜렷한 외곽선
+                        </td>
+                        <td>
+                            계단 현상
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">변화/회전</td>
+                        <td>
+                            변화 없음
+                        </td>
+                        <td>
+                            이미지 품질 손상
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">특징</td>
+                        <td>
+                            선명한 표현, 효과적인 응용 작업
+                        </td>
+                        <td>
+                            사실적인 표현, 특수 효과, 품부한 색감 표현
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">단점</td>
+                        <td>
+                            사진과 같은 이미지 그래픽의 정교한 작업의 한계점
+                        </td>
+                        <td>
+                            이미지 축소, 확대로 인한 이미지 품질 손상
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>
+    hljs.highlightAll();
+    </script> 
+</body>
+</html>

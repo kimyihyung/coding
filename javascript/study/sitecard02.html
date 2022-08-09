@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사이트 만들기 : 카드유형</title>
+    <title>사이트 만들기 : 카드유형02</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
     
@@ -47,7 +47,7 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">사이트 만들기 : 카드유형01</h2>
+            <h2 class="t_tit">사이트 만들기 : 카드유형02</h2>
             
             <p class="t_desc2">
                 사이트의 유형은 다양합니다. 메뉴, 배너, 이미지, 슬라이드, 동영상 외에도 많은 유형이 있지만, 그 중에서 <i>카드 유형</i>에 대해 알아봅시다.
@@ -61,14 +61,17 @@
 
             <div class="t_link">
                 <a href="https://github.com/kimyihyung/coding/blob/main/site/cardType/cardType02.html" target="blank">원본 소스 보기</a>
+                <a href="https://kimyihyung.github.io/Coding/site/cardType/cardType02.html" target="_blank">원본 사이트</a>
             </div>
 
             <hr>
 
             <h3 class="t_tit2">Figma</h3>
-            <p class="t_desc2">코드를 진행하기에 앞서, 피그마를 이용해서 웹사이트를 디자인합니다. </p>
+            <p class="t_desc2">코드를 진행하기에 앞서, 피그마를 이용해서 웹사이트를 디자인합니다. <br>
+            컴포넌트를 만들어서 원본을 이용하여 작업하면 중복되는 작업을 간단히 할 수 있습니다.
+            </p>
             <div class="t_iframe">
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FwUvtbZqHuvKFpB0uXVpCaw%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D124%253A394" allowfullscreen></iframe>
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FwUvtbZqHuvKFpB0uXVpCaw%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0%3Fnode-id%3D98%253A5" allowfullscreen></iframe>
             </div>
 
             <hr>
@@ -79,10 +82,10 @@
             <div class="t_code">
 <pre><code>
 /* fonts */
-@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
 
 .nexon {
-    font-family: 'NexonLv1Gothic';
+    font-family: 'GmarketSans';
     font-weight: 400;
 }
 
@@ -91,10 +94,12 @@
     margin: 0;
     padding: 0;
 }
+
 a {
     text-decoration: none;
     color: #000;
 }
+
 img {
     width: 100%;
 }
@@ -113,6 +118,7 @@ h6 {
     width: 1160px;
     padding: 0 20px;
     margin: 0 auto;
+    display: flex;
 }
 
 .section {
@@ -142,80 +148,230 @@ h6 {
 
 .card {
     width: 32%;
-    background: #f5f5f5;
+    background: #fff;
+    margin-right: 20px;
 }
+
 .card__body {
-    padding: 24px;
+    margin-top: 20px;
 }
+
 .card__body .tit {
-    font-size: 24px;
+    font-size: 23px;
     margin-bottom: 10px;
+    position: relative;
 }
+
 .card__body .desc {
     font-size: 18px;
     line-height: 1.4;
     color: #666;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     font-weight: 300;
 }
-.card__body .btn {}
+
+.card__body .btn {
+    position: absolute;
+    right: 0;
+}
 </code></pre>
             </div>
 
             <h3 class="t_tit2">HTML</h3>
-            <p class="t_desc2">article은 시멘틱 태그이기에 제목을 추가합니다. <br>
-                <i>이미지를 사용할 때 figure 태그를 사용하고, alt 태그로 이미지 없을 때 대체하는 것을 사용하여 웹표준을 준수합니다.</i>
+            <p class="t_desc2">svg이미지를 사용했습니다. <i>aria-hidden="true"</i>을 사용하면 스크인리더 프로그램이 svg파일을 읽지 않으며, 웹 접근성에 도움을 줍니다.
             </p>
             <div class="t_code">
 <pre><code>
 &lt;section id="cardType" class="card__wrap nexon section"&gt;
-&lt;h2&gt;계절&lt;/h2&gt;
-&lt;p&gt;계절에 대해 알아봅시다.&lt;/p&gt;
+&lt;h2&gt;영화&lt;/h2&gt;
+&lt;p&gt;영화가 무엇인지&lt;br&gt;
+    영화에 대해 알아봅시다.
+&lt;/p&gt;
 &lt;div class="card__inner container"&gt;
     &lt;article class="card"&gt;
-        &lt;!-- 
-            //이미지를 사용할 때 figure 태그를 사용하는 것이 웹표준 준수.
-            alt는 이미지 없을 때 대체하는 것, 웹표준 준수
-        --&gt;
-        &lt;figure class="card__header"&gt;   
-            &lt;img src="img/card_bg01.jpg" alt="여름"&gt;
+        &lt;figure class="card__header"&gt;
+            &lt;img src="img/card_bg04.jpg" alt="극장"&gt;
         &lt;/figure&gt;
         &lt;div class="card__body"&gt;
-            &lt;h3 class="tit"&gt;여름&lt;/h3&gt;
-            &lt;p class="desc"&gt;일반적으로 3, 4, 5월을 봄,&lt;br&gt;
-                6, 7, 8월을 여름,&lt;br&gt;
-                9, 10, 11월을 가을,&lt;br&gt;
-                12, 1, 2월을 겨울이라고 한다.
+            &lt;h3 class="tit"&gt;영화
+                &lt;a class="btn" href="/"&gt;
+                    &lt;span&gt;
+                        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                            &lt;path
+                                d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                fill="white" /&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                기록한 동영상을, 어떤 내용을&lt;br&gt;
+                전달하게끔 만든 영상물.&lt;br&gt;
             &lt;/p&gt;
-            &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
         &lt;/div&gt;
     &lt;/article&gt;
     &lt;article class="card"&gt;
         &lt;figure&gt;
-            &lt;img src="img/card_bg02.jpg" alt="봄/가을"&gt;
+            &lt;img src="img/card_bg05.jpg" alt="프로젝터"&gt;
         &lt;/figure&gt;
         &lt;div class="card__body"&gt;
-            &lt;h3 class="tit"&gt;봄/가을&lt;/h3&gt;
-            &lt;p class="desc"&gt;일반적으로 3, 4, 5월을 봄,&lt;br&gt;
-                6, 7, 8월을 여름,&lt;br&gt;
-                9, 10, 11월을 가을,&lt;br&gt;
-                12, 1, 2월을 겨울이라고 한다.
+            &lt;h3 class="tit"&gt;영화
+                &lt;a class="btn" href="/"&gt;
+                    &lt;span&gt;
+                        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                            &lt;path
+                                d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                fill="white" /&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                기록한 동영상을, 어떤 내용을&lt;br&gt;
+                전달하게끔 만든 영상물.&lt;br&gt;
             &lt;/p&gt;
-            &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
         &lt;/div&gt;
     &lt;/article&gt;
     &lt;article class="card"&gt;
         &lt;figure&gt;
-            &lt;img src="img/card_bg03.jpg" alt="겨울"&gt;
+            &lt;img src="img/card_bg06.jpg" alt="촬영"&gt;
         &lt;/figure&gt;
         &lt;div class="card__body"&gt;
-            &lt;h3 class="tit"&gt;겨울&lt;/h3&gt;
-            &lt;p class="desc"&gt;일반적으로 3, 4, 5월을 봄,&lt;br&gt;
-                6, 7, 8월을 여름,&lt;br&gt;
-                9, 10, 11월을 가을,&lt;br&gt;
-                12, 1, 2월을 겨울이라고 한다.
+            &lt;h3 class="tit"&gt;영화
+                &lt;a class="btn" href="/"&gt;
+                    &lt;span&gt;
+                        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                            &lt;path
+                                d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                fill="white" /&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                기록한 동영상을, 어떤 내용을&lt;br&gt;
+                전달하게끔 만든 영상물.&lt;br&gt;
             &lt;/p&gt;
-            &lt;a class="btn" href="/"&gt;더 자세히 보기&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class="card"&gt;
+        &lt;figure&gt;
+            &lt;img src="img/card_bg07.jpg" alt="tv"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;영화
+                &lt;a class="btn" href="/"&gt;
+                    &lt;span&gt;
+                        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                            &lt;path
+                                d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                fill="white" /&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                기록한 동영상을, 어떤 내용을&lt;br&gt;
+                전달하게끔 만든 영상물.&lt;br&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+&lt;div class="card__inner container"&gt;
+    &lt;article class="card"&gt;
+        &lt;figure class="card__header"&gt;
+            &lt;img src="img/card_bg08.jpg" alt="필름"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;영화
+                &lt;a class="btn" href="/"&gt;
+                    &lt;span&gt;
+                        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                            &lt;path
+                                d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                fill="white" /&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                기록한 동영상을, 어떤 내용을&lt;br&gt;
+                전달하게끔 만든 영상물.&lt;br&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class="card"&gt;
+        &lt;figure&gt;
+            &lt;img src="img/card_bg09.jpg" alt="필름"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;영화
+                &lt;a class="btn" href="/"&gt;
+                    &lt;span&gt;
+                        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                            &lt;path
+                                d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                fill="white" /&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                기록한 동영상을, 어떤 내용을&lt;br&gt;
+                전달하게끔 만든 영상물.&lt;br&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class="card"&gt;
+        &lt;figure&gt;
+            &lt;img src="img/card_bg10.jpg" alt="촬영"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;영화
+                &lt;a class="btn" href="/"&gt;
+                    &lt;span&gt;
+                        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                            &lt;path
+                                d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                fill="white" /&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                기록한 동영상을, 어떤 내용을&lt;br&gt;
+                전달하게끔 만든 영상물.&lt;br&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class="card"&gt;
+        &lt;figure&gt;
+            &lt;img src="img/card_bg11.jpg" alt="필름"&gt;
+        &lt;/figure&gt;
+        &lt;div class="card__body"&gt;
+            &lt;h3 class="tit"&gt;영화
+                &lt;a class="btn" href="/"&gt;
+                    &lt;span&gt;
+                        &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                            &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                            &lt;path
+                                d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                fill="white" /&gt;
+                        &lt;/svg&gt;
+                    &lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/h3&gt;
+            &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                기록한 동영상을, 어떤 내용을&lt;br&gt;
+                전달하게끔 만든 영상물.&lt;br&gt;
+            &lt;/p&gt;
         &lt;/div&gt;
     &lt;/article&gt;
 &lt;/div&gt;

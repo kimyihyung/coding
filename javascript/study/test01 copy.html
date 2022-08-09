@@ -1,111 +1,194 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
-
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;퀴즈 이펙트&lt;/title&gt;
-
-    &lt;link rel="stylesheet" href="../assets/css/quiz.css"&gt;
-
-    &lt;link href="https://webfontworld.github.io/neodgm/NeoDunggeunmo.css" rel="stylesheet"&gt;
-    &lt;link href="https://webfontworld.github.io/Cafe24Dangdanghae/Cafe24Dangdanghae.css" rel="stylesheet"&gt;
-
-&lt;/head&gt;
-
-&lt;body&gt;
-    &lt;header id="header"&gt;
-        &lt;h1&gt;&lt;a href="../javascript01.html"&gt;Quiz&lt;/a&gt; &lt;em&gt;정답 확인하기 유형&lt;/em&gt;&lt;/h1&gt;
-        &lt;nav&gt;
-            &lt;ul&gt;
-                &lt;li class="active"&gt;&lt;a href="quizEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="quizEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="quizEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="quizEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="quizEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="quizEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/nav&gt;
-    &lt;/header&gt;
-    &lt;!-- //header --&gt;
-
-    &lt;main id="main"&gt;
-        &lt;div class="quiz__wrap"&gt;
-            &lt;div class="quiz"&gt;
-                &lt;span class="quiz__type"&gt;&lt;/span&gt;
-                &lt;h2 class="quiz__question"&gt;
-                    &lt;span class="number"&gt;&lt;/span&gt;
-                    &lt;div class="ask"&gt;&lt;/div&gt;
-                &lt;/h2&gt;
-                &lt;div class="quiz__view"&gt;
-                    &lt;div class="dog"&gt;
-                        &lt;div class="head"&gt;
-                            &lt;div class="ears"&gt;&lt;/div&gt;
-                            &lt;div class="face"&gt;&lt;/div&gt;
-                            &lt;div class="eyes"&gt;
-                                &lt;div class="teardrop"&gt;&lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;div class="nose"&gt;&lt;/div&gt;
-                            &lt;div class="mouth"&gt;
-                                &lt;div class="tongue"&gt;&lt;/div&gt;
-                            &lt;/div&gt;
-                            &lt;div class="chin"&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                        &lt;div class="body"&gt;
-                            &lt;div class="tail"&gt;&lt;/div&gt;
-                            &lt;div class="legs"&gt;&lt;/div&gt;
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class="quiz__answer"&gt;
-                    &lt;button class="confirm"&gt;정답 확인하기&lt;/button&gt;
-                    &lt;div class="result"&gt;&lt;/div&gt;
-                &lt;/div&gt;
+&lt;section id="cardType" class="card__wrap nexon section"&gt;
+    &lt;h2&gt;영화&lt;/h2&gt;
+    &lt;p&gt;영화가 무엇인지&lt;br&gt;
+        영화에 대해 알아봅시다.
+    &lt;/p&gt;
+    &lt;div class="card__inner container"&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="img/card_bg04.jpg" alt="극장"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;영화
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                                &lt;path
+                                    d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                    fill="white" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/h3&gt;
+                &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                    기록한 동영상을, 어떤 내용을&lt;br&gt;
+                    전달하게끔 만든 영상물.&lt;br&gt;
+                &lt;/p&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/main&gt;
-    &lt;!-- //main --&gt;
-
-    &lt;footer id="footer"&gt;
-        &lt;a href="mailto:kimlh3743@gmail.com"&gt;kimlh3743@gmail.com&lt;/a&gt;
-    &lt;/footer&gt;
-    &lt;!-- //footer --&gt;
-
-    &lt;script&gt;
-        //선택자 
-        const quizType = document.querySelector(".quiz__type");                  //퀴즈 종류
-        const quizNumber = document.querySelector(".quiz__question .number");    //퀴즈 번호
-        const quizAsk = document.querySelector(".quiz__question .ask");          //퀴즈 질문
-        const quizConfirm = document.querySelector(".quiz__answer .confirm");    //정답 확인 버튼
-        const quizResult = document.querySelector(".quiz__answer .result");      //정답 결과
-        const quizDog = document.querySelector(".quiz__view .dog");              //강아지
-        
-        //문제 정보
-        const answerType = "웹디자인기능사";
-        const answerNum = 1;
-        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
-        const answerResult = "연변대비";
-
-        //문제 출력
-        quizType.innerText = answerType;
-        quizNumber.innerText = answerNum + ". ";
-        quizAsk.innerText = answerAsk;
-        quizResult.innerText = answerResult;
-
-        //정답 숨기기
-        quizResult.style.display = "none";
-
-        //정답 확인
-        //정답 버튼을 클릭하면 //확인버튼 안보인게... 숨겨진 정답은 보이게...
-        //정답을 확인하면 강아지가 웃고 있어야함 // 클래스 like 추가함
-        quizConfirm.addEventListener("click", function(){
-            quizConfirm.style.display = "none";
-            quizResult.style.display = "block";
-            quizDog.classList.add("like");
-        });
-
-    &lt;/script&gt;
-&lt;/body&gt;
-
-&lt;/html&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure&gt;
+                &lt;img src="img/card_bg05.jpg" alt="프로젝터"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;영화
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                                &lt;path
+                                    d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                    fill="white" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/h3&gt;
+                &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                    기록한 동영상을, 어떤 내용을&lt;br&gt;
+                    전달하게끔 만든 영상물.&lt;br&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure&gt;
+                &lt;img src="img/card_bg06.jpg" alt="촬영"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;영화
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                                &lt;path
+                                    d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                    fill="white" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/h3&gt;
+                &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                    기록한 동영상을, 어떤 내용을&lt;br&gt;
+                    전달하게끔 만든 영상물.&lt;br&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure&gt;
+                &lt;img src="img/card_bg07.jpg" alt="tv"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;영화
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                                &lt;path
+                                    d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                    fill="white" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/h3&gt;
+                &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                    기록한 동영상을, 어떤 내용을&lt;br&gt;
+                    전달하게끔 만든 영상물.&lt;br&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+    &lt;div class="card__inner container"&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
+                &lt;img src="img/card_bg08.jpg" alt="필름"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;영화
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                                &lt;path
+                                    d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                    fill="white" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/h3&gt;
+                &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                    기록한 동영상을, 어떤 내용을&lt;br&gt;
+                    전달하게끔 만든 영상물.&lt;br&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure&gt;
+                &lt;img src="img/card_bg09.jpg" alt="필름"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;영화
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                                &lt;path
+                                    d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                    fill="white" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/h3&gt;
+                &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                    기록한 동영상을, 어떤 내용을&lt;br&gt;
+                    전달하게끔 만든 영상물.&lt;br&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure&gt;
+                &lt;img src="img/card_bg10.jpg" alt="촬영"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;영화
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                                &lt;path
+                                    d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                    fill="white" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/h3&gt;
+                &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                    기록한 동영상을, 어떤 내용을&lt;br&gt;
+                    전달하게끔 만든 영상물.&lt;br&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure&gt;
+                &lt;img src="img/card_bg11.jpg" alt="필름"&gt;
+            &lt;/figure&gt;
+            &lt;div class="card__body"&gt;
+                &lt;h3 class="tit"&gt;영화
+                    &lt;a class="btn" href="/"&gt;
+                        &lt;span&gt;
+                            &lt;svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                                &lt;rect width="24" height="24" rx="5" fill="#CF5959" /&gt;
+                                &lt;path
+                                    d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13V11ZM18.6636 12.7071C19.0542 12.3166 19.0542 11.6834 18.6636 11.2929L12.2997 4.92893C11.9091 4.53841 11.276 4.53841 10.8855 4.92893C10.4949 5.31946 10.4949 5.95262 10.8855 6.34315L16.5423 12L10.8855 17.6569C10.4949 18.0474 10.4949 18.6805 10.8855 19.0711C11.276 19.4616 11.9091 19.4616 12.2997 19.0711L18.6636 12.7071ZM6 13H17.9565V11H6V13Z"
+                                    fill="white" /&gt;
+                            &lt;/svg&gt;
+                        &lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/h3&gt;
+                &lt;p class="desc"&gt;장면을 연속적으로 촬영하여&lt;br&gt;
+                    기록한 동영상을, 어떤 내용을&lt;br&gt;
+                    전달하게끔 만든 영상물.&lt;br&gt;
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
