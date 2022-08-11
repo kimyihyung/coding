@@ -34,7 +34,7 @@
             <hr>
 
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-                <iframe src="https://kimyihyung.github.io/coding/site/cardType/cardType02.html"
+                <iframe src="https://kimyihyung.github.io/coding/site/cardType/cardType03.html"
                     frameborder="0"></iframe>
             </div>
 
@@ -63,9 +63,25 @@
                 활용하여 중간에 생기는 선을 만들었습니다.<br>
                 .card__inner .card:nth-child(n) {
                     border-right: 1px solid #000;<br>
-                section은 <i>시멘틱 태그</i>라서 제목을 넣어줘야합니다.<br>
-                하지만 보이지 않아야 하기에 <i>blind</i>를 사용해서 가려줍니다.
-                }
+                section은 <i>시멘틱 태그</i>라서 h태그을 넣어줘야합니다.<br>
+                하지만 보이지 않아야 하기에 <i>class="blind"</i>를 부여하여 가려줍니다.<br>
+                <i>footer는 justify-content: flex-end;</i>를 사용하여 뒤쪽부터 정렬하여 오른쪽으로 배치합니다.
+            </p>
+            <h3 class="t_tit2">blind</h3>
+            <p class="t_desc2">
+                시각적으로 보이지 않게 blind 속성을 css에 부여합니다.
+            </p>
+            <p class="t_box">
+                .blind {
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;position:absolute;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;clip:rect(0 0 0 0);                 
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;width:1px;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;height:1px;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;margin:-1px;
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;overflow:hidden;
+                <br>}
+                <br><br>clip으로 영역을 지정하고, 모든 위치를 0으로 적용합니다. width, height를 1.
+                margin을 -1로 적용하고, overflow:hidden을 사용하여 넘는 부분은 표현하지 않게합니다.
             </p>
             <br>
             <div class="t_code">
