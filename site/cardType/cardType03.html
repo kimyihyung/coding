@@ -94,7 +94,7 @@
             /* 큰박스 안의 작은 박스에  전체적으로 들어있는 패딩 */
             width: 33.3333%;
             /* 카드 안에 카드의 가로가 333.5px 그걸로 넣어도 되지만, 33.333%도 괜찮 */
-            /* height는 전체 높이값을 보고 기입 */
+            /* height는 전체 높이값을 보고 임시로만 기입 */
             background-color: #fff;
         }
 
@@ -128,9 +128,11 @@
             position: absolute;
             right: 10px;
             top: 10px;
+            /* 둥근 모양 가져오는데, w,h 빼고 패딩은 보면서 조절 */
             padding: 6px 16px;
             border-radius: 50px;
             background-color: #fff;
+            /* 텍스트 센터, 폰트 사이즈,색 확인해서 넣고 */
             text-align: center;
             font-size: 14px;
             color: #000;
@@ -140,6 +142,10 @@
             font-size: 28px;
             line-height: 1.4;
             margin-bottom: 10px;
+            /* 
+            위에는 제플린 내용 확인해서 작성 
+            밑에는 한줄 효과 검색해서
+            */
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -151,6 +157,10 @@
             color: #666;
             font-size: 18px;
             line-height: 1.4;
+            /* 
+            위에는 제플린 내용 확인해서 작성 
+            밑에는 한줄 효과 검색해서
+            */
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
@@ -162,6 +172,7 @@
         .card__footer {
             display: flex;
             justify-content: flex-end;
+            /* justify-content: flex-end; 오른쪽으로 */
         }
 
         .card__footer h4 {
@@ -171,17 +182,21 @@
 
         .card__footer em {
             display: block;
+            /* 스팬은 인라인이라서 블록화하여 h4,em을 상하로 */
             color: #666666;
             font-style: normal;
+            /* font-style: normal;이유는 휘기 때문 */
         }
 
         .card__footer span {
             width: 40px;
             height: 40px;
             background: #000;
+            /* 사각형의 이미지를 처리 */
             border-radius: 50%;
             overflow: hidden;
             display: block;
+            /* 왼쪽에 글자와의 간격을 위해 블록처리 */
             margin-left: 10px;
             margin-top: -3px;
             box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
@@ -193,8 +208,8 @@
     <section id="cardType03" class="card__wrap score section">
         <h2 class="blind">영화</h2>
         <div class="card__inner container">
-            <!-- 블라인드 컨테이너와 아티클에 카드까지만 먼저 -->
             <article class="card">
+                !-- 블라인드 컨테이너와 아티클에 카드까지만 먼저 -->
                 <figure class="card__header">
                     <img src="img/card_bg03_01.jpg" alt="영화">
                     <figcaption>movie</figcaption>
