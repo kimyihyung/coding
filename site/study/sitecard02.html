@@ -61,9 +61,37 @@
             <p class="t_desc2"> '>' 를 사용하여 바로 아래 자식요소만 적용시킵니다.<br>
                 display: flex;를 사용하여 정렬을 합니다. <i>justify-content: space-between;</i> 으로 아이템들의 “사이(between)”에 균일한 간격을 만들어
                 줍니다.</p>
+                <br>
+            <h3 class="t_tit3">ir 효과</h3>
+            <p class="t_desc2">ir효과는 이미지 대체 효과입니다. alt와 같이 웹표준 준수를 위해 사용됩니다.<br>
+                사진이 있을 경우에는 사진이 보이지만, 없는 경우에 글자로 이미지의 정보를 확인할 수 있습니다.
+            </p>
+            <p class="t_box">
+                <i>ir 효과(이미지 대체 효과 == alt)</i>
+                .ir {<br>
+                display: block;<br>
+                overflow: hidden;<br>
+                font-size: 0;<br>
+                line-height: 0;<br>
+                text-indent: -9999px;<br>
+                }
+            </p>
+
+            <h3 class="t_tit3">텍스트 줄임효과</h3>
+            <p class="t_desc2">원하는 만큼의 줄의 양 만큼만 표시할 수 있는 방법입니다.<br>
+                표시할 글자의 양이 많은 경우에는 '...'으로 이후의 글자를 표기하며 줄여줍니다.<br>
+                텍스트를 깔끔하게 표현할 수 있습니다.
+            </p>
+            <p class="t_box">
+                <i>n줄만 남기고 줄이는 코드</i><br>
+                overflow: hidden;<br>
+                text-overflow: ellipsis;<br>
+                display: -webkit-box;<br>
+                -webkit-line-clamp: n; 표기하고 싶은 줄의 수치에 따라 변동합니다.<br>
+                -webkit-box-orient: vertical;
+            </p>
             <div class="t_code">
-                <pre><code>
-/* fonts */
+<pre><code>/* fonts */
 @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
 
 .gmark {
@@ -195,8 +223,7 @@ h6 {
                 줍니다.
             </p>
             <div class="t_code">
-                <pre><code>
-&lt;section id="cardType02" class="card__wrap gmark section gray"&gt;
+<pre><code>&lt;section id="cardType02" class="card__wrap gmark section gray"&gt;
 &lt;h2&gt;포트폴리오 구경하기&lt;/h2&gt;
 &lt;p&gt;웹디자이너, 웹 퍼블리셔, 프론트앤드 개발자 포트폴리오입니다.&lt;br&gt;
     열심히 만들었으니 소중히 봐주세요!🦁
@@ -285,45 +312,6 @@ h6 {
 &lt;/section&gt;
 </code></pre>
             </div>
-
-            <h3 class="t_tit2">ir 효과</h3>
-            <p class="t_desc2">ir효과는 이미지 대체 효과입니다. alt와 같이 웹표준 준수를 위해 사용됩니다.<br>
-                사진이 있을 경우에는 사진이 보이지만, 없는 경우에 글자로 이미지의 정보를 확인할 수 있습니다.<br>
-            </p>
-            <div class="t_code">
-                <pre><code>
-/* ir 효과(이미지 대체 효과 == alt) */
-.ir {
-    display: block;
-    overflow: hidden;
-    font-size: 0;
-    line-height: 0;
-    text-indent: -9999px;
-}
-</code></pre>
-            </div>
-
-            <h3 class="t_tit2">줄 고정</h3>
-            <p class="t_desc2">원하는 만큼의 줄의 양 만큼만 표시할 수 있는 방법입니다.<br>
-                표시할 글자의 양이 많은 경우에는 '...'으로 이후의 글자를 표기합니다.<br>
-                '-webkit-line-clamp: ;' 표기하고 싶은 줄의 수치에 따라 변동합니다.
-            </p>
-            <div class="t_code">
-                <pre><code>
-<!-- 1줄 -->
-overflow: hidden;
-white-space: nowrap;
-text-overflow: ellipsis;
-
-<!-- 3줄 -->
-overflow: hidden;
-text-overflow: ellipsis;
-display: -webkit-box;
--webkit-line-clamp: 3;
--webkit-box-orient: vertical;
-</code></pre>
-            </div>
-
         </div>
     </main>
     <!-- //main -->

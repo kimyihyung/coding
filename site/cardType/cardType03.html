@@ -10,9 +10,9 @@
         /* fonts */
         @import url('https://webfontworld.github.io/score/SCoreDream.css');
 
-        .SCore {
+        .score {
             font-family: 'SCoreDream';
-            font-weight: 500;
+            font-weight: 300;
         }
 
         /* reset */
@@ -42,6 +42,7 @@
         /* common */
         .container {
             width: 1160px;
+            padding: 0 20px;
             margin: 0 auto;
             min-width: 1160px;
         }
@@ -50,155 +51,199 @@
             padding: 120px 0;
         }
 
-        .gray {
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* blind : 접근성 이유로 가린다 */
+        .blind {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+        }
+
+
+        /* cardType03 */
+        body {
             background-color: #9B99FF;
         }
 
-        /* cardType02 */
         .card__inner {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            background-color: #fff;
-        }
-
-        .card__inner .card__wrap {
-            width: 386px;
-            border-right: 1px solid #eeeeee;
-            box-sizing: border-box;
-            background-color: #fff;
-            display: flex;
-            margin: 26px;
         }
 
         .card__inner .card {
-            width: 24%;
+            padding: 26px;
+            width: 33.3333%;
+            background-color: #fff;
+        }
+
+        .card__inner .card:nth-child(1) {
+            border-right: 1px solid #000;
+        }
+
+        .card__inner .card:nth-child(2) {
+            border-right: 1px solid #000;
+        }
+
+        .card__header {
             position: relative;
         }
 
-        .card__inner .card:first-child {
-            margin-bottom: 50px;
-        }
-
-        .card__inner .card img {
-            margin-bottom: 20px;
+        .card__header img {
             border-radius: 10px;
+            box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
         }
 
-        .card__inner .card .tit {
+        .card__header figcaption {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            background-color: #fff;
+            text-align: center;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .card__contents h3 {
             font-size: 28px;
+            line-height: 1.4;
             margin-bottom: 10px;
             overflow: hidden;
-            white-space: nowrap;
             text-overflow: ellipsis;
-            padding-right: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }
 
-        .card__inner .card .desc {
-            font-size: 18px;
-            font-weight: 300;
+        .card__contents p {
             color: #666;
+            font-size: 18px;
             line-height: 1.4;
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+            margin-bottom: 30px;
         }
 
-        .card__inner .card .more {
-            width: 24px;
-            height: 24px;
-            background-image: url(img/arrow.svg);
+        .card__footer {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .card__footer h4 {
+            text-align: right;
+            color: #000;
+        }
+
+        .card__footer em {
             display: block;
-            position: absolute;
-            right: 0;
-            top: 230px;
-            border-radius: 5px;
+            color: #666666;
+            font-style: normal;
         }
 
-        .card__inner .card .name {
-            width: 100.8px;
-            height: 28px;
-            border-radius: 50px;
-            background-color: #fff;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-weight: normal;
-            font-size: 14px;
-            text-align: center;
-            line-height: 28px;
-        }
-
-        .card__inner .line {
-            width: 1px;
-            height: 480px;
-            background-color: #000;
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 386px;
+        .card__footer span {
+            width: 40px;
+            height: 40px;
+            background: #000;
+            border-radius: 50%;
+            overflow: hidden;
+            display: block;
+            margin-left: 10px;
+            margin-top: -3px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
         }
     </style>
 </head>
 
 <body>
-    <section id="cardType03" class="card__wrap SCore section gray">
-        <h2></h2>
-        <p>
-        </p>
+    <section id="cardType03" class="card__wrap score section">
+        <h2 class="blind">영화</h2>
         <div class="card__inner container">
             <article class="card">
-                <div class="Line-3"></div>
-                <img src="img/card_bg03_1.jpg" alt="영화">
-                <h3 class="tit">영화에 대해<br>
-                    알아봅시다.</h3>
-                <p class="desc">
-                    장면을 연속적으로 촬영하여<br>
-                    기록한 동영상을, 어떤 내용을<br>
-                    전달하게끔 만든 영상물.<br>
-                </p>
-                <div class="name">Olive salad</div>
-                <div class="desc2">
-                    <div class="pic"></div>
-                    <p>Mr.k<br>
-                        movie
+                <figure class="card__header">
+                    <img src="img/card_bg03_01.jpg" alt="영화">
+                    <figcaption>movie</figcaption>
+                </figure>
+                <div class="card__contents">
+                    <h3>영화에 대해<br>
+                        알아봅시다.
+                    </h3>
+                    <p>
+                        장면을 연속적으로 촬영하여<br>
+                        기록한 동영상을, 어떤 내용을<br>
+                        전달하게끔 꾸며서 만든 영상물.
                     </p>
                 </div>
-                <div class="line"></div>
+                <div class="card__footer">
+                    <h4>Mr.k <em>movie</em></h4>
+                    <span>
+                        <img src="img/card_bg03_icon01.png" alt="face">
+                    </span>
+                </div>
             </article>
-
             <article class="card">
-                <div class="Line-4"></div>
-                <img src="img/card_bg03_2.jpg" alt="영화">
-                <h3 class="tit">영화에 대해<br>
-                    알아봅시다.</h3>
-                <p class="desc">장면을 연속적으로 촬영하여<br>
-                    기록한 동영상을, 어떤 내용을<br>
-                    전달하게끔 만든 영상물.<br>
-                </p>
-                <div class="name">Olive salad</div>
-                <div class="pic"></div>
-                <p class="desc2">Mr.k<br>
-                    movie
-                </p>
-                <div class="line"></div>
+                <figure class="card__header">
+                    <img src="img/card_bg03_02.jpg" alt="영화">
+                    <figcaption>movie</figcaption>
+                </figure>
+                <div class="card__contents">
+                    <h3>영화에 대해<br>
+                        알아봅시다.
+                    </h3>
+                    <p>
+                        장면을 연속적으로 촬영하여<br>
+                        기록한 동영상을, 어떤 내용을<br>
+                        전달하게끔 꾸며서 만든 영상물.
+                    </p>
+                </div>
+                <div class="card__footer">
+                    <h4>Mr.k <em>movie</em></h4>
+                    <span>
+                        <img src="img/card_bg03_icon01.png" alt="face">
+                    </span>
+                </div>
             </article>
-
             <article class="card">
-                <img src="img/card_bg03_3.jpg" alt="영화">
-                <h3 class="tit">영화에 대해<br>
-                    알아봅시다.</h3>
-                <p class="desc">장면을 연속적으로 촬영하여<br>
-                    기록한 동영상을, 어떤 내용을<br>
-                    전달하게끔 만든 영상물.<br>
-                </p>
-                <div class="name">Olive salad</div>
-                <div class="pic"></div>
-                <p class="desc2">Mr.k<br>
-                    movie
-                </p>
+                <figure class="card__header">
+                    <img src="img/card_bg03_03.jpg" alt="영화">
+                    <figcaption>movie</figcaption>
+                </figure>
+                <div class="card__contents">
+                    <h3>영화에 대해<br>
+                        알아봅시다.
+                    </h3>
+                    <p>
+                        장면을 연속적으로 촬영하여<br>
+                        기록한 동영상을, 어떤 내용을<br>
+                        전달하게끔 꾸며서 만든 영상물.
+                    </p>
+                </div>
+                <div class="card__footer">
+                    <h4>Mr.k <em>movie</em></h4>
+                    <span>
+                        <img src="img/card_bg03_icon01.png" alt="face">
+                    </span>
+                </div>
             </article>
         </div>
     </section>
