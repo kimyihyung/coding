@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NanumSquare/NanumSquare.css');
+
+
+        .NanumSquare {
+            font-family: NanumSquare;
+            font-weight: 500;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .blind {
+            position: absolute;
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            clip: rect(0 0 0 0);
+        }
+
+        /* 04 */
+        body {
+            background-color: #fff;
+        }
+
+        .card__header {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .card__header figcaption {
+            position: absolute;
+            width: 78px;
+            height: 25px;
+            margin: 0 217px 25px 0;
+            padding: 6px 21px 5px 24px;
+            background-color: #000;
+            text-align: center;
+            font-size: 12px;
+            color: rgb(255, 255, 255);
+        }
+
+        .card__contents {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .card__contents .con1 {
+            width: 767px;
+            margin: 25px 20px 40px 0;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .card__contents .con2 {
+            width: 373px;
+            height: 400px;
+            margin: 25px 0 40px 20px;
+            padding: 0 158px 0 0;
+            background-color: #d9d9d9;
+            margin-bottom: 40px;
+        }
+
+        .card__contents .con2 .h3 {
+            font-size: 15px;
+            font-style: normal;
+            text-align: left;
+            color: #000;
+            
+        }
+
+        .card__contents .con2 .p1 {
+            font-size: 15px;
+            font-style: normal;
+            text-align: left;
+            color: #000;
+        }
+
+        .card__contents .con2 .p2 {
+            font-size: 15px;
+            font-style: normal;
+            text-align: left;
+            color: #000;
+            margin-bottom: 220px;
+        }
+
+        .card__contents .con2 .p3 {
+            font-size: 15px;
+            font-style: normal;
+            text-align: left;
+            color: #000;
+        }
+
+        .card__footer {
+            display: flex;
+        }
+
+        .card__footer .footer1 {
+            width: 275px;
+            height: 85px;
+            margin: 40px 20px 0 0;
+            background-color: #d9d9d9;
+        }
+
+        .card__footer .footer2 {
+            width: 275px;
+            height: 85px;
+            margin: 40px 20px 0 0;
+            background-color: #d9d9d9;
+        }
+
+        .card__footer .footer3 {
+            width: 275px;
+            height: 85px;
+            margin: 40px 20px 0 0;
+            background-color: #d9d9d9;
+        }
+
+        .card__footer .footer4 {
+            width: 275px;
+            height: 85px;
+            margin: 40px 20px 0 0;
+            background-color: #d9d9d9;
+        }
+
+        .card__footer h4 {
+            color: #666;
+            margin-top: 10px;
+            font-size: 15px;
+            text-align: left;
+            font-style: normal;
+        }
+
+        .card__footer em {
+            margin-top: 10px;
+            color: #000;
+            font-size: 15px;
+            display: block;
+            text-align: left;
+            line-height: 1.4;
+            font-style: normal;
+        }
+
+        .card__footer span {
+            display: block;
+            width: 95px;
+            height: 85px;
+            margin-left: 73px;
+            width: 95px;
+            margin-left: 73px;
+        }
+
+        /* cardType4 */
+    </style>
+</head>
+
+<body>
+    <section id="cardType04" class="card__wrap NanumSquare section">
+        <h2 class="blind">코끼리</h2>
+        <div class="container">
+            <div class="card__header">
+                <figcaption>코끼리</figcaption>
+            </div>
+            <div class="card__contents">
+                <div class="con1">
+                    <span>
+                        <img src="img/card_bg04_1.jpg" alt="코끼리">
+                    </span>
+                </div>
+                <div class="con2">
+                    <h3>코끼리</h3>
+                    <p class="p1">지상에서 가장 큰 육상<br>
+                        현생 동물</p>
+                    <p class="p2">코끼리에 대해</p>
+                    <p class="p3">
+                        코끼리에 대하여 알아보는<br>
+                        시간을 가져봅시다.<br>
+                        코끼리의 간단한 정보<br>
+                    </p>
+                </div>
+            </div>
+            <div class="card__footer">
+                <div class="footer1">
+                    <h4>속도<em>순간 최대 속력은<br>
+                            약 40km/h다.</em></h4>
+                    <span>
+                        <img src="img/card_bg04_2.jpg" alt="코끼리">
+                    </span>
+                </div>
+                <div class="footer2">
+                    <h4>진화<em>메머드의<br>
+                            진화가 코끼리</em></h4>
+                    <span>
+                        <img src="img/card_bg04_3.jpg" alt="코끼리">
+                    </span>
+                </div>
+                <div class="footer3">
+                    <h4>초식<em>코끼리는<br>
+                            초식동물</em></h4>
+                    <span>
+                        <img src="img/card_bg04_4.jpg" alt="코끼리">
+                    </span>
+                </div>
+                <div class="footer4">
+                    <h4>수명<em>인간의 수명과<br>
+                            비슷하다.</em></h4>
+                    <span>
+                        <img src="img/card_bg04_5.jpg" alt="코끼리">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
