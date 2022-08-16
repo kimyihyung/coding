@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: normal;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* img01 */
+        .container {
+            display: flex;
+        }
+
+        .card {
+            width: 570px;
+            height: 370px;
+            margin-left: 20px;
+        }
+
+        .card__box {
+            position: relative;
+        }
+        
+        .tit {
+            position: absolute;
+            left: 30px;
+            top: 189px;
+            font-size: 32px;
+            color: #fff;
+        }
+
+        .desc {
+            position: absolute;
+            font-size: 16px;
+            line-height: 1.4;
+            bottom: 80px;
+            left: 30px;
+            color: #fff;
+        }
+
+        .btn {
+            position: absolute;
+            position: relative;
+            left: 20px;
+            top: 10px;
+        }
+
+        .btn1 {
+            position: absolute;
+            bottom: 32px;
+            left: 30px;
+            width: 120px;
+            height: 38px;
+            background-color: #015537;
+        }
+
+        .btn2 {
+            position: absolute;
+            bottom: 32px;
+            left: 30px;
+            width: 120px;
+            height: 38px;
+            background-color: #585656;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardType01" class="card__wrap nexon section">
+        <h2>계절</h2>
+        <p>계절에 대해 알아봅시다.</p>
+        <div class="container">
+            <article class="card">
+                <div class="card__box">
+                    <img src="img/img_bg01_01.jpg" alt="비">
+                    <div class="card__body">
+                        <h3 class="tit">계절</h3>
+                        <p class="desc">대표적인 계절로는 여름과 겨울이 있고, 가장 체감을 많이 하는 계절입니다.<br>
+                            두가지의 계절을 상징하는 비와 눈의 이미지입니다.
+                        </p>
+                        <footer class="btn1">
+                            <a class="btn" href="/">
+                                자세히 보기
+                            </a>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card__box">
+                    <img src="img/img_bg01_02.jpg" alt="눈">
+                    <div class="card__body">
+                        <h3 class="tit">계절</h3>
+                        <p class="desc">대표적인 계절로는 여름과 겨울이 있고, 가장 체감을 많이 하는 계절입니다.<br>
+                            두가지의 계절을 상징하는 비와 눈의 이미지입니다.
+                        </p>
+                        <footer class="btn2">
+                            <a class="btn" href="/">
+                                자세히 보기
+                            </a>
+                        </footer>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>
