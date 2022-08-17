@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: GmarketSans;
+            font-weight: 500;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* imageType02 */
+
+        .image__inner {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .img_h {
+            position: relative;
+            height: 520px;
+        }
+
+        .box1 {
+            width: 373px;
+            height: 100px;
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            background-color: rgba(163, 255, 91, 0.1);
+            position: absolute;
+            top: 420px;
+            text-align: center;
+        }
+
+        .box2 {
+            width: 373px;
+            height: 100px;
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            background-color: rgba(96, 52, 0, 0.34);
+            position: absolute;
+            top: 420px;
+            text-align: center;
+        }
+
+        .box3 {
+            width: 373px;
+            height: 100px;
+            -webkit-backdrop-filter: blur(4px);
+            backdrop-filter: blur(4px);
+            background-color: rgba(2, 52, 99, 0.35);
+            position: absolute;
+            top: 420px;
+            text-align: center;
+        }
+
+        .image__title {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+        .image__desc {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="imageType02" class="image__wrap nexon section">
+        <h2>자연</h2>
+        <p>아름다운 자연 경관을 함께 봅시다.</p>
+        <div class="image__inner container">
+            <article class="image img1">
+                <span class="img_h">
+                    <img src="img/img_bg02_01.jpg" alt="숲">
+                </span>
+
+                <div class="box1">
+                    <h3 class="image__title">폭포가 흐르는 숲</h3>
+                    <p class="image__desc">자세히 보기</p>
+                </div>
+
+
+            </article>
+            <article class="image img2">
+                <span class="img_h">
+                    <img src="img/img_bg02_02.jpg" alt="호수">
+                </span>
+                <div class="box2">
+                    <h3 class="image__title">노을이 지는 호수</h3>
+                    <p class="image__desc">자세히 보기</p>
+                </div>
+
+            </article>
+            <article class="image img3">
+                <span class="img_h">
+                    <img src="img/img_bg02_03.jpg" alt="산">
+                </span>
+                <div class="box3">
+                    <h3 class="image__title">눈 쌓인 산</h3>
+                    <p class="image__desc">자세히 보기</p>
+                </div>
+
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>
