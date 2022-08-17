@@ -61,14 +61,16 @@
             </div>
 
             <div class="t_link">
-                <a href="https://github.com/kimyihyung/coding/blob/main/javascript/effect/searchEffect01.html"
-                    target="_blank">원본 소스 보기</a>
+                <a href="https://github.com/kimyihyung/coding/javascript/effect/searchEffect01.html" target="blank">원본
+                    소스 보기</a>
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/searchEffect01.html" target="_blank">원본
+                    사이트</a>
             </div>
 
             <hr>
 
-            <h3 class="t_tit2">HTML 작성</h3>
-            <p class="t_desc">사용자가 이용 하기 위한 input 박스를 만들어 줍니다. 검색 대상도 데이터 이름으로 설정해 둡니다.</p>
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc">데이터 구분을 위해 <i>data-name</i>을 활용합니다.</p>
             <div class="t_code">
                 <pre><code class="language-html">&lt;main id="main"&gt;
 &lt;div class="search__wrap"&gt;
@@ -84,207 +86,357 @@
                 &lt;li data-name="a"&gt;&lt;strong&gt;a&lt;/strong&gt; : a 태그는 다른 페이지 이동을 설정합니다.&lt;/li&gt;
                 &lt;li data-name="abbr"&gt;&lt;strong&gt;abbr&lt;/strong&gt; : abbr 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li&gt;
                 &lt;li data-name="acronym"&gt;&lt;strong&gt;acronym&lt;/strong&gt; : acronym 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li&gt;
-                &lt;li data-name="address"&gt;&lt;strong&gt;address&lt;/strong&gt; : address 태그는 웹 페이지의 연락처 정보를 설정합니다.&lt;/li&gt;
-                &lt;li data-name="aaplet"&gt;&lt;strong&gt;aaplet&lt;/strong&gt; : aaplet 태그는 는 자바 애플릿을 보이게 하는 곳에 쓰입니다.&lt;/li&gt;
-                &lt;li data-name="area"&gt;&lt;strong&gt;area&lt;/strong&gt; : area 는 이미지의 핫스팟 영역을 정의하고 하이퍼링크를 추가할 수 있습니다.&lt;/li&gt;
+                &lt;li data-name="address"&gt;&lt;strong&gt;address&lt;/strong&gt; : address 태그는 웹 페이지의 연락처 정보를 설정합니다&lt;/li&gt;
+                &lt;li data-name="applet"&gt;&lt;strong&gt;applet&lt;/strong&gt; : applet 태그는 애플랫 요소를 설정합니다. 현재는 사용하지 않습니다.&lt;/li&gt;
+                &lt;li data-name="area"&gt;&lt;strong&gt;area&lt;/strong&gt; : area 태그는 이미지 맵의 영역을 정의합니다. &lt;/li&gt;
                 &lt;li data-name="article"&gt;&lt;strong&gt;article&lt;/strong&gt; : article 태그는 사이트의 독립적인 컨텐츠 섹션을 설정합니다.&lt;/li&gt;
                 &lt;li data-name="aside"&gt;&lt;strong&gt;aside&lt;/strong&gt; : aside 태그는 주요 콘텐츠의 보조적 컨텐츠 섹션을 설정합니다.&lt;/li&gt;
                 &lt;li data-name="audio"&gt;&lt;strong&gt;audio&lt;/strong&gt; : audio 태그는 오디오 파일을 설정합니다.&lt;/li&gt;
                 &lt;li data-name="b"&gt;&lt;strong&gt;b&lt;/strong&gt; : b 태그는 다른 텍스트와 구별 할 때 설정합니다.&lt;/li&gt;
                 &lt;li data-name="base"&gt;&lt;strong&gt;base&lt;/strong&gt; : base 태그는 모든 문서의 기본이 되는 URL을 설정합니다.&lt;/li&gt;
-                &lt;li data-name="basefont"&gt;&lt;strong&gt;basefont&lt;/strong&gt; : basefont 태그는 문서의 기본 폰트, 사이즈, 종류를 설정합니다.&lt;/li&gt;
+                &lt;li data-name="basefont"&gt;&lt;strong&gt;basefont&lt;/strong&gt; : basefont 태그는 문서의 기본 폰트, 사이즈, 종류를 설정합니다.
+                &lt;/li&gt;
                 &lt;li data-name="bdi"&gt;&lt;strong&gt;bdi&lt;/strong&gt; : bdi 태그는 텍스트의 출력 방향 영역을 설정합니다.&lt;/li&gt;
                 &lt;li data-name="bdo"&gt;&lt;strong&gt;bdo&lt;/strong&gt; : bdo 태그는 텍스트의 방향을 설정합니다.&lt;/li&gt;
                 &lt;li data-name="big"&gt;&lt;strong&gt;big&lt;/strong&gt; : big 태그는 텍스트의 크기를 크게 설정합니다.&lt;/li&gt;
                 &lt;li data-name="blockquote"&gt;&lt;strong&gt;blockquote&lt;/strong&gt; : blockquote 태그는 긴 문장의 인용문을 설정합니다.&lt;/li&gt;
             &lt;/ul&gt;
-        &lt;/div&gt;                
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;/main&gt;
-</div>
 </code></pre>
-                <h3 class="t_tit2">CSS 작성</h3>
-                <p class="t_desc">스타일시트를 이용해서 글자 크기와 디자인을 완성시켜줍니다. 폰트는 링크를 넣어 font-family를 이용했습니다.</p>
-                <div class="t_code">
-                    <pre><code class="language-css">* {
+            </div>
+            <h3 class="t_tit2">JAVASCRIPT</h3>
+            <p class="t_desc">
+                indexOf()는 문자열에서 특정 문자의 위치를 찾아 숫자를 반환하는 메서드입니다.<br>
+                사용자가 원하는 값을 입력시에 출력하는 값이 아닌 경우 hide로 숨기고.<br>
+                0으로 false가 되어, 출력되야하는 값만 hide를 지워주어 원하는 키워드를 출력할 수 있습니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">//선택자
+const searchBox = document.querySelector(".search__box input");               //검색 영역
+const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+
+searchBox.addEventListener("keyup", () => {
+    const searchWord = searchBox.value;     //사용자가 입력한 키워드
+
+    searchList.forEach(el => {
+        const cssname = el.dataset.name;
+
+        if (cssname.indexOf(searchWord)) {
+            el.classList.add("hide")        //0이 되면서 false가 되고 나머지는 보이게
+        } else {
+            el.classList.remove("hide")     //indexOf()값이 0이되는 값만 hide를 지워줍니다.
+        }
+    });
+});
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+                <pre><code class="language-css">/* 웹폰트 */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+/* 여백 초기화 */
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'NexonLv1Gothic';
-    color: #223547;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-
+/* 링크 초기화 */
 a {
-    color: var(--htmlColor);
     text-decoration: none;
+    color: #222;
 }
 
+/* 목록 초기화 */
 li {
     list-style: none;
 }
 
-/* header */
-#header {}
-#header nav {
-    margin: 10px;
-}
-#header nav ul {}
-#header nav li {
-    position: relative;
-    display: inline;
-}
-#header nav li a {
-    width: 30px;
-    height: 30px;
-    border: 1px solid var(--htmlColor);
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    line-height: 30px;
-    font-family: 'NexonLv1Gothic';
-}
-#header nav li.active a {
-    background-color: var(--htmlColor);
-    color: #fff;
-}
-#header nav li .sub {
-    position: absolute;
-    left: 0;
-    top: 35px;
-    width: 400px;
-}
-#header nav li .sub li a {
-    width: auto;
-    background-color: transparent;
-    color: var(--htmlColor);
-    border: 0;
-    text-align: left;
-    line-height: 1.2;
-}
-#header nav li .sub li.active a {
-    text-decoration: underline;
-}
-/* main */
-#main {
-    margin: 50px 10px;
-}
-.search__wrap {
-    max-width: 1400px;
-    margin: 0 auto;
-    border: 3px solid var(--htmlColor);
-    border-radius: 20px;
-    background-color: #f1f3f6;
-    padding: 30px;
-    text-align: center;
-}
-.search__wrap > span {
-    font-size: 20px;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-.search__wrap > h1 {
-    font-family: 'Tmon';
-    color: var(--htmlColor);
-    font-size: 6vw;
-    margin-bottom: 10px;
-}
-.search__box {
-    margin-bottom: 20px;
-}
-.search__box label {
-    position:absolute;
-    clip:rect(0 0 0 0);
-    width:1px;
-    height:1px;
-    margin:-1px;
-    overflow:hidden
-}
-.search__box input {
-    border: 2px solid var();
-    padding: 15px 40px;
-    width: 70%;
-    border-radius: 50px;
-    font-size: 20px;
-}
-.search__list {}
-.search__list li {
-    text-align: left;
-    line-height: 1.7;
-}
-.search__list li.hide {
-    display: none;
-}
-@media (max-width: 600px) {
-    .search__wrap {
-        padding: 20px;
-    }
-    .search__wrap > span {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
-    .search__wrap > h1 {
-        font-size: 44px;
-    }
-    .search__box input {
-        font-size: 16px;
-        padding: 12px 30px;
-    }
-}
-/* footer */
-#footer {
-    text-align: center;
+/* 제목 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
 }
 
-#footer a {
-    color: #000;
-    font-family: 'NexonLv1Gothic';
-    padding-bottom: 50px;
+/* 모든 페이지 레이아웃 */
+body {
+    padding: 40px;
+}
+
+#header {
+    border-bottom: 1px dashed #dcdcdc;
+    padding-bottom: 40px;
+}
+
+#main {
+    padding: 40px 0;
+    border-bottom: 1px dashed #dcdcdc;
+}
+
+#footer {
+    padding: 40px 0;
+    text-align: center;
 }
 
 #footer a:hover {
     text-decoration: underline;
 }
+
+/* 헤더 영역 */
+#header h1 a {
+    font-size: 60px;
+    font-weight: 700px;
+}
+
+.header_nav ul li {
+    display: inline;
+}
+
+.header_nav ul li.active a {
+    background-color: #000;
+    color: #fff;
+}
+
+.header_nav ul li a {
+    border: 1px solid #222;
+    padding: 8px 25px;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+.header_nav ul li a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.header_nav .study {
+    margin-top: 10px;
+}
+
+.header_nav .study li a {
+    border-radius: 50px;
+    padding: 6px 30px;
+    background-color: #000;
+    color: #fff;
+}
+.header_nav .effect {
+    margin-top: 10px;
+}
+.header_nav .effect li a {
+    border-radius: 40px;
+}
+
+/* 메인 샘플 */
+.main_sample {
+    margin-top: 40px;
+    border-top: 1px dashed #dcdcdc;
+    padding-top: 40px;
+}
+
+.main_sample h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.main_sample p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.main_sample .result {
+    margin-bottom: 80px;
+}
+
+/* sample */
+.sample {
+    margin-bottom: 80px;
+}
+.sample .table {
+    margin-bottom: 10px;
+}
+.sample .table table {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+}
+.sample .table table tr th {
+    font-weight: normal;
+    background-color: #f5f5f5;
+    padding: 3px;
+}
+.sample .table table tr td {
+    border: 1px solid #e6e6e6;
+    padding: 6px;
+}
+.sample .table table tr td[class*="_P"] {
+    color: #fff;
+}
+.sample .table table tr td[class*="_P"]:hover {
+    color: #000;
+    cursor: help;
+}
+.sample .box {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+@media (max-width: 800px) {
+    .sample .table {
+        overflow-x: scroll;
+    }
+    .sample .table table {
+        width: 780px;
+    }
+    .sample .table table tr td[class*="_P"] {
+        color: #000;
+    }
+}
+
+/* 티스토리용 문서 */
+/* .document{
+    word-break: keep-all;
+} */
+
+.document i {
+    font-style: normal;
+    position: relative;
+}
+
+.document i::before {
+    content: '';
+    background-color: #0242f136;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+}
+
+.document hr {
+    border: 0;
+    border-top: 1px dashed #dcdcdc;
+    margin-top: 44px;
+}
+
+.document .t_tit {
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 5px !important;
+    font-weight: 400;
+}
+
+.document .t_tit2 {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 50px;
+    margin-bottom: 5px !important;
+    font-weight: 400;
+}
+
+.document .t_tit3 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 5px !important;
+    font-weight: 400;
+}
+
+.document .t_desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    margin-bottom: 10px !important;
+}
+
+.document .t_desc2 {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #0243f1;
+    background-color: #f9f9f9;
+}
+
+.document .t_box {
+    padding: 20px !important;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    color: #666;
+    border-radius: 5px;
+}
+
+.document .t_table {
+    border: 1px solid #dcdcdc;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.document .t_table tr th {
+    background-color: #f9f9f9;
+}
+.document .t_table tr th,
+.document .t_table tr td {
+    border: 1px solid #dcdcdc;
+    font-weight: normal;
+    padding: 8px 10px;
+    color: #666;
+}
+.document .t_table .ce {
+    text-align: center;
+}
+.document .t_iframe {
+    position: relative;
+    padding-top: 56%;
+    width: 100%;
+    height: 0;
+}
+.document .t_iframe iframe {
+    border: 1px solid rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.document .t_link a {
+    display: block;
+    width: 200px;
+    background-color: #f5f5f5;
+    margin: 40px auto;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s;
+}
+.document .t_link a:hover {
+    background: #d6d6d6;
+}
+
+
+
+@media (max-width: 800px) {
+    body {
+        padding: 20px;
+    }
+}
 </code></pre>
-                    <h3 class="t_tit2">JS 작성</h3>
-                    <p class="t_desc">스크립트 부분은 오히려 간단했습니다. input박스와 미리 작성해 둔 목록 리스트를 querySelector를 이용해서 배열로 저장한뒤,
-                        addEventListener를 사용해
-                        keyup(키를 누르고 떼었을 때) if 문을 사용해 indexOf()값이 0(false)이되는 값만 else문을 이용해 hide를 지워줍니다.
-                    </p>
-                    <div class="t_code">
-                        <pre><code class="language-js">//선택자
-const searchBox = document.querySelector(".search__box input");   //input 박스
-const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
-
-// 검색 영역 이벤트
-searchBox.addEventListener("keyup", () => { // 사용자가 검색 영역에 keyup 했을 때(키를 눌렀다가 떼었을 때)
-    const searchWord = searchBox.value;     //사용자가 입력한 키워드
-
-    searchList.forEach(el => {
-        const cssName = el.dataset.name;    // 데이터 세팅
-
-
-
-        if (cssName.indexOf(searchWord)) {
-            el.classList.add("hide");
-        } else {
-            el.classList.remove("hide");    //indexOf()값이 0(false)이되는 값만 hide를 지워줍니다.
-        }
-
-    });
-
-});
-</code></pre>
-
-                    </div>
-                </div>
             </div>
+        </div>
     </main>
     <!-- //main -->
     <footer id="footer">
