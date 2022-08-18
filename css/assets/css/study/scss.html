@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+
+    <link rel="stylesheet" href="../../../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../../../javascript/assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href=""></a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="basic.html">기본 문법</a></li>
+                <li><a href="media.html">미디어쿼리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <div class="main_refer">
+        <div class="document">
+            <h2 class="t_tit">SCSS</h2>
+            <p class="t_desc">
+                scss는 sass의 3버전에서 등장한 언어입니다. css와 비슷한 구문을 가지고 있으며,<br>
+                css와 완전히 호환되도록 새로운 구문을 도입한 css의 상위 호환 스타일시트입니다.<br>
+                sass기능을 지원하며, css와 거의 같은 문법으로 사용되는 장점을 가지고 있습니다.
+            </p>
+            <h3 class="t_tit2">Sass(SCSS)</h3>
+            <p class="t_desc2">
+                Sass란 Syntactically Awesome Style Sheets의 약자.<br>
+                CSS pre-processor로서, 복잡한 작업을 쉽게 할 수 있게 해주고, 코드의 재활용성 및 가독성을 높여주며 유지보수를 쉽게 해줍니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">CSS Preprocessor</h3>
+            <p class="t_desc2">
+                CSS가 동작하기 전에 사용하는 기능이며, 전처리기를 통해 쉽게 입력을 하고 CSS로 변환시키는 것입니다.<br>
+                CSS Preprocessor의 예로는 SCSS,Sass,Less 등이 있습니다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">Variable : 반복작업 줄이기</h3>
+            <p class="t_desc2">
+                $로 시작하는 방식으로 입력하며, 색상이나 글꼴 등을 재사용할 경우에 코드의 양을 상당히 줄일 수 있는 효과를 가지고 있습니다.<br>
+                <i>$ 기호를 사용하여, 변수를 스타일시트 전체에서 재사용하려는 정보를 저장하여 사용</i>됩니다.
+            </p>
+
+            <p class="t_desc">
+                SCSS
+            </p>
+            <div class="t_code">
+                <pre><code class="language-css">$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+    font: 100% $font-stack;
+    color: $primary-color;
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                css
+            </p>
+            <div class="t_code">
+                <pre><code class="language-css">body {
+    font: 100% Helvetica, sans-serif;
+    color: #333;
+}
+ </code></pre>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">Nesting : 깔끔한 코드</h3>
+            <p class="t_desc2">
+                괄호사이에 클래스명을 삽입하면, Sass가 알아서 컴파일 해줍니다.<br>
+                Sass를 사용하면 HTML의 동일한 시각적 계층 구조를 따르는 방식으로 <i>CSS를 중첩</i>할 수 있습니다.<br>
+                아래의 예제로 ul, li, 및 a가 nav내부에 중첩되어 있음을 알 수 있습니다. 이것은 CSS를 더 읽기 쉽게 만드는 좋은 방법입니다.
+            </p>
+            <p class="t_desc">
+                SCSS
+            </p>
+            <div class="t_code">
+                <pre><code class="language-css">nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    li { display: inline-block; }
+    
+    a {
+        display: block;
+        padding: 6px 12px;
+        text-decoration: none;
+    }
+}
+</code></pre>
+            </div>
+            <p class="t_desc">
+                css
+            </p>
+            <div class="t_code">
+                <pre><code class="language-css">nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li {
+    display: inline-block;
+}
+nav a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+}                  
+ </code></pre>
+            </div>
+
+
+        </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+
+        <script src="../../../../javascript/assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
