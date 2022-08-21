@@ -51,43 +51,70 @@
             <div class="document">
                 <h2 class="t_tit">블록 레벨 요소와 인라인요소</h2><br>
                 <h3 class="t_tit2">1. 블록 레벨 요소 (Block-level Element)</h3>
-                <p class="t_box">
-                    &lt;!DOCTYPE html&gt;<br>
-                    &lt;html lang="ko"&gt;<br>
-                    &lt;head&gt;<br>
-                    &emsp;&lt;meta charset="UTF-8"&gt;<br>
-                    &emsp;&lt;title&gt;블록 레벨 요소&lt;/title&gt;<br>
-                    &lt;/head&gt;<br>
-                    &lt;body&gt;<br>
-                    &emsp;&lt;h1&gt;블록 레벨 요소&lt;/h1&gt;<br>
-                    &emsp;&lt;h2&gt;블록 레벨 요소 성질&lt;/h2&gt;<br>
-                    &emsp;&lt;p&gt;줄 바꿈이 생깁니다.&lt;/p&gt;<br>
-                    &lt;/body&gt;<br>
-                    &lt;/html&gt;
-                </p>
-                <p class="t_desc">
+                <p class="t_desc2">
+                    콘텐츠의 흐름이 끊기고, 요소를 구성하는 줄 하나를 다 차지합니다.<br>
                     마크업 했던 &lt;h1&gt;,
-                    &lt;h2&gt;, &lt;p&gt; 요소들은 블록의 성질을 가지고 있어 화면상 줄 바꿈 현상이 일어나는 것을 볼 수 있다.
+                    &lt;h2&gt;, &lt;p&gt; 요소들은 블록의 성질을 가지고 있어 화면상 줄 바꿈 현상이 일어나는 것을 볼 수 있습니다.
                 </p>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;블록 레벨 요소&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;블록 레벨 요소&lt;/h1&gt;
+    &lt;h2&gt;블록 레벨 요소 성질&lt;/h2&gt;
+    &lt;p&gt;줄 바꿈이 생깁니다.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <br>
+                <div class="t_iframe">
+                    <p class="codepen" data-height="150" data-default-tab="html,result" data-slug-hash="abYXMWM"
+                        data-user="kimyihyung"
+                        style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                        <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/abYXMWM">
+                                블록</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
+                    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </div>
+
+
 
                 <h3 class="t_tit2"><br />2. 인라인 요소 (Inline Element)</h3>
-                <p class="t_box">
-                    &lt;!DOCTYPE html&gt;<br>
-                    &lt;html lang="ko"&gt;<br>
-                    &lt;head&gt;<br>
-                    &emsp;&lt;meta charset="UTF-8"&gt;<br>
-                    &emsp;&lt;title&gt;인라인 요소&lt;/title&gt;<br>
-                    &lt;/head&gt;<br>
-                    &lt;body&gt;<br>
-                    &emsp;&lt;strong&gt;인라인 요소&lt;/strong&gt;<br>
-                    &emsp;&lt;span&gt;인라인 요소는 한 줄로 출력됩니다.&lt;/span&gt;<br>
-                    &lt;/body&gt;<br>
-                    &lt;/html&gt;
-                </p>
-                <p class="t_desc">
+                <p class="t_desc2">
+                    콘텐츠의 흐름을 끊지 않고, 요소를 구성하는 태그를 할당된 공간만 차지합니다.<br>
                     마크업 했던 &lt;strong&gt;,
-                    &lt;span&gt; 요소들은 인라인 성질을 가지고 있어 행이 바뀌지 않고 한 줄로 출력 된 것을 볼 수 있다.
+                    &lt;span&gt; 요소들은 인라인 성질을 가지고 있어 행이 바뀌지 않고 한 줄로 출력 된 것을 볼 수 있습니다.<br>
                 </p>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;인라인 요소&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;strong&gt;인라인 요소&lt;/strong&gt;
+    &lt;span&gt;인라인 요소는 한 줄로 출력됩니다.&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                </div>
+                <br>
+                <div class="t_iframe">
+                    <p class="codepen" data-height="150" data-default-tab="html,result" data-slug-hash="BarMbRp" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                        <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/BarMbRp">
+                        인라인</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                      </p>
+                      <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </div>
+
 
                 <h3 class="t_tit2"><br />3. 블록 레벨 요소와 인라인 요소의 특징</h3>
                 <table class="t_table">
@@ -114,7 +141,49 @@
 
                 </table><br>
 
-                <p class="t_desc">HTML5로 넘어오면서 블록 레벨 요소와 인라인요소는 좀 더 복잡한 콘텐츠 카테고리 (콘텐츠 모델)로 대체 되었습니다. 콘텐츠의 종류와 태그는 다음과 같습니다. </p>
+                <p class="t_desc">블록구조와 인라인구조의 태그 종류입니다.</p>
+
+                <table class="t_table">
+                    <colgroup>
+                        <col style="width: 30%;">
+                        <col style="width: 70%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구조</th>
+                            <th>태그 종류</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">블록</td>
+                            <td>&lt;address&gt;, &lt;article&gt;, &lt;aside&gt;, &lt;audio&gt;, &lt;blockquote&gt;, <br>
+                                &lt;canvas&gt;, &lt;dd&gt;, &lt;div&gt;, &lt;dl&gt;, &lt;fieldset&gt;,
+                                &lt;figcaption&gt;, <br>
+                                &lt;figure&gt;, &lt;footer&gt;, &lt;form&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;,
+                                &lt;h4&gt;, <br>
+                                &lt;h5&gt;, &lt;h6&gt;, &lt;header&gt;, &lt;hgroup&gt;, &lt;hr&gt;, &lt;noscript&gt;,
+                                &lt;ol&gt;, <br>
+                                &lt;output&gt;, &lt;p&gt;, &lt;pre&gt;, &lt;section&gt;, &lt;table&gt;, &lt;ul&gt;,
+                                &lt;video&gt;</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">인라인</td>
+                            <td>&lt;a&gt;, &lt;abbr&gt;, &lt;acronym&gt;, &lt;b&gt;, &lt;bdo&gt;, &lt;big&gt;, <br>
+                                &lt;br/&gt;, &lt;button&gt;, &lt;cite&gt;, &lt;code&gt;, &lt;dfn&gt;, &lt;em&gt;,
+                                &lt;i&gt;, <br>
+                                &lt;img&gt;, &lt;input&gt;, &lt;kbd&gt;, &lt;label&gt;, &lt;map&gt;, &lt;object&gt;,
+                                &lt;q&gt;, <br>
+                                &lt;samp&gt;, &lt;small&gt;, &lt;script&gt;, &lt;select&gt;, &lt;span&gt;,
+                                &lt;strong&gt;, <br>
+                                &lt;sub&gt;, &lt;sup&gt;, &lt;textarea&gt;, &lt;tt&gt;, &lt;var&gt;</td>
+                    </tbody>
+                </table>
+
+                <br>
+
+                <p class="t_desc">HTML5로 넘어오면서 블록 레벨 요소와 인라인요소는 좀 더 복잡한 콘텐츠 카테고리 (콘텐츠 모델)로 대체 되었습니다. 콘텐츠의 종류와 태그는 다음과
+                    같습니다. </p>
 
                 <table class="t_table">
                     <thead>
