@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">searchEffect03</h2>
+            <div class="t_desc2">
+                <i>charAt()</i>를 이용하여 속성 첫글자 검색하기.
+            </div>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/searchEffect03.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/javascript/effect/searchEffect03.html" target="blank">원본
+                    소스 보기</a>
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/searchEffect03.html" target="_blank">원본
+                    사이트</a>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc">keyword 별로 검색이 가능하도록 span 태그를 사용하여 알파벳별로 검색이 가능하도록 만듭니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-html"> &lt;div class="search__wrap" &gt;
+    &lt;span &gt;charAt()를 이용하여 검색하기 &lt;/span &gt;
+    &lt;h1 &gt;CSS 속성 첫글자 검색하기 &lt;/h1 &gt;
+
+    &lt;div class="search__info" &gt;
+        &lt;div class="keyword" &gt;
+            &lt;span &gt;a &lt;/span &gt;
+            &lt;span &gt;b &lt;/span &gt;
+            &lt;span &gt;c &lt;/span &gt;
+            &lt;span &gt;d &lt;/span &gt;
+            &lt;span &gt;e &lt;/span &gt;
+            &lt;span &gt;f &lt;/span &gt;
+            &lt;span &gt;g &lt;/span &gt;
+            &lt;span &gt;h &lt;/span &gt;
+            &lt;span &gt;i &lt;/span &gt;
+            &lt;span &gt;j &lt;/span &gt;
+            &lt;span &gt;k &lt;/span &gt;
+            &lt;span &gt;l &lt;/span &gt;
+            &lt;span &gt;m &lt;/span &gt;
+            &lt;span &gt;n &lt;/span &gt;
+            &lt;span &gt;o &lt;/span &gt;
+            &lt;span &gt;p &lt;/span &gt;
+            &lt;span &gt;q &lt;/span &gt;
+            &lt;span &gt;r &lt;/span &gt;
+            &lt;span &gt;s &lt;/span &gt;
+            &lt;span &gt;t &lt;/span &gt;
+            &lt;span &gt;u &lt;/span &gt;
+            &lt;span &gt;v &lt;/span &gt;
+            &lt;span &gt;w &lt;/span &gt;
+            &lt;span &gt;x &lt;/span &gt;
+            &lt;span &gt;y &lt;/span &gt;
+            &lt;span &gt;z &lt;/span &gt;
+        &lt;/div &gt;
+        &lt;div &gt;
+            전체 속성 갯수 :  &lt;span class="num" &gt;0 &lt;/span &gt;
+        &lt;/div &gt;
+    &lt;/div &gt;
+    &lt;div class="search__list" &gt;
+        &lt;div class="css" &gt;
+            &lt;ul &gt;
+                &lt;li&gt;&lt;strong&gt;accent-color&lt;/strong&gt; : 일부 요소가 생성하는 사용자 인터페이스 컨트롤의 강조색을 지정합니다.&lt;/li&gt;
+                <!-- 이하 생략 -->
+            &lt;/ul &gt;
+        &lt;/div &gt;
+    &lt;/div &gt;
+&lt;/div &gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc">
+                keyword와 span에 대한 css내용을 추가합니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-css">.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">JAVASCRIPT</h3>
+            <p class="t_desc">
+                charAt()의 문자열에서 원하는 문자열을 찾고 포함되어 있으면 출력하는 방식을 사용하였습니다.
+                strong 태그의 데이터를 불러와서 출력하도록 하였습니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">//선택자
+const searchKeyword = document.querySelectorAll(".search__info .keyword span");    //알파벳             //검색 영역
+const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+const searchInfo = document.querySelector(".search__info .num")     //전체 갯수
+
+//전체 갯수 구하기
+searchInfo.textContent = searchList.length;
+
+searchKeyword.forEach(el => {
+    el.addEventListener("click", () => {
+        const searchWord = el.innerText;    //사용자가 클릭한 알파벳
+        //console.log(searchKeyword);
+
+        searchList.forEach(el => {
+            const cssName = el.querySelector("strong").innerText;   //CSS 속성 텍스트
+            //console.log(cssName)
+
+            //알파벳 첫글자 == CSS 속성의 첫글자
+            if(searchWord.charAt(0) === cssName.charAt(0)){
+                el.classList.remove("hide");
+            } else {
+                el.classList.add("hide");
+            }
+        })
+    });
+});
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
