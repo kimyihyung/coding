@@ -65,6 +65,9 @@
                 <div>
                     전체 속성 갯수 : <span class="num">0</span>
                 </div>
+                <div>
+                    선택 속성 갯수 : <span class="num2">0</span>
+                </div>
             </div>
             <div class="search__list">
                 <div class="css">
@@ -471,6 +474,7 @@
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");    //알파벳             //검색 영역
         const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
         const searchInfo = document.querySelector(".search__info .num")     //전체 갯수
+        const searchInfo2 = document.querySelector(".search__info .num2")     //선택 갯수
 
         //전체 갯수 구하기
         searchInfo.textContent = searchList.length;
@@ -491,6 +495,8 @@
                         el.classList.add("hide");
                     }
                 })
+                const searchList2 = document.querySelectorAll(".search__list ul li.hide");
+                    searchInfo2.textContent = searchList.length - searchList2.length;       //먼저 작성 후 선택자에 추가함. 2번으로 부여. 목록 리스트에 hide.
             });
         });
     </script>
