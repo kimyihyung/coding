@@ -11,6 +11,46 @@
     <link rel="stylesheet" href="../assets/css/dracula.css">
 </head>
 
+<style>
+    /* slider */
+    .slider__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .slider__img {
+        position: relative;
+        width: 800px;
+        height: 450px;
+    }
+    .slider {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 5px 10px;
+    }
+    .slider:nth-child(1)::before {content: '이미지1';}
+    .slider:nth-child(2)::before {content: '이미지2';}
+    .slider:nth-child(3)::before {content: '이미지3';}
+    .slider:nth-child(4)::before {content: '이미지4';}
+    .slider:nth-child(5)::before {content: '이미지5';}
+    .slider:nth-child(1) {z-index: 5;}
+    .slider:nth-child(2) {z-index: 4;}
+    .slider:nth-child(3) {z-index: 3;}
+    .slider:nth-child(4) {z-index: 2;}
+    .slider:nth-child(5) {z-index: 1;}
+</style>
+
+
 <body class="img03">
     <header id="header">
         <h1>Javascript Silder Effect01</h1>
@@ -26,7 +66,17 @@
     <!-- header -->
 
     <main id="main">
-
+        <section id="sliderType01">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider"><img src="../assets/img/effect_bg01-min.jpg" alt="이미지1"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg02-min.jpg" alt="이미지2"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg03-min.jpg" alt="이미지3"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg04-min.jpg" alt="이미지4"></div>
+                    <div class="slider"><img src="../assets/img/effect_bg05-min.jpg" alt="이미지5"></div>
+                </div>
+            </div>
+        </section>
     </main>
     <!-- main -->
 
@@ -398,43 +448,40 @@ li {
 
 
     <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
     <script>
-        hljs.highlightAll();
-    </script>
-    <script>
+        const sliderWrap =document.querySelector(".slider__wrap");
+        const sliderImg =sliderWrap.querySelector(".slider__img");
+        const slider = sliderWrap.querySelectorAll(".slider");
 
-        // 모달
-        const modalBtn = document.querySelector(".modal__btn");
-        const modalClose = document.querySelector(".modal__close");
-        const modalCont = document.querySelector(".modal__cont");
+        let currentIndex = 0;               //현재 보이는 이미지
+        let sliderCount = slider.length;    //이미지 갯수
 
-        modalBtn.addEventListener("click", () => {
-            modalCont.classList.add("show");
-        });
-        modalClose.addEventListener("click", () => {
-            modalCont.classList.add("hide");
-        })
+        setInterval(() => {
+            let nextIndex = (currentIndex + 1) % 5;   //다음 이미지
 
-        //탭 메뉴
-        const tapBtn = document.querySelectorAll(".modal__box .tabs > div");
-        const tapCont = document.querySelectorAll(".modal__box .cont > div");
+            slider[currentIndex].style.opacity = "0";  //첫번째 이미지를 안보이게
+            slider[nextIndex].style.opacity = "1";  //첫번째 이미지를 안보이게
 
-        tapBtn.forEach((element, index) => {
-            element.addEventListener("click", (event) => {
-                event.preventDefault();
+            currentIndex = nextIndex;
 
-                tapBtn.forEach(li => {
-                    li.classList.remove("active");
-                })
-                element.classList.add("active");
+            //증가가 아닌 반복.
+        },3000)
 
-                tapCont.forEach(div => {
-                    div.style.display = "none";
-                });
 
-                tapCont[index].style.display = "block";
-            });
-        });
+            // slider[1].style.opacity = "0";  //두번째 이미지를 안보이게
+            // slider[2].style.opacity = "1";  //세번째 이미지를 안보이게
+
+            // slider[2].style.opacity = "0";  //세번째 이미지를 안보이게
+            // slider[3].style.opacity = "1";  //네번째 이미지를 안보이게
+
+            // slider[3].style.opacity = "0";  //네번째 이미지를 안보이게
+            // slider[4].style.opacity = "1";  //다섯번째 이미지를 안보이게
+
+            // slider[4].style.opacity = "0";  //다섯번째 이미지를 안보이게
+            // slider[0].style.opacity = "1";  //첫번째 이미지를 안보이게
+
+
     </script>
 </body>
 
