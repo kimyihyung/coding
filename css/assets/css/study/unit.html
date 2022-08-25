@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+
+    <link rel="stylesheet" href="../../../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../../../javascript/assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href=""></a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="basic.html">기본 문법</a></li>
+                <li><a href="media.html">미디어쿼리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">CSS 단위</h2>
+            <p class="t_desc">
+                CSS에는 다양한 형태의 단위가 있으며, 필요에 맞게 사용합시다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">절대 단위</h2>
+                <p class="t_desc2">
+                    규격이 정해져 있으며, 각 단위들 끼리 값 변환이 가능합니다.
+                </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>단위</th>
+                        <th>의미</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">cm</td>
+                        <td class="ce">센티미터 단위</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">mm</td>
+                        <td class="ce">밀리미터 단위</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">in</td>
+                        <td class="ce">인치(inch) 단위로, 2.54cm과 같음</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">px</td>
+                        <td class="ce">픽셀(pixels) 단위로, 1/96inch와 같음</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">px</td>
+                        <td class="ce">포인트(point) 단위로, 1/72inch와 같음</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">pc</td>
+                        <td class="ce">피카(picas) 단위로, 12pt와 같음</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+
+            <h3 class="t_tit2">상대 단위</h2>
+                <p class="t_desc2">
+                    다양한 플랫폼들에 유동적으로 적용할 수 있습니다. 
+                </p>
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th>단위</th>
+                            <th>의미</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">em</td>
+                            <td class="ce">폰트의 기본 크기 값에 비례한 단위</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">ex</td>
+                            <td class="ce">폰트의 기본 X 높이에 비례한 단위</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">ch</td>
+                            <td class="ce">"0"의 기본 폭에 비례한 단위</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">rem</td>
+                            <td class="ce">최상위 요소의 폰트 크기에 비례한 단위</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">vw</td>
+                            <td class="ce">뷰포트 너비에 비례한 단위</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">vh</td>
+                            <td class="ce">뷰포트 높이에 비례한 단위</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">vmin</td>
+                            <td class="ce">뷰포트의 최소 너비, 높이에 비례한 단위</td>
+                        </tr>
+                        <tr>
+                            <td class="ce">%</td>
+                            <td class="ce">브라우저 기본 글꼴을 100%하고 상대적 크기를 나타냄</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="../../../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
