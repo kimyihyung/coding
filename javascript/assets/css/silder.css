@@ -70,6 +70,21 @@ a {
     color: #000;
     text-decoration: none;
 }
+/* scroll */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #1f224a26;
+}
+::-webkit-scrollbar-thumb {
+    background: #d6d8fe;
+    border-radius: 20px;
+}
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #b0b3e5;
+} */
 
 /* header */
 #header {
@@ -116,8 +131,17 @@ a {
 
 /* modal__wrap */
 .modal__wrap {}
-.modal__btn {}
-.modal__btn .btn {}
+.modal__btn {
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    display: inline-block;
+    padding: 10px 20px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
 .modal__cont {
     width: 100%;
     height: 100vh;
@@ -129,8 +153,29 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(0);
 }
+.modal__cont.show {
+    animation: foldOut 1s ease;
+}
+@keyframes foldOut {
+    0%      {transform: scaleX(0);}
+    50%     {transform: scaleX(1);}
+    100%    {transform: scaleX(1);}
+}
+
+
+
+/* 요소 안보이게 하는 방법
+    1. display: none;           (애니메이션x, 영역x)
+    2. opacity: 0;              (애니메이션o, 영역o)
+    3. visibility: hidden;      (애니메이션x, 영역x)
+    4. width: 0; height: 0;     (애니메이션x, 영역x) : blind
+    5. transform: scaleX(0);    (애니메이션o, 영역x)
+*/
+
 .modal__box {
+    display: none;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -138,7 +183,7 @@ a {
     background-color: #fff;
     border-radius: 0.5rem;
     background-color: #fff;
-    /* box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%); */
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%);
     
 }
 .modal__box .title {
@@ -226,4 +271,22 @@ a {
 }
 .modal__box .cont > div.active {
     display: block;
+}
+.modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #1f224a;
+    padding: 1rem 1rem 0.8rem 1rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 7px -5px rgba(25, 26, 26, 0.698);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.modal__close:hover {
+    background-color: #33377d;
+}
+
+.modal__close svg {
+    color: #fff
 }

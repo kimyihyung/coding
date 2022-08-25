@@ -32,10 +32,7 @@
 
     <footer id="footer">
         <div class="modal__wrap">
-            <div class="modal__btn">
-                <label for="btn">소스 보기</label>
-                <input class="btn" type="checkbox" id="btn" name="btn" />
-            </div>
+            <div class="modal__btn">소스 보기</div>
             <div class="modal__cont">
                 <div class="modal__box">
                     <div class="title">
@@ -126,7 +123,7 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code>//선택자
+                            <pre><code>//선택자
     const searchBox = document.querySelector(".search__box input");               //검색 영역
     const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
     const searchInfo = document.querySelector(".search__info .num")
@@ -153,7 +150,7 @@
 </code></pre>
                         </div>
                         <div>
-<pre><code>&lt;div class="search__wrap" &gt;
+                            <pre><code>&lt;div class="search__wrap" &gt;
     &lt;span &gt;indexOf()/search()를 이용하여 검색하기 &lt;/span &gt;
     &lt;h1 &gt;CSS 속성 검색하기 &lt;/h1 &gt;
     &lt;div class="search__box" &gt;
@@ -177,7 +174,7 @@
 </code></pre>
                         </div>
                         <div>
-<pre><code>:root {
+                            <pre><code>:root {
     --htmlColor: #223547;
     --cssColor: #472222;
     --javascriptColor: #224736;
@@ -388,6 +385,12 @@ li {
                         </div>
                     </div>
                 </div>
+                <div class="modal__close">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                </div>
             </div>
         </div>
     </footer>
@@ -397,6 +400,20 @@ li {
     <script src="../assets/js/highlight.min.js"></script>
     <script>
         hljs.highlightAll();
+    </script>
+    <script>
+
+        // 모달
+        const modalBtn = document.querySelector(".modal__btn");
+        const modalClose = document.querySelector(".modal__close");
+        const modalCont = document.querySelector(".modal__cont");
+
+        modalBtn.addEventListener("click", () => {
+            modalCont.classList.add("show");
+        });
+        modalClose.addEventListener("click", () => {
+            modalCont.classList.remove("show");
+        })
 
         //탭 메뉴
         const tapBtn = document.querySelectorAll(".modal__box .tabs > div");
