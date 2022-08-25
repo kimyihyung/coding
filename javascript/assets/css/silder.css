@@ -140,6 +140,12 @@ a {
     position: absolute;
     right: 20px;
     bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.modal__btn :hover {
+    background-color: #fff;
+    color: #33377d;
 }
 
 .modal__cont {
@@ -155,27 +161,8 @@ a {
     justify-content: center;
     transform: scale(0);
 }
-.modal__cont.show {
-    animation: foldOut 1s ease;
-}
-@keyframes foldOut {
-    0%      {transform: scaleX(0);}
-    50%     {transform: scaleX(1);}
-    100%    {transform: scaleX(1);}
-}
-
-
-
-/* 요소 안보이게 하는 방법
-    1. display: none;           (애니메이션x, 영역x)
-    2. opacity: 0;              (애니메이션o, 영역o)
-    3. visibility: hidden;      (애니메이션x, 영역x)
-    4. width: 0; height: 0;     (애니메이션x, 영역x) : blind
-    5. transform: scaleX(0);    (애니메이션o, 영역x)
-*/
 
 .modal__box {
-    display: none;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
@@ -290,3 +277,47 @@ a {
 .modal__close svg {
     color: #fff
 }
+
+/* 모달 애니메이션 */
+.modal__cont.show {
+    animation: foldOut 1s ease forwards;
+}
+.modal__cont.show.hide {
+    animation: foldIn 0.3s 0.5s ease backwards;
+}
+.modal__cont.show .modal__box {
+    transform: scale(0);
+    animation: zoomOut 0.5s 1s ease forwards;
+}
+.modal__cont.show.hide .modal__box {
+    animation: zoomIn 0.5s ease forwards;
+}
+
+
+@keyframes foldOut {
+    0%      {transform: scaleX(0) scaleY(0.001);}
+    50%     {transform: scaleX(1) scaleY(0.001);}
+    100%    {transform: scaleX(1) scaleY(1);}
+}
+@keyframes foldIn {
+    0%      {transform: scaleX(1) scaleY(1);}
+    50%     {transform: scaleX(1) scaleY(0.001);}
+    100%    {transform: scaleX(0) scaleY(0.001);}
+}
+@keyframes zoomOut {
+    0%      {transform: scale(0);}
+    100%    {transform: scale(1);}
+}
+@keyframes zoomIn {
+    0%      {transform: scale(1);}
+    100%    {transform: scale(0);}
+}
+
+
+/* 요소 안보이게 하는 방법
+    1. display: none;           (애니메이션x, 영역x)
+    2. opacity: 0;              (애니메이션o, 영역o)
+    3. visibility: hidden;      (애니메이션x, 영역x)
+    4. width: 0; height: 0;     (애니메이션x, 영역x) : blind
+    5. transform: scaleX(0);    (애니메이션o, 영역x)
+*/
