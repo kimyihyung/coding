@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+
+    <link rel="stylesheet" href="../../../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../../../javascript/assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href=""></a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="basic.html">기본 문법</a></li>
+                <li><a href="media.html">미디어쿼리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <div class="main_refer">
+        <div class="document">
+            <h2 class="t_tit">CSS 요소 숨기기</h2>
+            <p class="t_desc2">
+                CSS를 통하여 요소를 숨길 수 있습니다. 다양한 숨기는 방법을 알아봅시다.
+            </p>
+
+            <hr>
+
+
+            <h3 class="t_tit2">display: none; (애니메이션X, 영역X)</h3>
+            <p class="t_desc2">
+                영역을 차지하지 않고, 공간을 차지하지 않는다. 요소가 없던 것처럼 표시
+            </p>  
+            <div class="t_code">
+<pre><code>display: none;
+</code></pre>
+            </div>
+             
+            <h3 class="t_tit2">opacity: 0; (애니메이션O, 영역O)</h3>
+            <p class="t_desc2">
+                opacity는 0~1 사이, 0% ~ 100% 사이로 표시 할 수 있습니다.
+                opacity는 불투명도라는 뜻입니다. 숫자가 클수록 불투명하고, 숫자가 작을 수록 투명합니다.
+            </p>
+            <div class="t_code">
+<pre><code>opacity: 0;
+</code></pre>
+            </div>
+           
+            <h3 class="t_tit2">visibility: hidden; (애니메이션X, 영역X)</h3>
+            <p class="t_dsec2">
+                레이아웃에 영향을 미치지 않고 요소를 감춥니다. 사라진 공간은 빈 공간으로 영역이 남게됩니다.
+            </p>
+            <div class="t_code">
+<pre><code>visibility: hidden;
+</code></pre>
+            </div>
+            
+            <h3 class="t_tit2">width: 0; height: 0; (애니메이션X, 영역X) : blind</h3>
+            <p class="t_desc2">
+                특정 요소의 너비와 높이를 0으로 설정하여 숨기는 방식으로, 스크린리더 또한 이 엘리먼트가 접근 가능하지 않은 것으로 간주하고 건너뜁니다.
+            </p>
+            <div class="t_code">
+<pre><code>width: 0; height: 0;
+</code></pre>
+            </div>
+            
+            <h3 class="t_tit2">transform: scale(0); (애니메이션O, 영역X)</h3>
+            <p class="t_desc2">
+                scale의 값을 0으로 설정해 주어서 요소를 숨길 수 있습니다. 요소를 확대, 축소를 하고 안보여도 영역은 남습니다.
+            <div class="t_code">
+<pre><code>transform: scale(0);
+</code></pre>
+            </div>
+            </p>
+            <br>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>속성</th>
+                        <th>영역</th>
+                        <th>애니메이션</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>display: none;</td>
+                        <td class="ce">X</td>
+                        <td class="ce">X</td>
+                    </tr>
+                    <tr>
+                        <td>opacity: 0;</td>
+                        <td class="ce">O</td>
+                        <td class="ce">O</td>
+                    </tr>
+                    <tr>
+                        <td>visibility: hidden;</td>
+                        <td class="ce">X</td>
+                        <td class="ce">X</td>
+                    </tr>
+                    <tr>
+                        <td>width: 0; height: 0;</td>
+                        <td class="ce">X</td>
+                        <td class="ce">X</td>
+                    </tr>
+                    <tr>
+                        <td>transform: scale(0);</td>
+                        <td class="ce">O</td>
+                        <td class="ce">X</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+
+        <script src="../../../../javascript/assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
