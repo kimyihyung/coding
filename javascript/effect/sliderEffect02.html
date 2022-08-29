@@ -227,39 +227,16 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-                            <pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");
-const sliderImg = document.querySelector(".slider__img");       //보여지는 영역
-const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역
+                            <pre><code class="language-js">const sliderInner = document.querySelector(".slider__inner");   //움직이는 영역
 const slider = document.querySelectorAll(".slider");            //이미지
-
-let currentIndex = 0;                   //현재 이미지
-let sliderCount = slider.length;        //이미지 갯수
+let currentIndex = 0;
 
 sliderInner.style.transition = "all 0.6s"
-
-// sliderInner.style.transform += "translateX(0px)";         800 * 0 (사진의 width값의 반복)
-// sliderInner.style.transform += "translateX(-800px)";      800 * 1
-// sliderInner.style.transform += "translateX(-1600px)";     800 * 2
-// sliderInner.style.transform += "translateX(-2400px)";     800 * 3
-// sliderInner.style.transform += "translateX(-3200px)";     800 * 4
-
-
 setInterval(() => {
-    //currentIndex++;
-    
-    currentIndex = (currentIndex + 1) % sliderCount;  //1 2 3 4 0 1 2 3 4
-
-    // if(currentIndex &lt; 4) {
-    //     currentIndex++
-    // } else {
-    //     currentIndex = 0
-    // }
-
-    // currentIndex &lt; 4 ? currentIndex++ : currentIndex =   //값이 나왔을때 무엇을 실행. if를 변형하기 위한 것이 아님
-
+    currentIndex = (currentIndex + 1) % slider.length; 
 
     sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)";
-},1000);
+},2000);
 </code></pre>
                         </div>
                         <div>
