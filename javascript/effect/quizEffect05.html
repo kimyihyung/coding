@@ -906,7 +906,7 @@
 
             //사용자 체크한 보기 == 문제 정답
             quizInfo.forEach((question, number) => {
-                const userSelector = `input[name=select${number}]:checked`; //사용자가 체크한 것
+                const userSelector = `input[name=select${number}]:checked`; //사용자가 체크한 것   (이해가 잘)
                 const quizSelectsWrap = quizSelects[number];                //0은 첫번째 문제, 1은 두번째 문제... quizSelectsWrap으로 정해준 것
                 const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value;           //quiz__selects[number] 체크 된 것을 찾는다. | {} 빈 문자열은 체크 하지 않을 경우의 출력
                 const quizView = document.querySelectorAll(".quiz__view")       //강아지
