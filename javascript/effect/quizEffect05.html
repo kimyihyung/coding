@@ -914,11 +914,11 @@
                 console.log(userAnswer)
 
                 if (userAnswer == question.answerResult) {
-                    console.log("정답");
+                    // console.log("정답");
                     quizView[number].classList.add("like");
                     quizScore++;
                 } else {
-                    console.log("오답");
+                    // console.log("오답");
                     quizView[number].classList.add("dislike");
                     const divBox = document.createElement("div");
                     quizSelectsWrap.appendChild(divBox).innerHTML = `<p class="result">${question.answerEx}</p>`
