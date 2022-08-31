@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: GmarketSans;
+            font-weight: 500;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        body {
+            background-color: #c7c9ff;
+        }
+
+        .text__wrap {
+            padding: 120px 0;
+            margin: 0 auto;
+            width: 1160px;
+        }
+
+        .text__wrap .text__header {
+            text-align: center;
+        }
+
+        .text__wrap .text__header h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .text__wrap .text__header p {
+            font-size: 20px;
+            margin-bottom: 70px;
+            color: #666;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .text {
+            background-color: #f5f5f5;
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 28%;
+            border-radius: 20px;
+        }
+
+        .text:hover {
+            background-color: #f5f5f5;
+        }
+
+        .text .text__img {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .text .text__desc h2 {
+            margin-bottom: 20px;
+        }
+
+        .text .text__desc p {
+            font-weight: 300;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dcdcdc;
+        }
+
+        .text .text__desc a {
+            font-weight: 300;
+            text-decoration: underline;
+        }
+
+        .text__info {
+            display: flex;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #dcdcdc;
+        }
+
+        .info__box {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .info__box h2 {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .info__box p {
+            color: #666;
+            font-weight: 300;
+        }
+
+        .more {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background-color: #8A98A5;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="textType03" class="text__wrap gmark section">
+        <header class="text__header">
+            <h1>스터디</h1>
+            <p>스터디 수강생 후기</p>
+        </header>
+        <div class="con">
+            <article class="text">
+                <div class="text__desc">
+                    <p>
+                        불과 3달전만해도 여러 원인들로 인해 <br>자존감이 밑바닥이였던 저에게 이 스터<br>디는 너무 소중한 시간이었어요. 매일 마<br>음속 으로 울고싶다를 외쳤던 저였는데
+                        <br>이제는 조금이나마
+                        이겨 낼 수 있을 것 같<br>네요. 다음에 선생님 만났을 때는 많이 발<br>전해 있는 제가 되었으면 좋겠네요...
+                    </p>
+                </div>
+                <div class="text__box">
+                    <figure class="text__img">
+                        <img src="img/logo03_01.png" alt="logo"/>
+                    </figure>
+                    <div class="text__info">
+                        <h2>묵그몽</h2>
+                        <p>묵학교 1반</p>
+                        <figure>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                        </figure>
+                    </div>
+                </div>
+                <a class="more" href="">자세히 보기</a>
+            </article>
+            <article class="text">
+                <div class="text__desc">
+                    <p>
+                        불과 3달전만해도 여러 원인들로 인해 <br>자존감이 밑바닥이였던 저에게 이 스터<br>디는 너무 소중한 시간이었어요. 매일 마<br>음속 으로 울고싶다를 외쳤던 저였는데
+                        <br>이제는 조금이나마
+                        이겨 낼 수 있을 것 같<br>네요. 다음에 선생님 만났을 때는 많이 발<br>전해 있는 제가 되었으면 좋겠네요...
+                    </p>
+                </div>
+                <div class="text__box">
+                    <figure class="text__img">
+                        <img src="img/logo03_02.png" alt="logo"/>
+                    </figure>
+                    <div class="text__info">
+                        <h2>찌그몬</h2>
+                        <p>찌학교 5반</p>
+                        <figure>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                        </figure>
+                    </div>
+                </div>
+                <a class="more" href="">자세히 보기</a>
+            </article>
+            <article class="text">
+                <div class="text__desc">
+                    <p>
+                        불과 3달전만해도 여러 원인들로 인해 <br>자존감이 밑바닥이였던 저에게 이 스터<br>디는 너무 소중한 시간이었어요. 매일 마<br>음속 으로 울고싶다를 외쳤던 저였는데
+                        <br>이제는 조금이나마
+                        이겨 낼 수 있을 것 같<br>네요. 다음에 선생님 만났을 때는 많이 발<br>전해 있는 제가 되었으면 좋겠네요...
+                    </p>
+                </div>
+                <div class="text__box">
+                    <figure class="text__img">
+                        <img src="img/logo03_03.png" alt="logo"/>
+                    </figure>
+                    <div class="text__info">
+                        <h2>빠그몹</h2>
+                        <p>빠학교 2반</p>
+                        <figure>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                            <img src="img/Star.png" alt="별점"/>
+                        </figure>
+                    </div>
+                </div>
+                <a class="more" href="">자세히 보기</a>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 유형03</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: GmarketSans;
+            font-weight: 500;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+
+        /* common */
+        .container {
+            width: 1160px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 45px;
+            font-weight: bold;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 500;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        body {
+            background-color: #c7c9ff;
+        }
+
+        .text__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .text {
+            background-color: #fff;
+            width: 28%;
+            padding: 30px 25px;
+            border-radius: 10px;
+        }
+
+        .text p {
+            font-size: 18px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+        }
+
+        .info {
+            padding: 25px 0;
+            border-top: 1px solid #666666;
+            border-bottom: 1px solid #666666;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 85px;
+            margin-right: 15px;
+        }
+
+        .name {
+            font-size: 24px;
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        em {
+            font-size: 16px;
+            font-weight: 300;
+            font-style: normal;
+            margin-left: 5px;
+        }
+
+        .more {
+            padding: 6px 20px;
+            margin-left: 100px;
+            background-color: #0052cc;
+            border-radius: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="textType03" class="text__wrap gmark section">
+        <h2>스터디</h2>
+        <p>스터디 수강생 후기</p>
+        <div class="text__inner container">
+            <article class="text">
+                <p>
+                    불과 3달전만해도 여러 원인들로 인해 <br>자존감이 밑바닥이였던 저에게 이 스터<br>디는 너무 소중한 시간이었어요. 매일 마<br>음속 으로 울고싶다를 외쳤던 저였는데
+                    <br>이제는 조금이나마
+                    이겨 낼 수 있을 것 같<br>네요. 다음에 선생님 만났을 때는 많이 발<br>전해 있는 제가 되었으면 좋겠네요...
+                </p>
+                <div class="info">
+                    <figure class="icon">
+                        <img src="img/logo03_01.png" alt="">
+                    </figure>
+                    <div class="text__info">
+                        <h3 class="name">수강중 <em>수강생</em></h3>
+                        <figure class="stra">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                        </figure>
+                    </div>
+                </div>
+                <span class="more"><a href="#">자세히 보기</a></span>
+            </article>
+            <article class="text">
+                <p>
+                    불과 3달전만해도 여러 원인들로 인해 <br>자존감이 밑바닥이였던 저에게 이 스터<br>디는 너무 소중한 시간이었어요. 매일 마<br>음속 으로 울고싶다를 외쳤던 저였는데
+                    <br>이제는 조금이나마
+                    이겨 낼 수 있을 것 같<br>네요. 다음에 선생님 만났을 때는 많이 발<br>전해 있는 제가 되었으면 좋겠네요...
+                </p>
+                <div class="info">
+                    <figure class="icon">
+                        <img src="img/logo03_02.png" alt="">
+                    </figure>
+                    <div class="text__info">
+                        <h3 class="name">수강하 <em>수강생</em></h3>
+                        <figure class="Star">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                        </figure>
+                    </div>
+                </div>
+                <span class="more"><a href="#">자세히 보기</a></span>
+            </article>
+            <article class="text">
+                <p>
+                    불과 3달전만해도 여러 원인들로 인해 <br>자존감이 밑바닥이였던 저에게 이 스터<br>디는 너무 소중한 시간이었어요. 매일 마<br>음속 으로 울고싶다를 외쳤던 저였는데
+                    <br>이제는 조금이나마
+                    이겨 낼 수 있을 것 같<br>네요. 다음에 선생님 만났을 때는 많이 발<br>전해 있는 제가 되었으면 좋겠네요...
+                </p>
+                <div class="info">
+                    <figure class="icon">
+                        <img src="img/logo03_03.png" alt="">
+                    </figure>
+                    <div class="text__info">
+                        <h3 class="name">수강상 <em>수강생</em></h3>
+                        <figure class="Star">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                            <img src="img/Star.png" alt="">
+                        </figure>
+                    </div>
+                </div>
+                <span class="more"><a href="#">자세히 보기</a></span>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

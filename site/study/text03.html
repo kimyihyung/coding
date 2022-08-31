@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기 : 카드유형03</title>
+    <link rel="stylesheet" href="../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../javascript/assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">SITE</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="sitecard01.html">사이트 만들기 : 카드유형01</a></li>
+                <li><a href="sitecard02.html">사이트 만들기 : 카드유형02</a></li>
+                <li class="active"><a href="sitecard03.html">사이트 만들기 : 카드유형03</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">사이트 만들기 : 텍스트유형03</h2>
+
+            <p class="t_desc2">
+                텍스트 유형을 만들어봅시다.
+            </p>
+
+            <hr>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/site/textType/textType03.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/blob/main/site/textType/textType03.html" target="blank">원본
+                    소스 보기</a>
+                <a href="https://kimyihyung.github.io/coding/site/textType/textType03.html" target="_blank">원본 사이트</a>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">Figma</h3>
+            <p class="t_desc2">코드를 진행하기에 앞서, 피그마를 이용해서 웹사이트를 디자인합니다.
+            </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FwUvtbZqHuvKFpB0uXVpCaw%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-(Y)%3Fnode-id%3D957%253A1949" allowfullscreen></iframe>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <br>
+            <div class="t_code">
+                <pre><code>/* fonts */
+@import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+.gmark {
+    font-family: GmarketSans;
+    font-weight: 500;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* common */
+.container {
+    width: 1160px;
+    margin: 0 auto;
+    min-width: 1160px;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+.section>h2 {
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.section>p {
+    font-size: 22px;
+    font-weight: 500;
+    color: #666;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+body {
+    background-color: #c7c9ff;
+}
+
+.text__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.text {
+    background-color: #fff;
+    width: 28%;
+    padding: 30px 25px;
+    border-radius: 10px;
+}
+
+.text p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
+
+.info {
+    padding: 25px 0;
+    border-top: 1px solid #666666;
+    border-bottom: 1px solid #666666;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 85px;
+    margin-right: 15px;
+}
+
+.name {
+    font-size: 24px;
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+em {
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 5px;
+}
+
+.more {
+    padding: 6px 20px;
+    margin-left: 100px;
+    background-color: #0052cc;
+    border-radius: 30px;
+    text-align: center;
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">HTML</h3>
+            <br>
+            <div class="t_code">
+                <pre><code>&lt;section id="textType03" class="text__wrap gmark section"&gt;
+    &lt;h2&gt;스터디&lt;/h2&gt;
+    &lt;p&gt;스터디 수강생 후기&lt;/p&gt;
+    &lt;div class="text__inner container"&gt;
+        &lt;article class="text"&gt;
+            &lt;p&gt;
+                불과 3달전만해도 여러 원인들로 인해 &lt;br&gt;자존감이 밑바닥이였던 저에게 이 스터&lt;br&gt;디는 너무 소중한 시간이었어요. 매일 마&lt;br&gt;음속 으로 울고싶다를 외쳤던 저였는데
+                &lt;br&gt;이제는 조금이나마
+                이겨 낼 수 있을 것 같&lt;br&gt;네요. 다음에 선생님 만났을 때는 많이 발&lt;br&gt;전해 있는 제가 되었으면 좋겠네요...
+            &lt;/p&gt;
+            &lt;div class="info"&gt;
+                &lt;figure class="icon"&gt;
+                    &lt;img src="img/logo03_01.png" alt=""&gt;
+                &lt;/figure&gt;
+                &lt;div class="text__info"&gt;
+                    &lt;h3 class="name"&gt;수강중 &lt;em&gt;수강생&lt;/em&gt;&lt;/h3&gt;
+                    &lt;figure class="stra"&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                    &lt;/figure&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;span class="more"&gt;&lt;a href="#"&gt;자세히 보기&lt;/a&gt;&lt;/span&gt;
+        &lt;/article&gt;
+        &lt;article class="text"&gt;
+            &lt;p&gt;
+                불과 3달전만해도 여러 원인들로 인해 &lt;br&gt;자존감이 밑바닥이였던 저에게 이 스터&lt;br&gt;디는 너무 소중한 시간이었어요. 매일 마&lt;br&gt;음속 으로 울고싶다를 외쳤던 저였는데
+                &lt;br&gt;이제는 조금이나마
+                이겨 낼 수 있을 것 같&lt;br&gt;네요. 다음에 선생님 만났을 때는 많이 발&lt;br&gt;전해 있는 제가 되었으면 좋겠네요...
+            &lt;/p&gt;
+            &lt;div class="info"&gt;
+                &lt;figure class="icon"&gt;
+                    &lt;img src="img/logo03_02.png" alt=""&gt;
+                &lt;/figure&gt;
+                &lt;div class="text__info"&gt;
+                    &lt;h3 class="name"&gt;수강하 &lt;em&gt;수강생&lt;/em&gt;&lt;/h3&gt;
+                    &lt;figure class="Star"&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                    &lt;/figure&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;span class="more"&gt;&lt;a href="#"&gt;자세히 보기&lt;/a&gt;&lt;/span&gt;
+        &lt;/article&gt;
+        &lt;article class="text"&gt;
+            &lt;p&gt;
+                불과 3달전만해도 여러 원인들로 인해 &lt;br&gt;자존감이 밑바닥이였던 저에게 이 스터&lt;br&gt;디는 너무 소중한 시간이었어요. 매일 마&lt;br&gt;음속 으로 울고싶다를 외쳤던 저였는데
+                &lt;br&gt;이제는 조금이나마
+                이겨 낼 수 있을 것 같&lt;br&gt;네요. 다음에 선생님 만났을 때는 많이 발&lt;br&gt;전해 있는 제가 되었으면 좋겠네요...
+            &lt;/p&gt;
+            &lt;div class="info"&gt;
+                &lt;figure class="icon"&gt;
+                    &lt;img src="img/logo03_03.png" alt=""&gt;
+                &lt;/figure&gt;
+                &lt;div class="text__info"&gt;
+                    &lt;h3 class="name"&gt;수강상 &lt;em&gt;수강생&lt;/em&gt;&lt;/h3&gt;
+                    &lt;figure class="Star"&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                        &lt;img src="img/Star.png" alt=""&gt;
+                    &lt;/figure&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;span class="more"&gt;&lt;a href="#"&gt;자세히 보기&lt;/a&gt;&lt;/span&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../../javascript/assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
