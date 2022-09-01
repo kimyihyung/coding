@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 : 이벤트 객체</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li><a href="javascript02.html">데이터 불러오기</a></li>
+                <li><a href="javascript03.html">데이터 실행하기</a></li>
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
+                <li class="active"><a href="javascript12.html">제이쿼리</a></li>
+            </ul>
+            <ul class="effect">
+                <li><a href="effect/searchEffect.html">검색 효과</a></li>
+                <li><a href="effect/quizEffect.html">퀴즈 효과</a></li>
+                <li><a href="effect/dataEffect.html">데이터 효과</a></li>
+                <li><a href="effect/mouseEffect.html">마우스 효과</a></li>
+                <li><a href="effect/sliderEffect.html">슬라이드 효과</a></li>
+                <li><a href="effect/parallaxEffect.html">패랠랙스 효과</a></li>
+                <li><a href="effect/gameEffect.html">게임 효과</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="container">
+            <div class="main_menu">
+                <ul>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("click") : 클릭했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("scroll") : 스크롤했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("resize") : 브라우저 사이즈 변경 됐을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("selectstart") : 텍스트 선택을 시작 했을 때</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousedown") : 마우스 버튼을 눌렀을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mouseup") : 마우스 버튼을 떼는 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("mousemove") : 마우스 움직이는 경우</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("drag") : 드래그 중인 경우</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragstart") : 드래그 시작했을 때</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("dragend") : 드래그 끝났을 때</a></li>
+                    <br>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keydown") : 키 눌렀을 때(한번만 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keypress") : 키 눌렀을 때(누르고 있으면 계속 실행)</a></li>
+                    <li><a href="#">01. 이벤트 메서드 : addEventListener("keyup") : 키 누르고 땠을 때</a></li>
+
+                </ul>
+
+
+            </div>
+            <div class="main_sample">
+                <div class="sample">
+                    <h3></h3>
+                    <p></p>
+                    <div class="table">
+                        <table>
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>종류</th>
+                                    <th>제이쿼리</th>
+                                    <th>자바스크립트</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="18">SELECTORS</td>
+                                    <td rowspan="5">기본 선택자</td>
+                                    <td>$("*")</td>
+                                    <td>document.querySelector("*")</td>
+                                </tr>
+                                <tr>
+                                    <td>$(".class")</td>
+                                    <td>document.querySelector(".class")</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div")</td>
+                                    <td>document.querySelector("div")</td>
+                                </tr>
+                                <tr>
+                                    <td>$("#id")</td>
+                                    <td>document.querySelector("#id")</td>
+                                </tr>
+                                <tr>
+                                    <td>$("#id .class")</td>
+                                    <td>document.querySelector("#id .class")</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">계층 선택자</td>
+                                    <td>$("div p")</td>
+                                    <td>document.querySelector("div p")</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div > p")</td>
+                                    <td>document.querySelector("div > p")</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div + p")</td>
+                                    <td>document.querySelector("div + p")</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div ~ p")</td>
+                                    <td>document.querySelector("div ~ p")</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="9">속성 선택자</td>
+                                    <td>$("div[class]")</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class='name'][id='name']")</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class='name']")</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class!='name']")</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class~='name']")</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class*='name']")</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class|='name']")</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class^='name']")</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td>$("div[class$='name']")</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                <!-- sample01 -->
+            </div>
+
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script src="assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>
