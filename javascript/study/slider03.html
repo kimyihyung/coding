@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이드 이펙트 - 좌로 움직이기(연속적으로)</h2>
+            <p class="t_desc2">
+                연속적으로 이미지가 좌로 변동되는 것을 만들어 보았습니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/sliderEffect03.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/blob/main/javascript/effect/sliderEffect03.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/sliderEffect03.html">원본 사이트</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">html</h3>
+            <p class="t_desc">
+            </p>
+                <div class="t_code">
+                    <pre><code>&lt;section id="sliderType03"&gt;
+    &lt;div class="slider__wrap"&gt;
+        &lt;div class="slider__img"&gt;
+            &lt;div class="slider__inner"&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg01-min.jpg" alt="이미지1"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg02-min.jpg" alt="이미지2"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg03-min.jpg" alt="이미지3"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg04-min.jpg" alt="이미지4"&gt;&lt;/div&gt;
+                &lt;div class="slider"&gt;&lt;img src="../assets/img/effect_bg05-min.jpg" alt="이미지5"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+                </div>
+
+            <h3 class="t_tit2">css</h3>
+            <p class="t_desc">
+            </p>
+                <div class="t_code">
+                    <pre><code>/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider__img {
+    /* 이미지 보이는 영역 */
+    position: relative;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.slider__inner {
+    /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+    display: flex;
+    flex-wrap: wrap;
+    width: 4800px;
+    /* 총 이미지 6개 */
+    height: 450px;
+    position: relative;
+}
+
+.slider {
+    /* 개별적인 이미지 */
+    position: relative;
+    width: 800px;
+    height: 450px;
+}
+
+.slider::before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.slider:nth-child(1)::before {
+    content: '이미지1';
+}
+
+.slider:nth-child(2)::before {
+    content: '이미지2';
+}
+
+.slider:nth-child(3)::before {
+    content: '이미지3';
+}
+
+.slider:nth-child(4)::before {
+    content: '이미지4';
+}
+
+.slider:nth-child(5)::before {
+    content: '이미지5';
+}
+
+.slider:nth-child(6)::before {
+    content: '이미지1';
+}
+
+.slider:nth-child(1) {
+    z-index: 5;
+}
+
+.slider:nth-child(2) {
+    z-index: 4;
+}
+
+.slider:nth-child(3) {
+    z-index: 3;
+}
+
+.slider:nth-child(4) {
+    z-index: 2;
+}
+
+.slider:nth-child(5) {
+    z-index: 1;
+}
+
+@media (max-width: 800px) {
+    .slider__img {
+        width: 400px;
+        height: 225px;
+    }
+}
+</code></pre>
+                </div>
+
+            <h3 class="t_tit2">js</h3>
+            <p class="t_desc">
+            </p>
+                <div class="t_code">
+                    <pre><code>const sliderWrap = document.querySelector(".slider__wrap")
+const sliderImg = document.querySelector(".slider__img")            //보여지는 영역
+const sliderInner = document.querySelector(".slider__inner")        //움직이는 영역
+const slider = document.querySelectorAll(".slider")                 //각각 이미지
+
+let currentIndex = 0;                                               //현재 보이는 이미지
+let sliderCount = slider.length;                                    //이미지 갯수
+let silderWidth = sliderImg.offsetwidth;                            //이미지 가로값
+let sliderClone = sliderInner.firstElementChild.cloneNode(true);    //첫번째 이미지 복사
+sliderInner.appendChild(sliderClone);                               //첫번째 이미지를 마지막에 넣어줌
+
+function sliderEffect(){
+    currentIndex++;
+    sliderInner.style.transition = "all 0.6s";
+    sliderInner.style.transform = "translateX(-"+ silderWidth * currentIndex +"px)";
+
+    // sliderInner.style.transform = "translateX(-800px)";      800*1
+    // sliderInner.style.transform = "translateX(-1600px)";     800*2
+    // sliderInner.style.transform = "translateX(-2400px)";     800*3
+    // sliderInner.style.transform = "translateX(-3200px)";     800*4
+    // sliderInner.style.transform = "translateX(-4000px)";     800*5
+    // sliderInner.style.transform = "translateX(-4800px)";     800*6
+
+    //마지막 사진에 위치 했을 때
+    if(currentIndex == sliderCount){
+        setTimeout(() => {
+            sliderInner.style.transition = "0s";
+            sliderInner.style.transform = "translateX(0px)";
+        }, 700);
+
+        currentIndex = 0;
+    }
+
+}
+setInterval(sliderEffect, 2000);
+</code></pre>
+                </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">searchEffect01</h2>
+            <div class="t_desc2">
+                <i>indexOf()</i>를 이용하여 키워드 검색하기.
+            </div>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/searchEffect01.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/javascript/effect/searchEffect01.html" target="blank">원본
+                    소스 보기</a>
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/searchEffect01.html" target="_blank">원본
+                    사이트</a>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc">데이터 구분을 위해 <i>data-name</i>을 활용합니다.</p>
+            <div class="t_code">
+                <pre><code class="language-html">&lt;main id="main"&gt;
+&lt;div class="search__wrap"&gt;
+    &lt;span&gt;indexOf()를 이용하여 검색하기&lt;/span&gt;
+    &lt;h1&gt;HTML 태그 검색하기&lt;/h1&gt;
+    &lt;div class="search__box"&gt;
+        &lt;label for="search"&gt;검색하기&lt;/label&gt;
+        &lt;input type="text" id="search" placeholder="HTML 태그를 입력해주세요!"&gt;
+    &lt;/div&gt;
+    &lt;div class="search__list"&gt;
+        &lt;div class="html"&gt;
+            &lt;ul&gt;
+                &lt;li data-name="a"&gt;&lt;strong&gt;a&lt;/strong&gt; : a 태그는 다른 페이지 이동을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="abbr"&gt;&lt;strong&gt;abbr&lt;/strong&gt; : abbr 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li&gt;
+                &lt;li data-name="acronym"&gt;&lt;strong&gt;acronym&lt;/strong&gt; : acronym 태그는 줄임말이나 머리글자를 표현하는데 사용합니다.&lt;/li&gt;
+                &lt;li data-name="address"&gt;&lt;strong&gt;address&lt;/strong&gt; : address 태그는 웹 페이지의 연락처 정보를 설정합니다&lt;/li&gt;
+                &lt;li data-name="applet"&gt;&lt;strong&gt;applet&lt;/strong&gt; : applet 태그는 애플랫 요소를 설정합니다. 현재는 사용하지 않습니다.&lt;/li&gt;
+                &lt;li data-name="area"&gt;&lt;strong&gt;area&lt;/strong&gt; : area 태그는 이미지 맵의 영역을 정의합니다. &lt;/li&gt;
+                &lt;li data-name="article"&gt;&lt;strong&gt;article&lt;/strong&gt; : article 태그는 사이트의 독립적인 컨텐츠 섹션을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="aside"&gt;&lt;strong&gt;aside&lt;/strong&gt; : aside 태그는 주요 콘텐츠의 보조적 컨텐츠 섹션을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="audio"&gt;&lt;strong&gt;audio&lt;/strong&gt; : audio 태그는 오디오 파일을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="b"&gt;&lt;strong&gt;b&lt;/strong&gt; : b 태그는 다른 텍스트와 구별 할 때 설정합니다.&lt;/li&gt;
+                &lt;li data-name="base"&gt;&lt;strong&gt;base&lt;/strong&gt; : base 태그는 모든 문서의 기본이 되는 URL을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="basefont"&gt;&lt;strong&gt;basefont&lt;/strong&gt; : basefont 태그는 문서의 기본 폰트, 사이즈, 종류를 설정합니다.
+                &lt;/li&gt;
+                &lt;li data-name="bdi"&gt;&lt;strong&gt;bdi&lt;/strong&gt; : bdi 태그는 텍스트의 출력 방향 영역을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="bdo"&gt;&lt;strong&gt;bdo&lt;/strong&gt; : bdo 태그는 텍스트의 방향을 설정합니다.&lt;/li&gt;
+                &lt;li data-name="big"&gt;&lt;strong&gt;big&lt;/strong&gt; : big 태그는 텍스트의 크기를 크게 설정합니다.&lt;/li&gt;
+                &lt;li data-name="blockquote"&gt;&lt;strong&gt;blockquote&lt;/strong&gt; : blockquote 태그는 긴 문장의 인용문을 설정합니다.&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">JAVASCRIPT</h3>
+            <p class="t_desc">
+                indexOf()는 문자열에서 특정 문자의 위치를 찾아 숫자를 반환하는 메서드입니다.<br>
+                사용자가 원하는 값을 입력시에 출력하는 값이 아닌 경우 hide로 숨기고.<br>
+                0으로 false가 되어, 출력되야하는 값만 hide를 지워주어 원하는 키워드를 출력할 수 있습니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">//선택자
+const searchBox = document.querySelector(".search__box input");               //검색 영역
+const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
+
+searchBox.addEventListener("keyup", () => {
+    const searchWord = searchBox.value;     //사용자가 입력한 키워드
+
+    searchList.forEach(el => {
+        const cssname = el.dataset.name;
+
+        if (cssname.indexOf(searchWord)) {
+            el.classList.add("hide")        //0이 되면서 false가 되고 나머지는 보이게
+        } else {
+            el.classList.remove("hide")     //indexOf()값이 0이되는 값만 hide를 지워줍니다.
+        }
+    });
+});
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+                <pre><code class="language-css">/* 웹폰트 */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+/* 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'NexonLv1Gothic';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* 목록 초기화 */
+li {
+    list-style: none;
+}
+
+/* 제목 초기화 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 모든 페이지 레이아웃 */
+body {
+    padding: 40px;
+}
+
+#header {
+    border-bottom: 1px dashed #dcdcdc;
+    padding-bottom: 40px;
+}
+
+#main {
+    padding: 40px 0;
+    border-bottom: 1px dashed #dcdcdc;
+}
+
+#footer {
+    padding: 40px 0;
+    text-align: center;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/* 헤더 영역 */
+#header h1 a {
+    font-size: 60px;
+    font-weight: 700px;
+}
+
+.header_nav ul li {
+    display: inline;
+}
+
+.header_nav ul li.active a {
+    background-color: #000;
+    color: #fff;
+}
+
+.header_nav ul li a {
+    border: 1px solid #222;
+    padding: 8px 25px;
+    display: inline-block;
+    margin-bottom: 7px;
+}
+
+.header_nav ul li a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.header_nav .study {
+    margin-top: 10px;
+}
+
+.header_nav .study li a {
+    border-radius: 50px;
+    padding: 6px 30px;
+    background-color: #000;
+    color: #fff;
+}
+.header_nav .effect {
+    margin-top: 10px;
+}
+.header_nav .effect li a {
+    border-radius: 40px;
+}
+
+/* 메인 샘플 */
+.main_sample {
+    margin-top: 40px;
+    border-top: 1px dashed #dcdcdc;
+    padding-top: 40px;
+}
+
+.main_sample h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.main_sample p {
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.main_sample .result {
+    margin-bottom: 80px;
+}
+
+/* sample */
+.sample {
+    margin-bottom: 80px;
+}
+.sample .table {
+    margin-bottom: 10px;
+}
+.sample .table table {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    text-align: center;
+}
+.sample .table table tr th {
+    font-weight: normal;
+    background-color: #f5f5f5;
+    padding: 3px;
+}
+.sample .table table tr td {
+    border: 1px solid #e6e6e6;
+    padding: 6px;
+}
+.sample .table table tr td[class*="_P"] {
+    color: #fff;
+}
+.sample .table table tr td[class*="_P"]:hover {
+    color: #000;
+    cursor: help;
+}
+.sample .box {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+@media (max-width: 800px) {
+    .sample .table {
+        overflow-x: scroll;
+    }
+    .sample .table table {
+        width: 780px;
+    }
+    .sample .table table tr td[class*="_P"] {
+        color: #000;
+    }
+}
+
+/* 티스토리용 문서 */
+/* .document{
+    word-break: keep-all;
+} */
+
+.document i {
+    font-style: normal;
+    position: relative;
+}
+
+.document i::before {
+    content: '';
+    background-color: #0242f136;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+}
+
+.document hr {
+    border: 0;
+    border-top: 1px dashed #dcdcdc;
+    margin-top: 44px;
+}
+
+.document .t_tit {
+    font-size: 30px;
+    line-height: 1.6;
+    margin-bottom: 5px !important;
+    font-weight: 400;
+}
+
+.document .t_tit2 {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 50px;
+    margin-bottom: 5px !important;
+    font-weight: 400;
+}
+
+.document .t_tit3 {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 5px !important;
+    font-weight: 400;
+}
+
+.document .t_desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    margin-bottom: 10px !important;
+}
+
+.document .t_desc2 {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 10px !important;
+    padding: 15px 20px !important;
+    border-left: 4px solid #0243f1;
+    background-color: #f9f9f9;
+}
+
+.document .t_box {
+    padding: 20px !important;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    color: #666;
+    border-radius: 5px;
+}
+
+.document .t_table {
+    border: 1px solid #dcdcdc;
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.document .t_table tr th {
+    background-color: #f9f9f9;
+}
+.document .t_table tr th,
+.document .t_table tr td {
+    border: 1px solid #dcdcdc;
+    font-weight: normal;
+    padding: 8px 10px;
+    color: #666;
+}
+.document .t_table .ce {
+    text-align: center;
+}
+.document .t_iframe {
+    position: relative;
+    padding-top: 56%;
+    width: 100%;
+    height: 0;
+}
+.document .t_iframe iframe {
+    border: 1px solid rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.document .t_link a {
+    display: block;
+    width: 200px;
+    background-color: #f5f5f5;
+    margin: 40px auto;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    transition: all 0.3s;
+}
+.document .t_link a:hover {
+    background: #d6d6d6;
+}
+
+
+
+@media (max-width: 800px) {
+    body {
+        padding: 20px;
+    }
+}
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

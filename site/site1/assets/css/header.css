@@ -39,12 +39,12 @@
 .header__menu li a {
     padding: 13px 30px;
     margin: 0 5px;
+    transition: background-color 0.3s;
 }
 
 .header__menu li a:hover {
     background-color: #F1F1F1;
     border-radius: 5px;
-    transition: background-color 0.3s;
 }
 
 .header__member {
