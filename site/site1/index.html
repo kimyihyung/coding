@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이트 만들기1</title>
+
+    <!-- SEO -->
+    <meta name="author" content="YH">
+    <meta name="description" content="사이트 만들기 튜토리얼입니다.">
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, YH">
+    <meta name="robots" content="all">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+
+    <!-- CSS(섹션별) -->
+    <link rel="stylesheet" href="assets/css/card.css">
+    <link rel="stylesheet" href="assets/css/img.css">
+    <link rel="stylesheet" href="assets/css/text.css">
+
+</head>
+
+<body>
+    <div id="skip">
+        <a href="#">헤더 영역 바로가기</a>
+        <a href="#">슬라이드 영역 바로가기</a>
+        <a href="#">이미지 영역 바로가기</a>
+        <a href="#">이미지/텍스트 영역 바로가지</a>
+        <a href="#">카드 영역 바로가기</a>
+        <a href="#">배터 영역 바로가기</a>
+        <a href="#">텍스트 영역 바로가기</a>
+        <a href="#">푸터 영역 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <header id="headerType">
+        <h1>web site</h1>
+    </header>
+    <!-- //headerType -->
+
+    <main id="mainType">
+        <section id="sliderType" class="slider__wrap">
+            <h2>슬라이드 영역</h2>
+        </section>
+        <!-- //sliderType -->
+
+        <section id="imageType" class="image__wrap nexon section">
+            <h2>계절</h2>
+            <p>계절에 대해 알아봅시다.</p>
+            <div class="image__inner container">
+                <article class="image img1">
+                    <h3 class="image__title">계절</h3>
+                    <p class="image__desc">대표적인 계절로는 여름과 겨울이 있고, 가장 체감을 많이 하는 계절입니다.<br>
+                        두가지의 계절을 상징하는 비와 눈의 이미지입니다.</p>
+                    <a class="image__btn" href="/" title="자세히 보기">자세히 보기</a>
+                </article>
+                <article class="image img2">
+                    <h3 class="image__title">계절</h3>
+                    <p class="image__desc">대표적인 계절로는 여름과 겨울이 있고, 가장 체감을 많이 하는 계절입니다.<br>
+                        두가지의 계절을 상징하는 비와 눈의 이미지입니다.</p>
+                    <a class="image__btn yellow" href="/" title="자세히 보기">자세히 보기</a>
+                </article>
+            </div>
+        </section>
+        <!-- //imageType -->
+
+        <section id="imgTextType" class="imgText__wrap">
+            <h2>이미지/텍스트 영역</h2>
+        </section>
+        <!-- //imgTextType -->
+
+        <section id="cardType" class="card__wrap nexon section">
+            <h2>계절</h2>
+            <p>계절에 대해 알아봅시다.</p>
+            <div class="card__inner container">
+                <article class="card">
+                    <!-- 
+                    //이미지를 사용할 때 figure 태그를 사용하는 것이 웹표준 준수.
+                    alt는 이미지 없을 때 대체하는 것, 웹표준 준수
+                -->
+                    <figure class="card__header">
+                        <img src="assets/img/card_bg01_01.jpg" alt="여름">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">여름</h3>
+                        <p class="desc">일반적으로 3, 4, 5월을 봄,<br>
+                            6, 7, 8월을 여름,<br>
+                            9, 10, 11월을 가을,<br>
+                            12, 1, 2월을 겨울이라고 한다.<br>
+                            글씨추가ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                        </p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span aria-hidden="true">
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                        fill="black" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure>
+                        <img src="assets/img/card_bg01_02.jpg" alt="봄/가을">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">봄/가을</h3>
+                        <p class="desc">일반적으로 3, 4, 5월을 봄,<br>
+                            6, 7, 8월을 여름,<br>
+                            9, 10, 11월을 가을,<br>
+                            12, 1, 2월을 겨울이라고 한다.<br>계절을 구분하는 방법으로는
+                        </p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span aria-hidden="true">
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                        fill="black" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+                <article class="card">
+                    <figure>
+                        <img src="assets/img/card_bg01_03.jpg" alt="겨울">
+                    </figure>
+                    <div class="card__body">
+                        <h3 class="tit">겨울</h3>
+                        <p class="desc">일반적으로 3, 4, 5월을 봄,<br>
+                            6, 7, 8월을 여름,<br>
+                            9, 10, 11월을 가을,<br>
+                            12, 1, 2월을 겨울이라고 한다.<br>
+                            글씨추가ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ
+                        </p>
+                        <a class="btn" href="/">
+                            더 자세히 보기
+                            <span aria-hidden="true">
+                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                                        fill="black" />
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- //cardType -->
+
+        <section id="banneTyper" class="banner__wrap">
+            <h2>배터 영역</h2>
+        </section>
+        <!-- //bannerType -->
+
+        <section id="textType" class="text__wrap nexon section">
+            <span>텍스트 유형01</span>
+            <h2 class="mb70">자바스크립트</h2>
+            <div class="text__inner container">
+                <div class="text t1">
+                    <h3 class="text__title">자바스크립트</h3>
+                    <p class="text__desc">
+                        객체 기반의 스크립트 프로그래밍 언어.<br>
+                        웹 브라우저 내에서 주로 사용.<br>
+                        다른 응용 프로그램의 내장 객체에도 접근.
+                    </p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t2">
+                    <h3 class="text__title">자바스크립트</h3>
+                    <p class="text__desc">
+                        객체 기반의 스크립트 프로그래밍 언어.<br>
+                        웹 브라우저 내에서 주로 사용.<br>
+                        다른 응용 프로그램의 내장 객체에도 접근.
+                    </p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t3">
+                    <h3 class="text__title">자바스크립트</h3>
+                    <p class="text__desc">
+                        객체 기반의 스크립트 프로그래밍 언어.<br>
+                        웹 브라우저 내에서 주로 사용.<br>
+                        다른 응용 프로그램의 내장 객체에도 접근.
+                    </p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t4">
+                    <h3 class="text__title">자바스크립트</h3>
+                    <p class="text__desc">
+                        객체 기반의 스크립트 프로그래밍 언어.<br>
+                        웹 브라우저 내에서 주로 사용.<br>
+                        다른 응용 프로그램의 내장 객체에도 접근.
+                    </p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t5">
+                    <h3 class="text__title">자바스크립트</h3>
+                    <p class="text__desc">
+                        객체 기반의 스크립트 프로그래밍 언어.<br>
+                        웹 브라우저 내에서 주로 사용.<br>
+                        다른 응용 프로그램의 내장 객체에도 접근.
+                    </p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+                <div class="text t6">
+                    <h3 class="text__title">자바스크립트</h3>
+                    <p class="text__desc">
+                        객체 기반의 스크립트 프로그래밍 언어.<br>
+                        웹 브라우저 내에서 주로 사용.<br>
+                        다른 응용 프로그램의 내장 객체에도 접근.
+                    </p>
+                    <a class="text_btn" href="/">더보기</a>
+                </div>
+            </div>
+        </section>
+        <!-- //textType -->
+    </main>
+    <!-- //mainType -->
+
+    <footer id="footerType">
+        <h2>푸터 영역</h2>
+    </footer>
+    <!-- //footerType -->
+</body>
+
+</html>
