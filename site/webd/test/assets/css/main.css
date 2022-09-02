@@ -1,0 +1,28 @@
+.main__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main {
+    width: 49%;
+    height: 370px;
+    color: #fff;
+    padding: 200px 30px 30px 30px;
+    box-sizing: border-box;
+}
+.main_top {
+    width: 1160px;
+    margin-bottom: 50px;
+}
+.main_new {
+    background: #000;
+}
+.main_bom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main_ads {
+    width: 980px;
+    height: 435px;
+}

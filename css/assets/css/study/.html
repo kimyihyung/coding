@@ -1,71 +1,83 @@
+*  {
+    box-sizing: border-box;
+}
 body {
-    height: 100vh;
-    background-image: linear-gradient(to top, blue, red);
+    background: linear-gradient(to top, #E38B29 0%, #FDEEDC 100%);
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+    padding:0;
+
+.wrapper{
+    position:absolute;
+    animation: x 1s ease-in-out alternate infinite 0s both;
+}
+.wrapper:nth-of-type(2){
+    animation-delay: 0.1s;
+}
+.wrapper:nth-of-type(3){
+    animation-delay: 0.2s;
+}
+.wrapper:nth-of-type(4){
+    animation-delay: 0.3s;
+}
+.wrapper:nth-of-type(5){
+    animation-delay: 0.4s;
 }
   
-.box {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+.wrapper>div{
+    width:50px;
+    height:50px;
+    background-color: #fff;
+    border-radius:100%;
+    margin:40px;
+    animation: y 1s linear infinite 0s both;
+}
+.wrapper:nth-of-type(2)>div{
+    animation-delay: 0.1s;
+    height: 40px;
+    width: 40px;
+    opacity:0.8;
+}
+.wrapper:nth-of-type(3)>div{
+    animation-delay: 0.2s;
+    height: 30px;
+    width: 30px;
+    opacity:0.6;
+}
+.wrapper:nth-of-type(4)>div{
+    animation-delay: 0.3s;
+    height: 20px;
+    width: 20px;
+    opacity:0.4;
+}
+.wrapper:nth-of-type(5)>div{
+    animation-delay: 0.4s;
+    height: 10px;
+    width: 10px;
+    opacity:0.2;
 }
   
-.box::before {
-    content: '';
-    width: 50px;
-    height: 5px;
-    background: #000;
-    position: absolute;
-    top: 58px;
-    left: 0;
-    border-radius: 50%;
-    opacity: 0.2;
-    animation: shadow 0.6s linear infinite;
-}
-  
-@keyframes shadow {
+@keyframes x {
     0% {
-      transform: scale(1, 1)
-    }
-    50% {
-      transform: scale(1.2, 1)
+      transform:translatex(-100px)
     }
     100% {
-      transform: scale(1, 1)
+      transform:translatex(100px)
     }
 }
   
-.box::after {
-    content: '';
-    background: green;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 3px;
-    animation: load 0.6s linear infinite;
-}
-  
-@keyframes load {
-    17% {
-      border-bottom-right-radius: 3px;
+@keyframes y {
+    25%{
+      transform:translatey(-50px);
     }
-    25% {
-      transform: translatey(9px) rotate(22.5deg);
+    0%,50%,100%{
+      transform:translatey(0);
     }
-    50% {
-      transform: translatey(18px) scale(1, 0.9) rotate(45deg);
-      border-bottom-right-radius: 40px;
-    }
-    75% {
-      transform: translatey(9px) rotate(67.5deg);
-    }
-    100% {
-      transform: translatey(0px) rotate(90deg);
+    75%{
+      transform:translatey(50px);
     }
 }

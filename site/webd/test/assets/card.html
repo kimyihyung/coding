@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형02</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/gmarket/GmarketSans.css');
+
+        .gmark {
+            font-family: GmarketSans;
+            font-weight: 500;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 24px;
+            line-height: 1;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .card__inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card__inner .card {
+            width: 24%;
+            position: relative;
+        }
+
+        .card__inner .card:first-child {
+            margin-bottom: 50px;
+        }
+
+        .card__inner .card img {
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .card__inner .card .tit {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 10px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
+        }
+
+        .card__inner .card .desc {
+            font-size: 18px;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.4;
+            overflow: hidden;
+        }
+
+        .card__inner .card .more {
+            width: 24px;
+            height: 24px;
+            background-image: url(img/arrow.svg);
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 230px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="cardType" class="card__wrap gmark section">
+        <div class="card__inner container">
+            <article class="card">
+                <h2>특별한 경험</h2>
+                <img src="../assets/image/img-1.jpg" alt="롯데월드">
+                <h3 class="tit">연간회원안내</h3>
+            </article>
+
+            <article class="card">
+                <img src="../assets/image/img-2.jpg" alt="롯데월드">
+                <h3 class="tit">프리미엄투어</h3>
+            </article>
+
+            <article class="card">
+                <img src="../assets/image/img-3.jpg" alt="롯데월드">
+                <h3 class="tit">공연참여 프로그램</h3>
+            </article>
+
+            <article class="card">
+                <img src="../assets/image/img-4.jpg" alt="롯데월드">
+                <h3 class="tit">단체프로그램</h3>
+            </article>
+        </div>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트01</title>
+
+    <link rel="stylesheet" href="../assets/css/silder.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+</head>
+
+<style>
+    /* slider */
+    .slider__wrap {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .slider__img {
+        position: relative;
+        width: 800px;
+        height: 450px;
+    }
+    .slider {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 5px 10px;
+    }
+    .slider:nth-child(1)::before
+    .slider:nth-child(2)::before
+    .slider:nth-child(1) {z-index: 2;}
+    .slider:nth-child(2) {z-index: 1;}
+
+    @media (max-width: 800px) {
+        .slider__img {
+            width: 400px;
+            height: 225px;
+        }
+    }
+</style>
+
+    <main id="main">
+        <section id="sliderType01">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider"><img src="../assets/image/slider.jpg"></div>
+                    <div class="slider"><img src="../assets/image/slider_1.jpg"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- main -->
+
+
+    <script src="../assets/js/highlight.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script>
+        const sliderWrap =document.querySelector(".slider__wrap");
+        const sliderImg =sliderWrap.querySelector(".slider__img");
+        const slider = sliderWrap.querySelectorAll(".slider");
+
+        let currentIndex = 0;             
+        let sliderCount = slider.length;  
+
+        setInterval(() => {
+            let nextIndex = (currentIndex + 1) % sliderCount;
+            // 1, 2, 3, 4, 5, 6, 7, 8, 9...
+            // 1, 2, 3, 4, 0, 1, 2, 3, 4, 0...
+
+            slider[currentIndex].style.opacity = "0";  
+            slider[nextIndex].style.opacity = "1";  
+
+            currentIndex = nextIndex;
+
+        },3000)
+
+    </script>
+</body>
+
+</html>

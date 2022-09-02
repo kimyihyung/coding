@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+            min-width: 1160px;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section>h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section>p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .main__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main {
+            width: 49%;
+            height: 370px;
+            color: #fff;
+            padding: 200px 30px 30px 30px;
+            box-sizing: border-box;
+        }
+
+        .main_new {
+            background: #000;
+        }
+
+        .main_bom {
+            float: left;
+            justify-content: space-between;
+        }
+
+        .main_ads {
+            width: 980px;
+            height: 435px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main__inner container">
+        <article class="main">
+            <div class="main_bom">
+                <div class="main_new">
+                    <div class="main_t">
+                        <h2>롯데월드 소식 | <em>뉴스∙공지</em></h2>
+                        <p>더보기</p><img src="../assets/image/icon.jpg" alt="icon">
+                    </div>
+                    <div class="main_b1">
+                        <ul>
+                            <li>그럴싸진과 미라클</li>
+                            <li>드림스테이지'힘내 소중한 너'</li>
+                            <li>'힘내 소중한 너'음원 발매</li>
+                            <li>이용 요금 조정 안내</li>
+                        </ul>
+                    </div>
+                    <div class="main_b2">
+                        <ul>
+                            <li>2018.11.19</li>
+                            <li>2018.11.20</li>
+                            <li>2018.11.13</li>
+                            <li>2018.11.12</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="main_ads">
+                    <img src="../assets/image/ads.jpg" alt="">
+                </div>
+            </div>
+        </article>
+</body>
+
+</html>

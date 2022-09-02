@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+
+    <link rel="stylesheet" href="../../../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../../../javascript/assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href=""></a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="basic.html">기본 문법</a></li>
+                <li><a href="media.html">미디어쿼리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <div class="main_refer">
+        <div class="document">
+            <h2 class="t_tit">잔상 공</h2>
+            <p class="t_desc">
+                잔상이 반복적으로 생기는, 움직이는 공 애니메이션을 만들어 봅시다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                공을 5개 만들어 봅시다.
+            </p>
+
+            <div class="t_code">
+                <pre><code class="language-html">&lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="wrapper"&gt;
+    &lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                linear-gradient : 적용된 HTML 요소에 선형으로 그래디언트(gradient) 효과를 적용시켜 줍니다.<br>
+                ease-in-out 빠르게 시작하여 점점 천천히 동작합니다.<br>
+                alternate : 순방향으로 애니메이션을 시작해 역방향과 순방향으로 번갈아 애니메이션을 진행.<br>
+                keyframes을 만든 뒤, transform으로 움직임을 부여합니다.
+            </p>
+
+            <div class="t_code">
+<pre><code class="language-css">*  {
+    box-sizing: border-box;
+}
+body {
+    background: linear-gradient(to top, #E38B29 0%, #FDEEDC 100%);
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+    padding:0;
+
+.wrapper{
+    position:absolute;
+    animation: x 1s ease-in-out alternate infinite 0s both;
+}
+.wrapper:nth-of-type(2){
+    animation-delay: 0.1s;
+}
+.wrapper:nth-of-type(3){
+    animation-delay: 0.2s;
+}
+.wrapper:nth-of-type(4){
+    animation-delay: 0.3s;
+}
+.wrapper:nth-of-type(5){
+    animation-delay: 0.4s;
+}
+  
+.wrapper>div{
+    width:50px;
+    height:50px;
+    background-color: #fff;
+    border-radius:100%;
+    margin:40px;
+    animation: y 1s linear infinite 0s both;
+}
+.wrapper:nth-of-type(2)>div{
+    animation-delay: 0.1s;
+    height: 40px;
+    width: 40px;
+    opacity:0.8;
+}
+.wrapper:nth-of-type(3)>div{
+    animation-delay: 0.2s;
+    height: 30px;
+    width: 30px;
+    opacity:0.6;
+}
+.wrapper:nth-of-type(4)>div{
+    animation-delay: 0.3s;
+    height: 20px;
+    width: 20px;
+    opacity:0.4;
+}
+.wrapper:nth-of-type(5)>div{
+    animation-delay: 0.4s;
+    height: 10px;
+    width: 10px;
+    opacity:0.2;
+}
+  
+@keyframes x {
+    0% {
+      transform:translatex(-100px)
+    }
+    100% {
+      transform:translatex(100px)
+    }
+}
+  
+@keyframes y {
+    25%{
+      transform:translatey(-50px);
+    }
+    0%,50%,100%{
+      transform:translatey(0);
+    }
+    75%{
+      transform:translatey(50px);
+    }
+}
+</code></pre>
+            </div>
+            <br>
+            <h4 class="t_tit3">결과</h4>
+            <div class="t_iframe">
+                <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="jOxOqoK" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/jOxOqoK">
+                    Untitled</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+
+        </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+
+        <script src="../../../../javascript/assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
