@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>벡터와 비트맵</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <script src="../assets/js/highlight.min.js"></script>
+
+</head>
+
+<body>
+
+    <main id="main">
+        <div class="document">
+            <h1 class="t_tit2">Prettier 설치 및 오류해결 방법</h1>
+            <p class="t_desc2">
+                visual studio code(vscode)를 사용하면서 자동으로 코드를 정렬해주는 기능으로 Prettier가 있습니다.<br>
+                사용하게 되면, ctrl + s만으로 자동을 코드의 줄이 맞춰집니다.<br>
+                적용하는 방법과 실행되는 않는 경우, 오류를 해결하는 방법을 알아봅시다.
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">설치 과정</h2>
+            <p class="t_desc2">
+                설치과정을 알아봅시다.
+            </p>
+
+            <h3 class="t_tit2">검색</h3>
+            <p class="t_desc2">
+                Extensions에서 확장프로그램으로 Prettier를 검색합니다.
+            </p>
+
+            <h4 class="t_tit2">설치</h4>
+            <p class="t_desc2">
+                Install을 눌러서 설치를 합니다.
+            </p>
+
+            <br>
+
+            <h5 class="t_tit2">오류 해결 방법
+            </h5>
+            <p class="t_desc2">
+                설치를 했는데, 정렬이 자동으로 되지 않을 경우. 오류를 해결하는 방법을 알아봅시다.
+            </p>
+            <br>
+            <h6 class="t_tit2">editor format on save</h6>
+            <p class="t_desc2">
+                설정에 들어가서 "editor format on save"를 검색 후 체크 박스를 선택해줍니다.
+            </p>
+            <br>
+            <h7 class="t_tit2">json</h7>
+            <p class="t_desc2">
+                json 파일을 검색해서 파일의 내용을 수정합니다. 코드를 넣어주어서 문제를 해결합니다.
+            </p>
+            <br>
+            <h8 class="t_tit3">코드</h8>
+            <p>
+                하단의 코드를 넣어봅시다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">"editor.formatOnType": true,
+</code></pre>
+            </div>
+            <br>
+            <p>
+                그럼에도 안되는 경우, 하단의 코드를 추가로 넣어줍니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">"editor.defaultFormatter": "esbenp.prettier-vscode",
+"[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

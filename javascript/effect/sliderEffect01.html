@@ -20,34 +20,67 @@
         align-items: center;
         justify-content: center;
     }
+
     .slider__img {
         position: relative;
         width: 800px;
         height: 450px;
     }
+
     .slider {
         position: absolute;
         left: 0;
         top: 0;
     }
+
     .slider::before {
         position: absolute;
         left: 5px;
         top: 5px;
-        background: rgba(0,0,0,0.4);
+        background: rgba(0, 0, 0, 0.4);
         color: #fff;
         padding: 5px 10px;
     }
-    .slider:nth-child(1)::before {content: '이미지1';}
-    .slider:nth-child(2)::before {content: '이미지2';}
-    .slider:nth-child(3)::before {content: '이미지3';}
-    .slider:nth-child(4)::before {content: '이미지4';}
-    .slider:nth-child(5)::before {content: '이미지5';}
-    .slider:nth-child(1) {z-index: 5;}
-    .slider:nth-child(2) {z-index: 4;}
-    .slider:nth-child(3) {z-index: 3;}
-    .slider:nth-child(4) {z-index: 2;}
-    .slider:nth-child(5) {z-index: 1;}
+
+    .slider:nth-child(1)::before {
+        content: '이미지1';
+    }
+
+    .slider:nth-child(2)::before {
+        content: '이미지2';
+    }
+
+    .slider:nth-child(3)::before {
+        content: '이미지3';
+    }
+
+    .slider:nth-child(4)::before {
+        content: '이미지4';
+    }
+
+    .slider:nth-child(5)::before {
+        content: '이미지5';
+    }
+
+    .slider:nth-child(1) {
+        z-index: 5;
+    }
+
+    .slider:nth-child(2) {
+        z-index: 4;
+    }
+
+    .slider:nth-child(3) {
+        z-index: 3;
+    }
+
+    .slider:nth-child(4) {
+        z-index: 2;
+    }
+
+    .slider:nth-child(5) {
+        z-index: 1;
+    }
 
     @media (max-width: 800px) {
         .slider__img {
@@ -276,8 +309,10 @@ setInterval(() => {
                 </div>
                 <div class="modal__close">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
-                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
                     </svg>
                 </div>
             </div>
@@ -289,8 +324,8 @@ setInterval(() => {
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
-        const sliderWrap =document.querySelector(".slider__wrap");
-        const sliderImg =sliderWrap.querySelector(".slider__img");
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");
         const slider = sliderWrap.querySelectorAll(".slider");
 
         let currentIndex = 0;               //현재 보이는 이미지
@@ -307,7 +342,7 @@ setInterval(() => {
             currentIndex = nextIndex;
 
             //증가가 아닌 반복. //1,2... 계속 순환과 반복
-        },3000)
+        }, 3000)
 
 
             // slider[1].style.opacity = "0";  //두번째 이미지를 안보이게
@@ -321,8 +356,6 @@ setInterval(() => {
 
             // slider[4].style.opacity = "0";  //다섯번째 이미지를 안보이게
             // slider[0].style.opacity = "1";  //첫번째 이미지를 안보이게
-
-
     </script>
 </body>
 

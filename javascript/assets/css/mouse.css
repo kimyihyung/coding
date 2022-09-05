@@ -8,6 +8,7 @@
 body {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 body.img01 {
@@ -59,6 +60,55 @@ body.img10 {
   background: #f5f5f5 url(../img/effect_bg10@2x-min.jpg) no-repeat center /
     cover;
 }
+body.img11 {
+  background: #f5f5f5 url(../img/effect_bg11@2x-min.jpg) no-repeat center /
+    cover;
+}
+
+body.img12 {
+  background: #f5f5f5 url(../img/effect_bg12@2x-min.jpg) no-repeat center /
+    cover;
+}
+
+body.img13 {
+  background: #f5f5f5 url(../img/effect_bg13@2x-min.jpg) no-repeat center /
+    cover;
+}
+
+body.img14 {
+  background: #f5f5f5 url(../img/effect_bg14@2x-min.jpg) no-repeat center /
+    cover;
+}
+
+body.img15 {
+  background: #f5f5f5 url(../img/effect_bg15@2x-min.jpg) no-repeat center /
+    cover;
+}
+
+body.img16 {
+  background: #f5f5f5 url(../img/effect_bg16@2x-min.jpg) no-repeat center /
+    cover;
+}
+
+body.img17 {
+  background: #f5f5f5 url(../img/effect_bg17@2x-min.jpg) no-repeat center /
+    cover;
+}
+
+body.img18 {
+  background: #f5f5f5 url(../img/effect_bg18@2x-min.jpg) no-repeat center /
+    cover;
+}
+
+body.img19 {
+  background: #f5f5f5 url(../img/effect_bg19@2x-min.jpg) no-repeat center /
+    cover;
+}
+
+body.img20 {
+  background: #f5f5f5 url(../img/effect_bg20@2x-min.jpg) no-repeat center /
+    cover;
+}
 
 body::after {
   content: "";
@@ -79,6 +129,9 @@ img {
 a {
   color: #000;
   text-decoration: none;
+}
+li {
+  list-style: none;
 }
 /* scroll */
 ::-webkit-scrollbar {
@@ -416,11 +469,3 @@ a {
     width: 96%;
   }
 }
-
-/* 요소 안보이게 하는 방법
-    1. display: none;           (애니메이션x, 영역x)
-    2. opacity: 0;              (애니메이션o, 영역o)
-    3. visibility: hidden;      (애니메이션x, 영역x)
-    4. width: 0; height: 0;     (애니메이션x, 영역x) : blind
-    5. transform: scaleX(0);    (애니메이션o, 영역x)
-*/

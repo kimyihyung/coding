@@ -20,10 +20,13 @@
 
     <!-- CSS(섹션별) -->
     <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
     <link rel="stylesheet" href="assets/css/card.css">
     <link rel="stylesheet" href="assets/css/img.css">
     <link rel="stylesheet" href="assets/css/text.css">
     <link rel="stylesheet" href="assets/css/imgText.css">
+    <link rel="stylesheet" href="assets/css/banner.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
 
 </head>
 
@@ -63,7 +66,35 @@
 
     <main id="mainType">
         <section id="sliderType" class="slider__wrap">
-            <h2>슬라이드 영역</h2>
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <div class="slider">
+                    <div class="slider__img">
+                        <div class="desc">
+                            <span>DEVELOPER</span>
+                            <h3>NEW PROJECT</h3>
+                            <p>너무 무리하지 말아요! 이미 당신은 잘하고 있고!<br>
+                                앞으로도 잘 할 수 있어요!
+                            </p>
+                            <div class="btn">
+                                <a href="#">자세히 보기</a>
+                                <a href="#" class="black">사이트 보기</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider__arrow">
+                        <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+                        <a href="#" class="right"><span class="ir">다음 이미지</span></a>
+                    </div>
+                    <div class="slider__dot">
+                        <a href="#" class="dot active"><span class="ir">1</span></a>
+                        <a href="#" class="dot"><span class="ir">2</span></a>
+                        <a href="#" class="dot"><span class="ir">3</span></a>
+                        <a href="#" class="play"><span class="ir">플레이</span></a>
+                        <a href="#" class="stop"><span class="ir">정지</span></a>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- //sliderType -->
 
@@ -199,8 +230,16 @@
         </section>
         <!-- //cardType -->
 
-        <section id="banneTyper" class="banner__wrap">
-            <h2>배터 영역</h2>
+        <section id="bannerTyper" class="banner__wrap nexon section">
+            <h2 class="blind">배터 영역</h2>
+            <div class="banner__inner">
+                <h3 class="title">YHcode</h3>
+                <p class="desc">
+                    다양한 코딩 정보를 공유합니다.
+                    <a href="https://yhcode.tistory.com" title="블로그 이동">https://yhcode.tistory.com</a>
+                </p>
+                <span class="small">배너 유형01</span>
+            </div>
         </section>
         <!-- //bannerType -->
 
@@ -268,8 +307,65 @@
     </main>
     <!-- //mainType -->
 
-    <footer id="footerType">
-        <h2>푸터 영역</h2>
+    <footer id="footerType" class="footer__wrap cexon section gray">
+        <h2 class="blind">푸터 영역</h2>
+        <div class="footer__inner container">
+            <div class="footer__menu">
+                <div>
+                    <h3>사이트</h3>
+                    <ul>
+                        <li><a href="/">웹표준 사이트</a></li>
+                        <li><a href="/">반응형 사이트</a></li>
+                        <li><a href="/">패럴랙스 사이트</a></li>
+                        <li><a href="/">포트폴리오 사이트</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>헤더 영역</h3>
+                    <ul>
+                        <li><a href="/">메뉴 유형01</a></li>
+                        <li><a href="/">메뉴 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>슬라이드 영역</h3>
+                    <ul>
+                        <li><a href="/">슬라이드 유형01</a></li>
+                        <li><a href="/">슬라이드 유형02</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>이미지 영역</h3>
+                    <ul>
+                        <li><a href="/">이미지 유형01</a></li>
+                        <li><a href="/">이미지 유형02</a></li>
+                        <li><a href="/">이미지/텍스트 유형01</a></li>
+                        <li><a href="/">이미지/텍스트 유형02</a></li>
+                        <li><a href="/">텍스트 유형01</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>컨텍츠 영역</h3>
+                    <ul>
+                        <li><a href="/">카드 유형01</a></li>
+                        <li><a href="/">카드 유형02</a></li>
+                        <li><a href="/">카드 유형03</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>푸터 영역</h3>
+                    <ul>
+                        <li><a href="/">푸터 메뉴 유형01</a></li>
+                        <li><a href="/">푸터 컨택트 유형02</a></li>
+                        <li><a href="/">푸터 이메일 유형03</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__right">
+                2022 YH. Portfolio is Power<br>
+                All rights reserved.
+            </div>
+        </div>
     </footer>
     <!-- //footerType -->
 </body>
