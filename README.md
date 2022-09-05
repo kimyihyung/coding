@@ -1,6 +1,9 @@
 # coding
 
-### 메인 페이지
+### 메인 페이지2
+https://ebyh.netlify.app/
+
+### 메인 페이지2
 https://kimyihyung.github.io/coding/index.html   
 
 ### 자기소개 페이지
