@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>벡터와 비트맵</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <script src="../assets/js/highlight.min.js"></script>
+
+</head>
+
+<body>
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 스타일 관련 메서드</h2>
+            <p class="t_desc">
+                jQuery 스타일 관련 메서드를 알아봅시다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">css() 메서드</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>실행 분류</th>
+                        <th>형식</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">취득</td>
+                        <td>$("div").css("width");</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" class="ce">생성, 변경</td>
+                        <td>$("div").css("background-color", "red").css("padding", "10px");</td>
+                    </tr>
+                    <tr>
+                        <td>$("div").css({background-color: "red", padding: "10px"});</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">콜백 함수</td>
+                        <td>
+                            $("div").css("width", function(index, w){ <br>
+                            &nbsp;&nbsp;&nbsp;//index는 각 div 요소의 index 0, 1, 2<br>
+                            &nbsp;&nbsp;&nbsp;//w는 각 div 요소의 width 값<br>
+                            &nbsp;&nbsp;&nbsp;return css속성 // 각 div 요소의 css 속성을 변경합니다. <br>
+                            });<br>
+                            ... <br>
+                            &lt;div&gt;내용&lt;/div&gt; <br>
+                            &lt;div&gt;내용&lt;/div&gt; <br>
+                            &lt;div&gt;내용&lt;/div&gt;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h3 class="t_tit2">예제</h3>
+            <div class="t_iframe">
+                <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="qBYEadm"
+                    data-user="kimyihyung"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/qBYEadm">
+                            제이쿼리 스타일메서드01</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+            <hr>
+            <h3 class="t_tit2">width, height 관련 메서드</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>메서드 종류</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">width()</td>
+                        <td>요소의 가로 길이를 취득, 변경할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">innerWidth()</td>
+                        <td>padding이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">outerWidth()</td>
+                        <td>
+                            border와 margin이 적용된 요소의 가로 길이를 취득, 변경할 수 있습니다.<br>
+                            outerWidth()는 요소의 width값 + 좌 · 우 border 값<br>
+                            outerWidth(true)는 요소의 width값 + 좌 · 우 border값 + 좌 · 우 margin값
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">height()</td>
+                        <td>요소의 높이를 취득, 변경할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">innerHeight()</td>
+                        <td>padding이 적용된 요소의 높이를 취득, 변경할 수 있습니다.</td>
+                    </tr>
+                    <tr>
+                        <td class="ce">outerHeight()</td>
+                        <td>
+                            border와 margin이 적용된 요소의 높이를 취득, 변경할 수 있습니다.<br>
+                            outerHeight()는 요소의 height값 + 상 · 하 border 값<br>
+                            outerHeight(true)는 요소의 height값 + 상 · 하 border값 + 상 · 하 margin값
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h3 class="t_tit2">예제</h3>
+            <div class="t_iframe">
+                <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="BaxyLoG"
+                    data-user="kimyihyung"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/BaxyLoG">
+                            제이쿼리 스타일메서드02</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+            <hr>
+            <h3 class="t_tit2">위치 관련 메서드</h3>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>메서드 종류</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ce">offset()</td>
+                        <td>
+                            $("div").offset().left <br>
+                            $("div").offset().top <br>
+                            $("div").offset({left:10, top: 10}) <br>
+                            html 기준으로 left, top 값을 취득, 변경할 수 있습니다.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="ce">position()</td>
+                        <td>
+                            $("div").position().left <br>
+                            $("div").position().top <br>
+                            부모 요소 기준으로 left, top 값을 취득할 수 있습니다.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <h3 class="t_tit2">예제</h3>
+            <div class="t_iframe">
+                <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="VwxYKer"
+                    data-user="kimyihyung"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/VwxYKer">
+                            제이쿼리 스타일메서드03</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

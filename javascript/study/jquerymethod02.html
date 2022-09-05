@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>벡터와 비트맵</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+    <script src="../assets/js/highlight.min.js"></script>
+
+</head>
+
+<body>
+
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">jQuery 속성 관련 메서드</h2>
+            <p class="t_desc">
+                jQuery 속성 관련 메서드를 알아봅시다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">attr() 메서드</h3>
+            <p class="t_desc">
+                선택한 요소의 attribute(속성)를 선택, 생성, 변경할 수 있습니다.
+            </p>
+            <table class="t_table">
+                <thead>
+                    <tr>
+                        <th>실행 분류</th>
+                        <th>형식</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class ="ce">취득</td>
+                        <td>$("a").attr("href");</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" class ="ce">생성, 변경</td>
+                        <td>$("a").attr("href", "http://icoxpublish.com").attr("target", "_blank");</td>
+                    </tr>
+                    <tr>
+                        <td>$("a").attr({"href": "http://icoxpublish.com", target:"_blank"});</td>
+                    </tr>
+                    <tr>
+                        <td class ="ce">콜백 함수</td>
+                        <td>
+                            $("a").attr("href", function(index, h){ <br>
+                                &nbsp;&nbsp;&nbsp;//index는 각 a 요소의 index 0, 1, 2<br>
+                                &nbsp;&nbsp;&nbsp;//h는 각 a 요소 href 속성<br>
+                                &nbsp;&nbsp;&nbsp;return attribute(속성) // 각 a 요소의 속성을 생성 및 변경합니다.     <br>
+                            });<br>
+                            ... <br>
+                            &lt;a href="http://www.daum.net" target="_blank" title="새창"&gt;다음&lt;/a&gt; <br>
+                            &lt;a href="http://www.naver.net" target="_blank" title="새창"&gt;네이버&lt;/a&gt;   <br>
+                            &lt;a href="http://www.nate.net" target="_blank" title="새창"&gt;네이트&lt;/a&gt;   <br>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <div class="t_iframe">
+                <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="bGMNePQ" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/bGMNePQ">
+                    제이쿼리 속성메서드01</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+            <hr>
+            <h3 class="t_tit2">pop() 메서드</h3>
+            <p class="t_desc">
+                attr()가 html attribute(속성)에 관련된 메서드라면 prop()는 자바스크립트 property(프로퍼티)에 관련된 메서드입니다. prop() 메서드는 요소의 속성을 true, false로 
+                제어할 수 있습니다.
+            </p>
+            <br>
+            <div class="t_iframe">
+                <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="GRdgqVx" data-user="kimyihyung" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/GRdgqVx">
+                    제이쿼리 속성메서드02</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
