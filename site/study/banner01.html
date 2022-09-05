@@ -24,10 +24,10 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">사이트 만들기 : 카드유형01</h2>
+            <h2 class="t_tit">사이트 만들기 : 배너 유형01</h2>
 
             <p class="t_desc2">
-                사이트의 유형은 다양합니다. 메뉴, 배너, 이미지, 슬라이드, 동영상 외에도 많은 유형이 있지만, 그 중에서 <i>카드 유형</i>에 대해 알아봅시다.
+                배너 유형을 만들어봅시다.
             </p>
 
             <hr>
@@ -41,85 +41,82 @@
                 <a href="https://github.com/kimyihyung/coding/blob/main/site/bannerType/bannerType01.html"
                     target="blank">원본
                     소스 보기</a>
+                <a href="https://kimyihyung.github.io/coding/site/bannerType/bannerType01.html" target="_blank">원본
+                    사이트</a>
             </div>
-        </div>
 
-        <hr>
 
-        <h3 class="t_tit2">Figma</h3>
-        <p class="t_desc2">코드를 진행하기에 앞서, 피그마를 이용해서 웹사이트를 디자인합니다. </p>
-        <div class="t_iframe">
-            <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
-                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FwUvtbZqHuvKFpB0uXVpCaw%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-(Y)%3Fnode-id%3D1189%253A1944"
-                allowfullscreen></iframe>
-            <a href="https://kimyihyung.github.io/coding/site/bannerType/bannerType01.html" target="_blank">원본 사이트</a>
-        </div>
+            <hr>
 
-        <hr>
+            <h3 class="t_tit2">Figma</h3>
+            <p class="t_desc2">코드를 진행하기에 앞서, 피그마를 이용해서 웹사이트를 디자인합니다. </p>
+            <div class="t_iframe">
+                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450"
+                    src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FwUvtbZqHuvKFpB0uXVpCaw%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0-(Y)%3Fnode-id%3D1189%253A1944"
+                    allowfullscreen></iframe>
+            </div>
 
-        <h3 class="t_tit2">CSS</h3>
-        <p class="t_desc2"> '>' 를 사용하여 바로 아래 자식요소만 적용시킵니다.<br>
-            display: flex;를 사용하여 정렬을 합니다. <i>justify-content: space-between;</i> 으로 아이템들의 “사이(between)”에 균일한 간격을 만들어
-            줍니다.</p>
-        <div class="t_code">
-            <pre><code>.banner__inner {
-background-image: url(../site1/assets/img/banner_bg01.jpg);
-background-repeat: no-repeat;
-background-position: center;
-background-size: cover;
-text-align: center;
-padding: 120px 0;
-color: #fff;
+            <hr>
+
+            <h3 class="t_tit2">CSS</h3>
+            <div class="t_code">
+                <pre><code>.banner__inner {
+    background-image: url(../site1/assets/img/banner_bg01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
 }
 
 .banner__inner .title {
-font-size: 50px;
-line-height: 1;
-font-weight: 300;
-margin-bottom: 40px;
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 300;
+    margin-bottom: 40px;
 }
 
 .banner__inner .desc {
-font-size: 24px;
-line-height: 1.5;
-font-weight: 300;
-margin-bottom: 70px;
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
 }
 
 .banner__inner .desc a {
-color: #fff;
-display: block;
+    color: #fff;
+    display: block;
 }
 
 .banner__inner .desc a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .banner__inner .small {
-font-size: 16px;
-text-decoration: underline;
+    font-size: 16px;
+    text-decoration: underline;
 }
 </code></pre>
+            </div>
+
+            <h3 class="t_tit2">HTML</h3>
+            <div class="t_code">
+                <pre><code>&lt;section id="bannerTyper" class="banner__wrap nexon section"&gt;
+    &lt;h2 class="blind"&gt;배터 영역&lt;/h2&gt;
+    &lt;div class="banner__inner"&gt;
+        &lt;h3 class="title"&gt;YHcode&lt;/h3&gt;
+        &lt;p class="desc"&gt;
+            다양한 코딩 정보를 공유합니다.
+            &lt;a href="https://yhcode.tistory.com" title="블로그 이동"&gt;https://yhcode.tistory.com&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;span class="small"&gt;배너 유형01&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+            </div>
         </div>
 
-        <h3 class="t_tit2">HTML</h3>
-        <p class="t_desc2">article은 시멘틱 태그이기에 제목을 추가합니다. <br>
-            <i>이미지를 사용할 때 figure 태그를 사용하고, alt 태그로 이미지 없을 때 대체하는 것을 사용하여 웹표준을 준수합니다.</i>
-        </p>
-        <div class="t_code">
-            <pre><code>&lt;section id="bannerTyper" class="banner__wrap nexon section"&gt;
-                &lt;h2 class="blind"&gt;배터 영역&lt;/h2&gt;
-                &lt;div class="banner__inner"&gt;
-                    &lt;h3 class="title"&gt;YHcode&lt;/h3&gt;
-                    &lt;p class="desc"&gt;
-                        다양한 코딩 정보를 공유합니다.
-                        &lt;a href="https://yhcode.tistory.com" title="블로그 이동"&gt;https://yhcode.tistory.com&lt;/a&gt;
-                    &lt;/p&gt;
-                    &lt;span class="small"&gt;배너 유형01&lt;/span&gt;
-                &lt;/div&gt;
-            &lt;/section&gt;
-</code></pre>
-        </div>
 
         </div>
 
