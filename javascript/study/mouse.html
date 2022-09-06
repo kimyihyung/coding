@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">MouseOver, MouseEnter</h2>
+            <p class="t_desc2">
+                MouseOver, MouseEnter의 차이를 알아봅시다.
+            </p>
+
+            <hr>
+
+            <h2 class="t_tit2">MouseOver, MouseEnter에 대해서</h2>
+            <p class="t_desc2">
+                mouseOver와 mouseEnter는 어떤 요소 안으로 마우스가 들어오는 순간을 감지하는 마우스 이벤트이며,<br>
+                이와 반대로 마우스가 어떤 요소 밖으로 이동하는 순간을 감지하는 마우스 이벤트는 mouseOut과 mouseLeave입니다.
+            </p>
+            <p class="t_box">
+                주로 아래와 같이 짝을 이루어 사용합니다.<br>
+                mouseOver &lt;-&gt; mouseOut<br>
+                mouseEnter &lt;-&gt; mouseLeave
+            </p>
+
+            <h3 class="t_tit2">mouseover</h3>
+            <p class="t_box">
+                mouseover는 지정된 요소에 (자기 자신)을 포함하면서, 밑에 자식요소가 존재한다면 자식영역까지 포함됩니다.
+            </p>
+
+            <h3 class="t_tit2">mouseenter</h3>
+            <p class="t_box">
+                mouseenter는 지정된 요소(자기 자신)만 해당되며, 밑에 자식요소가 존재한다면 자식영역은 제외됩니다.
+            </p>
+
+            <h2 class="t_tit2">MouseOver, MouseEnter 차이</h2>
+            <p class="t_desc2">
+                mouseOver/mouseOut는 이벤트가 발생할 때 버블링이 일어나며 상위 요소로 전파됩니다. 그리고 preventDefault 메서드를 호출하여 이벤트의 기본 동작을 취소할 수
+                있습니다.<br>
+                mouseEnter/mouseLeave는 이벤트가 발생할 때 버블링이 일어나지 않아 자기 자신만이 이벤트를 받을 수 있게 됩니다. target과 currentTarget이 항상
+                일치합니다. preventDefault 메서드를 호출하여 이벤트의 기본 동작을 취소할 수 없습니다.
+            </p>
+            <h3 class="t_tit2">예제</h3>
+            <div class="t_iframe" style="min-height: 600px; padding-top: 0;">
+                <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="zYRPvme"
+                    data-user="kwonwonpyo"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kwonwonpyo/pen/zYRPvme">
+                            MouseOver vs. MouseEnter</a> by KwonWonpyo (<a
+                            href="https://codepen.io/kwonwonpyo">@kwonwonpyo</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+            <br>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

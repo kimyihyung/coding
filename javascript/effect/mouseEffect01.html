@@ -70,7 +70,9 @@
         border: 3px solid #fff;
         background-color: rgba(255, 255, 255, 0.1);
         user-select: none;
+        /* 포인터가 선택이 안되게 */
         pointer-events: none;
+        /* 포인터 이벤트가 발생 안되게 */
         perspective: 400px;
         transform-style: preserve-3d;
         transition:
@@ -80,6 +82,7 @@
             border-radius 0.3s;
     }
 
+    /* 효과의 스타일 */
     .mouse__cursor.style1 {
         background-color: rgba(68, 124, 184, 0.476);
         border-color: rgb(38, 66, 115);
@@ -129,7 +132,7 @@
 <body class="img10">
     <header id="header">
         <h1>Javascript Mouse Effect01</h1>
-        <p>마우스 이펙트 - 트랜지션 효과</p>
+        <p>마우스 이펙트 - 마우스 따라다니기</p>
         <ul>
             <li class="active"><a href="MouseEffect01.html">1</a></li>
             <li><a href="MouseEffect02.html">2</a></li>
