@@ -255,6 +255,7 @@
     <main id="parallax__cont">
         <div class="contents">
             <section id="section1" class="content__item">
+                <!-- //각 섹션에 content__item으로 클래스 부여 -->
                 <span class="content__item__num">01</span>
                 <h2 class="content__item__title">section1</h2>
                 <figure class="content__item__imgWrap">
@@ -946,7 +947,6 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
             let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
             //브라우저마다 지원여부가 다르기에 "||"을 적어 셋 중 한가지를 선택해 스크롤 값을 불어와서 작동하도록.
 
-
             // if (scrollTop >= document.getElementById("section1").offsetTop) {
             //     document.querySelectorAll("#parallax__nav li").forEach(li => {
             //         li.classList.remove("active")
@@ -1014,10 +1014,13 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
 
             //forEach
             document.querySelectorAll(".content__item").forEach((element, index) => {   //1.forEach를 통해 각 .content__item 클래스의 각 요소를 가져옵니다.
+                //오차범위를 위해 -2
                 if (scrollTop >= element.offsetTop - 2) {        //scrollTop=[여기서 if를 통해 만약 scrollTop(브라우저의 최상단에서 스크롤 한 값)]이 e=[.content__item 클래스 요소의 상단과의 거리 값]의 이상이라면
                     document.querySelectorAll("#parallax__nav li").forEach(li => {
+                        //메뉴바 active 모두 없애기 (선택되지 않은 것은 선택되지 않게)
                         li.classList.remove("active");        //#parallax__nav li의 요소의 클래스에 active를 지워주고
                     });
+                    //index가 0부터 시작이기에 1부터 시작을 위해 index +1
                     document.querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")").classList.add("active");     //li의 n번째 값에 active를 추가해줍니다
                 }
             })       //스크롤 값이 요소의 offset 값보다 크거나 같으면 스크롤이 해당 섹션에 도달하지 못한 것, 메뉴의 클래스에서 active를 삭제.
@@ -1029,7 +1032,7 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
 
             // offsetTop값 for문 이용해서 구하기
             //getElementById : 주어진 문자열과 일치하는 id 속성을 가진 요소를 찾고, 이를 나타내는 Element 객체를 반환
-            for (let i = 1; i <= 9; i++) {
+            for (let i = 1; i <= 9; i++) {      // section + i 의 offsetTop값을 offset + i 에 텍스트로 대입 시킨다.
                 document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
             }
 
@@ -1047,11 +1050,12 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
         //스크롤 이동, 메뉴 선택 이동. (클릭하면 부드럽게 이동되는 설정)
         //preventDefault() : 요소를 클릭했을 때, 맨 위로 스크롤되는 이벤트가 발생하지 않도록 합니다.
         //scrollIntoView() : 스크롤이 이동하는 동안의 움직임 효과를 설정할 수 있습니다.
-        //getAttribute() : 특정 요소 내에서 특정 한 속성값을 가져오는 메소드
+        //getAttribute() : 특정 요소 내에서 특정 한 속성값을 가져오는 메서드
         document.querySelectorAll("#parallax__nav li a").forEach(li => {
+            //이벤트 발생을 막는다.(behavior: "smooth"를 부여하기 위함.)
             li.addEventListener("click", (e) => {
                 e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                document.querySelector(li.getAttribute("href")).scrollIntoView({    //li = li a태그들 href = secton1,2,...//getAttribute 속성값을 가져온다.
                     behavior: "smooth"
                 });
             });

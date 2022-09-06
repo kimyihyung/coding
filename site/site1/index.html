@@ -50,11 +50,11 @@
             </div>
             <div class="header__menu">
                 <ul>
-                    <li><a href="#">헤더 영역</a></li>
-                    <li><a href="#">슬라이드 영역</a></li>
-                    <li><a href="#">배너 영역</a></li>
-                    <li><a href="#">컨텐츠 영역</a></li>
-                    <li><a href="#">푸터 영역</a></li>
+                    <li class="active"><a href="#imageType">이미지 영역</a></li>
+                    <li><a href="#imgTextType">이미지/텍스트 영역</a></li>
+                    <li><a href="#cardType">카드 영역</a></li>
+                    <li><a href="#bannerTyper">배너 영역</a></li>
+                    <li><a href="#textType">텍스트 영역</a></li>
                 </ul>
             </div>
             <div class="header__member">
@@ -98,7 +98,7 @@
         </section>
         <!-- //sliderType -->
 
-        <section id="imageType" class="image__wrap nexon section">
+        <section id="imageType" class="type image__wrap nexon section">
             <h2>계절</h2>
             <p>계절에 대해 알아봅시다.</p>
             <div class="image__inner container">
@@ -118,7 +118,7 @@
         </section>
         <!-- //imageType -->
 
-        <section id="imgTextType" class="imgText__wrap nexon section gray">
+        <section id="imgTextType" class="type imgText__wrap nexon section gray">
             <h2 class="blind">유용한 사이트 살펴보기</h2>
             <div class="imgText__inner container">
                 <div class="imgText__txt">
@@ -144,7 +144,7 @@
         </section>
         <!-- //imgTextType -->
 
-        <section id="cardType" class="card__wrap nexon section">
+        <section id="cardType" class="type card__wrap nexon section">
             <h2>계절</h2>
             <p>계절에 대해 알아봅시다.</p>
             <div class="card__inner container">
@@ -230,7 +230,7 @@
         </section>
         <!-- //cardType -->
 
-        <section id="bannerTyper" class="banner__wrap nexon section">
+        <section id="bannerTyper" class="type banner__wrap nexon section">
             <h2 class="blind">배터 영역</h2>
             <div class="banner__inner">
                 <h3 class="title">YHcode</h3>
@@ -243,7 +243,7 @@
         </section>
         <!-- //bannerType -->
 
-        <section id="textType" class="text__wrap nexon section">
+        <section id="textType" class="type text__wrap nexon section">
             <span>텍스트 유형01</span>
             <h2 class="mb70">자바스크립트</h2>
             <div class="text__inner container">
@@ -368,6 +368,32 @@
         </div>
     </footer>
     <!-- //footerType -->
+
+    <script>
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+            document.querySelectorAll(".type").forEach((element, index) => {    //type을 각 섹션에 추가해줘서 인식하게, 다들 content__item을 추가해서 이유를 몰랐는데 빼도 됨.
+                //그게 아니어도 #mainType > section으로 하면됨. (이동하면서도 이상하니까 동작할 부분에만 타입을 썼더니 제대로 동작.)
+                if (scrollTop >= element.offsetTop - 2) {
+                    document.querySelectorAll(".header__menu li").forEach(li => {
+                        li.classList.remove("active");
+                    });
+                    document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active");
+                };
+            })
+        })
+
+        document.querySelectorAll(".header__menu li a").forEach(li => {
+            li.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        });
+    </script>
 </body>
+
 
 </html>
