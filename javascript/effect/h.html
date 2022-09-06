@@ -1,26 +1,142 @@
-&lt;main id="main"&gt;
-&lt;section id="mouseType"&gt;
-&lt;div class="mouse__cursor"&gt;&lt;/div&gt;
-&lt;div class="mouse__wrap"&gt;
-&lt;p&gt;&lt;span class="style1"&gt;Only&lt;/span&gt; those who dare to &lt;span class="style2"&gt;fail&lt;/span&gt;
-greatly can ever
-achieve &lt;span class="style3"&gt;greatly&lt;/span&gt;.
-&lt;/p&gt;
-&lt;p&gt;크게 &lt;span class="style4"&gt;실패&lt;/span&gt;할 &lt;span class="style5"&gt;용기&lt;/span&gt;있는 자만이 &lt;span
-class="style6"&gt;크게&lt;/span&gt; 이룰 수 있다.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/section&gt;
-
-&lt;div class="mouse__info"&gt;
+&lt;header id="header"&gt;
+&lt;h1&gt;Javascript Parallax Effect01&lt;/h1&gt;
+&lt;p&gt;패럴렉스 이펙트 - 메뉴 이동&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
-&lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
-&lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
-&lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
-&lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
-&lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
-&lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
-&lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;li class="active"&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="parallaxEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/header&gt;
+&lt;!-- //header --&gt;
+
+&lt;nav id="parallax__nav"&gt;
+&lt;ul&gt;
+&lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;!-- //parallax__nav --&gt;
+
+&lt;main id="parallax__cont"&gt;
+&lt;div class="contents"&gt;
+&lt;section id="section1" class="content__item"&gt;
+&lt;span class="content__item__num"&gt;01&lt;/span&gt;
+&lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+&lt;figure class="content__item__imgWrap"&gt;
+&lt;div class="content__item__img"&gt;&lt;/div&gt;
+&lt;/figure&gt;
+&lt;p class="content__item__desc"&gt;얕은 사람은 행운을 믿으며, 강한 사람은 원인과 결과를 믿는다.&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- //section1 --&gt;
+
+&lt;section id="section2" class="content__item"&gt;
+&lt;span class="content__item__num"&gt;02&lt;/span&gt;
+&lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+&lt;figure class="content__item__imgWrap"&gt;
+&lt;div class="content__item__img"&gt;&lt;/div&gt;
+&lt;/figure&gt;
+&lt;p class="content__item__desc"&gt;지난 일은 어쩔 수 없는 바 슬퍼한들 이미 엎질러진 물이다.&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- //section2 --&gt;
+
+&lt;section id="section3" class="content__item"&gt;
+&lt;span class="content__item__num"&gt;03&lt;/span&gt;
+&lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+&lt;figure class="content__item__imgWrap"&gt;
+&lt;div class="content__item__img"&gt;&lt;/div&gt;
+&lt;/figure&gt;
+&lt;p class="content__item__desc"&gt;행동하는 사람처럼 생각하고, 생각하는 사람처럼 행동하라.&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- //section3 --&gt;
+
+&lt;section id="section4" class="content__item"&gt;
+&lt;span class="content__item__num"&gt;04&lt;/span&gt;
+&lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+&lt;figure class="content__item__imgWrap"&gt;
+&lt;div class="content__item__img"&gt;&lt;/div&gt;
+&lt;/figure&gt;
+&lt;p class="content__item__desc"&gt;실수할 자유가 없는 자유란 가치가 없다.&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- //section4 --&gt;
+
+&lt;section id="section5" class="content__item"&gt;
+&lt;span class="content__item__num"&gt;05&lt;/span&gt;
+&lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+&lt;figure class="content__item__imgWrap"&gt;
+&lt;div class="content__item__img"&gt;&lt;/div&gt;
+&lt;/figure&gt;
+&lt;p class="content__item__desc"&gt;끝까지 해보기 전까지는 늘 불가능해 보입니다.&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- //section5 --&gt;
+
+&lt;section id="section6" class="content__item"&gt;
+&lt;span class="content__item__num"&gt;06&lt;/span&gt;
+&lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+&lt;figure class="content__item__imgWrap"&gt;
+&lt;div class="content__item__img"&gt;&lt;/div&gt;
+&lt;/figure&gt;
+&lt;p class="content__item__desc"&gt;고통은 잠깐이다. 포기는 영원히 남는다.&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- //section6 --&gt;
+
+&lt;section id="section7" class="content__item"&gt;
+&lt;span class="content__item__num"&gt;07&lt;/span&gt;
+&lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+&lt;figure class="content__item__imgWrap"&gt;
+&lt;div class="content__item__img"&gt;&lt;/div&gt;
+&lt;/figure&gt;
+&lt;p class="content__item__desc"&gt;희망을 품지 않은 자는 절망도 할 수 없다.&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- //section7 --&gt;
+
+&lt;section id="section8" class="content__item"&gt;
+&lt;span class="content__item__num"&gt;08&lt;/span&gt;
+&lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+&lt;figure class="content__item__imgWrap"&gt;
+&lt;div class="content__item__img"&gt;&lt;/div&gt;
+&lt;/figure&gt;
+&lt;p class="content__item__desc"&gt;뭔가를 위해 시도조차하려는 용기가 없다면 삶이 무슨 의미가 있을까?&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- //section8 --&gt;
+
+&lt;section id="section9" class="content__item"&gt;
+&lt;span class="content__item__num"&gt;09&lt;/span&gt;
+&lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+&lt;figure class="content__item__imgWrap"&gt;
+&lt;div class="content__item__img"&gt;&lt;/div&gt;
+&lt;/figure&gt;
+&lt;p class="content__item__desc"&gt;꿈을 꾸세요. 그러면 그 꿈이 당신을 만들 것입니다.&lt;/p&gt;
+&lt;/section&gt;
+&lt;!-- //section9 --&gt;
 &lt;/div&gt;
 &lt;/main&gt;
+&lt;!-- //main --&gt;
+
+&lt;aside id="parallax__info"&gt;
+&lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
+&lt;div class="info"&gt;
+&lt;ul&gt;
+&lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;li&gt;#section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;li&gt;#section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;li&gt;#section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;li&gt;#section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/aside&gt;
+&lt;!-- //parallax__info --&gt;
