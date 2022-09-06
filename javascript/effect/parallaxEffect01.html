@@ -160,6 +160,7 @@
     }
 
     .content__item:nth-child(even) .content__item__desc {
+        /* 2n도 가능 */
         margin-left: auto;
         margin-right: -4vw;
     }
@@ -936,13 +937,15 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
-        const scroll = document.querySelector("#parallax__info .scroll span")
+        const scroll = document.querySelector("#parallax__info .scroll span")   //요소의 offsetTop 값을 구해 삽입할 info의 span태그를 선택하여 scroll 변수 안에 저장합니다.
 
-        window.addEventListener("scroll", () => {
+        window.addEventListener("scroll", () => {       //스크롤하는 이벤트를 발생, 화면상에서의 이벤트 발생을 가져오기 위해, 대상 요소는 window로.
             //let scrollTop = window.pageYOffset;
             //let scrollTop = window.scrollY;
             //let scrollTop = document.documentElement.scrollTop
             let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+            //브라우저마다 지원여부가 다르기에 "||"을 적어 셋 중 한가지를 선택해 스크롤 값을 불어와서 작동하도록.
+
 
             // if (scrollTop >= document.getElementById("section1").offsetTop) {
             //     document.querySelectorAll("#parallax__nav li").forEach(li => {
@@ -1010,19 +1013,22 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
             // }
 
             //forEach
-            document.querySelectorAll(".content__item").forEach((element, index) => {
-                if (scrollTop >= element.offsetTop - 2) {
+            document.querySelectorAll(".content__item").forEach((element, index) => {   //1.forEach를 통해 각 .content__item 클래스의 각 요소를 가져옵니다.
+                if (scrollTop >= element.offsetTop - 2) {        //scrollTop=[여기서 if를 통해 만약 scrollTop(브라우저의 최상단에서 스크롤 한 값)]이 e=[.content__item 클래스 요소의 상단과의 거리 값]의 이상이라면
                     document.querySelectorAll("#parallax__nav li").forEach(li => {
-                        li.classList.remove("active");
+                        li.classList.remove("active");        //#parallax__nav li의 요소의 클래스에 active를 지워주고
                     });
-                    document.querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")").classList.add("active");
+                    document.querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")").classList.add("active");     //li의 n번째 값에 active를 추가해줍니다
                 }
-            })
+            })       //스크롤 값이 요소의 offset 값보다 크거나 같으면 스크롤이 해당 섹션에 도달하지 못한 것, 메뉴의 클래스에서 active를 삭제.
+            //도달한 요소는 index+1 번째 li요소와 같으므로, 변수를 사용하여 해당 요소를 선택한 후, 클래스에 active를 추가해 활성화 시켜줍니다.
 
 
             //info
-            document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+            document.querySelector(".scroll span").innerText = Math.round(scrollTop);   //Math.round()는 값을 반올림.
 
+            // offsetTop값 for문 이용해서 구하기
+            //getElementById : 주어진 문자열과 일치하는 id 속성을 가진 요소를 찾고, 이를 나타내는 Element 객체를 반환
             for (let i = 1; i <= 9; i++) {
                 document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
             }
@@ -1038,7 +1044,10 @@ document.querySelectorAll("#parallax__nav li a").forEach(li => {
             // document.querySelector(".offset9").innerText = document.getElementById("section9").offsetTop;
         });
 
-        //스크롤 이동
+        //스크롤 이동, 메뉴 선택 이동. (클릭하면 부드럽게 이동되는 설정)
+        //preventDefault() : 요소를 클릭했을 때, 맨 위로 스크롤되는 이벤트가 발생하지 않도록 합니다.
+        //scrollIntoView() : 스크롤이 이동하는 동안의 움직임 효과를 설정할 수 있습니다.
+        //getAttribute() : 특정 요소 내에서 특정 한 속성값을 가져오는 메소드
         document.querySelectorAll("#parallax__nav li a").forEach(li => {
             li.addEventListener("click", (e) => {
                 e.preventDefault();
