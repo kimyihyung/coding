@@ -417,6 +417,7 @@
                 <!-- Intro6 -->
                 <div class="bs-docs-section">
                     <h2 id="intro6" class="page-header">클리핑 마스크(Clip-path)</h2>
+
                     <div class="sample">
                         <h3><span></span><em class="sr-only">svg</em></h3>
                         <div class="svgBox svg3">
@@ -454,38 +455,37 @@
                         </div>
                     </div>
                     <pre class="line-numbers language-html"><code>&lt;div class="svgBox svg3"&gt;
-&lt;svg&gt;
-    &lt;image xlink:href="img/bg.jpg" width="160" height="160" /&gt;
-&lt;/svg&gt;
-&lt;svg&gt;
-    &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="circle(60px at center)" /&gt;
-&lt;/svg&gt;
-&lt;svg&gt;
-    &lt;clipPath id="clipPath1"&gt;
-        &lt;polygon points="136,141 10,101 108,12" /&gt;
-    &lt;/clipPath&gt;
-    &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath1)" /&gt;
-&lt;/svg&gt;
-&lt;svg&gt;
-    &lt;clipPath id="clipPath2"&gt;
-        &lt;polygon points="121,131 56,140 15,89 39,27 104,18 145,70" /&gt;
-    &lt;/clipPath&gt;
-    &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath2)" /&gt;
-&lt;/svg&gt;
-&lt;svg&gt;
-    &lt;clipPath id="clipPath3"&gt;
-        &lt;polygon points="115,134 71,144 30,124 12,82 26,39 64,14 108,20 139,53 142,98" /&gt;
-    &lt;/clipPath&gt;
-    &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath3)" /&gt;
-&lt;/svg&gt;
-&lt;svg&gt;
-    &lt;clipPath id="clipPath4"&gt;
-        &lt;polygon points="133,129 87,115 50,144 49,96 9,70 54,54 67,8 96,47 144,45 116,84" /&gt;
-    &lt;/clipPath&gt;
-    &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath4)" /&gt;
-&lt;/svg&gt;
-&lt;/div&gt;
-</code></pre>
+    &lt;svg&gt;
+        &lt;image xlink:href="img/bg.jpg" width="160" height="160" /&gt;     
+    &lt;/svg&gt;
+    &lt;svg&gt;
+        &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="circle(60px at center)" /&gt;     
+    &lt;/svg&gt;
+    &lt;svg&gt;
+        &lt;clipPath id="clipPath1"&gt;
+            &lt;polygon points="136,141 10,101 108,12"/&gt;
+        &lt;/clipPath&gt;
+        &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath1)" /&gt;     
+    &lt;/svg&gt;
+    &lt;svg&gt;
+        &lt;clipPath id="clipPath2"&gt;
+            &lt;polygon points="121,131 56,140 15,89 39,27 104,18 145,70" /&gt;
+        &lt;/clipPath&gt;
+        &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath2)" /&gt;     
+    &lt;/svg&gt;
+    &lt;svg&gt;
+        &lt;clipPath id="clipPath3"&gt;
+            &lt;polygon points="115,134 71,144 30,124 12,82 26,39 64,14 108,20 139,53 142,98" /&gt;
+        &lt;/clipPath&gt;
+        &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath3)" /&gt;     
+    &lt;/svg&gt;
+    &lt;svg&gt;
+        &lt;clipPath id="clipPath4"&gt;
+            &lt;polygon points="133,129 87,115 50,144 49,96 9,70 54,54 67,8 96,47 144,45 116,84" /&gt;
+        &lt;/clipPath&gt;
+        &lt;image xlink:href="img/bg.jpg" width="160" height="160" clip-path="url(#clipPath4)" /&gt;     
+    &lt;/svg&gt;
+&lt;/div&gt;</code></pre>
                 </div>
                 <!-- //Intro6 -->
 
@@ -573,7 +573,6 @@
                             <div class="text-wrap">
                                 <div class="text-clip c4">SVG</div>
                             </div>
-
                         </div>
                     </div>
                     <pre class="line-numbers language-html"><code>&lt;div class="svgBox svg7"&gt;
@@ -600,8 +599,44 @@
     &lt;div class="text-wrap"&gt;
         &lt;div class="text-clip c4"&gt;SVG&lt;/div&gt;
     &lt;/div&gt;
-
 &lt;/div&gt;
+</code></pre>
+                    <pre class="line-numbers language-css"><code>.text-wrap {
+    background-color: #e3f3fd;
+    width: 160px;
+    height: 160px;
+    margin: 6px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.text-clip {
+    font-size: 70px;
+    text-align: center;
+    font-family: "SCoreDream";
+    text-transform: uppercase;
+    line-height: 170px;
+    -webkit-text-fill-color: #0d47a1;
+}
+
+.text-clip.c2 {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: url(img/bg.jpg);
+    background-size: 100%;
+}
+
+.text-clip.c3 {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(60deg, #ff5858, #f09819);
+}
+
+.text-clip.c4 {
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 2px #0d47a1
+}
 </code></pre>
                 </div>
                 <!-- //Intro7 -->
@@ -614,10 +649,108 @@
                         x: 30px;
                         y: 30px;
                         fill: none;
-                        stroke: #880e41;
+                        stroke: #880E41;
                         stroke-width: 2px;
                         stroke-dasharray: 50;
                         stroke-dashoffset: 50;
+                        animation: ani1 1s infinite linear alternate-reverse;
+                    }
+
+                    @keyframes ani1 {
+                        0% {
+                            stroke-dashoffset: 50;
+                        }
+
+                        100% {
+                            stroke-dashoffset: 0;
+                        }
+                    }
+
+                    .ani2 {
+                        width: 100px;
+                        height: 100px;
+                        x: 30px;
+                        y: 30px;
+                        fill: none;
+                        stroke: #880E41;
+                        stroke-width: 2px;
+                        stroke-dasharray: 400;
+                        stroke-dashoffset: 400;
+                        animation: ani2 2s infinite linear alternate-reverse;
+                    }
+
+                    @keyframes ani2 {
+                        0% {
+                            stroke-dashoffset: 400;
+                        }
+
+                        100% {
+                            stroke-dashoffset: 0;
+                        }
+                    }
+
+                    .ani3 {
+                        animation: ani3 1s infinite linear alternate-reverse;
+                        stroke-dasharray: 230px;
+                        stroke-dashoffset: 230px;
+                    }
+
+                    @keyframes ani3 {
+                        0% {
+                            stroke-dashoffset: 230px;
+                        }
+
+                        100% {
+                            stroke-dashoffset: 0;
+                        }
+                    }
+
+                    .ani4 {
+                        animation: ani4 1s infinite linear alternate-reverse;
+                        stroke-dasharray: 605px;
+                        stroke-dashoffset: 605px;
+                    }
+
+                    @keyframes ani4 {
+                        0% {
+                            stroke-dashoffset: 605px;
+                        }
+
+                        100% {
+                            stroke-dashoffset: 0;
+                        }
+                    }
+
+                    .ani5 {
+                        animation: ani5 1s infinite linear alternate-reverse;
+                        stroke-dasharray: 411px;
+                        stroke-dashoffset: 411px;
+                    }
+
+                    @keyframes ani5 {
+                        0% {
+                            stroke-dashoffset: 411px;
+                        }
+
+                        100% {
+                            stroke-dashoffset: 0;
+                        }
+                    }
+
+                    .ani6 {
+                        animation: ani6 1s infinite linear alternate-reverse;
+                        stroke-dasharray: 614px;
+                        stroke-dashoffset: 614px;
+                    }
+
+                    @keyframes ani6 {
+                        0% {
+                            stroke-dashoffset: 614px;
+                        }
+
+                        100% {
+                            stroke-dashoffset: 0;
+                        }
                     }
                 </style>
                 <div class="bs-docs-section">
@@ -627,13 +760,155 @@
                         <h3><span></span><em class="sr-only">svg</em></h3>
                         <div class="svgBox svg8">
                             <svg>
-                                <rect class="ani1" />
+                                <rect class="ani1"></rect>
+                            </svg>
+                            <svg>
+                                <rect class="ani2"></rect>
+                            </svg>
+                            <svg style="background: #E3F3FD">
+                                <path class="ani3" fill="none" stroke="#0D47A1" stroke-width="2"
+                                    d="M7,154.667c0-82.358,65.152-149,145.667-149" />
+                            </svg>
+                            <svg style="background: #E3F3FD">
+                                <path class="ani4" fill="none" stroke="#0D47A1" stroke-width="2" d="M151.534,123.547c-33.711,33.711-88.369,33.711-122.08,0
+      c-26.97-26.969-26.97-70.695,0-97.665c21.575-21.576,56.556-21.576,78.131,0c17.261,17.26,17.261,45.245,0.001,62.504
+      c-13.809,13.809-36.196,13.809-50.005,0c-11.046-11.046-11.046-28.956,0-40.002c8.837-8.837,23.166-8.837,32.003,0
+      c7.069,7.07,7.07,18.532,0,25.602c-5.656,5.657-14.826,5.657-20.482,0c-4.524-4.524-4.524-11.86,0-16.385" />
+                            </svg>
+                            <svg style="background: #E3F3FD">
+                                <path class="ani5" fill="none" stroke="#0D47A1" stroke-width="2" d="M58.665,139.312c0-6.873,42-6.873,42-13.747s-42-6.874-42-13.748
+                              s42-6.874,42-13.748c0-6.872-42-6.872-42-13.744c0-6.874,42-6.874,42-13.747c0-6.877-42-6.877-42-13.753
+                              c0-6.874,42-6.874,42-13.748c0-6.878-42-6.878-42-13.757s42-6.879,42-13.758" />
+                            </svg>
+                            <svg style="background: #E3F3FD">
+                                <path class="ani6" fill="none" stroke="#0D47A1" stroke-width="2" d="M93.108,91.478c42.049,30.58-13.048,57.425-13.347,6.503
+                              c0.299,50.922-55.041,24.58-13.405-6.381c-41.636,30.961-55.545-28.728-3.37-14.458c-52.176-14.27-14.181-62.359,9.204-11.649
+                              c-23.385-50.71,37.901-50.989,14.846-0.067c23.055-50.922,61.484-3.179,9.309,11.565C148.521,62.245,135.157,122.058,93.108,91.478
+                              z" />
                             </svg>
                         </div>
                     </div>
-                    <pre class="line-numbers language-html"><code></code></pre>
+                    <pre class="line-numbers language-css"><code>.ani1 {
+    width: 100px;
+    height: 100px;
+    x: 30px;
+    y: 30px;
+    fill: none;
+    stroke: #880E41;
+    stroke-width: 2px;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    animation: ani1 1s infinite linear alternate-reverse;
+}
+
+@keyframes ani1 {
+    0% {
+        stroke-dashoffset: 50;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.ani2 {
+    width: 100px;
+    height: 100px;
+    x: 30px;
+    y: 30px;
+    fill: none;
+    stroke: #880E41;
+    stroke-width: 2px;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: ani2 2s infinite linear alternate-reverse;
+}
+
+@keyframes ani2 {
+    0% {
+        stroke-dashoffset: 400;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.ani3 {
+    animation: ani3 1s infinite linear alternate-reverse;
+    stroke-dasharray: 230px;
+    stroke-dashoffset: 230px;
+}
+
+@keyframes ani3 {
+    0% {
+        stroke-dashoffset: 230px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.ani4 {
+    animation: ani4 1s infinite linear alternate-reverse;
+    stroke-dasharray: 605px;
+    stroke-dashoffset: 605px;
+}
+
+@keyframes ani4 {
+    0% {
+        stroke-dashoffset: 605px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.ani5 {
+    animation: ani5 1s infinite linear alternate-reverse;
+    stroke-dasharray: 411px;
+    stroke-dashoffset: 411px;
+}
+
+@keyframes ani5 {
+    0% {
+        stroke-dashoffset: 411px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.ani6 {
+    animation: ani6 1s infinite linear alternate-reverse;
+    stroke-dasharray: 614px;
+    stroke-dashoffset: 614px;
+}
+
+@keyframes ani6 {
+    0% {
+        stroke-dashoffset: 614px;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}</code></pre>
+
+                    <p class="codepen" data-height="500" data-default-tab="result" data-slug-hash="wvjKJLN"
+                        data-user="kimyihyung"
+                        style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                        <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/wvjKJLN">
+                                Text Animation</a> by kimyihyung (<a
+                                href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                            on <a href="https://codepen.io">CodePen</a>.</span>
+                    </p>
+                    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
                 </div>
-                <!-- //Intro7 -->
+                <!-- //Intro8 -->
 
 
 
