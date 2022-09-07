@@ -1,6 +1,6 @@
 # coding
 
-### 메인 페이지2
+### 메인 페이지1
 https://ebyh.netlify.app/
 
 ### 메인 페이지2
