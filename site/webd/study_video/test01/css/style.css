@@ -1,0 +1,23 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* layout */
+#wrap {
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  background: #ccc;
+}
+#header {
+}
+#banner {
+}
+#content1 {
+}
+#content2 {
+}
+#footer {
+}

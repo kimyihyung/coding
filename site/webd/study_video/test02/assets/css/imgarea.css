@@ -1,0 +1,23 @@
+.image__inner1 {
+  display: flex;
+  justify-content: space-between;
+}
+.image {
+  width: 32%;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.img_tit {
+  color: #000;
+  margin-top: 30px;
+}
+.img_desc {
+  height: 70px;
+  background-color: #ccc;
+  position: relative;
+}
+h4 {
+  position: absolute;
+  top: 10px;
+}
