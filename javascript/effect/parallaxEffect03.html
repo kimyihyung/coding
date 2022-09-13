@@ -508,7 +508,7 @@
         document.querySelector("#parallax__top").classList.add("show");
     } else {
         document.querySelector("#parallax__top").classList.remove("show");
-    } //=> 높이 구해서 넣어야함.
+    } 
 
 
     document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
@@ -540,7 +540,7 @@ function scrollProgress() {
 function hasScroll() {
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
-    if (scrollTop < lastScroll) {
+    if (scrollTop &lt; lastScroll) {
         document.querySelector("#parallax__nav").classList.add("show")
     } else {
         document.querySelector("#parallax__nav").classList.remove("show")

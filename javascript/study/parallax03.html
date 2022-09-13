@@ -71,41 +71,30 @@
 
             <h3 class="t_tit2">html</h3>
             <p class="t_desc2">
-                이전의 방식에서 parallax__nav이었던 것을 parallax__dot으로 변경해줍니다.<br>
-                클릭하면 각 섹션으로 이동할 수 있도록 링크를 부여해 줍니다.
+                TOP버튼을 추가하기 위해서, 이전의 방식에서 parallax__top를 추가해줍니다.
             </p>
             <details>
                 <summary>코드보기</summary>
                 <div class="t_code">
-                    <pre><code class="language-html">&lt;header id="header"&gt;
-    &lt;h1&gt;Javascript Parallax Effect02&lt;/h1&gt;
-    &lt;p&gt;패럴렉스 이펙트 - 사이드 메뉴&lt;/p&gt;
+                    <pre><code class="language-html">&lt;nav id="parallax__nav"&gt;
     &lt;ul&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-        &lt;li class="active"&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/header&gt;
-&lt;!-- //header --&gt;
-
-&lt;nav id="parallax__dot"&gt;
-    &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;&lt;span&gt;메뉴1&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;&lt;span&gt;메뉴2&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;&lt;span&gt;메뉴3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;&lt;span&gt;메뉴4&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;&lt;span&gt;메뉴5&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;&lt;span&gt;메뉴6&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;&lt;span&gt;메뉴7&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;&lt;span&gt;메뉴8&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;&lt;span&gt;메뉴9&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/nav&gt;
 &lt;!-- //parallax__nav --&gt;
+
+&lt;div id="parallax__top"&gt;
+    Top
+&lt;/div&gt;
+&lt;!-- //parallax__top --&gt;
 
 &lt;main id="parallax__cont"&gt;
     &lt;div class="contents"&gt;
@@ -213,20 +202,26 @@
 
             <h3 class="t_tit2">css</h3>
             <p class="t_desc2">
-                parallax__dot이 추가되었기에 그에 따른 css를 추가해줍니다.
-                active되는 경우의 transform을 부여합니다.
+                parallax__top이 추가되었기에 그에 따른 css를 추가해줍니다.
             </p>
             <details>
                 <summary>코드보기</summary>
                 <div class="t_code">
-                    <pre><code class="language-css">#parallax__nav {
+                    <pre><code class="language-css">/* parallax */
+/* parallax__nav */
+#parallax__nav {
     position: fixed;
     right: 20px;
-    top: 20px;
+    top: -200px;
     z-index: 2000;
     background-color: rgba(0, 0, 0, 0.4);
     padding: 20px 30px;
     border-radius: 50px;
+    transition: top 0.4s ease;
+}
+
+#parallax__nav.show {
+    top: 20px;
 }
 
 #parallax__nav li {
@@ -418,54 +413,33 @@
         left: 10px;
         bottom: 10px;
     }
-
-    /* .content__item {
-        height: 100vh;
-    } */
 }
 
-#parallax__dot {
+#parallax__top {
     position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    bottom: -220px;
     z-index: 10000;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
     background: rgba(0, 0, 0, 0.4);
-    padding: 20px 10px;
-    border-radius: 30px;
-}
-
-#parallax__dot li {
-    position: relative;
-    width: 20px;
-    height: 20px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
     border-radius: 50%;
-    margin: 12px 8px;
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
-    transition: box-shadow .2s ease;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-#parallax__dot li a {
+#parallax__top.show {
+    bottom: 20px;
+}
+
+#parallax__top:hover {
     background: #fff;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: 50%;
-    transition: transform .2s ease;
-}
-
-#parallax__dot li.active {
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
-}
-
-#parallax__dot li.active a {
-    transform: scale(0.4);
-}
-
-#parallax__dot li span {
-    display: none;
+    color: #000;
 }
 </code></pre>
                 </div>
@@ -473,37 +447,81 @@
 
             <h3 class="t_tit2">js</h3>
             <p class="t_desc2">
-                preventDefault() : 요소를 클릭했을 때, 링크로 이동되지 않게 합니다.<br>
-                => scrollIntoView() : 특정 위치로 이동시켜주는 함수로 behavior: "smooth"을 부여하여 움직임을 부드럽게 하기위해.<br>
-                <br>
-                getAttribute() : 특정 요소 내에서 특정 한 속성값을 가져오는 메서드<br>
-                <br>
-                (scrollTop >= e.offsetTop - 10) = e.offsetTopdl이 scrollTop보다 수치가 커지는 오차가 발생. 10미만의 오차이지만, 10으로
-                부여. 탑과 section의 오차를 줄여줍니다.
+                메뉴가 안보이다가 화면을 위로 올리는 경우에 메뉴가 나타나며, top버튼이 페이지 하단에 도달했을 때에 나타나게 만들어줍니다.<br>
+                Math.ceil(scrollTop)은 scrollTop의 값의 소수점을 없애기 위해 숫자를 올림해 줍니다. (1.1같은 숫자도 2로 올림합니다. 소수점 아래의 수를 무조건
+                올려줍니다.)<br>
+                '전체 문서 높이 값 - 브라우저 높이 값' scrollTop의 값보다 작은 경우로 top버튼이 나타나는 위치를 구해줍니다.<br>
+                document.body.scrollHeight는 문서 전체의 높이, window.innerHeight 정보를 다루는 페이지 높이,<br>
+                window.outerHeight 브라우저 상단바의 높이까지 포함 (브라우저별 높이가 다르기에 그 값까지 구하는 경우 사용)<br>
+                lastScroll(과거) scrollTop(현재)를 트리거 변수를 이용하여 구합니다. setInterval을 통해 무제한으로 계산하면 버벅이기에, 0.3초에 한번씩만 실행시킵니다.
             </p>
             <div class="t_code">
-                <pre><code class="language-js">document.querySelectorAll("#parallax__dot a").forEach(el => {
-    el.addEventListener("click", e => {
-        e.preventDefault(); //링크를 차단
+                <pre><code class="language-js">window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
-        document.querySelector(el.getAttribute("href")).scrollIntoView({ behavior: "smooth" })
-    });
-});
+    // //01 메뉴 버튼
+    // if (scrollTop > 0) {
+    //     document.querySelector("#parallax__nav").classList.add("show");
+    // } else {
+    //     document.querySelector("#parallax__nav").classList.remove("show");
+    // }
 
-window.addEventListener("scroll", () => {
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //브라우저마다 지원여부가 다르기에 "||"을 적어 셋 중 한가지를 선택해 스크롤 값을 불어와서 작동하도록.
-
-    document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
-
-    document.querySelectorAll(".content__item").forEach((e, i) => {
-        if (scrollTop >= e.offsetTop - 10) {    //나중에 가면 e.offsetTopdl이 scrollTop보다 수치가 커지는 오차가 발생. 10미만의 오차이지만, 10으로 부여. 탑과 section의 오차를 줄이기.
-            document.querySelectorAll("#parallax__dot li").forEach(li => {
+    //메뉴 active
+    document.querySelectorAll(".content__item").forEach((el, i) => {
+        if (scrollTop > el.offsetTop - 500) {
+            document.querySelectorAll("#parallax__nav li").forEach((li) => {
                 li.classList.remove("active");
             });
-            document.querySelector("#parallax__dot li:nth-child(" + (i + 1) + ")").classList.add("active")
-        };
+            document.querySelector("#parallax__nav li:nth-child(" + (i + 1) + ")").classList.add("active");
+        }
     });
-});
+
+    //02 top 버튼 
+    if (scrollTop > (document.body.scrollHeight - window.outerHeight)) {
+        document.querySelector("#parallax__top").classList.add("show");
+    } else {
+        document.querySelector("#parallax__top").classList.remove("show");
+    } 
+
+
+    document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
+})
+
+//top 버튼
+document.querySelector("#parallax__top").addEventListener("click", () => {
+    window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+})
+
+//03
+let nowScroll = true;
+let lastScroll = 0;
+
+function scrollProgress() {
+    nowScroll = true;
+
+    setInterval(() => {
+        if (nowScroll) {    //움직였으니 트루
+            nowScroll = false; //그 뒤 움직이지 않으니 false. 0.3초에 한번씩만 실행
+            hasScroll();
+        }
+    }, 300)
+}
+//위의 내용이 포인트, 시간차를 줘서 작동시키는 것
+
+//스크롤 할때마다가 아니라 일정한 간격
+function hasScroll() {
+    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop &lt; lastScroll) {
+        document.querySelector("#parallax__nav").classList.add("show")
+    } else {
+        document.querySelector("#parallax__nav").classList.remove("show")
+    }
+    lastScroll = scrollTop; //과거 값을 넣어준다 그것을 무제한으로 하지 않게 인터벌을 준 것. 버벅이기에 시간 차를 줌.
+}
+
+window.addEventListener("scroll", scrollProgress);
 </code></pre>
             </div>
 
