@@ -508,7 +508,7 @@ window.addEventListener("scroll", () => {
     document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
 
     document.querySelectorAll(".content__item").forEach((e, i) => {
-        if (scrollTop >= e.offsetTop - 10) {
+        if (scrollTop >= e.offsetTop - 500) {
             document.querySelectorAll("#parallax__dot li").forEach(li => {
                 li.classList.remove("active");
             });
@@ -935,7 +935,7 @@ window.addEventListener("scroll", () => {
             document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
 
             document.querySelectorAll(".content__item").forEach((e, i) => {
-                if (scrollTop >= e.offsetTop - 10) {  //나중에 가면 e.offsetTopdl이 scrollTop보다 수치가 커지는 오차가 발생. 10미만의 오차이지만, 10으로 부여. 탑과 section의 오차를 줄이기.
+                if (scrollTop >= e.offsetTop - 500) {  //나중에 가면 e.offsetTopdl이 scrollTop보다 수치가 커지는 오차가 발생. 탑과 section의 오차를 줄이기.
                     document.querySelectorAll("#parallax__dot li").forEach(li => {
                         li.classList.remove("active");
                     });

@@ -68,15 +68,15 @@
   position: absolute;
   left: 30px;
   bottom: 30px;
-  background-color: #7c2d39;
+  background-color: #4285f4;
   color: #fff;
   font-size: 18px;
-  padding: 10px 30px;
+  padding: 10px 50px;
   border-radius: 30px;
   display: inline-block;
 }
-.imgText__img a.blue {
-  background-color: #2b387c;
+.imgText__img a.red {
+  background-color: #c9395f;
 }
 
 .imgText__img.img1 {
