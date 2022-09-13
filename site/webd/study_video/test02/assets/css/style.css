@@ -39,7 +39,7 @@ li {
 #header .nav li {
   float: left;
   position: relative;
-  width: 140px;
+  width: 150px;
   text-align: center;
 }
 #header .nav li a {
@@ -48,11 +48,15 @@ li {
   font-weight: bold;
   padding: 24px 20px 20px 20px;
 }
+#header .nav li a:hover {
+  background: #ccc;
+}
 #header .nav li ul.submenu {
   display: none;
   position: absolute;
   left: 0;
-  top: 69;
+  top: 67px;
+  z-index: 100;
 }
 #header .nav li ul.submenu li {
 }
@@ -60,12 +64,62 @@ li {
   padding: 10px;
   background: #888;
 }
+#header .nav li ul.submenu li a:hover {
+  background: #666;
+}
 
 /* banner */
 #banner {
+  height: 389px;
+  overflow: hidden;
 }
 #banner img {
   width: 100%;
+  display: block;
+}
+
+/* 상하
+.slideList {
+    position: relative; 
+    width: 1000px; 
+    height: 389px;
+}
+.slideList .slideImg {
+    position: relative;
+}
+.slideList .slideImg h2 {
+    position: absolute; 
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%,-50%); 
+    background: rgba(0,0,0,0.4); 
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+*/
+
+/* 좌우 */
+.slideList {
+  position: relative;
+  width: 3000px;
+  z-index: 50;
+}
+
+.slideList .slideImg {
+  position: relative;
+  width: 1000px;
+  float: left;
+  /* 가로로 정렬 float width 지정 */
+}
+
+.slideList .slideImg h2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 30px;
+  border-radius: 20px;
 }
 
 /* content1 */
