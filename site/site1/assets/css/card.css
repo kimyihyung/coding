@@ -46,7 +46,7 @@
   .card {
     width: 100%;
   }
-  .card:last-child {
+  .card:first-child {
     margin-bottom: 20px;
   }
   .card__body {
