@@ -12,27 +12,94 @@
 <body>
     <div id="wrap">
         <header id="header" class="clearfix">
-            <h1><a href="#"><img src="assets/jpg/logo.jpg" alt="롯데월드"></a></h1>
+            <h1><a href="#"><img src="assets/images/logo.jpg" alt="롯데월드"></a></h1>
             <nav class="nav">
                 <ul class="clearfix">
-                    <li><a href="#">즐길거리</a></li>
-                    <li><a href="#">요금/무대혜택</a></li>
-                    <li><a href="#">참여프로그램</a></li>
-                    <li><a href="#">이용가이드</a></li>
-                    <li><a href="#">소통서비스</a></li>
+                    <li><a href="#">즐길거리</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">요금/무대혜택</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">참여프로그램</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">이용가이드</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">소통서비스</a>
+                        <ul class="submenu">
+                            <li><a href="#">subMenu-1</a></li>
+                            <li><a href="#">subMenu-2</a></li>
+                            <li><a href="#">subMenu-3</a></li>
+                            <li><a href="#">subMenu-4</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </header>
         <!-- //header -->
 
         <section id="banner">
-            <img src="assets/images/banner.jpg" alt="메리크리스마스">
+            <div class="slideList">
+                <div class="slideImg">
+                    <h2>이미지1</h2>
+                    <img src="assets/images/banner.jpg" alt="메리 크리스마스1">
+                </div>
+                <div class="slideImg">
+                    <h2>이미지2</h2>
+                    <img src="assets/images/banner.jpg" alt="메리 크리스마스2">
+                </div>
+                <div class="slideImg">
+                    <h2>이미지3</h2>
+                    <img src="assets/images/banner.jpg" alt="메리 크리스마스3">
+                </div>
+            </div>
         </section>
         <!-- //banner -->
 
         <section id="content1" class="clearfix">
             <article class="notice">
-                fff
+                <ul class="clearfix">
+                    <li class="active"><a href="#">롯데월드 소식</a>
+                        <ul>
+                            <li><a href="#">1. 첫번째 목록 첫번째 목록 첫번째 목록</a><span>2022.09.11</span></li>
+                            <li><a href="#">1. 첫번째 목록 첫번째 목록 첫번째 목록</a><span>2022.09.11</span></li>
+                            <li><a href="#">1. 첫번째 목록 첫번째 목록 첫번째 목록</a><span>2022.09.11</span></li>
+                            <li><a href="#">1. 첫번째 목록 첫번째 목록 첫번째 목록</a><span>2022.09.11</span></li>
+                        </ul>
+
+                    </li>
+                    <li><a href="#">뉴스·공지</a>
+                        <ul>
+                            <li><a href="#">2. 두번째 목록 두번째 목록 두번째 목록</a><span>2022.09.10</span></li>
+                            <li><a href="#">2. 두번째 목록 두번째 목록 두번째 목록</a><span>2022.09.10</span></li>
+                            <li><a href="#">2. 두번째 목록 두번째 목록 두번째 목록</a><span>2022.09.10</span></li>
+                            <li><a href="#">2. 두번째 목록 두번째 목록 두번째 목록</a><span>2022.09.10</span></li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="#" class="more">더보기 +</a>
             </article>
             <figure class="ad">
                 <img src="assets/images/ad01.jpg" alt="온종일 혜택">
@@ -84,7 +151,116 @@
             </address>
         </footer>
         <!-- //footer -->
+
+        <!-- 모달 -->
+        <div class="layer_bg">
+            <div class="layer">
+                <h2>타이틀</h2>
+                <a href="#" class="close">닫기</a>
+            </div>
+        </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    //#header .nav li ul.submenu {display:none}
+    //선택자 {속성: 속성값}
+
+    //$(".submenu").css("display","block");
+    //선택자.메서드(속성,속성값)
+
+    //첫번째 유형
+    // $(".nav > ul > li").mouseover(function(){   //li에 마우스 오버했을 때
+    //     $(this).find(".submenu").css("display","block");
+    // });
+
+    // $(".nav > ul > li").mouseout(function(){   //li에 마우스 아웃했을 때
+    //     $(this).find(".submenu").css("display","none");
+    // });
+
+    //두번째 유형
+    // $(".nav > ul > li").mouseover(function(){   //li에 마우스 오버했을 때
+    //     $(".nav > ul > li").find(".submenu").css("display","block");
+    // });
+
+    // $(".nav > ul > li").mouseout(function(){   //li에 마우스 아웃했을 때
+    //     $(".nav > ul > li").find(".submenu").css("display","none");
+    // });
+
+    // $(".nav > ul > li").mouseover(function(){
+    //     $(this).find(".submenu").stop().show(500);
+    // });
+
+    // $(".nav > ul > li").mouseout(function(){
+    //     $(this).find(".submenu").stop().hide(500);
+    // });
+
+    //첫번째 유형
+    $(".nav > ul > li").mouseover(function () {
+        $(this).find(".submenu").stop().slideDown(200);
+    });
+
+    $(".nav > ul > li").mouseout(function () {
+        $(this).find(".submenu").stop().slideUp(200);
+    });
+
+    //두번째 유형
+    //$(".nav > ul > li").mouseover(function(){
+    //    $(".nav > ul > li").find(".submenu").stop().slideDown(200);
+    //});
+
+    //$(".nav > ul > li").mouseout(function(){
+    //    $(".nav > ul > li").find(".submenu").stop().slideUp(200);
+    //});
+
+
+    //이미지 슬라이드
+    //이미지를 top으로 이미지의 height값 만큼 설정
+
+    //$(".slideList").css("top","-300px");
+    //$(".slideList").animate({"top":"-300px"},4000);
+
+    //현재 이미지 = 0    -> top:  0;
+    //두번째 이미지 = 1   -> top: -378px; 
+    //세번째 이미지 = 2   -> top: -756px;
+
+    var currentIndex = 0;       //현재 이미지를 변수에 저장
+
+    setInterval(function () {
+        if (currentIndex < 2) {
+            currentIndex++
+        } else {
+            currentIndex = 0;
+        }
+        var slidePosition = currentIndex * (-378) + "px";
+
+        //console.log(slidePosition);
+        $(".slideList").animate({ top: slidePosition }, 400);
+    }, 3000);
+
+
+    //탭메뉴
+    var tabMenu = $(".notice");
+
+    tabMenu.find("ul > li > ul").hide();
+    tabMenu.find("ul > li.active > ul").show();
+
+    function tabList(e) {
+        e.preventDefault();
+        var target = $(this);
+        target.next().show().parent("li").addClass("active").siblings("li").removeClass("active").find("ul").hide();
+    };
+
+    tabMenu.find("ul > li > a").click(tabList).focus(tabList);
+
+    //팝업
+    $(".ad").click(function () {
+        $(".layer_bg").css("display", "block");
+    });
+    $(".layer .close").click(function () {
+        $(".layer_bg").css("display", "none");
+    });
+
+</script>
 
 </html>

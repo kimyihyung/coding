@@ -90,17 +90,7 @@
   .header__member a {
     margin-left: 5px;
   }
-  .header__icon {
-    display: block;
-    position: fixed;
-    top: 20px;
-    right: 5px;
-  }
   .header__inner {
     padding-left: 20px;
-  }
-  .header__icon {
-    top: 20px;
-    right: 20px;
   }
 }
