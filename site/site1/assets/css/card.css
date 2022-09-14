@@ -1,4 +1,4 @@
-/* cardType */
+/* cartType */
 .card__inner {
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding-right: 20px;
 }
 .card__body .desc {
   font-size: 18px;

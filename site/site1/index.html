@@ -145,6 +145,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
@@ -158,14 +159,14 @@
             <div class="image__inner container">
                 <article class="image img1">
                     <h3 class="image__title">비</h3>
-                    <p class="image__desc">대기 중의 수증기가 물방울이 되어 지상으로 떨어지는 기상현상.<br>
+                    <p class="image__desc">대기 중의 수증기가 물방울이 되어 지상으로 떨어지는 기상현상.
                         비가 내리는 대표적인 계절로는 여름이 있습니다.
                     </p>
                     <a class="image__btn" href="/" title="자세히 보기">자세히 보기</a>
                 </article>
                 <article class="image img2">
                     <h3 class="image__title">눈</h3>
-                    <p class="image__desc">대기 중의 수증기가 얼어붙은 상태가 되어 지상으로 떨어지는 기상현상.<br>
+                    <p class="image__desc">대기 중의 수증기가 얼어붙은 상태가 되어 지상으로 떨어지는 기상현상.
                         눈이 내리는 대표적인 계절로는 겨울이 있습니다.
                     </p>
                     <a class="image__btn yellow" href="/" title="자세히 보기">자세히 보기</a>
@@ -428,6 +429,13 @@
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2000,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
             },
         });
 

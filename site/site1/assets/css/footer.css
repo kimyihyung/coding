@@ -3,10 +3,9 @@
   margin-bottom: 70px;
 }
 .footer__menu > div {
-  width: 20%;
-  text-align: center;
+  width: 16%;
 }
-.footer__menu > div h3 {
+.footer__menu h3 {
   font-size: 18px;
   margin-bottom: 20px;
 }
