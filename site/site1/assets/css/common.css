@@ -20,8 +20,8 @@
 .container {
   width: 100%;
   max-width: 1160px;
-  padding: 0 20px;
   margin: 0 auto;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -78,6 +78,7 @@
     margin-bottom: 50px;
   }
 }
+
 /* 폰트 */
 .nexon {
   font-family: "NexonLv1Gothic";

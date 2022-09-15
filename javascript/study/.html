@@ -1,165 +1,688 @@
-&lt;!DOCTYPE html&gt;
-&lt;html lang="ko"&gt;
+<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-&lt;head&gt;
-&lt;meta charset="UTF-8"&gt;
-&lt;title&gt;롯데월드&lt;/title&gt;
+<style>
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-&lt;!-- style --&gt;
-&lt;link rel="stylesheet" href="assets/css/style.css"&gt;
-&lt;/head&gt;
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
 
-&lt;body&gt;
-&lt;div id="wrap"&gt;
-&lt;header id="header" class="clearfix"&gt;
-&lt;h1&gt;&lt;a href="#"&gt;&lt;img src="assets/images/logo.jpg" alt="롯데월드"&gt;&lt;/a&gt;&lt;/h1&gt;
-&lt;nav class="nav"&gt;
-&lt;ul class="clearfix"&gt;
-&lt;li&gt;&lt;a href="#"&gt;즐길거리&lt;/a&gt;
-&lt;ul class="submenu"&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;요금/무대혜택&lt;/a&gt;
-&lt;ul class="submenu"&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;참여프로그램&lt;/a&gt;
-&lt;ul class="submenu"&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;이용가이드&lt;/a&gt;
-&lt;ul class="submenu"&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;소통서비스&lt;/a&gt;
-&lt;ul class="submenu"&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;subMenu-4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/nav&gt;
-&lt;/header&gt;
-&lt;!-- //header --&gt;
+    .col-xs-1,
+    .col-sm-1,
+    .col-md-1,
+    .col-lg-1,
+    .col-xs-2,
+    .col-sm-2,
+    .col-md-2,
+    .col-lg-2,
+    .col-xs-3,
+    .col-sm-3,
+    .col-md-3,
+    .col-lg-3,
+    .col-xs-4,
+    .col-sm-4,
+    .col-md-4,
+    .col-lg-4,
+    .col-xs-5,
+    .col-sm-5,
+    .col-md-5,
+    .col-lg-5,
+    .col-xs-6,
+    .col-sm-6,
+    .col-md-6,
+    .col-lg-6,
+    .col-xs-7,
+    .col-sm-7,
+    .col-md-7,
+    .col-lg-7,
+    .col-xs-8,
+    .col-sm-8,
+    .col-md-8,
+    .col-lg-8,
+    .col-xs-9,
+    .col-sm-9,
+    .col-md-9,
+    .col-lg-9,
+    .col-xs-10,
+    .col-sm-10,
+    .col-md-10,
+    .col-lg-10,
+    .col-xs-11,
+    .col-sm-11,
+    .col-md-11,
+    .col-lg-11,
+    .col-xs-12,
+    .col-sm-12,
+    .col-md-12,
+    .col-lg-12 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
 
-&lt;section id="banner"&gt;
-&lt;div class="slideList"&gt;
-&lt;div class="slideImg"&gt;
-&lt;h2&gt;이미지1&lt;/h2&gt;
-&lt;img src="assets/images/banner.jpg" alt="메리 크리스마스1"&gt;
-&lt;/div&gt;
-&lt;div class="slideImg"&gt;
-&lt;h2&gt;이미지2&lt;/h2&gt;
-&lt;img src="assets/images/banner.jpg" alt="메리 크리스마스2"&gt;
-&lt;/div&gt;
-&lt;div class="slideImg"&gt;
-&lt;h2&gt;이미지3&lt;/h2&gt;
-&lt;img src="assets/images/banner.jpg" alt="메리 크리스마스3"&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/section&gt;
-&lt;!-- //banner --&gt;
+    .page-header {
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        border-bottom: 1px solid #eee;
+    }
 
-&lt;section id="content1" class="clearfix"&gt;
-&lt;article class="notice"&gt;
-&lt;ul class="clearfix"&gt;
-&lt;li class="active"&gt;&lt;a href="#"&gt;롯데월드 소식&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#"&gt;1. 첫번째 목록 첫번째 목록 첫번째 목록&lt;/a&gt;&lt;span&gt;2022.09.11&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;1. 첫번째 목록 첫번째 목록 첫번째 목록&lt;/a&gt;&lt;span&gt;2022.09.11&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;1. 첫번째 목록 첫번째 목록 첫번째 목록&lt;/a&gt;&lt;span&gt;2022.09.11&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;1. 첫번째 목록 첫번째 목록 첫번째 목록&lt;/a&gt;&lt;span&gt;2022.09.11&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
+    .lead {
+        margin-bottom: 20px;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
 
-&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;뉴스·공지&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="#"&gt;2. 두번째 목록 두번째 목록 두번째 목록&lt;/a&gt;&lt;span&gt;2022.09.10&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;2. 두번째 목록 두번째 목록 두번째 목록&lt;/a&gt;&lt;span&gt;2022.09.10&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;2. 두번째 목록 두번째 목록 두번째 목록&lt;/a&gt;&lt;span&gt;2022.09.10&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="#"&gt;2. 두번째 목록 두번째 목록 두번째 목록&lt;/a&gt;&lt;span&gt;2022.09.10&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;a href="#" class="more"&gt;더보기 +&lt;/a&gt;
-&lt;/article&gt;
-&lt;figure class="ad"&gt;
-&lt;img src="assets/images/ad01.jpg" alt="온종일 혜택"&gt;
-&lt;/figure&gt;
-&lt;/section&gt;
-&lt;!-- //content1 --&gt;
+    .bs-callout {
+        margin: 20px 0;
+        padding: 20px;
+        border-left: 3px solid #eee;
+    }
 
-&lt;section id="content2"&gt;
-&lt;h2&gt;특별한 경험&lt;/h2&gt;
-&lt;ul class="clearfix"&gt;
-&lt;li&gt;
-&lt;a href="#"&gt;
-&lt;img src="assets/images/sub01.jpg" alt="연간회원안내"&gt;
-&lt;span&gt;연간회원안내&lt;/span&gt;
-&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="#"&gt;
-&lt;img src="assets/images/sub02.jpg" alt="프리미엄투어"&gt;
-&lt;span&gt;프리미엄투어&lt;/span&gt;
-&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="#"&gt;
-&lt;img src="assets/images/sub03.jpg" alt="공연참여 프로그램"&gt;
-&lt;span&gt;공연참여 프로그램&lt;/span&gt;
-&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href="#"&gt;
-&lt;img src="assets/images/sub04.jpg" alt="단체프로그램"&gt;
-&lt;span&gt;단체프로그램&lt;/span&gt;
-&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/section&gt;
-&lt;!-- //content2 --&gt;
+    .bs-callout h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
 
-&lt;footer id="footer"&gt;
-&lt;address&gt;
-&lt;ul&gt;
-&lt;li class="left"&gt;서울특별시 송파구 올림픽로 240 호텔롯데 롯데월드&lt;/li&gt;
-&lt;li&gt;대표자 : 박동기&lt;/li&gt;
-&lt;li&gt;사업자등록번호: 219-85-00014&lt;/li&gt;
-&lt;li class="left"&gt;통신판매업신고번호: 송파 제5513호&lt;/li&gt;
-&lt;li&gt;전화:1661-2000&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;COPYRIGHT 2018 LOTTEWORLD.ALL RIGHTS RESERVED.&lt;/p&gt;
-&lt;/address&gt;
-&lt;/footer&gt;
-&lt;!-- //footer --&gt;
+    .bs-callout p:last-child {
+        margin-bottom: 0;
+    }
 
-&lt;!-- 모달 --&gt;
-&lt;div class="layer_bg"&gt;
-&lt;div class="layer"&gt;
-&lt;h2&gt;타이틀&lt;/h2&gt;
-&lt;a href="#" class="close"&gt;닫기&lt;/a&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/body&gt;
+    .bs-callout code {
+        background-color: #fff;
+        border-radius: 3px;
+    }
 
-&lt;/html&gt;
+    .bs-callout-danger {
+        background-color: #fdf7f7;
+        border-color: #d9534f;
+    }
+
+    .bs-callout-danger h4 {
+        color: #d9534f;
+    }
+
+    .bs-callout-warning {
+        background-color: #fcf8f2;
+        border-color: #f0ad4e;
+    }
+
+    .bs-callout-warning h4 {
+        color: #f0ad4e;
+    }
+
+    .bs-callout-info {
+        background-color: #f4f8fa;
+        border-color: #5bc0de;
+    }
+
+    .bs-callout-info h4 {
+        color: #5bc0de;
+    }
+
+    .bs-docs-section {
+        margin-bottom: 60px;
+    }
+
+    .bs-docs-section:last-child {
+        margin-bottom: 0;
+    }
+
+    .nav {
+        padding-left: 0;
+        margin-bottom: 0;
+        list-style: none;
+    }
+
+    .nav>li {
+        position: relative;
+        display: block;
+    }
+
+    .nav>li>a {
+        position: relative;
+        display: block;
+        padding: 10px 15px;
+    }
+
+    .nav>li>a:hover,
+    .nav>li>a:focus {
+        text-decoration: none;
+        background-color: #eee;
+    }
+
+    .nav>li.disabled>a {
+        color: #999;
+    }
+
+    .nav>li.disabled>a:hover,
+    .nav>li.disabled>a:focus {
+        color: #999;
+        text-decoration: none;
+        cursor: not-allowed;
+        background-color: transparent;
+    }
+
+    .nav .open>a,
+    .nav .open>a:hover,
+    .nav .open>a:focus {
+        background-color: #eee;
+        border-color: #428bca;
+    }
+
+    .nav .nav-divider {
+        height: 1px;
+        margin: 9px 0;
+        overflow: hidden;
+        background-color: #e5e5e5;
+    }
+
+    .nav>li>a>img {
+        max-width: none;
+    }
+
+    .bs-sidebar.affix {
+        position: static;
+    }
+
+    @media (min-width:768px) {
+        .bs-sidebar {
+            padding-left: 20px;
+        }
+    }
+
+    .bs-sidenav {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .bs-sidebar .nav>li>a {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #999;
+        padding: 4px 20px;
+    }
+
+    .bs-sidebar .nav>li>a:hover,
+    .bs-sidebar .nav>li>a:focus {
+        padding-left: 19px;
+        color: #E65447;
+        text-decoration: none;
+        background-color: transparent;
+        border-left: 1px solid #E65447;
+    }
+
+    .bs-sidebar .nav>.active>a,
+    .bs-sidebar .nav>.active:hover>a,
+    .bs-sidebar .nav>.active:focus>a {
+        padding-left: 18px;
+        font-weight: 700;
+        color: #483434;
+        background-color: transparent;
+        border-left: 2px solid #483434;
+    }
+
+    .bs-sidebar .nav .nav {
+        display: none;
+        padding-bottom: 10px;
+    }
+
+    .bs-sidebar .nav .nav>li>a {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 30px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+
+    .bs-sidebar .nav .nav>li>a:hover,
+    .bs-sidebar .nav .nav>li>a:focus {
+        padding-left: 29px;
+    }
+
+    .bs-sidebar .nav .nav>.active>a,
+    .bs-sidebar .nav .nav>.active:hover>a,
+    .bs-sidebar .nav .nav>.active:focus>a {
+        font-weight: 500;
+        padding-left: 28px;
+    }
+
+    @media (min-width:992px) {
+        .bs-sidebar .nav>.active>ul {
+            display: block;
+        }
+
+        .bs-sidebar.affix,
+        .bs-sidebar.affix-bottom {
+            width: 213px;
+        }
+
+        .bs-sidebar.affix {
+            position: fixed;
+            top: 20px;
+        }
+
+        .bs-sidebar.affix-bottom {
+            position: absolute;
+        }
+
+        .bs-sidebar.affix-bottom .bs-sidenav,
+        .bs-sidebar.affix .bs-sidenav {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width:1200px) {
+
+        .bs-sidebar.affix-bottom,
+        .bs-sidebar.affix {
+            width: 263px;
+        }
+    }
+
+    .bs-sidebar.affix-bottom .bs-sidenav,
+    .bs-sidebar.affix .bs-sidenav {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .bs-sidenav {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* padding, margin setting */
+    .pt00 {
+        padding-top: 0px !important;
+    }
+
+    .pt05 {
+        padding-top: 5px !important;
+    }
+
+    .pt10 {
+        padding-top: 10px !important;
+    }
+
+    .pt15 {
+        padding-top: 15px !important;
+    }
+
+    .pt20 {
+        padding-top: 20px !important;
+    }
+
+    .pt25 {
+        padding-top: 25px !important;
+    }
+
+    .pt30 {
+        padding-top: 30px !important;
+    }
+
+    .pt35 {
+        padding-top: 35px !important;
+    }
+
+    .pt40 {
+        padding-top: 40px !important;
+    }
+
+    .pt45 {
+        padding-top: 45px !important;
+    }
+
+    .pt50 {
+        padding-top: 50px !important;
+    }
+
+    .pt55 {
+        padding-top: 55px !important;
+    }
+
+    .pt60 {
+        padding-top: 60px !important;
+    }
+</style>
+
+<div class="document">
+    <div class="container bs-docs-container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="bs-docs-section">
+                    <h2 id="intro1" class="page-header">MySQL</h2>
+                    <p class="lead">
+                        MySQL은 데이터베이스 소프트웨어입니다.
+                        일반적으로 데이터를 추가하거나 검색, 추출하는 기능을 모두 포함해서 데이터베이스라고 부릅니다.
+                    </p>
+                    <p>
+                        MySQL은 세계에서 가장 많이 쓰이는 오픈 소스의 관계형 데이터베이스 관리시스템(RDBMS)입니다.
+                        MySQL은 PHP 스크립트 언어와 상호 연동이 잘 되면서 오픈소스로 개발된 무료 프로그램입니다.
+                        그래서 홈페이지나 쇼핑몰(워드프레스, cafe24, 제로보드, 그누보드)등 일반적으로 웹 개발에 널리 사용하고 있습니다.
+                    </p>
+                </div>
+                <!-- //intro1 -->
+
+                <div class="bs-docs-section">
+                    <h2 id="intro2" class="page-header">MySQL 설치</h2>
+                    <div class="bs-callout bs-callout-info">
+                        MAMP란 웹사이트를 개발할 때 쓰이는 기술 스택인 macOS, Apache, MySQL, PHP 의 약어이자 솔루션 스택이다.
+                        <a href="https://www.mamp.info/en/downloads/"
+                            target="_blank">https://www.mamp.info/en/downloads/</a>
+                    </div>
+                </div>
+                <!-- //intro2 -->
+
+                <div class="bs-docs-section">
+                    <h2 id="intro3" class="page-header">MySQL 실행</h2>
+                    <div class="bs-callout bs-callout-info">
+                        윈도우 : cd MAMP/Bin/mysql/bin<br>
+                        로그인 : mysql -uroot -proot
+                    </div>
+                    <pre><code class="language-js">C:\MAMP\bin\mysql\bin>mysql -uroot -proot
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.7.24 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+                    <div class="bs-callout bs-callout-info">
+                        맥 : cd Application/mamp/Libary/bin<br>
+                        로그인 : sudo ./ -uroot -proot
+                    </div>
+                    <pre><code class="language-js">younghwan@younghwan-MacBookPro bin % ./mysql -uroot -proot
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 188
+Server version: 5.7.34 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2021, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+</code></pre>
+                </div>
+                <!-- //intro3 -->
+
+                <div class="bs-docs-section">
+                    <h2 id="intro4" class="page-header">데이터베이스</h2>
+                    <h3 id="intro4-1" class="page-header">데이터베이스 만들기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        create database 데이터베이스 이름;
+                    </div>
+                    <pre><code class="language-js">mysql> create database sample02;
+Query OK, 1 row affected (0.00 sec)
+</code></pre>
+                    <h3 id="intro4-1" class="page-header">데이터베이스 보기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        show databases;
+                    </div>
+                    <pre><code class="language-js">mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample01           |
+| sample02           |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+</code></pre>
+                    <h3 id="intro4-1" class="page-header">데이터베이스 사용</h3>
+                    <div class="bs-callout bs-callout-info">
+                        use 데이터베이스 이름;
+                    </div>
+                    <pre><code class="language-js">mysql> use sample01;
+Database changed
+</code></pre>
+                    <h3 id="intro4-1" class="page-header">데이터베이스 삭제</h3>
+                    <div class="bs-callout bs-callout-info">
+                        drop database 데이터베이스 이름;
+                    </div>
+                    <pre><code class="language-js">mysql> drop database sample02;
+Query OK, 0 rows affected (0.02 sec)
+</code></pre>
+                </div>
+                <!-- //intro4 -->
+
+                <div class="bs-docs-section">
+                    <h2 id="intro5" class="page-header">테이블</h2>
+                    <h3 id="intro5-1" class="page-header">테이블 만들기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        create table 테이블 이름;
+                    </div>
+                    <pre><code class="language-js">create table member (
+    myMemberID int(10) unsigned auto_increment,
+    youEmail varchar(40) NOT NULL,
+    youName varchar(20) NOT NULL,
+    youPass varchar(20) NOT NULL,
+    youBirth int(20) NOT NULL,
+    regTime int(20) NOT NULL,
+    PRIMARY KEY (myMemberID)
+) charset=utf8;
+</code></pre>
+                    <h3 id="intro5-2" class="page-header">테이블 전체보기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        show tables;
+                    </div>
+                    <pre><code class="language-js">mysql> show tables;
++--------------------+
+| Tables_in_sample01 |
++--------------------+
+| member             |
++--------------------+
+1 row in set (0.00 sec)
+</code></pre>
+                    <h3 id="intro5-3" class="page-header">테이블 보기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        desc 테이블 이름;
+                    </div>
+                    <pre><code class="language-js">mysql> desc member;
++------------+------------------+------+-----+---------+----------------+
+| Field      | Type             | Null | Key | Default | Extra          |
++------------+------------------+------+-----+---------+----------------+
+| myMemberID | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+| youEmail   | varchar(40)      | NO   |     | NULL    |                |
+| youName    | varchar(20)      | NO   |     | NULL    |                |
+| youPass    | varchar(20)      | NO   |     | NULL    |                |
+| youBirth   | int(20)          | NO   |     | NULL    |                |
+| regTime    | int(20)          | NO   |     | NULL    |                |
++------------+------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+</code></pre>
+                    <h3 id="intro5-4" class="page-header">테이블 삭제</h3>
+                    <div class="bs-callout bs-callout-info">
+                        drop table 테이블 이름;
+                    </div>
+                    <pre><code class="language-js">mysql> drop table member;
+Query OK, 0 rows affected (0.01 sec)
+</code></pre>
+                    <h3 id="intro5-5" class="page-header">테이블 복사</h3>
+                    <div class="bs-callout bs-callout-info">
+
+                    </div>
+                    <pre><code class="language-js">
+
+</code></pre>
+
+                </div>
+                <!-- //intro5 -->
+
+                <div class="bs-docs-section">
+                    <h2 id="intro6" class="page-header">테이블 데이터</h2>
+                    <h3 id="intro6-1" class="page-header">데이터 입력하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        INSERT INTO 테이블이름(필드명) VALUE(데이터)
+                    </div>
+                    <pre><code class="language-js">INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('webstoryboy@naver.com','***','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('thdtjdgml415@naver.com', '***', '1234', '19970415', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('mo0647@naver.com', '***', '1234', '19970530', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('tjrwnsrkdtj@naver.com', '***', '1234', '19941009', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('jwor124@naver.com', '***', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('leesh3432@naver.com','***','1234','19970205','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('sshin4882@naver.com','***','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('to_before@naver.com', '***', '1234', '19970809', '04');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('kkb7528@naver.com','***','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('piowm123@gmail.com', '***', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('ghkddbwls96@gmail.com', '***', '1234', '19990303', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('eodnjs9605@naver.com','***','1234','19960530','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('wjsqhdus971007@gmail.com','***','1234','19971007','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('noeyheyh@gmail.com','***','1234','19960331','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('hjkang306@gmail.com','***','1234','19990303','1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('sunhey9810@gmail.com', '***', '1234', '19981010', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUE('kde66034@gmail.com', '***', '1234', '19700101', '1234567');
+INSERT INTO member(youEmail, youName, youPass, youBirth, regTime) VALUES('praise1109@gmail.com', '***', '1234', '19990303', '1234567');
+</code></pre>
+                    <h3 id="intro6-2" class="page-header">데이터 불러오기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        SELECT 필드명 FROM 테이블명 WHERE 조건
+                    </div>
+                    <h4>전체 데이터 불러오기</h4>
+                    <pre><code class="language-js">mysql> select * from member;
++------------+--------------------------+---------+---------+----------+---------+
+| myMemberID | youEmail                 | youName | youPass | youBirth | regTime |
++------------+--------------------------+---------+---------+----------+---------+
+|          1 | kimlh3743@gmail.com      |   ***   | 1234    | 20011009 | 1234567 |
+|          2 | webstoryboy@naver.com    |   ***   | 1234    | 19990303 | 1234567 |
+|          3 | thdtjdgml415@naver.com   |   ***   | 1234    | 19970415 | 1234567 |
+|          4 | mo0647@naver.com         |   ***   | 1234    | 19970530 | 1234567 |
+|          5 | tjrwnsrkdtj@naver.com    |   ***   | 1234    | 19941009 | 1234567 |
+|          6 | jwor124@naver.com        |   ***   | 1234    | 19990303 | 1234567 |
+|          7 | leesh3432@naver.com      |   ***   | 1234    | 19970205 | 1234567 |
+|          8 | sshin4882@naver.com      |   ***   | 1234    | 19990303 | 1234567 |
+|          9 | to_before@naver.com      |   ***   | 1234    | 19970809 | 1234567 |
+|         10 | kkb7528@naver.com        |   ***   | 1234    | 19990303 | 1234567 |
+|         11 | ghkddbwls96@gmail.com    |   ***   | 1234    | 19990303 | 1234567 |
+|         12 | eodnjs9605@naver.com     |   ***   | 1234    | 19960530 | 1234567 |
+|         13 | wjsqhdus971007@gmail.com |   ***   | 1234    | 19971007 | 1234567 |
+|         14 | noeyheyh@gmail.com       |   ***   | 1234    | 19960331 | 1234567 |
+|         15 | hjkang306@gmail.com      |   ***   | 1234    | 19990303 | 1234567 |
+|         16 | sunhey9810@gmail.com     |   ***   | 1234    | 19981010 | 1234567 |
+|         17 | kde66034@gmail.com       |   ***   | 1234    | 19700101 | 1234567 |
+|         18 | praise1109@gmail.com     |   ***   | 1234    | 19990303 | 1234567 |
+|         19 | oranssy@naver.com        |   ***   | 3950    | 20010415 | 1234567 |
+|         20 | kkk5993@naver.com        |   ***   | 1234    | 19960617 | 1234567 |
+|         21 | happyham52@gmail.com     |   ***   | 1234    | 19970731 | 1234567 |
++------------+--------------------------+---------+---------+----------+---------+
+21 rows in set (0.00 sec)
+</code></pre>
+                    <h4 class="pt20">mymemberID가 6번인 경우</h4>
+                    <pre><code class="language-js">mysql> select * from member where myMemberID = 6;
++------------+-------------------+---------+---------+----------+---------+
+| myMemberID | youEmail          | youName | youPass | youBirth | regTime |
++------------+-------------------+---------+---------+----------+---------+
+|          6 | jwor124@naver.com |   ***   | 1234    | 19990303 | 1234567 |
++------------+-------------------+---------+---------+----------+---------+
+1 row in set (0.00 sec)
+</code></pre>
+                    <h4 class="pt20">email 중에 naver 텍스트를 포함하고 있는 경우</h4>
+                    <pre><code class="language-js">mysql> select * from member where youEmail LIKE "%naver%";
++------------+------------------------+---------+---------+----------+---------+
+| myMemberID | youEmail               | youName | youPass | youBirth | regTime |
++------------+------------------------+---------+---------+----------+---------+
+|          2 | webstoryboy@naver.com  |   ***   | 1234    | 19990303 | 1234567 |
+|          3 | thdtjdgml415@naver.com |   ***   | 1234    | 19970415 | 1234567 |
+|          4 | mo0647@naver.com       |   ***   | 1234    | 19970530 | 1234567 |
+|          5 | tjrwnsrkdtj@naver.com  |   ***   | 1234    | 19941009 | 1234567 |
+|          6 | jwor124@naver.com      |   ***   | 1234    | 19990303 | 1234567 |
+|          7 | leesh3432@naver.com    |   ***   | 1234    | 19970205 | 1234567 |
+|          8 | sshin4882@naver.com    |   ***   | 1234    | 19990303 | 1234567 |
+|          9 | to_before@naver.com    |   ***   | 1234    | 19970809 | 1234567 |
+|         10 | kkb7528@naver.com      |   ***   | 1234    | 19990303 | 1234567 |
+|         12 | eodnjs9605@naver.com   |   ***   | 1234    | 19960530 | 1234567 |
+|         19 | oranssy@naver.com      |   ***   | 3950    | 20010415 | 1234567 |
+|         20 | kkk5993@naver.com      |   ***   | 1234    | 19960617 | 1234567 |
++------------+------------------------+---------+---------+----------+---------+
+12 rows in set (0.00 sec)
+</code></pre>
+                    <h3 id="intro6-3" class="page-header">데이터 수정하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        UPDATE 테이블 이름 SET 수정필드 = 수정값 WHERE 조건;
+                    </div>
+                    <pre><code class="language-js">
+
+</code></pre>
+                    <h3 id="intro6-4" class="page-header">데이터 삭제하기</h3>
+                    <div class="bs-callout bs-callout-info">
+                        drop table 테이블 이름;
+                    </div>
+                    <pre><code class="language-js">
+
+</code></pre>
+
+                </div>
+                <!-- //intro6 -->
+
+            </div>
+            <!-- //col-md-9 -->
+            <div class="col-md-3">
+                <div class="bs-sidebar hidden-print affix-top" role="complementary">
+                    <ul class="nav bs-sidenav">
+                        <li class="active"><a href="#intro1">MySQL</a></li>
+                        <li><a href="#intro2">MySQL 설치</a></li>
+                        <li><a href="#intro3">MySQL 실행</a></li>
+                        <li><a href="#intro4">데이터베이스</a>
+                            <ul class="nav">
+                                <li><a href="#intro4-1">데이터베이스 만들기</a></li>
+                                <li><a href="#intro4-2">데이터베이스 보기</a></li>
+                                <li><a href="#intro4-3">데이터베이스 사용</a></li>
+                                <li><a href="#intro4-4">데이터베이스 삭제</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro5">테이블</a>
+                            <ul class="nav">
+                                <li><a href="#intro5-1">테이블 만들기</a></li>
+                                <li><a href="#intro5-2">테이블 전체보기</a></li>
+                                <li><a href="#intro5-3">테이블 보기</a></li>
+                                <li><a href="#intro5-4">테이블 삭제</a></li>
+                                <li><a href="#intro5-5">테이블 복사</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro6">테이블 데이터</a>
+                            <ul class="nav">
+                                <li><a href="#intro6-1">데이터 입력하기</a></li>
+                                <li><a href="#intro6-2">데이터 불러오기</a></li>
+                                <li><a href="#intro6-3">데이터 수정하기</a></li>
+                                <li><a href="#intro6-4">데이터 삭제하기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro7">테이블 수정</a>
+                            <ul class="nav">
+                                <li><a href="#intro7-1">테이블 만들기</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#intro8">테이블 JOIN</a>
+                            <ul class="nav">
+                                <li><a href="#intro8-1">테이블 만들기</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //col-md-3 -->
+        </div>
+        <!-- //row -->
+    </div>
+</div>

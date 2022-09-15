@@ -50,9 +50,9 @@
     <!-- //header -->
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">패럴렉스 이펙트 - 메뉴 이동</h2>
+            <h2 class="t_tit">COOKIT 사이트</h2>
             <p class="t_desc2">
-                메뉴에 맞는 페이지로 이동되는 패럴렉스를 만들어 봅시다.
+                웹디자인 기능사 실기 연습
             </p>
 
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
@@ -60,505 +60,1239 @@
             </div>
 
             <div class="t_link">
-                <a href="https://github.com/kimyihyung/coding/blob/main/javascript/effect/parallaxEffect01.html"
-                    target="_blank">원본 소스 보기</a>
+                <a href="https://github.com/kimyihyung/coding/site/webd/study_video/test02/test.html" target="_blank">원본
+                    소스 보기</a>
             </div>
             <div class="t_link">
-                <a href="https://kimyihyung.github.io/coding/javascript/effect/parallaxEffect01.html">원본 사이트</a>
+                <a href="https://kimyihyung.github.io/coding/site/webd/study_video/test02/test.html">원본 사이트</a>
             </div>
             <hr>
 
-            <h3 class="t_tit2">이미지로 설명</h3>
+            <h3 class="t_tit2">1-1</h3>
+            <details>
+                <summary>코드보기</summary>
+                <h3 class="t_tit3">HTML</h3>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;div class="wrap"&gt;
+    &lt;header id="header" class="clearfix"&gt;
+        &lt;h1&gt;&lt;a href="#"&gt;&lt;img src="assets/images/logo.jpg" alt="Cookit"&gt;&lt;/a&gt;&lt;/h1&gt;
+        &lt;nav class="nav"&gt;
+            &lt;ul class="clearfix"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;COOKIT 소개&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;COOKIT 메뉴&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;리뷰&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;이벤트&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;MY쿡킷&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;!-- //header  --&gt;
 
-            <hr>
+    &lt;section id="banner"&gt;
+        &lt;img src="assets/images/banner.jpg" alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트"&gt;
+    &lt;/section&gt;
+    &lt;!-- //banner  --&gt;
 
-            <h3 class="t_tit2">html</h3>
-            <p class="t_desc">
-            </p>
-            <div class="t_code">
-                <pre><code class="language-html">&lt;header id="header"&gt;
-    &lt;h1&gt;Javascript Parallax Effect01&lt;/h1&gt;
-    &lt;p&gt;패럴렉스 이펙트 - 메뉴 이동&lt;/p&gt;
-    &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="parallaxEffect01.html"&gt;1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect02.html"&gt;2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect03.html"&gt;3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect04.html"&gt;4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect05.html"&gt;5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect06.html"&gt;6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="parallaxEffect07.html"&gt;7&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/header&gt;
-&lt;!-- //header --&gt;
+    &lt;section id="content1" class="clearfix"&gt;
+        &lt;article class="left"&gt;
+            &lt;h2 class="title"&gt;우리집도 COOKIT 배송이 되나요?&lt;/h2&gt;
+            &lt;p class="desc"&gt;배송이 가능한지 알려드려요&lt;/p&gt;
+            &lt;a href="#" class="btn"&gt;배송지 검색&lt;/a&gt;
+        &lt;/article&gt;
+        &lt;article class="right"&gt;
+            &lt;h2 class="title"&gt;7월 30일(화)에 받을 수 있어요&lt;/h2&gt;
+            &lt;p class="desc"&gt;오전 7시까지 주문하시면 다음날 배송됩니다.&lt;/p&gt;
+            &lt;a href="#" class="btn"&gt;63:28:32 &lt;em&gt;남은 시간&lt;/em&gt;&lt;/a&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+    &lt;!-- //content1  --&gt;
 
-&lt;nav id="parallax__nav"&gt;
-    &lt;ul&gt;
-        &lt;li class="active"&gt;&lt;a href="#section1"&gt;메뉴1&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section2"&gt;메뉴2&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section3"&gt;메뉴3&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section4"&gt;메뉴4&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section5"&gt;메뉴5&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section6"&gt;메뉴6&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section7"&gt;메뉴7&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section8"&gt;메뉴8&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#section9"&gt;메뉴9&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
-&lt;!-- //parallax__nav --&gt;
-
-&lt;main id="parallax__cont"&gt;
-    &lt;div class="contents"&gt;
-        &lt;section id="section1" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+    &lt;section id="content2"&gt;
+        &lt;h2&gt;실시간 베스트&lt;/h2&gt;
+        &lt;div class="best"&gt;
+            &lt;figure&gt;
+                &lt;img src="assets/images/best1.jpg" alt="평양식 어복쟁반"&gt;
+                &lt;figcaption&gt;평양식 어복쟁반&lt;/figcaption&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;얕은 사람은 행운을 믿으며, 강한 사람은 원인과 결과를 믿는다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section1 --&gt;
-
-        &lt;section id="section2" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;figure&gt;
+                &lt;img src="assets/images/best2.jpg" alt="새우주꾸미삼겹살"&gt;
+                &lt;figcaption&gt;새우주꾸미삼겹살&lt;/figcaption&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;지난 일은 어쩔 수 없는 바 슬퍼한들 이미 엎질러진 물이다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section2 --&gt;
-
-        &lt;section id="section3" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;figure&gt;
+                &lt;img src="assets/images/best3.jpg" alt="방풀나물 아귀찜"&gt;
+                &lt;figcaption&gt;방풀나물 아귀찜&lt;/figcaption&gt;
             &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;행동하는 사람처럼 생각하고, 생각하는 사람처럼 행동하라.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section3 --&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //content2  --&gt;
 
-        &lt;section id="section4" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;실수할 자유가 없는 자유란 가치가 없다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section4 --&gt;
+    &lt;footer id="footer"&gt;
+    &lt;/footer&gt;
+    &lt;!-- //footer  --&gt;
 
-        &lt;section id="section5" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;끝까지 해보기 전까지는 늘 불가능해 보입니다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section5 --&gt;
-
-        &lt;section id="section6" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;고통은 잠깐이다. 포기는 영원히 남는다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section6 --&gt;
-
-        &lt;section id="section7" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;희망을 품지 않은 자는 절망도 할 수 없다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section7 --&gt;
-
-        &lt;section id="section8" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;뭔가를 위해 시도조차하려는 용기가 없다면 삶이 무슨 의미가 있을까?&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section8 --&gt;
-
-        &lt;section id="section9" class="content__item"&gt;
-            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
-            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
-                &lt;div class="content__item__img"&gt;&lt;/div&gt;
-            &lt;/figure&gt;
-            &lt;p class="content__item__desc"&gt;꿈을 꾸세요. 그러면 그 꿈이 당신을 만들 것입니다.&lt;/p&gt;
-        &lt;/section&gt;
-        &lt;!-- //section9 --&gt;
-    &lt;/div&gt;
-&lt;/main&gt;
-&lt;!-- //main --&gt;
-
-&lt;aside id="parallax__info"&gt;
-    &lt;div class="scroll"&gt;scrollTop : &lt;span&gt;0&lt;/span&gt;px&lt;/div&gt;
-    &lt;div class="info"&gt;
-        &lt;ul&gt;
-            &lt;li&gt;#section1 offset() : &lt;span class="offset1"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section2 offset() : &lt;span class="offset2"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section3 offset() : &lt;span class="offset3"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section4 offset() : &lt;span class="offset4"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section5 offset() : &lt;span class="offset5"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section6 offset() : &lt;span class="offset6"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section7 offset() : &lt;span class="offset7"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section8 offset() : &lt;span class="offset8"&gt;0&lt;/span&gt;px&lt;/li&gt;
-            &lt;li&gt;#section9 offset() : &lt;span class="offset9"&gt;0&lt;/span&gt;px&lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;/aside&gt;
-&lt;!-- //parallax__info --&gt;
+&lt;/div&gt;
 </code></pre>
-            </div>
-
-            <h3 class="t_tit2">css</h3>
-            <p class="t_desc">
-            </p>
-            <div class="t_code">
-                <pre><code class="language-css">#parallax__nav {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 2000;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 20px 30px;
-    border-radius: 50px;
+                </div>
+                <h3 class="t_tit3">css</h3>
+                <div class="t_code">
+                    <pre><code class="language-css">/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
-#parallax__nav li {
-    display: inline;
-    margin: 0 5px;
-}
-
-#parallax__nav li a {
-    display: inline-block;
-    height: 30px;
-    padding: 5px 20px;
-    text-align: center;
-    line-height: 30px;
-}
-
-#parallax__nav li.active a {
-    background: #fff;
-    color: #000;
-    border-radius: 20px;
-    box-sizing: content-box;
-}
-
-#parallax__cont {
-    max-width: 1600px;
-    width: 98%;
-    margin: 0 auto;
-    /* background-color: rgba(255, 255, 255, 0.1); */
-}
-
-.content__item {
+/* layout */
+#wrap {
     width: 1000px;
-    max-width: 70vw;
-    margin: 30vw auto;
-    /* background-color: rgba(255, 255, 255, 0.3); */
-    text-align: left;
-    margin-right: 0;
+    margin: 0 auto;
+    background: #ccc;
+    height: 1000px;
+}
+#header {
+}
+#banner {
+}
+#content1 {
+}
+#content2 {
+}
+#footer {
+}
+
+/* header */
+#header h1 {
+    float: left;
+    padding: 15px 0 10px;
+}
+#header h1 img {
+    width: 110px;
+}
+#header .nav {
+    float: right;
+    background: #ddd;
+}
+#header .nav li {
+    float: left;
     position: relative;
-    padding-top: 8vw;
+    width: 140px;
+    text-align: center;
 }
-
-.content__item:nth-child(even) {
-    margin-left: 0;
-    text-align: right;
+#header .nav li a {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 24px 20px 20px 20px;
 }
-
-.content__item__num {
-    font-size: 35vw;
-    font-weight: 100;
-    font-family: 'Lato';
+#header .nav li ul.submenu {
+    display: none;
     position: absolute;
-    left: -5vw;
-    top: -16vw;
-    opacity: 0.07;
-    z-index: -2;
+    left: 0;
+    top: 69;
+}
+#header .nav li ul.submenu li {
+}
+#header .nav li ul.submenu li a {
+    padding: 10px;
+    background: #888;
 }
 
-.content__item:nth-child(even) .content__item__num {
-    left: auto;
-    right: -5vw;
+/* banner */
+#banner {
 }
-
-.content__item__title {
-    font-weight: 400;
-    text-transform: capitalize;
-}
-
-.content__item__imgWrap {
+#banner img {
     width: 100%;
-    padding-bottom: 56.25%;
-    background: #000;
-    position: relative;
-    overflow: hidden;
-    z-index: -1;
 }
 
-.content__item__img {
-    position: absolute;
-    background: url(../assets/img/effect_bg19-min.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    width: 110%;
-    height: 110%;
-    left: -5%;
-    top: -5%;
-    filter: saturate(0%);
-    transition: all 1s;
+/* content1 */
+#content1 {
+    margin-top: 20px;
 }
-
-.content__item:nth-child(1) .content__item__img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg20-min.jpg);
-}
-
-.content__item:nth-child(2) .content__item__img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg19-min.jpg);
-}
-
-.content__item:nth-child(3) .content__item__img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg18-min.jpg);
-}
-
-.content__item:nth-child(4) .content__item__img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg17-min.jpg);
-}
-
-.content__item:nth-child(5) .content__item__img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg16-min.jpg);
-}
-
-.content__item:nth-child(6) .content__item__img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg15-min.jpg);
-}
-
-.content__item:nth-child(7) .content__item__img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg14-min.jpg);
-}
-
-.content__item:nth-child(8) .content__item__img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg13-min.jpg);
-}
-
-.content__item:nth-child(9) .content__item__img {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg12-min.jpg);
-}
-
-.content__item__desc {
-    font-size: 4vw;
-    line-height: 1.4;
-    margin-top: -5vw;
-    margin-left: -4vw;
-    word-break: keep-all;
-}
-
-.content__item:nth-child(even) .content__item__desc {
-    margin-left: auto;
-    margin-right: -4vw;
-}
-
-#parallax__info {
-    position: fixed;
-    left: 20px;
-    bottom: 20px;
-    z-index: 2000;
-    background: rgba(0, 0, 0, 0.6);
-    color: #fff;
+#content1 .left {
+    float: left;
+    width: 49%;
     padding: 20px;
-    border-radius: 10px;
+    box-sizing: border-box;
+    margin-right: 2%;
+    background: #f2f2f2 url(../images/bg1.jpg) no-repeat right 20px center;
+    background-size: 80px;
+}
+#content1 .left .title {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+#content1 .left .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+#content1 .left .btn {
+    background: url(../images/icon1.gif) no-repeat left top;
+    background-size: 20px;
+    padding-left: 25px;
+    padding-top: 3px;
+}
+#content1 .right {
+    float: left;
+    width: 49%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-right: 0;
+    background: #f2f2f2 url(../images/bg2.jpg) no-repeat right 20px center;
+    background-size: 80px;
+}
+#content1 .right .title {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+#content1 .right .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+#content1 .right .btn {
+    background: url(../images/icon2.gif) no-repeat left top;
+    background-size: 20px;
+    padding-left: 25px;
+    padding-top: 2px;
+}
+#content1 .right .btn em {
+    font-size: 13px;
+    color: #999;
+    font-style: normal;
+}                        
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">1-2</h3>
+            <details>
+                <summary>코드보기</summary>
+                <h3 class="t_tit3">HTML</h3>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;div class="wrap"&gt;
+    &lt;header id="header" class="clearfix"&gt;
+        &lt;h1&gt;&lt;a href="#"&gt;&lt;img src="assets/images/logo.jpg" alt="Cookit"&gt;&lt;/a&gt;&lt;/h1&gt;
+        &lt;nav class="nav"&gt;
+            &lt;ul class="clearfix"&gt;
+                &lt;li&gt;&lt;a href="#"&gt;COOKIT 소개&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;COOKIT 메뉴&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;리뷰&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;이벤트&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;MY쿡킷&lt;/a&gt;
+                    &lt;ul class="submenu"&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;!-- //header  --&gt;
+
+    &lt;section id="banner"&gt;
+        &lt;div class="slideList"&gt;
+            &lt;div class="slideImg"&gt;
+                &lt;h2&gt;이미지1&lt;/h2&gt;
+                &lt;img src="assets/images/banner.jpg" alt="쿡킷을 더 편리하게 Cookit 앱 런칭기념 이벤트1"&gt;
+            &lt;/div&gt;
+            &lt;div class="slideImg"&gt;
+                &lt;h2&gt;이미지2&lt;/h2&gt;
+                &lt;img src="assets/images/banner.jpg" alt="쿡킷을 더 편리하게 Cookit 앱 런칭기념 이벤트2"&gt;
+            &lt;/div&gt;
+            &lt;div class="slideImg"&gt;
+                &lt;h2&gt;이미지3&lt;/h2&gt;
+                &lt;img src="assets/images/banner.jpg" alt="쿡킷을 더 편리하게 Cookit 앱 런칭기념 이벤트3"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //banner  --&gt;
+
+    &lt;section id="content1" class="clearfix"&gt;
+        &lt;article class="left"&gt;
+            &lt;h2 class="title"&gt;우리집도 COOKIT 배송이 되나요?&lt;/h2&gt;
+            &lt;p class="desc"&gt;배송이 가능한지 알려드려요&lt;/p&gt;
+            &lt;a href="#" class="btn"&gt;배송지 검색&lt;/a&gt;
+        &lt;/article&gt;
+        &lt;article class="right"&gt;
+            &lt;h2 class="title"&gt;7월 30일(화)에 받을 수 있어요&lt;/h2&gt;
+            &lt;p class="desc"&gt;오전 7시까지 주문하시면 다음날 배송됩니다.&lt;/p&gt;
+            &lt;a href="#" class="btn"&gt;63:28:32 &lt;em&gt;남은 시간&lt;/em&gt;&lt;/a&gt;
+        &lt;/article&gt;
+    &lt;/section&gt;
+    &lt;!-- //content1  --&gt;
+
+    &lt;section id="content2"&gt;
+        &lt;h2&gt;실시간 베스트&lt;/h2&gt;
+        &lt;div class="best clearfix"&gt;
+            &lt;figure&gt;
+                &lt;img src="assets/images/best1.jpg" alt="평양식 어복쟁반"&gt;
+                &lt;figcaption&gt;평양식 어복쟁반&lt;/figcaption&gt;
+            &lt;/figure&gt;
+            &lt;figure&gt;
+                &lt;img src="assets/images/best2.jpg" alt="새우주꾸미삼겹살"&gt;
+                &lt;figcaption&gt;새우주꾸미삼겹살&lt;/figcaption&gt;
+            &lt;/figure&gt;
+            &lt;figure&gt;
+                &lt;img src="assets/images/best3.jpg" alt="방풀나물 아귀찜"&gt;
+                &lt;figcaption&gt;방풀나물 아귀찜&lt;/figcaption&gt;
+            &lt;/figure&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;!-- //content2  --&gt;
+
+    &lt;footer id="footer" class="clearfix"&gt;
+        &lt;h2&gt;&lt;img src="assets/images/logo-2.jpg" alt="Cookit"&gt;&lt;/h2&gt;
+        &lt;div class="foot"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;이용 약관&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;개인정보처리 방침&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;법적 고지&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;사업자정보 확인&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;address&gt;
+                씨제이제일제당(주) 대표자 : 신현재&lt;br&gt;
+                주소: 서울 중구 동호로 330 CJ 제일제당 센터(우)04560 사업자등록번호 : 104-86-09535&lt;br&gt;
+                통신판매업신고 중구 제 07767호 개인정보보호책임자 : 류화정&lt;br&gt;
+            &lt;/address&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+    &lt;!-- //footer  --&gt;
+&lt;/div&gt;
+&lt;!-- //wrap --&gt;
+</code></pre>
+                </div>
+                <h3 class="t_tit3">css</h3>
+                <div class="t_code">
+                    <pre><code class="language-css">/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
 }
 
-#parallax__info li,
-.scroll {
-    line-height: 1.4;
+/* layout */
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
 }
 
-@media (max-width: 800px) {
-    #parallax__cont {
-        margin-top: 70vw;
-    }
+/* header */
+#header h1 {
+    float: left;
+    padding: 15px 0 10px;
+}
+#header h1 img {
+    width: 110px;
+}
+#header .nav {
+    float: right;
+    background: #ddd;
+}
+#header .nav li {
+    float: left;
+    position: relative;
+    width: 150px;
+    text-align: center;
+}
+#header .nav li a {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 24px 20px 20px 20px;
+}
+#header .nav li a:hover {
+    background: #ccc;
+}
+#header .nav li ul.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 67px;
+    z-index: 100;
+}
+#header .nav li ul.submenu li {
+}
+#header .nav li ul.submenu li a {
+    padding: 10px;
+    background: #888;
+}
+#header .nav li ul.submenu li a:hover {
+    background: #666;
+}
 
-    #parallax__nav {
-        padding: 10px;
-        right: auto;
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        border-radius: 5px;
-        background-color: rgba(0, 0, 0, 0.8);
-    }
+/* banner */
+#banner {
+    height: 389px;
+    overflow: hidden;
+}
+#banner img {
+    width: 100%;
+    display: block;
+}
 
-    #parallax__nav li {
-        display: block;
-        margin: 5px;
-    }
+/* 상하
+.slideList {
+    position: relative; 
+    width: 1000px; 
+    height: 389px;
+}
+.slideList .slideImg {
+    position: relative;
+}
+.slideList .slideImg h2 {
+    position: absolute; 
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%,-50%); 
+    background: rgba(0,0,0,0.4); 
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+*/
 
-    #parallax__nav li a {
-        font-size: 14px;
-        padding: 5px;
-        border-radius: 5px;
-        height: auto;
-        line-height: 1;
-    }
+/* 좌우 */
+.slideList {
+    position: relative;
+    width: 3000px;
+    z-index: 50;
+}
 
-    #parallax__nav li.active a {
-        border-radius: 5px;
-    }
+.slideList .slideImg {
+    position: relative;
+    width: 1000px;
+    float: left;
+    /* 가로로 정렬 float width 지정 */
+}
 
-    #parallax__info {
-        left: 10px;
-        bottom: 10px;
-    }
+.slideList .slideImg h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+/* content1 */
+#content1 {
+    margin-top: 20px;
+}
+#content1 .left {
+    float: left;
+    width: 49%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-right: 2%;
+    background: #f2f2f2 url(../images/bg1.jpg) no-repeat right 20px center;
+    background-size: 80px;
+}
+#content1 .left .title {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+#content1 .left .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+#content1 .left .btn {
+    background: url(../images/icon1.gif) no-repeat left top;
+    background-size: 20px;
+    padding-left: 25px;
+    padding-top: 3px;
+}
+#content1 .right {
+    float: left;
+    width: 49%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-right: 0;
+    background: #f2f2f2 url(../images/bg2.jpg) no-repeat right 20px center;
+    background-size: 80px;
+}
+#content1 .right .title {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+#content1 .right .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+#content1 .right .btn {
+    background: url(../images/icon2.gif) no-repeat left top;
+    background-size: 20px;
+    padding-left: 25px;
+    padding-top: 2px;
+}
+#content1 .right .btn em {
+    font-size: 13px;
+    color: #999;
+    font-style: normal;
+}
+
+/* content2 */
+#content2 {
+    margin-top: 30px;
+}
+#content2 h2 {
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+#content2 .best {
+}
+#content2 .best figure {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+}
+#content2 .best figure img {
+    width: 100%;
+}
+#content2 .best figure:last-child {
+    margin-right: 0;
+}
+#content2 .best figcaption {
+}
+
+/* footer */
+#footer {
+    padding: 20px 0;
+    background: #202020;
+    margin-top: 30px;
+}
+
+#footer h2 {
+    float: left;
+    padding-left: 20px;
+}
+
+#footer h2 img {
+    width: 150px;
+}
+
+#footer .foot {
+    float: right;
+    padding-right: 30px;
+}
+
+#footer .foot ul {
+    padding-bottom: 10px;
+}
+
+#footer .foot ul li {
+    display: inline;
+}
+
+#footer .foot ul li a {
+    color: #fff;
+    padding-right: 10px;
+}
+
+#footer .foot address {
+    font-style: normal;
+    color: #ccc;
 }
 </code></pre>
-            </div>
+                </div>
+                <h3 class="t_tit3">js</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">// 내비게이션
+$(".nav > ul > li").mouseover(function () {
+    $(this).find(".submenu").stop().slideDown(200);
+});
+$(".nav > ul > li").mouseout(function () {
+    $(this).find(".submenu").stop().slideUp(200);
+});
 
-            <h3 class="t_tit2">js</h3>
-            <p class="t_desc">
-                preventDefault() : (이벤트의 기본 기능을 막는 것)요소를 클릭했을 때, 맨 위로 스크롤되는 이벤트가 발생하지 않도록 합니다.
-                scrollIntoView() : 화면의 특정 위치로 이동시켜주는 함수.
-                getAttribute() : 특정 요소 내에서 특정 한 속성값을 가져오는 메소드
-            </p>
-            <div class="t_code">
-                <pre><code class="language-js">const scroll = document.querySelector("#parallax__info .scroll span")   //요소의 offsetTop 값을 구해 삽입할 info의 span태그를 선택하여 scroll 변수 안에 저장합니다.
+//currentIndex = 0; 첫번째 이미지 : 0
+//currentIndex = 1; 두번째 이미지 : -389
+//currentIndex = 2; 세번째 이미지 : -778
 
-window.addEventListener("scroll", () => {       //스크롤하는 이벤트를 발생, 화면상에서의 이벤트 발생을 가져오기 위해, 대상 요소는 window로.
-    //let scrollTop = window.pageYOffset;
-    //let scrollTop = window.scrollY;
-    //let scrollTop = document.documentElement.scrollTop
-    let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-    //브라우저마다 지원여부가 다르기에 "||"을 적어 셋 중 한가지를 선택해 스크롤 값을 불어와서 작동하도록.
+// 이미지 슬라이드 (상하)
+// var currentIndex = 0; //첫번째 이미지
+// 
+// setInterval(function(){
+//     if(currentIndex &lt; 2){
+//         currentIndex++;
+//     } else {
+//         currentIndex = 0;
+//     }
+//     var slidePosition = currentIndex * (-389)+"px";
+//     $(".slideList").animate({top: slidePosition},400);
+//     
+// }, 3000);
 
+// 이미지 슬라이드 (좌우)
+var currentIndex = 0;
 
-    // if (scrollTop >= document.getElementById("section1").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active")
-    // }
-    // if (scrollTop >= document.getElementById("section2").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active")
-    // }
-    // if (scrollTop >= document.getElementById("section3").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(3)").classList.add("active")
-    // }
-    // if (scrollTop >= document.getElementById("section4").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(4)").classList.add("active")
-    // }
-    // if (scrollTop >= document.getElementById("section5").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(5)").classList.add("active")
-    // }
-    // if (scrollTop >= document.getElementById("section6").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(6)").classList.add("active")
-    // }
-    // if (scrollTop >= document.getElementById("section7").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(7)").classList.add("active")
-    // }
-    // if (scrollTop >= document.getElementById("section8").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(8)").classList.add("active")
-    // }
-    // if (scrollTop >= document.getElementById("section9").offsetTop) {
-    //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //         li.classList.remove("active")
-    //     })
-    //     document.querySelector("#parallax__nav li:nth-child(9)").classList.add("active")
-    // }
-
-    //for
-    // for (let i = 1; i &lt;= 9; i++) {
-    //     if (scrollTop >= document.getElementById("section" + i).offsetTop) {
-    //         document.querySelectorAll("#parallax__nav li").forEach(li => {
-    //             li.classList.remove("active")
-    //         })
-    //         document.querySelector("#parallax__nav li:nth-child(" + i + ")").classList.add("active")
-    //     }
-    // }
-
-    //forEach
-    document.querySelectorAll(".content__item").forEach((element, index) => {   //1.forEach를 통해 각 .content__item 클래스의 각 요소를 가져옵니다.
-        //오차범위를 위해 -2
-        if (scrollTop >= element.offsetTop - 2) {        //scrollTop=[여기서 if를 통해 만약 scrollTop(브라우저의 최상단에서 스크롤 한 값)]이 e=[.content__item 클래스 요소의 상단과의 거리 값]의 이상이라면
-            document.querySelectorAll("#parallax__nav li").forEach(li => {
-                //메뉴바 active 모두 없애기 (선택되지 않은 것은 선택되지 않게)
-                li.classList.remove("active");        //#parallax__nav li의 요소의 클래스에 active를 지워주고
-            });
-            //index가 0부터 시작이기에 1부터 시작을 위해 index +1
-            document.querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")").classList.add("active");     //li의 n번째 값에 active를 추가해줍니다
-        }
-    })       //스크롤 값이 요소의 offset 값보다 크거나 같으면 스크롤이 해당 섹션에 도달하지 못한 것, 메뉴의 클래스에서 active를 삭제.
-    //도달한 요소는 index+1 번째 li요소와 같으므로, 변수를 사용하여 해당 요소를 선택한 후, 클래스에 active를 추가해 활성화 시켜줍니다.
-
-
-    //info
-    document.querySelector(".scroll span").innerText = Math.round(scrollTop);   //Math.round()는 값을 반올림.
-
-    // offsetTop값 for문 이용해서 구하기
-    //getElementById : 주어진 문자열과 일치하는 id 속성을 가진 요소를 찾고, 이를 나타내는 Element 객체를 반환
-    for (let i = 1; i &lt;= 9; i++) {      // section + i 의 offsetTop값을 offset + i 에 텍스트로 대입 시킨다.
-        document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
+setInterval(function () {
+    if (currentIndex &lt; 2) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
     }
-
-    // document.querySelector(".offset1").innerText = document.getElementById("section1").offsetTop;
-    // document.querySelector(".offset2").innerText = document.getElementById("section2").offsetTop;
-    // document.querySelector(".offset3").innerText = document.getElementById("section3").offsetTop;
-    // document.querySelector(".offset4").innerText = document.getElementById("section4").offsetTop;
-    // document.querySelector(".offset5").innerText = document.getElementById("section5").offsetTop;
-    // document.querySelector(".offset6").innerText = document.getElementById("section6").offsetTop;
-    // document.querySelector(".offset7").innerText = document.getElementById("section7").offsetTop;
-    // document.querySelector(".offset8").innerText = document.getElementById("section8").offsetTop;
-    // document.querySelector(".offset9").innerText = document.getElementById("section9").offsetTop;
-});
-
-//스크롤 이동, 메뉴 선택 이동. (클릭하면 부드럽게 이동되는 설정)
-//preventDefault() : 요소를 클릭했을 때, 맨 위로 스크롤되는 이벤트가 발생하지 않도록 합니다.
-//scrollIntoView() : 스크롤이 이동하는 동안의 움직임 효과를 설정할 수 있습니다.
-//getAttribute() : 특정 요소 내에서 특정 한 속성값을 가져오는 메서드
-document.querySelectorAll("#parallax__nav li a").forEach(li => {
-    //이벤트 발생을 막는다.(behavior: "smooth"를 부여하기 위함.)
-    li.addEventListener("click", (e) => {
-        e.preventDefault();
-        document.querySelector(li.getAttribute("href")).scrollIntoView({    //li = li a태그들 href = secton1,2,...//getAttribute 속성값을 가져온다.
-            behavior: "smooth"
-        });
-    });
-});
+    var slidePosition = currentIndex * (-1000) + "px";
+    $(".slideList").animate({ left: slidePosition }, 400);
+}, 3000);              
 </code></pre>
-            </div>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">1-3</h3>
+            <details>
+                <summary>코드보기</summary>
+                <h3 class="t_tit3">HTML</h3>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;div id="warp"&gt;
+&lt;header id="header" class="clearfix"&gt;
+    &lt;h1&gt;&lt;a href="#"&gt;&lt;img src="assets/images/logo.jpg" alt="Cookit"&gt;&lt;/a&gt;&lt;/h1&gt;
+    &lt;nav class="nav"&gt;
+        &lt;ul class="clearfix"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;COOKIT 소개&lt;/a&gt;
+                &lt;ul class="submenu"&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu1&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;COOKIT 메뉴&lt;/a&gt;
+                &lt;ul class="submenu"&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu2&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;리뷰&lt;/a&gt;
+                &lt;ul class="submenu"&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu3&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;이벤트&lt;/a&gt;
+                &lt;ul class="submenu"&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu4&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;My쿡킷&lt;/a&gt;
+                &lt;ul class="submenu"&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#"&gt;sub-menu5&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;!-- // header--&gt;
+
+&lt;section id="banner"&gt;
+    &lt;div class="slideList"&gt;
+        &lt;div class="slideImg"&gt;
+            &lt;h2&gt;이미지1&lt;/h2&gt;
+            &lt;img src="assets/images/banner.jpg" alt="쿡킷을 더 편리하게 Cookit 앱 런칭기념 이벤트1"&gt;
+        &lt;/div&gt;
+        &lt;div class="slideImg"&gt;
+            &lt;h2&gt;이미지2&lt;/h2&gt;
+            &lt;img src="assets/images/banner.jpg" alt="쿡킷을 더 편리하게 Cookit 앱 런칭기념 이벤트2"&gt;
+        &lt;/div&gt;
+        &lt;div class="slideImg"&gt;
+            &lt;h2&gt;이미지3&lt;/h2&gt;
+            &lt;img src="assets/images/banner.jpg" alt="쿡킷을 더 편리하게 Cookit 앱 런칭기념 이벤트3"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- // banner --&gt;
+
+&lt;section id="content1" class="clearfix"&gt;
+    &lt;article class="left"&gt;
+        &lt;h2 class="title"&gt;우리집도 COOKIT 배송이 되나요?&lt;/h2&gt;
+        &lt;p class="desc"&gt;배송이 가능한지 알려드려요&lt;/p&gt;
+        &lt;a href="#" class="btn"&gt;배송지 검색&lt;/a&gt;
+    &lt;/article&gt;
+    &lt;article class="right"&gt;
+        &lt;h2 class="title"&gt;7월 30일(화)에 받을 수 있어요&lt;/h2&gt;
+        &lt;p class="desc"&gt;오전 7시까지 주문하시면 다음날 배송됩니다.&lt;/p&gt;
+        &lt;a href="#" class="btn"&gt;63:28:32 &lt;em&gt;남은 시간&lt;/em&gt;&lt;/a&gt;
+    &lt;/article&gt;
+&lt;/section&gt;
+&lt;!-- // content1 --&gt;
+
+&lt;section id="content2"&gt;
+    &lt;div class="tab-menu"&gt;
+        &lt;div class="tab-btn"&gt;
+            &lt;ul&gt;
+                &lt;li class="active"&gt;&lt;a href="#"&gt;실시간 베스트&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;생생한 리뷰&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;div class="tab-cont"&gt;
+            &lt;div class="best clearfix"&gt;
+                &lt;figure&gt;
+                    &lt;img src="assets/images/best1.jpg" alt="평양식 어복쟁반"&gt;
+                    &lt;figcaption&gt;평양식 어복쟁반&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                &lt;figure&gt;
+                    &lt;img src="assets/images/best2.jpg" alt="새우주꾸미삼겹살"&gt;
+                    &lt;figcaption&gt;새우주꾸미삼겹살&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                &lt;figure&gt;
+                    &lt;img src="assets/images/best3.jpg" alt="방풀나물 아귀찜"&gt;
+                    &lt;figcaption&gt;방풀나물 아귀찜&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            &lt;/div&gt;
+            &lt;div class="best clearfix"&gt;
+                &lt;figure&gt;
+                    &lt;img src="assets/images/best3.jpg" alt="평양식 어복쟁반"&gt;
+                    &lt;figcaption&gt;방풀나물 아귀찜&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                &lt;figure&gt;
+                    &lt;img src="assets/images/best2.jpg" alt="새우주꾸미삼겹살"&gt;
+                    &lt;figcaption&gt;새우주꾸미삼겹살&lt;/figcaption&gt;
+                &lt;/figure&gt;
+                &lt;figure&gt;
+                    &lt;img src="assets/images/best1.jpg" alt="방풀나물 아귀찜"&gt;
+                    &lt;figcaption&gt;평양식 어복쟁반&lt;/figcaption&gt;
+                &lt;/figure&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;!-- // content2 --&gt;
+
+&lt;footer id="footer" class="clearfix"&gt;
+    &lt;h2&gt;&lt;img src="assets/images/logo-2.jpg" alt="Cookit footer logo"&gt;&lt;/h2&gt;
+    &lt;div class="foot"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;이용 약관&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;개인정보처리 방침&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;법적 고지&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;사업자정보 확인&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;address&gt;
+            씨제이제일제당(주) 대표자 : 신현재&lt;br&gt;
+            주소: 서울 중구 동호로 330 CJ 제일제당 센터(우)04560 사업자등록번호 : 104-86-09535&lt;br&gt;
+            통신판매업신고 중구 제 07767호 개인정보보호책임자 : 류화정&lt;br&gt;
+        &lt;/address&gt;
+    &lt;/div&gt;
+&lt;/footer&gt;
+&lt;!-- //footer--&gt;
+&lt;/div&gt;
+&lt;!-- //warp--&gt;
+
+&lt;!-- layer --&gt;
+&lt;div class="layer_bg"&gt;&lt;/div&gt;
+&lt;div class="layer"&gt;
+&lt;h2&gt;제목&lt;/h2&gt;
+&lt;a href="#" class="close"&gt;닫기&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+                </div>
+                <h3 class="t_tit3">css</h3>
+                <div class="t_code">
+                    <pre><code class="language-css">/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* warp */
+#warp {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* header */
+#header h1 {
+    float: left;
+    padding: 15px 0 10px;
+}
+
+#header h1 img {
+    width: 110px;
+}
+
+#header .nav {
+    float: right;
+}
+
+#header .nav li {
+    position: relative;
+    float: left;
+    width: 150px;
+    text-align: center;
+}
+
+#header .nav li a {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 24px 20px 20px 20px;
+}
+
+#header .nav li a:hover {
+    background: #ccc;
+}
+
+#header .nav li ul.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 67px;
+    z-index: 100;
+}
+
+#header .nav li ul.submenu li a {
+    padding: 10px;
+    background: #888;
+}
+
+#header .nav li ul.submenu li a:hover {
+    background: #666;
+}
+
+/* banner */
+#banner {
+    height: 389px;
+    overflow: hidden;
+}
+
+#banner img {
+    width: 100%;
+    display: block;
+}
+
+/* 상하
+.slideList {
+    position: relative; 
+    width: 1000px; 
+    height: 389px;
+}
+.slideList .slideImg {
+    position: relative;
+}
+.slideList .slideImg h2 {
+    position: absolute; 
+    left: 50%; 
+    top: 50%;
+    transform: translate(-50%,-50%); 
+    background: rgba(0,0,0,0.4); 
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+*/
+
+/* 좌우 */
+.slideList {
+    position: relative;
+    width: 3000px;
+    z-index: 50;
+}
+
+.slideList .slideImg {
+    position: relative;
+    width: 1000px;
+    float: left;
+}
+
+.slideList .slideImg h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+/* content1 */
+#content1 {
+    margin-top: 20px;
+}
+
+#content1 .left {
+    float: left;
+    width: 49%;
+    padding: 20px;
+    background: #f2f2f2 url(../images/bg1.jpg) no-repeat right 20px center;
+    background-size: 80px;
+    box-sizing: border-box;
+    margin-right: 2%;
+}
+
+#content1 .left .title {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+#content1 .left .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+
+#content1 .left .btn {
+    background: url(../images/icon1.gif) no-repeat left top;
+    background-size: 20px;
+    padding-left: 25px;
+    padding-top: 3px;
+}
+
+#content1 .right {
+    float: left;
+    width: 49%;
+    padding: 20px;
+    background: #f2f2f2 url(../images/bg2.jpg) no-repeat right 20px center;
+    background-size: 80px;
+    box-sizing: border-box;
+    margin-right: 0;
+}
+
+#content1 .right .title {
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+#content1 .right .desc {
+    font-size: 14px;
+    color: #666;
+    padding-bottom: 15px;
+}
+
+#content1 .right .btn {
+    background: url(../images/icon2.gif) no-repeat left top;
+    background-size: 20px;
+    padding-left: 25px;
+    padding-top: 2px;
+}
+
+#content1 .right .btn em {
+    font-size: 13px;
+    color: 999;
+    font-style: normal;
+}
+
+/* content2 */
+#content2 {
+    margin-top: 30px;
+}
+
+.tab-menu .tab-btn ul {
+    overflow: hidden;
+}
+
+.tab-menu .tab-btn li {
+    float: left;
+    margin-right: 15px;
+}
+
+.tab-menu .tab-btn li a {
+    display: block;
+    color: #999;
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+.tab-menu .tab-btn li.active a {
+    color: #000;
+}
+
+.tab-cont .best figure {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+}
+
+.tab-cont .best figure img {
+    width: 100%;
+}
+
+.tab-cont .best figure:last-child {
+    margin-right: 0;
+}
+
+#content2 h2 {
+    font-size: 24px;
+    padding-bottom: 10px;
+}
+
+#content2 .best figure {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+}
+
+#content2 .best figure img {
+    width: 100%;
+}
+
+#content2 .best figure:last-child {
+    margin-right: 0;
+}
+
+/* footer */
+#footer {
+    padding: 20px 0;
+    background: #202020;
+    margin-top: 30px;
+}
+
+#footer h2 {
+    float: left;
+    padding-left: 20px;
+}
+
+#footer h2 img {
+    width: 150px;
+}
+
+#footer .foot {
+    float: right;
+    padding-right: 30px;
+}
+
+#footer .foot ul {
+    padding-bottom: 10px;
+}
+
+#footer .foot ul li {
+    display: inline;
+}
+
+#footer .foot ul li a {
+    color: #fff;
+    padding-right: 10px;
+}
+
+#footer .foot address {
+    font-style: normal;
+    color: #ccc;
+}
+
+/* layer */
+.layer_bg {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.layer {
+    display: none;
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    z-index: 1000;
+    width: 500px;
+    height: 500px;
+    border: 3px solid #000;
+    background: #fff;
+}
+
+.layer h2 {
+    padding: 20px;
+    color: #000;
+}
+
+.layer .close {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}                             
+</code></pre>
+                </div>
+                <h3 class="t_tit3">js</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">// 내비게이션
+$(".nav > ul > li").mouseover(function () {
+    $(this).find(".submenu").stop().slideDown(200);
+});
+$(".nav > ul > li").mouseout(function () {
+    $(this).find(".submenu").stop().slideUp(200);
+});
+
+//currentIndex = 0; 첫번째 이미지 : 0
+//currentIndex = 1; 두번째 이미지 : -389
+//currentIndex = 2; 세번째 이미지 : -778
+
+// 이미지 슬라이드 (상하)
+// var currentIndex = 0; //첫번째 이미지
+// 
+// setInterval(function(){
+//     if(currentIndex &lt; 2){
+//         currentIndex++;
+//     } else {
+//         currentIndex = 0;
+//     }
+//     var slidePosition = currentIndex * (-389)+"px";
+//     $(".slideList").animate({top: slidePosition},400);
+//     
+// }, 3000);
+
+// 이미지 슬라이드 (좌우)
+var currentIndex = 0;
+
+setInterval(function () {
+    if (currentIndex &lt; 2) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    var slidePosition = currentIndex * (-1000) + "px";
+    $(".slideList").animate({ left: slidePosition }, 400);
+}, 3000);
+
+// 탭 메뉴
+var tabBtn = $(".tab-btn > ul > li");
+var tabCont = $(".tab-cont > div");
+
+tabCont.hide().eq(0).show();
+
+tabBtn.click(function (event) {
+    event.preventDefault();
+    var target = $(this);
+    var index = target.index();
+    //alert(index);
+    tabBtn.removeClass("active");
+    target.addClass("active");
+    tabCont.css("display", "none");
+    tabCont.eq(index).css("display", "block");
+});
+
+// 레이어 팝업
+$("#content1 .right").click(function () {
+    $(".layer").slideDown(300);
+    $(".layer_bg").show();
+});
+$(".layer .close").click(function () {
+    $(".layer").slideUp(300);
+    $(".layer_bg").hide();
+});                        
+</code></pre>
+                </div>
+            </details>
 
         </div>
     </main>
