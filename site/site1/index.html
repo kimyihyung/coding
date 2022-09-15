@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="assets/css/swiper.css" />
 </head>
 
-<body class="fixed">
+<body>
     <div id="skip">
         <a href="#">헤더 영역 바로가기</a>
         <a href="#">슬라이드 영역 바로가기</a>
@@ -448,7 +448,7 @@
         const btnStart = document.querySelector(".swiper-button-play");
         const btnHam = document.querySelector(".header__ham");
         const btnMenu = document.querySelector(".header__menu");
-        const btnMenuList = document.querySelectorAll("ul li a");
+        const btnMenuList = btnMenu.querySelectorAll("ul li a");
 
         btnStart.style.display = "none";
 
@@ -471,18 +471,18 @@
 
         btnMenuList.forEach((list) => {
             list.addEventListener("click", () => {
-                document.body.classList.toggle("fixed");
-                btnMenu.classList.remove("active")
-                btnHam.classList.remove("active")
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
             });
-        });
+        })
 
         window.addEventListener("resize", () => {
             let width = window.innerWidth;
             if (width > 1300) {
-                document.body.classList.toggle("fixed");
-                btnMenu.classList.remove("active")
-                btnHam.classList.remove("active")
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
             }
         });
 

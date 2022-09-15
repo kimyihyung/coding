@@ -90,6 +90,9 @@
   background-color: #f5f5f5;
 }
 
+body {
+  overflow: overlay;
+}
 /* fixed */
 body.fixed {
   height: 100vh;
