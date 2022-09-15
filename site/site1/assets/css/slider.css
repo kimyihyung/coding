@@ -4,15 +4,15 @@
 .slider {
   position: relative;
 }
-.swiper-slide {
+.slider__img {
   background: url(../img/slider_bg01.jpg) no-repeat center / cover;
 }
-.swiper-slide .desc {
+.slider__img .desc {
   width: 1160px;
   margin: 0 auto;
   padding: 100px 20px;
 }
-.swiper-slide .desc span {
+.slider__img .desc span {
   font-size: 16px;
   background-color: #fff;
   padding: 1px 14px 0 14px;
@@ -21,31 +21,29 @@
   margin-bottom: 10px;
   display: inline-block;
 }
-.swiper-slide .desc h3 {
+.slider__img .desc h3 {
   font-size: 110px;
   font-weight: 300;
   line-height: 1;
   color: #fff;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   margin-left: -8px;
 }
-.swiper-slide .desc p {
+.slider__img .desc p {
   font-size: 20px;
   font-weight: 300;
-  line-height: 1.35;
   color: #fff;
+  line-height: 1.35;
   margin-bottom: 130px;
 }
-.swiper-slide .desc .btn {
-}
-.swiper-slide .desc .btn a {
+.slider__img .desc .btn a {
   font-size: 16px;
   background-color: #fff;
   padding: 11px 50px;
   display: inline-block;
 }
-.swiper-slide .desc .btn a.black {
+.slider__img .desc .btn a.black {
   background: #000;
   color: #fff;
 }
@@ -112,14 +110,14 @@
   line-height: 1;
   color: #fff;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
   margin-left: -8px;
 }
 .swiper-slide .desc p {
   font-size: 20px;
   font-weight: 300;
-  line-height: 1.35;
   color: #fff;
+  line-height: 1.35;
   margin-bottom: 130px;
 }
 .swiper-slide .desc .btn a {
@@ -132,7 +130,6 @@
   background: #000;
   color: #fff;
 }
-
 .swiper-button-next,
 .swiper-button-prev {
   width: 30px !important;
@@ -155,7 +152,28 @@
   opacity: 1 !important;
 }
 .swiper-pagination-bullet-active {
-  background-position: 0 -70px !important;
+  background-position: 0px -70px !important;
+}
+.swiper-button {
+  position: absolute;
+  left: 50%;
+  margin-left: 40px;
+  bottom: 24px;
+  z-index: 1000;
+  display: flex;
+}
+.swiper-button-stop {
+  background-image: url(../img/slider_icon.svg);
+  background-position: -60px -70px;
+  width: 16px;
+  height: 16px;
+}
+.swiper-button-play {
+  background-image: url(../img/slider_icon.svg);
+  background-position: -40px -70px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 /* media */

@@ -30,15 +30,9 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/swiper.css" />
-
-    <style>
-        #headerType {
-            display: none;
-        }
-    </style>
 </head>
 
-<body>
+<body class="fixed">
     <div id="skip">
         <a href="#">헤더 영역 바로가기</a>
         <a href="#">슬라이드 영역 바로가기</a>
@@ -61,12 +55,17 @@
                     <li class="active"><a href="#imageType">PRECIP</a></li>
                     <li><a href="#imgTextType">SITE</a></li>
                     <li><a href="#cardType">SEASON</a></li>
-                    <li><a href="#bannerTyper">INFO</a></li>
+                    <li><a href="#bannerType">INFO</a></li>
                     <li><a href="#textType">N.D</a></li>
                 </ul>
             </div>
             <div class="header__member">
                 <a href="#">로그인</a>
+            </div>
+            <div class="header__ham">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </header>
@@ -146,6 +145,10 @@
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
+                    <div class="swiper-button">
+                        <div class="swiper-button-play"><span class="ir">play</span></div>
+                        <div class="swiper-button-stop"><span class="ir">stop</span></div>
+                    </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
@@ -431,29 +434,59 @@
                 prevEl: ".swiper-button-prev",
             },
             autoplay: {
-                delay: 2000,
+                delay: 5000,
+                disableOnInteraction: false,
             },
             pagination: {
                 el: '.swiper-pagination',
                 type: 'bullets',
+                clickable: true,
             },
         });
 
-        window.addEventListener("scroll", () => {
-            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+        const btnStop = document.querySelector(".swiper-button-stop");
+        const btnStart = document.querySelector(".swiper-button-play");
+        const btnHam = document.querySelector(".header__ham");
+        const btnMenu = document.querySelector(".header__menu");
+        const btnMenuList = document.querySelectorAll("ul li a");
 
-            document.querySelectorAll(".type").forEach((element, index) => {    //type을 각 섹션에 추가해줘서 인식하게, 다들 content__item을 추가해서 이유를 몰랐는데 빼도 됨.
-                //그게 아니어도 #mainType > section으로 하면됨. (이동하면서도 이상하니까 동작할 부분에만 타입을 썼더니 제대로 동작.)
-                if (scrollTop >= element.offsetTop - 2) {
-                    document.querySelectorAll(".header__menu li").forEach(li => {
-                        li.classList.remove("active");
-                    });
-                    document.querySelector(".header__menu li:nth-child(" + (index + 1) + ")").classList.add("active");
-                };
-            })
-        })
+        btnStart.style.display = "none";
 
-        document.querySelectorAll(".header__menu li a").forEach(li => {
+        btnStop.addEventListener("click", () => {
+            swiper.autoplay.stop();
+            btnStart.style.display = "block";
+            btnStop.style.display = "none";
+        });
+        btnStart.addEventListener("click", () => {
+            swiper.autoplay.start();
+            btnStart.style.display = "none";
+            btnStop.style.display = "block";
+        });
+
+        btnHam.addEventListener("click", () => {
+            btnHam.classList.toggle("active");
+            btnMenu.classList.toggle("active");
+            document.body.classList.toggle("fixed");
+        });
+
+        btnMenuList.forEach((list) => {
+            list.addEventListener("click", () => {
+                document.body.classList.toggle("fixed");
+                btnMenu.classList.remove("active")
+                btnHam.classList.remove("active")
+            });
+        });
+
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if (width > 1300) {
+                document.body.classList.toggle("fixed");
+                btnMenu.classList.remove("active")
+                btnHam.classList.remove("active")
+            }
+        });
+
+        document.querySelectorAll("a").forEach(li => {
             li.addEventListener("click", (e) => {
                 e.preventDefault();
                 document.querySelector(li.getAttribute("href")).scrollIntoView({
