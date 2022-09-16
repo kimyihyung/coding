@@ -86,8 +86,14 @@
 }
 
 /* swiper */
-.swiper-slide {
+.swiper-slide:first-child {
   background: url(../img/slider_bg01.jpg) no-repeat center / cover;
+}
+.swiper-slide:nth-child(2) {
+  background: url(../img/slider_bg01_02.jpg) no-repeat center / cover;
+}
+.swiper-slide:last-child {
+  background: url(../img/slider_bg01_03.jpg) no-repeat center / cover;
 }
 .swiper-slide .desc {
   width: 1160px;
