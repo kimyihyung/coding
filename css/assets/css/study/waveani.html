@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+
+    <link rel="stylesheet" href="../../../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../../../javascript/assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href=""></a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="basic.html">기본 문법</a></li>
+                <li><a href="media.html">미디어쿼리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <div class="main_refer">
+        <div class="document">
+            <h2 class="t_tit">Wave Animation</h2>
+            <p class="t_desc">
+                일렁이는 애니메이션
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">PUG</h3>
+            <p class="t_desc2">
+                PUG를 이용하여 진행
+            </p>
+
+            <div class="t_code">
+                <pre><code class="language-html">div.circle-wrap
+- for (var x =1; x &lt;= 12; x++)
+div.row
+    - for (var y = 1; y &lt;= 12; y++)
+    div.circle             
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">SCSS</h3>
+            <p class="t_desc2">
+                SCSS를 이용하여 진행.
+            </p>
+
+            <div class="t_code">
+                <pre><code class="language-css">@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+body {
+    @include center;
+    height: 100vh;
+    background-image: linear-gradient(45deg, #00DBDE 0%, #FC00FF 100%);
+}
+.row {
+    display: flex;
+    .circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 5px 10px;
+    background: #fff;
+    transform-origin: top center;
+    animation: spin 1s linear infinite;
+    }
+}
+@keyframes spin {
+    0% {transform: scale(1.1) rotate(0deg)}
+    50% {transform: scale(0.1) rotate(180deg)}
+    100% {transform: scale(1.1) rotate(360deg)}
+    }
+    // .row:nth-child(1) .circle {
+    //   animation-delay: 100ms
+    // }
+    // .row:nth-child(2) .circle {
+    //   animation-delay: 200ms
+    // }
+    // .row:nth-child(3) .circle {
+    //   animation-delay: 300ms
+    // }
+    // .row:nth-child(4) .circle {
+    //   animation-delay: 400ms
+    // }
+    @for $i from 1 through 12 {
+    .row:nth-child(#{$i}) .circle {
+        animation-delay: 100ms * $i
+    }
+    }
+</code></pre>
+            </div>
+
+            <h4 class="t_tit3">결과</h4>
+            <div class="t_iframe">
+                <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="RwyVjJo"
+                    data-user="kimyihyung"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/RwyVjJo">
+                            Wave Animation</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+
+        </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+
+        <script src="../../../../javascript/assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
