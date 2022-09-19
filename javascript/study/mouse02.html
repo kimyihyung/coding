@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트 - 마우스 따라다니기 (GSAP)</h2>
+            <p class="t_desc2">
+                포인터의 좌표값에 따라서 마우스의 움직임과 효과가 있는 마우스 이펙트를 GSAP를 이용하여 만들어 봅시다.
+                (GSAP 라이브러리를 스크립트에 추가해서 진행합니다.)
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/mouseEffect02.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/blob/main/javascript/effect/mouseEffect02.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/mouseEffect02.html">원본 사이트</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">html</h3>
+            <p class="t_desc2">
+                두개의 원을 만들어줄것이기에, mouse__cursor, mouse__cursor2를 생성합니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;section id="mouseType"&gt;
+    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+    &lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
+
+    &lt;div class="mouse__wrap"&gt;
+        &lt;p&gt;&lt;span class="style1"&gt;Victory&lt;/span&gt; belongs to the most persevering.
+        &lt;/p&gt;
+        &lt;p&gt;&lt;span&gt;승리&lt;/span&gt;는 가장 끈기있는 자에게 돌아간다.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">css</h3>
+            <p class="t_desc2">
+                커서의 크기와 효과 등을 부여. <br>
+                pointer-events: none = 요소가 포인터 이벤트의 대상이 되지 않습니다.<br>
+                user-select: none = 사용자가 텍스트를 선택할 수 없게 지정합니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-css">/* mouseType */
+.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+}
+
+.mouse__wrap p {
+    font-size: 2vw;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 300;
+}
+
+.mouse__wrap p span {
+    border-bottom: 0.15vw dashed blue;
+    color: blue;
+}
+
+@media (max-width: 800px) {
+    .mouse__wrap p {
+        padding: 0 20px;
+        font-size: 24px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .mouse__wrap p:last-child {
+        font-size: 40px;
+        line-height: 1.5;
+        text-align: center;
+        word-break: keep-all;
+    }
+}
+
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    z-index: 9999;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opactiy 0.2s;
+}
+
+.mouse__cursor2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    z-index: 9998;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    user-select: none;
+    pointer-events: none;
+    transition: transform 0.3s, opactiy 0.2s;
+}
+
+.mouse__cursor.active {
+    transform: scale(0);
+}
+
+.mouse__cursor2.active {
+    transform: scale(10);
+    background: rgba(255, 166, 0, 0.6);
+}
+
+.mouse__cursor.active {
+    transform: scale(0);
+}
+
+.mouse__cursor2.active {
+    transform: scale(10);
+    background: rgba(255, 166, 0, 0.6);
+}
+
+.mouse__cursor.active2 {
+    transform: scale(0);
+}
+
+.mouse__cursor2.active2 {
+    transform: scale(10) rotateY(720deg);
+    background: rgba(255, 166, 0, 0.6);
+}
+
+.mouse__cursor.active3 {
+    transform: scale(0);
+}
+
+.mouse__cursor2.active3 {
+    transform: scale(10) rotateX(545deg);
+    background: rgba(255, 166, 0, 0.6);
+}
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">js</h3>
+            <p class="t_desc2">
+                선택자를 생성 후 GSAP로 cursor, cursor2의 좌표값을 할당합니다. 마우스가 올라가면 active가 추가, 떠날경우 지워집니다.<br>
+                mouseenter / mouseover 지정된 요소와 자식 요소도 포함. mouseenter / mouseleave 지정된 요소만 이벤트 적용.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
+const cursor2 = document.querySelector(".mouse__cursor2");
+const span = document.querySelectorAll(".mouse__wrap span");
+const header = document.querySelectorAll("#header ul li a");
+const btn = document.querySelectorAll(".modal__btn");
+
+window.addEventListener("mousemove", e => {
+    // 커서 좌표값 할당
+    // cursor.style.left = e.pageX - 5 + "px";
+    // cursor.style.top = e.pageY - 5 + "px";
+    // cursor2.style.left = e.pageX - 15 + "px";
+    // cursor2.style.top = e.pageY - 15 + "px";
+
+    // GSAP
+    gsap.to(cursor, { duration: 0.3, left: e.pageX - 5, top: e.pageY - 5 });
+    gsap.to(cursor2, { duration: 0.8, left: e.pageX - 15, top: e.pageY - 15 });
+
+    // 오버 효과
+    // mouseenter / mouseover / 이벤트 버블링
+    //화살표 함수에서는 this 사용X
+
+    span.forEach(span => {
+        span.addEventListener("mouseenter", () => {
+            cursor.classList.add("active");
+            cursor2.classList.add("active");
+        });
+        span.addEventListener("mouseleave", () => {
+            cursor.classList.remove("active");
+            cursor2.classList.remove("active");
+        });
+    });
+    header.forEach(header => {
+        header.addEventListener("mouseenter", () => {
+            cursor.classList.add("active2");
+            cursor2.classList.add("active2");
+        });
+        header.addEventListener("mouseleave", () => {
+            cursor.classList.remove("active2");
+            cursor2.classList.remove("active2");
+        });
+    });
+
+    btn.forEach(btn => {
+        btn.addEventListener("mouseenter", () => {
+            cursor.classList.add("active3");
+            cursor2.classList.add("active3");
+        });
+        btn.addEventListener("mouseleave", () => {
+            cursor.classList.remove("active3");
+            cursor2.classList.remove("active3");
+        });
+    });
+});
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

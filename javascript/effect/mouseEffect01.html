@@ -265,15 +265,241 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-                            <pre><code class="language-js">
+                            <pre><code class="language-js">window.addEventListener("mousemove", (event) => {
+    document.querySelector(".clientX").innerHTML = event.clientX;
+    document.querySelector(".clientY").innerHTML = event.clientY;
+    document.querySelector(".offsetX").innerHTML = event.offsetX;
+    document.querySelector(".offsetY").innerHTML = event.offsetY;
+    document.querySelector(".pageX").innerHTML = event.pageX;
+    document.querySelector(".pageY").innerHTML = event.pageY;
+    document.querySelector(".screenX").innerHTML = event.screenX;
+    document.querySelector(".screenY").innerHTML = event.screenY;
+});
+
+const cursor = document.querySelector(".mouse__cursor");
+
+window.addEventListener("mousemove", (e) => {
+
+    cursor.style.left = e.clientX - 25 + "px";
+    cursor.style.top = e.clientY - 25 + "px";       //js는 left, top의 단위를 적어야함.
+});
+
+// document.querySelector(".style1").addEventListener("mouseover", () => {
+//     cursor.classList.add("style1");
+// });
+// document.querySelector(".style1").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style1");
+// });
+
+// document.querySelector(".style2").addEventListener("mouseover", () => {
+//     cursor.classList.add("style2");
+// });
+// document.querySelector(".style2").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style2");
+// });
+
+// document.querySelector(".style3").addEventListener("mouseover", () => {
+//     cursor.classList.add("style3");
+// });
+// document.querySelector(".style3").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style3");
+// });
+
+// document.querySelector(".style4").addEventListener("mouseover", () => {
+//     cursor.classList.add("style4");
+// });
+// document.querySelector(".style4").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style4");
+// });
+
+// document.querySelector(".style5").addEventListener("mouseover", () => {
+//     cursor.classList.add("style5");
+// });
+// document.querySelector(".style5").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style5");
+// });
+
+// document.querySelector(".style6").addEventListener("mouseover", () => {
+//     cursor.classList.add("style6");
+// });
+// document.querySelector(".style6").addEventListener("mouseout", () => {
+//     cursor.classList.remove("style6");
+// });
+
+// for문
+// for(let i=1; i &lt;= 6; i++) {
+//   document.querySelector(".style" + i).addEventListener("mouseover", () => {
+//     cursor.classList.add("style" + i);
+//   });
+//   document.querySelector(".style" + i).addEventListener("mouseout", () => {
+//   cursor.classList.remove("style" + i);
+//   });
+// };
+
+//forEach
+// document.querySelectorAll(".mouse__wrap span").forEach((span, num) => {
+//     span.addEventListener("mouseover", () => {
+//         cursor.classList.add("style" + (num + 1));
+//     });
+//     span.addEventListener("mouseout", () => {
+//         cursor.classList.remove("style" + (num + 1));
+//     });
+// });
+
+//getAttribute()
+document.querySelectorAll(".mouse__wrap span").forEach(span => {
+    let attr = span.getAttribute("class");
+
+    span.addEventListener("mouseover", () => {
+        cursor.classList.add(attr);
+    });
+    span.addEventListener("mouseout", () => {
+        cursor.classList.remove(attr);
+    });
+});
 </code></pre>
                         </div>
                         <div>
-                            <pre><code class="language-html">
+                            <pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;&lt;span class="style1"&gt;Only&lt;/span&gt; those who dare to &lt;span class="style2"&gt;fail&lt;/span&gt; greatly can ever
+                achieve &lt;span class="style3"&gt;greatly&lt;/span&gt;.
+            &lt;/p&gt;
+            &lt;p&gt;크게 &lt;span class="style4"&gt;실패&lt;/span&gt;할 &lt;span class="style5"&gt;용기&lt;/span&gt;있는 자만이 &lt;span
+                    class="style6"&gt;크게&lt;/span&gt; 이룰 수 있다.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;div class="mouse__info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;clientX : &lt;span class="clientX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;clientY : &lt;span class="clientY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;offsetX : &lt;span class="offsetX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;offsetY : &lt;span class="offsetY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;pageX : &lt;span class="pageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;pageY : &lt;span class="pageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;screenX : &lt;span class="screenX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;screenY : &lt;span class="screenY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div>
-                            <pre><code class="language-css">
+                            <pre><code class="language-css">/* mouseType */
+.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    overflow: hidden;
+    cursor: none;
+}
+
+.mouse__wrap p {
+    font-size: 2vw;
+    line-height: 2;
+    font-weight: 300;
+}
+
+.mouse__wrap p:last-child {
+    font-size: 3vw;
+    font-weight: 300;
+}
+
+.mouse__wrap p span {
+    border-bottom: 0.15vw dashed blue;
+    color: blue;
+}
+
+@media (max-width: 800px) {
+    .mouse__wrap p {
+        padding: 0 20px;
+        font-size: 24px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .mouse__wrap p:last-child {
+        font-size: 40px;
+        line-height: 1.5;
+        text-align: center;
+        word-break: keep-all;
+    }
+}
+
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    /* 포인터가 선택이 안되게 */
+    pointer-events: none;
+    /* 포인터 이벤트가 발생 안되게 */
+    perspective: 400px;
+    transform-style: preserve-3d;
+    transition:
+        background-color 0.3s,
+        border-color 0.3s,
+        transform 0.6s,
+        border-radius 0.3s;
+}
+
+/* 효과의 스타일 */
+.mouse__cursor.style1 {
+    background-color: rgba(68, 124, 184, 0.476);
+    border-color: rgb(38, 66, 115);
+}
+
+.mouse__cursor.style2 {
+    background-color: rgba(68, 176, 184, 0.499);
+    border-color: rgb(38, 91, 115);
+    transform: scale(2) rotateY(720deg);
+}
+
+.mouse__cursor.style3 {
+    background-color: rgba(68, 184, 182, 0.47);
+    border-color: rgb(38, 115, 98);
+    transform: scale(1.5) rotateX(545deg);
+}
+
+.mouse__cursor.style4 {
+    background-color: rgba(165, 68, 184, 0.593);
+    border-color: rgb(102, 38, 115);
+    transform: scale(10);
+}
+
+.mouse__cursor.style5 {
+    background-color: rgba(184, 68, 113, 0.406);
+    border-color: rgb(115, 38, 82);
+    transform: scale(0.5);
+}
+
+.mouse__cursor.style6 {
+    background-color: rgba(111, 184, 68, 0.466);
+    border-color: rgb(48, 115, 38);
+    transform: scale(5) skew(40deg);
+}
+
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+}
 </code></pre>
                         </div>
                     </div>
