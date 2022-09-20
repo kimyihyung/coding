@@ -25,11 +25,11 @@
 
 .header__logo em {
   font-size: 18px;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .header__menu {
-  width: 60%;
+  width: 100%;
   text-align: center;
 }
 
