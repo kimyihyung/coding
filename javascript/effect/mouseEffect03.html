@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>마우스 이펙트</title>
+    <title>마우스 이펙트03</title>
 
     <link rel="stylesheet" href="../assets/css/mouse.css" />
     <link rel="stylesheet" href="../assets/css/dracula.css">
@@ -22,7 +22,7 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        color: #fff;
+        color: #000;
         overflow: hidden;
         cursor: none;
     }
@@ -64,76 +64,27 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 10px;
-        height: 10px;
-        z-index: 9999;
+        width: 200px;
+        height: 200px;
+        z-index: -1;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.1);
-        user-select: none;
-        pointer-events: none;
-        transition: transform 0.3s, opactiy 0.2s;
-    }
-
-    .mouse__cursor2 {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 30px;
-        height: 30px;
-        z-index: 9998;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        user-select: none;
-        pointer-events: none;
-        transition: transform 0.3s, opactiy 0.2s;
-    }
-
-    .mouse__cursor.active {
-        transform: scale(0);
-    }
-
-    .mouse__cursor2.active {
-        transform: scale(10);
-        background: rgba(255, 166, 0, 0.6);
-    }
-
-    .mouse__cursor.active {
-        transform: scale(0);
-    }
-
-    .mouse__cursor2.active {
-        transform: scale(10);
-        background: rgba(255, 166, 0, 0.6);
-    }
-
-    .mouse__cursor.active2 {
-        transform: scale(0);
-    }
-
-    .mouse__cursor2.active2 {
-        transform: scale(10) rotateY(720deg);
-        background: rgba(255, 166, 0, 0.6);
-    }
-
-    .mouse__cursor.active3 {
-        transform: scale(0);
-    }
-
-    .mouse__cursor2.active3 {
-        transform: scale(10) rotateX(545deg);
-        background: rgba(255, 166, 0, 0.6);
+        background-image: url(../assets/img/effect_bg18@2x-min.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        border: 5px solid #fff;
     }
 </style>
 
 
-<body class="img10">
+<body class="img18">
     <header id="header">
-        <h1><a href="mouseEffect.html">Javascript Mouse Effect02</a></h1>
-        <p>마우스 이펙트 - 마우스 따라다니기 (GSAP)</p>
+        <h1><a href="mouseEffect.html">Javascript Mouse Effect03</a></h1>
+        <p>마우스 이펙트 - 조명효과</p>
         <ul>
             <li><a href="MouseEffect01.html">1</a></li>
-            <li class="active"><a href="MouseEffect02.html">2</a></li>
-            <li><a href="MouseEffect03.html">3</a></li>
+            <li><a href="MouseEffect02.html">2</a></li>
+            <li class="active"><a href="MouseEffect03.html">3</a></li>
             <li><a href="MouseEffect04.html">4</a></li>
             <li><a href="MouseEffect05.html">5</a></li>
             <li><a href="MouseEffect06.html">6</a></li>
@@ -145,15 +96,12 @@
     <main id="main">
         <section id="mouseType">
             <div class="mouse__cursor"></div>
-            <div class="mouse__cursor2"></div>
-
             <div class="mouse__wrap">
-                <p><span class="style1">Victory</span> belongs to the most persevering.
+                <p>The <span>gratification</span> comes in the <span>doing</span>, not in the results.
                 </p>
-                <p><span>승리</span>는 가장 끈기있는 자에게 돌아간다.</p>
+                <p><span>만족</span>은 결과가 아니라 <span>과정</span>에서 온다.</p>
             </div>
         </section>
-
     </main>
     <!-- //main -->
 
@@ -251,70 +199,45 @@
                     <div class="cont">
                         <div class="active">
                             <pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
-const cursor2 = document.querySelector(".mouse__cursor2");
-const span = document.querySelectorAll(".mouse__wrap span");
-const header = document.querySelectorAll("#header ul li a");
-const btn = document.querySelectorAll(".modal__btn");
 
-window.addEventListener("mousemove", e => {
-    // 커서 좌표값 할당
-    // cursor.style.left = e.pageX - 5 + "px";
-    // cursor.style.top = e.pageY - 5 + "px";
-    // cursor2.style.left = e.pageX - 15 + "px";
-    // cursor2.style.top = e.pageY - 15 + "px";
+// const circleW = cursor.offsetWidth;     //200
+// const circleH = cursor.offsetHeight;    //200
+// const circle2 = cursor.clientWidth;     //190 : 보더값 제외
 
-    // GSAP
-    gsap.to(cursor, { duration: 0.3, left: e.pageX - 5, top: e.pageY - 5 });
-    gsap.to(cursor2, { duration: 0.8, left: e.pageX - 15, top: e.pageY - 15 });
+const circle = cursor.getBoundingClientRect();
 
-    // 오버 효과
-    // mouseenter / mouseover / 이벤트 버블링
+console.log(circle);
+// const DOMRect = {
+//     x: 0,
+//     y: 0,
+//     bottom: 200,
+//     height: 200,
+//     left: 0,
+//     right: 200,
+//     top: 0,
+//     width: 200
+// }
 
-    span.forEach(span => {
-        span.addEventListener("mouseenter", () => {
-            cursor.classList.add("active");
-            cursor2.classList.add("active");
-        });
-        span.addEventListener("mouseleave", () => {
-            cursor.classList.remove("active");
-            cursor2.classList.remove("active");
-        });
-    });
-    header.forEach(header => {
-        header.addEventListener("mouseenter", () => {
-            cursor.classList.add("active2");
-            cursor2.classList.add("active2");
-        });
-        header.addEventListener("mouseleave", () => {
-            cursor.classList.remove("active2");
-            cursor2.classList.remove("active2");
-        });
-    });
-
-    btn.forEach(btn => {
-        btn.addEventListener("mouseenter", () => {
-            cursor.classList.add("active3");
-            cursor2.classList.add("active3");
-        });
-        btn.addEventListener("mouseleave", () => {
-            cursor.classList.remove("active3");
-            cursor2.classList.remove("active3");
-        });
+window.addEventListener("mousemove", (e) => {
+    gsap.to(cursor, {
+        duration: 0.5,
+        left: e.pageX - circle.width / 2,
+        top: e.pageY - circle.height / 2,
     });
 });
 </code></pre>
                         </div>
                         <div>
-                            <pre><code class="language-html">&lt;section id="mouseType"&gt;
-    &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
-    &lt;div class="mouse__cursor2"&gt;&lt;/div&gt;
-
-    &lt;div class="mouse__wrap"&gt;
-        &lt;p&gt;&lt;span class="style1"&gt;Victory&lt;/span&gt; belongs to the most persevering.
-        &lt;/p&gt;
-        &lt;p&gt;&lt;span&gt;승리&lt;/span&gt;는 가장 끈기있는 자에게 돌아간다.&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/section&gt;
+                            <pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;p&gt;The &lt;span&gt;gratification&lt;/span&gt; comes in the &lt;span&gt;doing&lt;/span&gt;, not in the results.
+            &lt;/p&gt;
+            &lt;p&gt;&lt;span&gt;만족&lt;/span&gt;은 결과가 아니라 &lt;span&gt;과정&lt;/span&gt;에서 온다.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div>
@@ -326,7 +249,7 @@ window.addEventListener("mousemove", e => {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: #fff;
+    color: #000;
     overflow: hidden;
     cursor: none;
 }
@@ -368,64 +291,15 @@ window.addEventListener("mousemove", e => {
     position: absolute;
     left: 0;
     top: 0;
-    width: 10px;
-    height: 10px;
-    z-index: 9999;
+    width: 200px;
+    height: 200px;
+    z-index: -1;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    user-select: none;
-    pointer-events: none;
-    transition: transform 0.3s, opactiy 0.2s;
-}
-
-.mouse__cursor2 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 30px;
-    height: 30px;
-    z-index: 9998;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    user-select: none;
-    pointer-events: none;
-    transition: transform 0.3s, opactiy 0.2s;
-}
-
-.mouse__cursor.active {
-    transform: scale(0);
-}
-
-.mouse__cursor2.active {
-    transform: scale(10);
-    background: rgba(255, 166, 0, 0.6);
-}
-
-.mouse__cursor.active {
-    transform: scale(0);
-}
-
-.mouse__cursor2.active {
-    transform: scale(10);
-    background: rgba(255, 166, 0, 0.6);
-}
-
-.mouse__cursor.active2 {
-    transform: scale(0);
-}
-
-.mouse__cursor2.active2 {
-    transform: scale(10) rotateY(720deg);
-    background: rgba(255, 166, 0, 0.6);
-}
-
-.mouse__cursor.active3 {
-    transform: scale(0);
-}
-
-.mouse__cursor2.active3 {
-    transform: scale(10) rotateX(545deg);
-    background: rgba(255, 166, 0, 0.6);
+    background-image: url(../assets/img/effect_bg18@2x-min.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border: 5px solid #fff;
 }
 </code></pre>
                         </div>
@@ -450,56 +324,30 @@ window.addEventListener("mousemove", e => {
     <script src="../assets/js/gsap.min.js"></script>
     <script>
         const cursor = document.querySelector(".mouse__cursor");
-        const cursor2 = document.querySelector(".mouse__cursor2");
-        const span = document.querySelectorAll(".mouse__wrap span");
-        const header = document.querySelectorAll("#header ul li a");
-        const btn = document.querySelectorAll(".modal__btn");
 
-        window.addEventListener("mousemove", e => {
-            // 커서 좌표값 할당
-            // cursor.style.left = e.pageX - 5 + "px";
-            // cursor.style.top = e.pageY - 5 + "px";
-            // cursor2.style.left = e.pageX - 15 + "px";
-            // cursor2.style.top = e.pageY - 15 + "px";
+        // const circleW = cursor.offsetWidth;     //200
+        // const circleH = cursor.offsetHeight;    //200
+        // const circle2 = cursor.clientWidth;     //190 : 보더값 제외
 
-            // GSAP
-            gsap.to(cursor, { duration: 0.3, left: e.pageX - 5, top: e.pageY - 5 });
-            gsap.to(cursor2, { duration: 0.8, left: e.pageX - 15, top: e.pageY - 15 });
+        const circle = cursor.getBoundingClientRect();
 
-            // 오버 효과
-            // mouseenter / mouseover / 이벤트 버블링
-            //화살표 함수에서는 this 사용X
+        console.log(circle);
+        // const DOMRect = {
+        //     x: 0,
+        //     y: 0,
+        //     bottom: 200,
+        //     height: 200,
+        //     left: 0,
+        //     right: 200,
+        //     top: 0,
+        //     width: 200
+        // }
 
-            span.forEach(span => {
-                span.addEventListener("mouseenter", () => {
-                    cursor.classList.add("active");
-                    cursor2.classList.add("active");
-                });
-                span.addEventListener("mouseleave", () => {
-                    cursor.classList.remove("active");
-                    cursor2.classList.remove("active");
-                });
-            });
-            header.forEach(header => {
-                header.addEventListener("mouseenter", () => {
-                    cursor.classList.add("active2");
-                    cursor2.classList.add("active2");
-                });
-                header.addEventListener("mouseleave", () => {
-                    cursor.classList.remove("active2");
-                    cursor2.classList.remove("active2");
-                });
-            });
-
-            btn.forEach(btn => {
-                btn.addEventListener("mouseenter", () => {
-                    cursor.classList.add("active3");
-                    cursor2.classList.add("active3");
-                });
-                btn.addEventListener("mouseleave", () => {
-                    cursor.classList.remove("active3");
-                    cursor2.classList.remove("active3");
-                });
+        window.addEventListener("mousemove", (e) => {
+            gsap.to(cursor, {
+                duration: 0.5,
+                left: e.pageX - circle.width / 2,
+                top: e.pageY - circle.height / 2,
             });
         });
     </script>

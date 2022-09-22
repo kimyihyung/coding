@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트 - 이미지효과</h2>
+            <p class="t_desc2">
+                마우스의 움직임에 따라서 안에 중앙에 있는 이미지가 미세하게 움직이는 효과를 만들어봅시다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/mouseEffect04.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/blob/main/javascript/effect/mouseEffect04.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/mouseEffect04.html">원본 사이트</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">html</h3>
+            <p class="t_desc2">
+                중앙에 떠있을 이미지를 넣어줍니다. figcaption으로 이미지 안에 글자를 넣어줍니다. 마우스의 위치 값들이 나타나도록 mouse__info를 넣어줍니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;figure&gt;
+                &lt;img src="../assets/img/effect_bg20-min.jpg" alt="이미지"&gt;
+                &lt;figcaption&gt;
+                    &lt;p&gt;Only I can change my life. No one can do it for me.&lt;/p&gt;
+                    &lt;p&gt;나만이 내 인생을 바꿀 수 있다. 아무도 날 대신할 수 없다.&lt;/p&gt;
+                &lt;/figcaption&gt;
+            &lt;/figure&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;div class="mouse__info"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;mousePageX : &lt;span class="mousePageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;mousePageY : &lt;span class="mousePageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;centerPageX : &lt;span class="centerPageX"&gt;0&lt;/span&gt;px&lt;/li&gt;
+            &lt;li&gt;centerPageY : &lt;span class="centerPageY"&gt;0&lt;/span&gt;px&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">css</h3>
+            <p class="t_desc2">
+                마우스 오버시의 효과를 만들어줍니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-css">/* mouseType */
+.mouse__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #000;
+    overflow: hidden;
+}
+
+.mouse__wrap figure {
+    width: 50vw;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    transition: transform 500ms ease;
+    cursor: none;
+}
+
+.mouse__wrap figure:hover {
+    transform: scale(1.025);
+}
+
+.mouse__wrap figure img {
+    position: absolute;
+    left: -5%;
+    top: -5%;
+    width: 110%;
+    height: 110%;
+    object-fit: cover;
+}
+
+.mouse__wrap figure figcaption {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 16px;
+    white-space: nowrap;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 50%;
+    z-index: 1000;
+    user-select: none;
+    pointer-events: none;
+}
+
+.mouse__info {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff;
+}
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">js</h3>
+            <p class="t_desc2">
+                centerPageX는 window.innerWidth전체 페이지의 가로값에서 2를 나눈 뒤, mousePageX의 값을 빼서 구합니다.<br>
+                세로값도 마찬가지의 방식으로 구하는데, 이는 페이지의 가로값을 구한 뒤에 나눠서 정중앙의 위치 값을 구하고, 마우스의 위치는 e.pageX내에서 계속 변동되기에 그 값을 빼서,
+                고정값인 화면의 값에서 마우스의 움직이는 값을 빼서 이미지의 움직임이 커서와 반대 방향으로 움직이도록 합니다. gsap를 통해서 부여한 이미지의 움직임은 앞의 방식으로 구한 값
+                centerPageX에서 움직임을 어떤 식으로 발생할지를 설정합니다. 20을 나눈것은 단지, 이미지의 움직임이 너무 커서 줄여주기 위함입니다. 커서는 e.pageX인 이미지 내부에서의
+                가로 값에서 커서를 2를 나눈 정중앙의 값을 빼서 이미지 내에서의 커서의 움직임을 설정합니다. 세로값도 가로값과 마찬가지의 방식으로 구합니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">const cursor = document.querySelector(".mouse__cursor");
+const cursorRect = cursor.getBoundingClientRect();
+
+document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
+    // 커서
+    gsap.to(cursor, {
+        duration: .2,
+        left: e.pageX - cursorRect.width / 2,
+        top: e.pageY - cursorRect.height / 2,
+    }); //duration 얼마나 걸릴지, 기본값 = 0.5
+
+    // 마우스 좌표 값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    // 전체 가로
+    window.innerWidth;      //1920 : 브라우저 크기(스크롤바 미포함)
+    window.outerWidth;      //1920 : 브라우저 크기(스크롤바 포함)
+    window.screen.Width;    //1920 : 화면 크기
+
+    // 마우스 좌표 값 가운데로 초기화
+    // 전체 길이/2 - 마우스 좌표값 == 0
+
+    let centerPageX = window.innerWidth / 2 - mousePageX;
+    let centerPageY = window.innerHeight / 2 - mousePageY;
+
+    // 이미지 움직이기
+    const imgMove = document.querySelector(".mouse__wrap figure img");
+    // imgMove.style.transform = "translate(" + centerPageX / 20 + "px, " + centerPageY / 20 + "px)";
+
+    gsap.to(imgMove, {
+        duration: 0.3,
+        x: centerPageX / 20,
+        y: centerPageY / 20
+    }); //더 부드럽게 하기 위한 20을 나누고
+
+
+    // 출력 
+    document.querySelector(".mousePageX").textContent = mousePageX;
+    document.querySelector(".mousePageY").textContent = mousePageY;
+    document.querySelector(".centerPageX").textContent = centerPageX;
+    document.querySelector(".centerPageY").textContent = centerPageY;
+});
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
