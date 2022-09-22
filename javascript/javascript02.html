@@ -11,6 +11,35 @@
 
 </head>
 
+<style>
+    #js__top {
+        position: fixed;
+        left: 50%;
+        bottom: -220px;
+        z-index: 10000;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        border-radius: 50%;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    #js__top.show {
+        bottom: 20px;
+    }
+
+    #js__top:hover {
+        background: #fff;
+        color: #000;
+    }
+</style>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
@@ -43,6 +72,12 @@
         </nav>
     </header>
     <!-- //header -->
+
+    <div id="js__top">
+        Top
+    </div>
+    <!-- //js__top -->
+
     <main id="main">
         <div class="container">
             <div class="main_menu">
@@ -1076,6 +1111,34 @@ document.write(name3);
         //     document.write(name3);
 
         // }
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+            // //01 메뉴 버튼
+            // if (scrollTop > 0) {
+            //     document.querySelector("#parallax__nav").classList.add("show");
+            // } else {
+            //     document.querySelector("#parallax__nav").classList.remove("show");
+            // }
+
+
+            //02 top 버튼 
+            if (scrollTop > (document.body.scrollHeight - window.outerHeight)) {
+                document.querySelector("#js__top").classList.add("show");
+            } else {
+                document.querySelector("#js__top").classList.remove("show");
+            } //=> 높이 구해서 넣어야함.
+
+
+            document.querySelector("#js__info span").innerText = Math.ceil(scrollTop);
+
+        })
+
+        //top 버튼
+        document.querySelector("#js__top").addEventListener("click", () => {
+            window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+        })
     </script>
 </body>
 

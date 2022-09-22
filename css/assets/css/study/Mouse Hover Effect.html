@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+
+    <link rel="stylesheet" href="../../../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../../../javascript/assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href=""></a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="basic.html">기본 문법</a></li>
+                <li><a href="media.html">미디어쿼리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <div class="main_refer">
+        <div class="document">
+            <h2 class="t_tit">Mouse Hover Effect</h2>
+            <p class="t_desc">
+                마우스를 올리고 내렸을때 움직임이 생기는 효과를 만들어봅시다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                hover__wrap 안에 hover__updown, hover__leftright등 구조를 만들어줍니다.
+            </p>
+
+            <div class="t_code">
+                <pre><code class="language-html">&lt;div class="hover__wrap"&gt;
+    &lt;div class="hover__updown"&gt;
+    &lt;figure class="front"&gt;
+        &lt;img src="https://github.com/kimyihyung/coding/blob/main/animation/img/jpg1.jpg?raw=true" alt="지구"&gt;
+        &lt;figcaption&gt;
+        &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+        &lt;p&gt;마우스 올리면 Up&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;figure class="back"&gt;
+        &lt;img src="https://github.com/kimyihyung/coding/blob/main/animation/img/jpg2.jpg?raw=true" alt="사막"&gt;
+        &lt;figcaption&gt;
+        &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+        &lt;p&gt;마우스 내리면 Down&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;/div&gt;
+    &lt;div class="hover__leftright"&gt;
+    &lt;figure class="front"&gt;
+        &lt;img src="https://github.com/kimyihyung/coding/blob/main/animation/img/jpg3.jpg?raw=true" alt="산"&gt;
+        &lt;figcaption&gt;
+        &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+        &lt;p&gt;마우스 올리면 to Right&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;figure class="back"&gt;
+        &lt;img src="https://github.com/kimyihyung/coding/blob/main/animation/img/jpg4.jpg?raw=true" alt="구름"&gt;
+        &lt;figcaption&gt;
+        &lt;h3&gt;Mouse Hover Effect&lt;/h3&gt;
+        &lt;p&gt;마우스 내리면 to Left&lt;/p&gt;
+        &lt;/figcaption&gt;
+    &lt;/figure&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                perspective = 원근감 수치를 작게 입력할 수록 가깝게<br>
+                transform-style: preserve-3d; 입력하면 z축 부여가능
+            </p>
+
+            <div class="t_code">
+                <pre><code class="language-css">@font-face {
+    font-family: 'LocusSangsang';
+    font-weight: normal;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/locus/LocusSangsang.ttf') format("truetype");
+    font-display: swap;
+}
+
+body {
+font-family: 'LocusSangsang';
+background: linear-gradient(135deg, #191970 0%, #483D8B 40%, #9370DB 100%);
+height: 100vh;
+}
+
+.hover__wrap {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.hover__wrap > div {
+max-width: 400px;
+margin: 3%;
+position: relative;
+perspective: 1000px;
+/*  perspective 원근감 숫자 적을 수록 가깝  */
+}
+
+.hover__wrap > div img {
+width: 100%;
+border: 10px solid #F0F8FF;
+box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+box-sizing: border-box;
+vertical-align: top;
+}
+
+.hover__wrap > div .front {
+transition: transform 1s;
+backface-visibility: hidden;
+transform-style: preserve-3d;
+}
+
+.hover__wrap > div .back {
+position: absolute;
+left: 0;
+top: 0;
+z-index: -1;
+transition: transform 1s;
+transform-style: preserve-3d;
+}
+
+.hover__wrap > div figcaption {
+background: rgba(0, 0, 0, 0.4);
+color: 	#F8F8FF;
+padding: 10px;
+text-align: center;
+line-height: 0.7;
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%) translatez(100px);
+/* translatez(100px)는 3D 효과를 주기 위한 transform-style 입력 후에 적어줌 */
+width: 60%;
+backface-visibility: hidden;
+}
+
+/* Mouse Hover Effect */
+.hover__updown .front {
+transform: rotateX(0deg);
+}
+
+.hover__updown:hover .front {
+transform: rotateX(180deg);
+}
+
+.hover__updown .back {
+transform: rotateX(-180deg);
+}
+
+.hover__updown:hover .back {
+transform: rotateX(0deg);
+}
+
+.hover__leftright .front {
+transform: rotateY(0deg);
+}
+
+.hover__leftright:hover .front {
+transform: rotateY(180deg);
+}
+
+.hover__leftright .back {
+transform: rotateY(-180deg);
+}
+
+.hover__leftright:hover .back {
+transform: rotateY(0deg);
+}
+</code></pre>
+            </div>
+
+            <h4 class="t_tit3">결과</h4>
+            <div class="t_iframe">
+                <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="wvjezex"
+                    data-user="kimyihyung"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/wvjezex">
+                            MouseHoverEffect</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+
+        </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+
+        <script src="../../../../javascript/assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
