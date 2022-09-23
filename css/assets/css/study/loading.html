@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+
+    <link rel="stylesheet" href="../../../../javascript/assets/css/style.css">
+    <link rel="stylesheet" href="../../../../javascript/assets/css/dracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href=""></a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li class="active"><a href="basic.html">기본 문법</a></li>
+                <li><a href="media.html">미디어쿼리</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <div class="main_refer">
+        <div class="document">
+            <h2 class="t_tit">loading</h2>
+            <p class="t_desc">
+                작은 원 10개가 돌면서 loading 화면 처럼 보이는 애니메이션을 만들어봅시다.
+            </p>
+
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc2">
+                원을 여러개 만들어줍니다.
+            </p>
+
+            <div class="t_code">
+                <pre><code class="language-html">&lt;div class="loader"&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+    &lt;div class="ball"&gt;&lt;/div&gt;
+&lt;/div&gt;                
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc2">
+                reverse : 애니메이션을 역방향으로 재생한다. 재생이 한 번 끝나면 마지막 프레임부터 다시 시작한다.<br>
+                ease-in-out : 애니메이션 효과가 천천히 시작되어, 천천히 끝납니다.<br>
+                transform 속성을 이용해 요소에 이동 효과(X , Y축으로 각각 -50%씩)를 부여하면, 시각적으로 가운데에 위치
+            </p>
+
+            <div class="t_code">
+                <pre><code class="language-css"> body{
+    background-color: rgb(105, 54, 199);
+}
+
+.loader  {
+    position: absolute;
+    top: 50%;
+    left:50%; 
+    transform:translate(-50%,-50%); 
+    width:100px; 
+    height:100px; 
+    animation: spin .6s linear infinite reverse;
+}
+.ball {
+    position: absolute; 
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    height:100%; 
+    animation: spin 1s infinite ease-in-out; 
+}
+.ball::after {
+    position: absolute; 
+    content: ''; 
+    background-color: #fff;
+    width:5px; 
+    height:5px;
+    border-radius:100%; 
+    top:0px;
+} 
+
+
+.ball:nth-child(2) {
+animation-delay:-0.1s; 
+}
+.ball:nth-child(3) {
+animation-delay:-0.2s;
+}
+.ball:nth-child(4) {
+animation-delay:-0.3s;
+}
+.ball:nth-child(5) {
+animation-delay:-0.4s;
+}
+.ball:nth-child(6) {
+animation-delay:-0.5s;
+}
+.ball:nth-child(7) {
+animation-delay:-0.6s;
+}
+.ball:nth-child(8) {
+animation-delay:-0.7s;
+}
+.ball:nth-child(9) {
+animation-delay:-0.8s;
+}
+.ball:nth-child(10) {
+animation-delay:-0.9s; 
+}
+
+@keyframes spin { 
+0% { 
+    transform:translate(-50%,-50%) rotate(0deg);
+}
+100% {
+    transform:translate(-50%,-50%) rotate(360deg);
+}
+}
+</code></pre>
+            </div>
+
+            <h4 class="t_tit3">결과</h4>
+            <div class="t_iframe">
+                <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="LYmzbvQ"
+                    data-user="kimyihyung"
+                    style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/kimyihyung/pen/LYmzbvQ">
+                            loading</a> by kimyihyung (<a href="https://codepen.io/kimyihyung">@kimyihyung</a>)
+                        on <a href="https://codepen.io">CodePen</a>.</span>
+                </p>
+                <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </div>
+
+        </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+
+        <script src="../../../../javascript/assets/js/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+</body>
+
+</html>
