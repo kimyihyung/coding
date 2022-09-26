@@ -1,0 +1,213 @@
+/* 폰트 */
+@import url("https://webfontworld.github.io/NexonLv2Gothic/NexonLv2Gothic.css");
+.nexon {
+    font-family: "NexonLv2Gothic";
+    font-weight: 400;
+}
+
+/* 블라인드 효과 */
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    width: 1000px;
+    margin: 50px auto 30px auto;
+    display: flex;
+    font-family: "NexonLv2Gothic";
+}
+.fcontainer {
+    width: 1000px;
+    margin: 0 auto;
+    font-family: "NexonLv2Gothic";
+}
+
+li {
+    list-style: none;
+}
+
+/* header */
+#header {
+    width: 30%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+#header img {
+    width: 150px;
+    margin-bottom: 40px;
+}
+
+#header .menu {
+    font-weight: 700;
+}
+
+#header .menu li {
+    padding: 10px 20px;
+    font-size: 20px;
+}
+#header .menu li.active {
+    color: rgb(0, 88, 221);
+}
+#header .menu .details {
+    padding: 20px 0;
+}
+#header .menu .details li {
+    padding: 10px 10px;
+    color: #666;
+    font-weight: 500;
+    font-size: 16px;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+/* main */
+#main {
+    width: 70%;
+}
+
+/* slider */
+.slider__wrap {
+}
+.slider__view {
+    width: 700px;
+    height: 383px;
+    overflow: hidden;
+}
+.slider__inner {
+    display: flex;
+    width: 2100px;
+    height: 383px;
+    transition: all 0.3s;
+}
+.slider {
+    width: 700px;
+    height: 383px;
+}
+
+/* contents */
+.contents {
+    box-sizing: border-box;
+    padding: 60px 20px;
+}
+.contents .title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    cursor: pointer;
+    margin-right: 35px;
+}
+.contents .title h2:nth-child(3) {
+    color: rgb(170, 170, 170);
+}
+.contents .icons {
+    display: flex;
+    justify-content: space-around;
+}
+.contents .icons .icon {
+    text-align: center;
+}
+.contents .icons .icon img {
+    width: 100px;
+    border-radius: 50%;
+}
+.contents .icons .icon p {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 700;
+    line-height: 1.4;
+    font-size: 14px;
+}
+/* notice */
+.notice {
+    background-color: rgb(255, 242, 242);
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.notice .noticeC {
+    border: 1px solid #dcdcdc;
+    width: 31%;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+.notice .noticeC h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.notice .noticeC img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+.notice .noticeC ul li {
+    text-align: left;
+    line-height: 1.5;
+    font-size: 14px;
+    color: #666;
+}
+.notice .noticeC ul li:before {
+    content: "";
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 2.5px;
+    width: 3px;
+    height: 3px;
+    background-color: #666;
+}
+.notice .noticeC .plus img {
+    width: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+/* footer */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #eff2f9;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+#footer .logo {
+    width: 10%;
+    box-sizing: border-box;
+}
+#footer .logo img {
+    width: 80px;
+}
+#footer .copyright {
+    width: 62%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#footer .copyright li {
+    line-height: 1.6;
+}
+#footer .social {
+    width: 25%;
+}
+#footer .social img {
+    margin-top: 30px;
+}

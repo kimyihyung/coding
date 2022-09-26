@@ -1,0 +1,40 @@
+/* headerType */
+.header__inner {
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  background: #fff;
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+}
+
+.header__logo {
+  margin: 21px 0 25px 0;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.header__menu {
+  text-align: center;
+}
+.header__menu ul {
+  margin-bottom: 20px;
+}
+.header__menu li {
+  display: inline;
+}
+.header__menu li a {
+  margin: 0 50px 0 50px;
+}
+.header__menu li:hover a {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
