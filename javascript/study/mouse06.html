@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">마우스 이펙트 - 텍스트 효과</h2>
+            <p class="t_desc2">
+                마우스의 움직임에 따라 글자가 움직이고 마우스를 텍스트 위에 올리면 마우스 커서에 효과가 나타납니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/mouseEffect06.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/blob/main/javascript/effect/mouseEffect06.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/mouseEffect06.html">원본 사이트</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">html</h3>
+            <p class="t_desc2">
+                글자를 왼쪽, 오른쪽에 같은 단어가 겹치면서 효과가 발생하기에 그에 따른 틀을 잡아줍니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;section id="mouseType"&gt;
+        &lt;div class="mouse__cursor"&gt;&lt;/div&gt;
+        &lt;div class="mouse__wrap"&gt;
+            &lt;div class="mouse__img"&gt;
+                &lt;figure&gt;
+                    &lt;img src="../assets/img/effect_bg11@2x-min.jpg" alt=""&gt;
+                &lt;/figure&gt;
+            &lt;/div&gt;
+            &lt;div class="mouse__text"&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanSlow style"&gt;Pain Past&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanSlow style"&gt;Pain Past&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanFast style"&gt;is pleasure&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanFast style"&gt;is pleasure&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanSlow style"&gt;지나간 고통은&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanSlow style"&gt;지나간 고통은&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="line"&gt;
+                    &lt;div class="left"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanFast style"&gt;쾌락이다.&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="right"&gt;
+                        &lt;div class="spanWrap"&gt;
+                            &lt;span class="spanFast style"&gt;쾌락이다.&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">css</h3>
+            <p class="t_desc2">
+                transform: skew();를 이용하여 글자에 기울기 효과를 부여합니다. mix-blend-mode: difference;를 이용하여 커서가 올라갔을 때의 배경색과의 반전을 줍니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-css">/* mouseType */
+.mouse__wrap {
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    cursor: none;
+}
+
+.mouse__img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.mouse__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -20%);
+    font-size: 3vw;
+    line-height: 1.5;
+}
+
+.mouse__text .line {
+    width: 100%;
+    display: flex;
+
+}
+
+.mouse__text .line .left {
+    width: 50vw;
+    color: orange;
+    overflow: hidden;
+    transform: skew(0deg, -15deg);
+}
+
+
+.mouse__text .line .left .spanWrap {
+    width: 100vw;
+    text-align: center;
+}
+
+.mouse__text .line .right {
+    width: 50vw;
+    overflow: hidden;
+    transform: skew(0deg, 15deg);
+}
+
+.mouse__text .line .right .spanWrap {
+    width: 100vw;
+    text-align: center;
+    transform: translateX(-50vw);
+}
+
+.mouse__text span {
+    display: inline-block;
+}
+
+.mouse__cursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    z-index: 9999;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    user-select: none;
+    pointer-events: none;
+    font-size: 5px;
+}
+
+.mouse__cursor.style {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(5);
+    mix-blend-mode: difference;
+}
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">js</h3>
+            <p class="t_desc2">
+                mouseMove의 움직임에 e=마우스 커서, 커서의 좌표값과 gsap를 이용해서는 마우스의 움직임에 따른 효과와 글자의 움직임에 대한 속도를 부여합니다.
+                커서가 글자에 올라갔을때 효과가 부여
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">const mouseMove = (e) => {
+    let positionSlow = (e.pageX - (window.innerWidth / 2)) * 0.1;
+    let positionFast = (e.pageX - (window.innerWidth / 2)) * 0.2;
+
+    gsap.to(".spanSlow", { duration: 0.4, x: positionSlow });
+    gsap.to(".spanFast", { duration: 0.4, x: -positionFast });
+    gsap.to(".mouse__cursor", { duration: 0.3, left: e.pageX - 5, top: e.pageY - 5 });
+}
+window.addEventListener("mousemove", mouseMove);
+
+//마우스를 올렸을때 커서 커지는 효과. 글자에 클래스와 스타일을 추가하여 부여
+const cursor = document.querySelector(".mouse__cursor");
+document.querySelectorAll(".spanWrap span").forEach((span) => {
+    span.addEventListener("mouseover", () => {
+        cursor.classList.add("style");
+    });
+    span.addEventListener("mouseout", () => {
+        cursor.classList.remove("style");
+    });
+});
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

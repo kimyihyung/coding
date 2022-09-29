@@ -1247,30 +1247,30 @@ li {
                     const cssName = el.querySelector("strong").innerText;        //속성 텍스트
 
                     // 알파벳 첫글자 == CSS 속성의
-                    //     if (searchWord === "all") {
-                    //         el.classList.remove("hide");
-                    //         count = searchList.length;
-                    //     } else if (searchWord.charAt(0) === cssName.charAt(0)) {
-                    //         el.classList.remove("hide");
-                    //         count++
-                    //     } else {
-                    //         el.classList.add("hide");
-                    //     }
-                    //     searchInfo.textContent = count;
-                    // });
-
-                    //     if (searchWord == "all") {
-                    //         searchInfo.innerHTML = "전체 갯수는 " + searchList.length + "개 입니다."
-                    //     } else if (count == 0) {
-                    //         searchInfo.innerHTML = "검색 결과가 없습니다."
-                    //     } else {
-                    //         searchInfo.innerHTML = searchWord + " 로 시작하는 속성의 개수는 " + count + " 개 입니다.";
-                    //     }
-
-                    //     count = 0;
-                    //     searchAlphabet.textContent = searchWord;
-                    // });
+                    if (searchWord === "all") {
+                        el.classList.remove("hide");
+                        count = searchList.length;
+                    } else if (searchWord.charAt(0) === cssName.charAt(0)) {
+                        el.classList.remove("hide");
+                        count++
+                    } else {
+                        el.classList.add("hide");
+                    }
+                    searchInfo.textContent = count;
                 });
+
+                if (searchWord == "all") {
+                    searchInfo.innerHTML = "전체 갯수는 " + searchList.length + "개 입니다."
+                } else if (count == 0) {
+                    searchInfo.innerHTML = "검색 결과가 없습니다."
+                } else {
+                    searchInfo.innerHTML = searchWord + " 로 시작하는 속성의 개수는 " + count + " 개 입니다.";
+                }
+
+                count = 0;
+                searchAlphabet.textContent = searchWord;
+            });
+        });
     </script>
 
 </body>

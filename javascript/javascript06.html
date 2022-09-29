@@ -1915,23 +1915,28 @@ console.log(result3)
             // console.log(result11);
         }
         {
+            //09.28 숙제
             //b d f h k
-            const num1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
-            const result1 = num1.filter(e => e === 'b' || e === 'd' || e === 'f' || e === 'h' || e === 'k');
-            console.log(result1);
+            // const num1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            // const result1 = num1.filter(e => e === 'b' || e === 'd' || e === 'f' || e === 'h' || e === 'k');
+            // console.log(result1);
 
-            const num2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
-            for (i = 1; i < num2.length; i += 2) {
-                console.log(num2[i]);
-            };
+            // const num2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            // for (i = 1; i < num2.length; i += 2) {
+            //     console.log(num2[i]);
+            // };
 
-            const num3 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
-            num3.map((e, i) => {
-                if (i % 2 == 1) {
-                    const result3 = num3[i];
-                    console.log(result3)
-                }
-            });
+            // const num3 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            // num3.map((e, i) => {
+            //     if (i % 2 == 1) {
+            //         const result3 = num3[i];
+            //         console.log(result3)
+            //     }
+            // });
+
+            // const num5 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            // const result5 = num5.slice(1, 2) + num5.slice(3, 4) + num5.slice(5, 6) + num5.slice(7, 8) + num5.slice(9, 10);
+            // console.log(result5);
 
             // const num4 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
             // for ((e, i) => {
@@ -1940,10 +1945,25 @@ console.log(result3)
             //         console.log(result3)
             //     }
             // });
+        }
 
-            const num5 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
-            const result5 = num5.slice(1, 2) + num5.slice(3, 4) + num5.slice(5, 6) + num5.slice(7, 8) + num5.slice(9, 10);
-            console.log(result5);
+        {
+            //09.29 숙제
+            const num = { a, b, c, d, e, f, g, h, i, k }
+
+            //e, f (3가지) (slice, splice 제외해서)
+
+            const num1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            const result1 = num1.find(e => e === 'e') + num1.find(e => e === 'f');
+            console.log(result1);
+
+            const num2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            const result2 = num2.filter(e => e === 'e' || e === 'f');
+            console.log(result2);
+
+            const num3 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            let result3 = num3.join("").match(/[e || f]/g);
+            console.log(result3.join());
 
         }
     </script>

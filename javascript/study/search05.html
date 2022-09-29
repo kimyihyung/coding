@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">searchEffect05</h2>
+            <div class="t_desc2">
+                filter()를 이용하여 속성의 중요도 보여주기
+            </div>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/searchEffect05.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/javascript/effect/searchEffect05.html" target="blank">원본
+                    소스 보기</a>
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/searchEffect05.html" target="_blank">원본
+                    사이트</a>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc">
+                중요도에 따라서 확인하기 위한 .search__click 속성 갯수 보여주는 .search__info 속성 리스트 .search__list
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;filter()를 이용하여 속성의 중요도 보여주기&lt;/span&gt;
+        &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+
+        &lt;div class="search__click"&gt;
+            &lt;ul&gt;
+                &lt;li data-star="0"&gt;&lt;a href="#"&gt;☆☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="1"&gt;&lt;a href="#"&gt;★☆☆☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="2"&gt;&lt;a href="#"&gt;★★☆☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="3"&gt;&lt;a href="#"&gt;★★★☆☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="4"&gt;&lt;a href="#"&gt;★★★★☆&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star="5"&gt;&lt;a href="#"&gt;★★★★★&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul&gt;
+                &lt;li data-star2="1"&gt;&lt;a href="#"&gt;1개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star2="2"&gt;&lt;a href="#"&gt;2개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star2="3"&gt;&lt;a href="#"&gt;3개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li data-star2="4"&gt;&lt;a href="#"&gt;4개 이상&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;
+                전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__list"&gt;
+            &lt;ul class="line"&gt;
+
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc">
+                마우스 hover시의 색상 변화 등
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-css">/* header */
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header nav {
+    margin: 10px;
+}
+
+#header nav li {
+    position: relative;
+    display: inline;
+}
+
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: "NexonLv1Gothic";
+}
+
+#header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+
+#header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+
+/* main */
+#main {
+    margin: 50px 10px;
+}
+
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    padding: 30px;
+    text-align: center;
+}
+
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.search__wrap > h1 {
+    font-family: "Tmon";
+    color: var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+
+.search__box {
+    margin-bottom: 20px;
+}
+
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+
+.search__list li.hide {
+    display: none;
+}
+
+.search__list li.show {
+    display: block;
+}
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.search__list span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+.search__list em {
+    float: right;
+    font-style: normal;
+}
+.search__list .line {
+    margin: 50px 0;
+}
+.search__list .line li {
+    background: #e3eaf5;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+.search__list .line li:hover {
+    background: #c1d7f7;
+    cursor: pointer;
+}
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+
+.search__desc {
+    padding: 20px 40px 20px 60px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    background-color: var(--htmlColor);
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
+}
+.desc {
+    color: #fff;
+}
+.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.search__click li {
+    display: inline;
+}
+
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+</code></pre>
+
+                </div>
+            </details>
+            <h3 class="t_tit2">JAVASCRIPT</h3>
+            <p class="t_desc">
+                switch를 이용하여 data.star의 숫자 값을 그에 맞는 문자로 변환한다.
+                li 안에 있는 각각의 star를 클릭했을 때에 이벤트를 발생시킨다. dataset에 있는 스타를 가져오고, 데이터 값이 타켓과 데이터 값이 같으면 출력.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">const cssProperty = [
+    { star: 1, name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
+    .
+    .
+    .
+];
+const serchList = document.querySelector(".search__list ul");
+const searchClick = document.querySelectorAll(".search__click ul li");
+
+// 출력하기
+function updateList(list) {
+    listCSS = "";
+
+    for (const data of list) {
+        //listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;${data.star}&lt;/em&gt;&lt;/li&gt;`;
+
+        switch (data.star) {
+            case 0:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;☆☆☆☆☆&lt;/em&gt;&lt;/li&gt;`;
+                break;
+            case 1:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★☆☆☆☆&lt;/em&gt;&lt;/li&gt;`;
+                break;
+            case 2:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★★☆☆☆&lt;/em&gt;&lt;/li&gt;`;
+                break;
+            case 3:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★★★☆☆&lt;/em&gt;&lt;/li&gt;`;
+                break;
+            case 4:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★★★★☆&lt;/em&gt;&lt;/li&gt;`;
+                break;
+            case 5:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;★★★★★&lt;/em&gt;&lt;/li&gt;`;
+                break;
+
+            default:
+                listCSS += `&lt;li&gt;${data.name} : ${data.desc}&lt;em&gt;값이 없습니다.&lt;/em&gt;&lt;/li&gt;`;
+                break;
+        }
+    }
+
+    serchList.innerHTML = listCSS
+
+    //속성 갯수
+    const searchList2 = document.querySelectorAll(".search__list ul li");
+    document.querySelector(".num").textContent = searchList2.length;
+
+}
+updateList(cssProperty);
+
+// 클릭하기
+searchClick.forEach(star => {
+    star.addEventListener("click", () => {
+        const target = star.dataset.star; //dataset으로 값 가져오는 
+        const target2 = star.dataset.star2;
+        const filterList = cssProperty.filter(data => data.star == target || data.star >= target2)
+
+        updateList(filterList);
+    });
+});
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
