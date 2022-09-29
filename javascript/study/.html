@@ -1,176 +1,21 @@
-<div class="document">
-    <h1 class="t_tit">01. 콜백함수 : 다른 함수에 인수로 넘겨지는 함수</h1>
-    <p class="t_desc2">
-        콜백함수는 하나의 함수가 실행되고 두 번째 함수를 실행하는 함수입니다.
-    </p>
-    <div class="t_code">
-        <pre><code class="language-js">function func() {
-document.write("함수가 실행되었습니다.2")
-}
+<span>find()를 이용하여 속성을 검색하면 설명 보여주기</span>
+<h1>CSS 속성 검색하기</h1>
 
-function callback(str) {
-document.write("함수가 실행되었습니다.1")
-str();
-}
+<div class="search__box">
+    <label for="search">검색하기</label>
+    <input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!">
+</div>
 
-callback(func);
-</code></pre>
-    </div>
-    <div class="result">
-        <details>
-            <summary>결과보기</summary>
-            <div class="sample01_result">
-                <script>
-                    {
-                        function func() {
-                            document.write("함수가 실행되었습니다.2")
-                        }
-
-                        function callback(str) {
-                            document.write("함수가 실행되었습니다.1")
-                            str();
-                        }
-
-                        callback(func);
-                    }
-                </script>
-            </div>
-        </details>
-    </div>
-    <h1 class="t_tit">02. 콜백함수 : 반복문</h1>
-    <p class="t_desc2">
-        콜백함수를 반복문을 사용해 반복하는 방법입니다.
-    </p>
-    <div class="t_code">
-        <pre><code class="language-js">function func(index) {
-document.write("함수가 실행되었습니다." + index);
-}
-
-function callback(num) {
-for (let i = 1; i &lt;= 10; i++) {
-num(i);
-}
-}
-
-callback(func);
-</code></pre>
-    </div>
-    <div class="result">
-        <details>
-            <summary>결과보기</summary>
-            <div class="sample01_result">
-                <script>
-                    {
-                        function func(index) {
-                            document.write("함수가 실행되었습니다." + index);
-                        }
-
-                        function callback(num) {
-                            for (let i = 1; i <= 10; i++) {
-                                num(i);
-                            }
-                        }
-
-                        callback(func);
-                    }
-                </script>
-            </div>
-        </details>
-    </div>
-    <h1 class="t_tit">03. 콜백함수 : 동기/비동기</h1>
-    <p class="t_desc2">
-        콜백함수의 동기/비동기 입니다. 여기서 동기는 동시에 실행하는 것을 말합니다.
-    </p>
-    <div class="t_code">
-        <pre><code class="language-js">//01. 순서대로 실행
-// function funcA() {
-//     document.write("funcA가 실행되었습니다.<br>");
-// }
-// function funcB() {
-//     document.write("funcB가 실행되었습니다.<br>");
-// }
-// funcA();
-// funcB();
-
-//a
-//b
-
-//02. setTimeout 때문에 b가 먼저 실행
-// function funcA() {
-//     setTimeout(() => {
-//         console.log("funcA가 실행되었습니다.<br>");
-//     }, 1000);
-// }
-// function funcB() {
-//     console.log("funcB가 실행되었습니다.<br>");
-// }
-// funcA();
-// funcB();
-
-//b
-//a
-
-//03. callback함수 이용하여 setTimeout이 걸려있지만 a 먼저 실행
-// function funcA(callback) {
-//     setTimeout(() => {
-//         console.log("funcA가 실행되었습니다.<br>");
-//         callback();
-//     }, 1000);
-// }
-
-// function funcB() {
-//     console.log("funcB가 실행되었습니다.<br>");
-// }
-// funcA(function () {
-//     funcB();
-// })
-
-//a
-//b
-
-//04. callback함수를 반복해서 사용할 때
-function funcA(callback) {
-setTimeout(() => {
-console.log("funcA가 실행되었습니다.<br>");
-callback();
-}, 1000);
-}
-
-function funcB(callback) {
-setTimeout(() => {
-console.log("funcB가 실행되었습니다.<br>");
-callback();
-}, 1000);
-}
-function funcC(callback) {
-setTimeout(() => {
-console.log("funcC가 실행되었습니다.<br>");
-callback();
-}, 1000);
-}
-function funcD() {
-setTimeout(() => {
-console.log("funcD가 실행되었습니다.<br>");
-}, 1000);
-}
-funcA(function () {
-funcB(function () {
-funcC(function () {
-    funcD()
-});
-});
-});
-</code></pre>
-    </div>
-    <div class="result">
-        <details>
-            <summary>결과보기</summary>
-            <div class="sample01_result">
-                funcA가 실행되었습니다. <br>
-                funcB가 실행되었습니다. <br>
-                funcC가 실행되었습니다. <br>
-                funcD가 실행되었습니다.
-            </div>
-        </details>
+<div class="search__desc">
+    <div class="desc">
+        속성을 검색하시면 설명이 표시 됩니다.
     </div>
 </div>
+
+<div class="search__info">
+    <div>
+        전체 속성 갯수 : <span class="num">0</span>
+    </div>
+</div>
+
+<div class="search__list">

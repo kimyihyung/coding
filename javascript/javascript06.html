@@ -1865,23 +1865,85 @@ console.log(result3)
             // const number5 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
             // const result5 = number5.filter(el => el === 400);
 
-            console.log()
+            //console.log()
             //400
 
-            //400 500
-            const number11 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            const result11 = number11.splice(3, 2);
+        }
+        {
 
-            const number12 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            const result12 = number12.slice(3, 5);
+            //400 500 출력
+            // const number11 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result11 = number11.splice(3, 2);
 
-            const number13 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            const result13 = number13.slice(-6, -4);
+            // const number12 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result12 = number12.slice(3, 5);
+
+            // const number13 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result13 = number13.slice(-6, -4);
+
+            // const number14 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result14 = number14.splice(-6, 2);
+
+            // const number3 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result3 = number3.filter((el) => el === 400 || el === 500).join(',');
+            // console.log(result3);
+
+            // const number4 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result4 = number4
+            //     .map((e) => {
+            //         if (e == 400 || e == 500) {
+            //             return e;
+            //         }
+            //     })
+            //     .filter((e) => e != null)
+            //     .join(',');
+            // console.log(result4);
+
+            // const number8 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            // const result8 = number8.filter(el => el > 300 && el < 600);
+
+            // {
+            //     const number = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            //     if (number.includes(400 || 500)) {
+            //         console.log(number[3], number[4])
+            //     }
+            // }
 
             // const number14 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
             // const result14 = number14(number14[3], number14[4]);
 
-            console.log(result11);
+            // console.log(result11);
+        }
+        {
+            //b d f h k
+            const num1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            const result1 = num1.filter(e => e === 'b' || e === 'd' || e === 'f' || e === 'h' || e === 'k');
+            console.log(result1);
+
+            const num2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            for (i = 1; i < num2.length; i += 2) {
+                console.log(num2[i]);
+            };
+
+            const num3 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            num3.map((e, i) => {
+                if (i % 2 == 1) {
+                    const result3 = num3[i];
+                    console.log(result3)
+                }
+            });
+
+            // const num4 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            // for ((e, i) => {
+            //     if (i % 2 == 1) {
+            //         const result3 = num3[i];
+            //         console.log(result3)
+            //     }
+            // });
+
+            const num5 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            const result5 = num5.slice(1, 2) + num5.slice(3, 4) + num5.slice(5, 6) + num5.slice(7, 8) + num5.slice(9, 10);
+            console.log(result5);
 
         }
     </script>

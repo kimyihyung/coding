@@ -36,6 +36,7 @@
 
             <div class="search__info">
                 <div class="keyword">
+                    <span>all</span>
                     <span>a</span>
                     <span>b</span>
                     <span>c</span>
@@ -63,12 +64,9 @@
                     <span>y</span>
                     <span>z</span>
                 </div>
-                <div>
-                    전체 속성 갯수 : <span class="num">0</span>
-                </div>
-                <div>
-                    선택 속성 갯수 : <span class="num2">0</span>
-                </div>
+                <div class="Result"></div>
+            </div>
+            <div class="search__box">
             </div>
             <div class="search__list">
                 <div class="css">
@@ -1233,11 +1231,12 @@ li {
         //선택자
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");    //알파벳             //검색 영역
         const searchList = document.querySelectorAll(".search__list ul li");    //목록 리스트
-        const searchInfo = document.querySelector(".search__info .num")     //전체 갯수
-        const searchInfo2 = document.querySelector(".search__info .num2")     //선택 갯수
+        const searchInfo = document.querySelector(".search__info .Result");                //전체 갯수
+        const searchAlphabet = document.querySelector(".search__info .alphabet");                //알파벳 시작
+        let count = 0;
 
         //전체 갯수 구하기
-        searchInfo.textContent = searchList.length;
+        //searchInfo.textContent = searchList.length;
 
         searchKeyword.forEach(el => {
             el.addEventListener("click", () => {
@@ -1245,20 +1244,33 @@ li {
                 //console.log(searchKeyword);
 
                 searchList.forEach(el => {
-                    const cssName = el.querySelector("strong").innerText;   //CSS 속성 텍스트
-                    //console.log(cssName)
+                    const cssName = el.querySelector("strong").innerText;        //속성 텍스트
 
-                    //알파벳 첫글자 == CSS 속성의 첫글자
-                    if (searchWord.charAt(0) === cssName.charAt(0)) {
-                        el.classList.remove("hide");
-                    } else {
-                        el.classList.add("hide");
-                    }
-                })
-                const searchList2 = document.querySelectorAll(".search__list ul li.hide");
-                searchInfo2.textContent = searchList.length - searchList2.length;       //먼저 작성 후 선택자에 추가함. 2번으로 부여. 목록 리스트에 hide.
-            });
-        });
+                    // 알파벳 첫글자 == CSS 속성의
+                    //     if (searchWord === "all") {
+                    //         el.classList.remove("hide");
+                    //         count = searchList.length;
+                    //     } else if (searchWord.charAt(0) === cssName.charAt(0)) {
+                    //         el.classList.remove("hide");
+                    //         count++
+                    //     } else {
+                    //         el.classList.add("hide");
+                    //     }
+                    //     searchInfo.textContent = count;
+                    // });
+
+                    //     if (searchWord == "all") {
+                    //         searchInfo.innerHTML = "전체 갯수는 " + searchList.length + "개 입니다."
+                    //     } else if (count == 0) {
+                    //         searchInfo.innerHTML = "검색 결과가 없습니다."
+                    //     } else {
+                    //         searchInfo.innerHTML = searchWord + " 로 시작하는 속성의 개수는 " + count + " 개 입니다.";
+                    //     }
+
+                    //     count = 0;
+                    //     searchAlphabet.textContent = searchWord;
+                    // });
+                });
     </script>
 
 </body>

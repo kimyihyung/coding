@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">searchEffect04</h2>
+            <div class="t_desc2">
+                find()를 이용하여 속성을 검색하면 설명 보여주기
+            </div>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/searchEffect04.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/javascript/effect/searchEffect04.html" target="blank">원본
+                    소스 보기</a>
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/searchEffect04.html" target="_blank">원본
+                    사이트</a>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc">검색을 하거나 키워드를 누르면 결과를 보여주기 위한 틀을 잡아 줍니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-html">&lt;main id="main"&gt;
+&lt;div class="search__wrap"&gt;
+&lt;span&gt;find()를 이용하여 속성을 검색하면 설명 보여주기&lt;/span&gt;
+&lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
+
+&lt;div class="search__box"&gt;
+    &lt;label for="search"&gt;검색하기&lt;/label&gt;
+    &lt;input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!"&gt;
+&lt;/div&gt;
+
+&lt;div class="search__desc"&gt;
+    &lt;div class="desc"&gt;
+        속성을 검색하시면 설명이 표시 됩니다.
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="search__info"&gt;
+    &lt;div&gt;
+        전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="search__list"&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+            </div>
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc">
+                검색 결과를 보여주는 css에 대한 수정
+            </p>
+            <div class="t_code">
+                <pre><code class="language-css">:root {
+    --htmlColor: #223547;
+    --cssColor: #472222;
+    --javascriptColor: #224736;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "NexonLv1Gothic";
+    color: var(--htmlColor);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    color: var(--htmlColor);
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* header */
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header nav {
+    margin: 10px;
+}
+
+#header nav li {
+    position: relative;
+    display: inline;
+}
+
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: "NexonLv1Gothic";
+}
+
+#header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+
+#header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+
+/* main */
+#main {
+    margin: 50px 10px;
+}
+
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    padding: 30px;
+    text-align: center;
+}
+
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.search__wrap > h1 {
+    font-family: "Tmon";
+    color: var(--htmlColor);
+    font-size: 6vw;
+    margin-bottom: 10px;
+}
+
+.search__box {
+    margin-bottom: 20px;
+}
+
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 70%;
+    border-radius: 50px;
+    font-size: 20px;
+}
+
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+
+.search__list li.hide {
+    display: none;
+}
+
+.search__list li.show {
+    display: block;
+}
+
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+    .search__wrap {
+    padding: 20px;
+    }
+
+    .search__wrap > span {
+    font-size: 16px;
+    margin-bottom: 10px;
+    }
+
+    .search__wrap > h1 {
+    font-size: 44px;
+    }
+
+    .search__box input {
+    font-size: 16px;
+    padding: 12px 30px;
+    }
+}
+
+/* footer */
+#footer {
+    position: relative;
+    text-align: center;
+}
+
+#footer a {
+    color: #000;
+    font-family: "NexonLv1Gothic";
+    padding-bottom: 50px;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+</code></pre>
+            </div>
+            <h3 class="t_tit2">JAVASCRIPT</h3>
+            <p class="t_desc">
+                cssProperty안에 속성들에 대한 정보를 저장하고, map을 사용한 출력. 이벤트를 발생시키는 경우에 매개변수를 이용한 동작
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">const cssProperty = [
+    { name: "accent-color", desc: "특정 요소에 색상을 지정할 때 사용됩니다." },
+    .
+    .
+    .
+];
+const searchList = document.querySelector(".search__list");
+const searchNum = document.querySelector(".search__info .num")     //전체 갯수
+const searchBox = document.querySelector(".search__box input");
+const searchDesc = document.querySelector(".search__desc");
+
+//출력하기
+cssProperty.map((element, index) => {
+    searchNum.innerText = index + 1;    //0부터 시작하기에 더하여 전체
+    searchList.innerHTML += `<span>${element.name}</span>`;
+});
+
+//입력하기
+searchBox.addEventListener("keyup", () => {
+    const searchWord = searchBox.value;
+    //console.log(searchWord);
+    findProperty(searchWord); //지역번수라서 매개변수로 전달
+});
+
+searchBox.addEventListener("click", () => {
+    const searchClick = searchBox.value;
+    findProperty(searchClick); //지역번수라서 매개변수로 전달
+});
+
+// 속성찾기
+function findProperty(searchData) {
+    const targetData = cssProperty.find((data) => data.name === searchData);
+
+    if (targetData == null) {
+        searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!";
+        return;     //결과값 출력도 있지만, 종료의 의미. 밑에 있는 실행이 무조건 실행되기에 리턴을로 종료를 시킨다.
+    }
+
+    searchDesc.textContent = targetData.desc;
+};
+
+// 클릭시 속성 동작
+const searchClick = document.querySelectorAll(".search__list span");
+searchClick.forEach((element, index) => {
+    element.addEventListener("click", () => {
+        const searchWord = element.innerText;
+        findProperty(searchWord);
+    });
+});
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
