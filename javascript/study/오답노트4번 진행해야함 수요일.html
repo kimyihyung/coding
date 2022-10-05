@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오답노트 정리 02</title>
+    <link rel="stylesheet" href="../assets/css/dracular.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+    <main id="main">
+        <div class="main_menu">
+            <div class="document">
+                <h2 class="t_tit">Javascript 오답노트 03</h2>
+                <div class="t_code">
+                    오답노트를 작성해봅시다. 시험 본 것을 두고와서, 맞은 것이 무엇인지 모르고 어차피 많이 틀려서 모든 문제를 작성합니다.
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">01. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    function cookingMama() {
+        let cook = ['당근', '소세지', '삼겹살', '계란후라이']
+        for (sel = 0; sel &lt; cook.length; sel++) {
+            if (cook[sel] !== '당근') {
+                let i = '오늘 저녁은' + cook[sel];
+                console.log(i);
+            }
+        }
+    }
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    cook[sel]에서 당근을 제외하고 출력하게 되어서, '오늘 저녁은 소세지, 삼겹살, 계란후라이'같지만, 출력하는 것이 없어서 답은 없습니다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            출력되지 않음.
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">02. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    function myWeight() {
+        let kcal, weight = 0;
+    
+        for (kcal = 0; kcal &lt;= 8; kcal++) {
+            weight += kcal;
+            if (kcal == 5) {
+                break;
+            }
+        }
+        console.log(weight + kcal);
+    }
+    myWeight()
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    break는 끝나게 되고, continue는 그 부분만 건너뛰는 것인데 break이기에, weight는 0, 1, 3, 6, 10, 15으로 점차 증가하여 15가 됩니다.
+                    kcal은 5이기에 5를 더하여 답이 20이 됩니다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            20
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">03. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    function party() {
+        let join = 0;
+        let people = ['철수', '민수', '상수', '변수', '무리수']
+        let enable = 4;
+    
+        if (people.length &lt;= 5) {
+            enable = 3;
+        } else {
+            enable = 8;
+        }
+        while (join &lt; people.length) {
+            join++;
+            if (join == enable) break;
+        }
+        console.log("오늘 파티 참가 가능한 인원수는 총 " + join + "명");
+    }
+    party();
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    people.length은 5이기 때문에 enable = 3;으로 3명이 됩니다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            "오늘 파티 참가 가능한 인원수는 총 3명"
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">04. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    function func() {
+        let i = 0, sum = 0, sel = 0;
+    
+        for (let sel = 1; sel &lt;= 8; sel++) {
+            if (sel &lt; 4) break;
+        }
+        if (sel &lt;= 4) {
+            while (i &lt;= 5) {
+                i++;
+                sum += i;
+            }
+        } else {
+            while (i &lt;= 3) {
+                i++;
+                sum += i;
+            }
+        }
+        console.log(sum);
+    }
+    func()
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    sel은 4보다 작은 값에서 break가 됩니다. 그에 따라서 첫번째 if에서 4이하라는 조건에 맞고, while문을 실행합니다. (i &lt;= 5)밑에 i++로 인해서 i는
+                    1에서 6까지가 되며, 0+1=1, 1+2=3, 3+3=6, 6+4=10, 10+5=15, 15+6=21이 되며 답은 21이 됩니다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            21
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">05. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    let o = 0;
+    let q = 1;
+    let c = 0;
+
+    for (let a = 0; a &lt;= 1; a++) {
+        for (let x = 0; x &lt;= 10; x++) {
+            o = a * x;
+            if (0) {
+                o += 10;
+            }
+        }
+    }
+    console.log(o);
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    a는 처음 for문의 조건에 따라서 1이며, x는 10이고 o는 a * x이기에 10이된다. 이후 if는 0으로 false이기에 바로 10이 출력된다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            10
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">06. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    function func(s) {
+        let answer = '';
+        let i = 0;
+
+        for (let x of s) {
+            if (x === x.toUpperCase()) {
+                answer += x.toLowerCase();
+            } else {
+                answer += x.toUpperCase();
+            }
+            if ('KICKboard' === answer.toUpperCase()) {
+                i = 5;
+            } else {
+                i = 3;
+            }
+        }
+        return i;
+    }
+    console.log(func("kickBOARD"))
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    처음 if문을 통해서 대문자는 소문자로, 소문자는 대분자로 변환된다. 이후에 변환된 글자가 모두 대문자인지 물었기에, 모든 글자가 대문자가 아니기에 3이 출력된다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            3
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">07. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    function good() {
+        let list = [1, 2, 3, 4, 5, 6];
+        let i = 0;
+    
+        for (let q = 0; q &lt;= 23; q++) {
+            if (q % 2 == 0) {
+                i++
+            } else {
+                i--
+            }
+            if (q == 2) break;
+            console.log(list[i]);
+        }
+    }
+    good();
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    if (q == 2) break;에 의하여 2까지만 q안에 들어갑니다. 0에서 2를 대입하게 되는데, 0을 대입하면 처음 if에 부합하며, i++로 1이 됩니다. list[i]에서
+                    1의 값은 2이며, 1은 조건에 맞지 않아서 i--로 인해서 0이되고, 배열 안에서 값은 1. 2는 브레이크로 멈추기에 2,1이 답.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            2,1
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">08. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    function solution(numbers) {
+        let answer = 0;
+        for (let i = 0; i &lt;= 10; i++) {
+            if (!numbers.includes(i)) {
+                answer += i;
+            }
+        }
+        if (answer &lt;= 10) {
+            answer = 0;
+        } else {
+            answer = 1;
+        }
+        return answer;
+    }
+    console.log(solution([1, 2, 3, 4, 5, 6, 7, 8, 0]));
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    includes로 numbers의 i안에서 포함되지 않은 값. 그것은 9, 10이며, 둘을 더하면 19이고 그것은 10을 넘기 때문에 1이 된다.
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            1
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">09. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    function myCurrentMind() {
+        let q = ['Q', 'I', 'B', 'E', 'O', 'N', 'G', 'R']
+        let o = "";
+    
+        for (let i = 0; i &lt;= q.length; i++) {
+            if (i = 2) o += q[i];
+            if (i = 4) o += q[i];
+            if (i = 7) o += q[i];
+            if (i = 1) o += q[i];
+            if (i = 5) o += q[i];
+            if (i = 6) o += q[i];
+            break;
+        }
+        return o;
+    }
+    console.log(myCurrentMind());
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    if문의 순서 대로 i위치에 해당하는 글자를 가져와서 출력한다, 그렇게 하여서 BORING
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            "BORING"
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+                <h3 class="t_tit2">10. 다음의 결괏값을 작성하시오.</h3>
+                <div class="t_code">
+                    <pre><code class="language-js">{
+    function func(afterSchool) {
+        let list = ['a', 'b', 'c']
+        let i = 0;
+        if (i &lt;= list.length) {
+            i = 1;
+        } else {
+            i = 10;
+        }
+        let answer = "";
+        for (let x of afterSchool) {
+            if (x == 'n') answer += i;
+            else answer += x;
+        }
+        return (answer);
+    }
+    let str = "오늘은 남는 사람 n명"
+    console.log(func(str));
+}
+</code></pre>
+                </div>
+                <br>
+                <p class="t_box">
+                    if의 list.length보다 i가 작을 때 i=1이다. 길이가 3이기에 그 값으로 출력되기에 1이기에 "오늘은 남는 사람 1명"
+                </p>
+                <div class="result">
+                    <details>
+                        <summary>정답 확인하기</summary>
+                        <div class="sample_result">
+                            "오늘은 남는 사람 1명"
+                        </div>
+                    </details>
+                </div>
+
+                <hr> <!-- 구간나눔 -->
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:eodnjs9605.gmailcom">eodnjs9605@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    <script>
+
+
+        // 01
+        {
+            // function cookingMama() {
+            //     let cook = ['당근', '소세지', '삼겹살', '계란후라이']
+            //     for (sel = 0; sel < cook.length; sel++) {
+            //         if (cook[sel] !== '당근') {
+            //             let i = '오늘 저녁은' + cook[sel];
+            //             console.log(i);
+            //         }
+            //     }
+            // }
+        }
+        // 02
+        {
+            // function myWeight() {
+            //     let kcal, weight = 0;
+
+            //     for (kcal = 0; kcal <= 8; kcal++) {
+            //         weight += kcal;
+            //         if (kcal == 5) {
+            //             break;
+            //         }
+            //     }
+            //     console.log(weight + kcal);
+            // }
+            // myWeight()
+        }
+        // 03
+        {
+            // function party() {
+            //     let join = 0;
+            //     let people = ['철수', '민수', '상수', '변수', '무리수']
+            //     let enable = 4;
+
+            //     if (people.length <= 5) {
+            //         enable = 3;
+            //     } else {
+            //         enable = 8;
+            //     }
+            //     while (join < people.length) {
+            //         join++;
+            //         if (join == enable) break;
+            //     }
+            //     console.log("오늘 파티 참가 가능한 인원수는 총 " + join + "명");
+            // }
+            // party();
+        }
+
+        // 04
+        {
+            // function func() {
+            //     let i = 0, sum = 0, sel = 0;
+
+            //     for (let sel = 1; sel <= 8; sel++) {
+            //         if (sel < 4) break;
+            //     }
+            //     if (sel <= 4) {
+            //         while (i <= 5) {
+            //             i++;
+            //             sum += i;
+            //         }
+            //     } else {
+            //         while (i <= 3) {
+            //             i++;
+            //             sum += i;
+            //         }
+            //     }
+            //     console.log(sum);
+            // }
+            // func()
+        }
+
+        // 05
+        {
+            // let o = 0;
+            // let q = 1;
+            // let c = 0;
+
+            // for (let a = 0; a <= 1; a++) {
+            //     for (let x = 0; x <= 10; x++) {
+            //         o = a * x;
+            //         if (0) {
+            //             o += 10;
+            //         }
+            //     }
+            // }
+            // console.log(o);
+        }
+        // 06
+        {
+            // function func(s) {
+            //     let answer = '';
+            //     let i = 0;
+
+            //     for (let x of s) {
+            //         if (x === x.toUpperCase()) {
+            //             answer += x.toLowerCase();
+            //         } else {
+            //             answer += x.toUpperCase();
+            //         }
+            //         if ('KICKboard' === answer.toUpperCase()) {
+            //             i = 5;
+            //         } else {
+            //             i = 3;
+            //         }
+            //     }
+            //     return i;
+            // }
+            // console.log(func("kickBOARD"))
+        }
+
+        // 07
+        {
+            // function good() {
+            //     let list = [1, 2, 3, 4, 5, 6];
+            //     let i = 0;
+
+            //     for (let q = 0; q <= 23; q++) {
+            //         if (q % 2 == 0) {
+            //             i++
+            //         } else {
+            //             i--
+            //         }
+            //         if (q == 2) break;
+            //         console.log(list[i]);
+            //     }
+            // }
+            // good();
+        }
+        // 08
+        {
+            // function solution(numbers) {
+            //     let answer = 0;
+            //     for (let i = 0; i <= 10; i++) {
+            //         if (!numbers.includes(i)) {
+            //             answer += i;
+            //         }
+            //     }
+            //     if (answer <= 10) {
+            //         answer = 0;
+            //     } else {
+            //         answer = 1;
+            //     }
+            //     return answer;
+            // }
+            // console.log(solution([1, 2, 3, 4, 5, 6, 7, 8, 0]));
+        }
+        // 09
+        {
+            // function myCurrentMind() {
+            //     let q = ['Q', 'I', 'B', 'E', 'O', 'N', 'G', 'R']
+            //     let o = "";
+
+            //     for (let i = 0; i <= q.length; i++) {
+            //         if (i = 2) o += q[i];
+            //         if (i = 4) o += q[i];
+            //         if (i = 7) o += q[i];
+            //         if (i = 1) o += q[i];
+            //         if (i = 5) o += q[i];
+            //         if (i = 6) o += q[i];
+            //         break;
+            //     }
+            //     return o;
+            // }
+            // console.log(myCurrentMind());
+        }
+
+        // 10
+        {
+            // function func(afterSchool) {
+            //     let list = ['a', 'b', 'c']
+            //     let i = 0;
+            //     if (i <= list.length) {
+            //         i = 1;
+            //     } else {
+            //         i = 10;
+            //     }
+            //     let answer = "";
+            //     for (let x of afterSchool) {
+            //         if (x == 'n') answer += i;
+            //         else answer += x;
+            //     }
+            //     return (answer);
+            // }
+            // let str = "오늘은 남는 사람 n명"
+            // console.log(func(str));
+        }
+
+    </script>
+</body>
+
+</html>
