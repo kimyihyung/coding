@@ -355,104 +355,6 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         <h2>01. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
-    let arr = [1,3,5,7];
-    const sum = list => {
-    let result = [list[0]];
-    
-    for(let i = 1; i &lt; list.length; i++) {
-        result.push(list[i] + result[i-1]);
-    } 
-    
-    return result;
-    }
-    document.write(sum(arr));
-}
-</code></pre>
-        </div>
-    </div>
-
-    <hr>
-
-    <div id="sample2" class="sample">
-        <h2>02. 결괏값을 작성하시오.<span class="dot"></span></h2>
-        <div class="code">
-            <pre class="line-numbers"><code class="language-js">{
-    let arr = [1,2,3,4,5,6,7,8,10];
-    const findNum = (arr) => {
-    for(var i = 0; i &lt; arr.length - 1; i++) {
-        if(arr[i] + 1 != arr[i+1] ) {
-        return arr[i] + 1;
-        }
-    }
-    
-    return false;
-    }
-    document.write(findNum(arr));
-}
-</code></pre>
-        </div>
-    </div>
-
-    <hr>
-
-    <div id="sample3" class="sample">
-        <h2>03. 결괏값을 작성하시오.<span class="dot"></span></h2>
-        <div class="code">
-            <pre class="line-numbers"><code class="language-js">{
-    const arr = ['a', 'b', 'c'];
-
-    const result = arr.reduceRight(function (str, currValue) {
-        return str + currValue;
-    }, '');
-
-    document.write(result);
-}
-</code></pre>
-        </div>
-    </div>
-
-    <hr>
-
-    <div id="sample4" class="sample">
-        <h2>04. 결괏값을 작성하시오.<span class="dot"></span></h2>
-        <div class="code">
-            <pre class="line-numbers"><code class="language-js">{
-    const arr = [1, 2, 3];
-
-    const result = arr.reduce(function add(sum, currValue) {
-        return sum + currValue;
-    }, 0);
-
-    const average = result / arr.length;
-
-    document.write(average);
-}
-</code></pre>
-        </div>
-    </div>
-
-    <hr>
-
-    <div id="sample5" class="sample">
-        <h2>05. 결괏값을 작성하시오.<span class="dot"></span></h2>
-        <div class="code">
-            <pre class="line-numbers"><code class="language-js">{
-    const arr = ['a', 'b', 'c', 'a', 'd', 'd'];
-
-    let count = arr.filter(element => 'a' === element).length;
-
-    document.write(count);
-}
-</code></pre>
-        </div>
-    </div>
-
-    <hr>
-
-    <div id="sample6" class="sample">
-        <h2>06. 결괏값을 작성하시오.<span class="dot"></span></h2>
-        <div class="code">
-            <pre class="line-numbers"><code class="language-js">{
     function func(){
         let i = 0; sum = 0;
         while(0){
@@ -471,8 +373,8 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 
     <hr>
 
-    <div id="sample7" class="sample">
-        <h2>07. 결괏값을 작성하시오.<span class="dot"></span></h2>
+    <div id="sample2" class="sample">
+        <h2>02. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
     function solution(n) {
@@ -488,8 +390,8 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 
     <hr>
 
-    <div id="sample8" class="sample">
-        <h2>08. 결괏값을 작성하시오.<span class="dot"></span></h2>
+    <div id="sample3" class="sample">
+        <h2>03. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
     function func() {
@@ -511,8 +413,8 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 
     <hr>
 
-    <div id="sample9" class="sample">
-        <h2>09. 결괏값을 작성하시오.<span class="dot"></span></h2>
+    <div id="sample4" class="sample">
+        <h2>04. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
     function func(n) {
@@ -528,8 +430,8 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
     </div>
     <hr>
 
-    <div id="sample9" class="sample">
-        <h2>10. 결괏값을 작성하시오.<span class="dot"></span></h2>
+    <div id="sample5" class="sample">
+        <h2>05. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
             <pre class="line-numbers"><code class="language-js">{
     function func() {
@@ -551,77 +453,110 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
 
     <hr>
 
+    <div id="sample6" class="sample">
+        <h2>06. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    let arr = [1,3,5,7];
+    const sum = list => {
+    let result = [list[0]];
+    
+    for(let i = 1; i &lt; list.length; i++) {
+        result.push(list[i] + result[i-1]);
+    } 
+    
+    return result;
+    }
+    document.write(sum(arr));
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample7" class="sample">
+        <h2>07. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    let arr = [1,2,3,4,5,6,7,8,10];
+    const findNum = (arr) => {
+    for(var i = 0; i &lt; arr.length - 1; i++) {
+        if(arr[i] + 1 != arr[i+1] ) {
+        return arr[i] + 1;
+        }
+    }
+    
+    return false;
+    }
+    document.write(findNum(arr));
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample8" class="sample">
+        <h2>08. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const arr = ['a', 'b', 'c'];
+
+    const result = arr.reduceRight(function (str, currValue) {
+        return str + currValue;
+    }, '');
+
+    document.write(result);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample9" class="sample">
+        <h2>09. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const arr = [1, 2, 3];
+
+    const result = arr.reduce(function add(sum, currValue) {
+        return sum + currValue;
+    }, 0);
+
+    const average = result / arr.length;
+
+    document.write(average);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="sample10" class="sample">
+        <h2>10. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <div class="code">
+            <pre class="line-numbers"><code class="language-js">{
+    const arr = ['a', 'b', 'c', 'a', 'd', 'd'];
+
+    let count = arr.filter(element => 'a' === element).length;
+
+    document.write(count);
+}
+</code></pre>
+        </div>
+    </div>
+
+    <hr>
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
         // document.write("****** 정답 ******<br><br>");
-        // //sample1
-        // //01. 변수 : 데이터 저장소
-        // {
-        //     let arr = [1, 3, 5, 7];
-        //     const sum = list => {
-        //         let result = [list[0]];
-
-        //         for (let i = 1; i < list.length; i++) {
-        //             result.push(list[i] + result[i - 1]);
-        //         }
-
-        //         return result;
-        //     }
-        //     document.write(sum(arr)); //1,4,9,16
-        // }
-
-        // //sample2
-        // //02. 변수 : 데이터 저장 + 데이터 변경
-        // {
-        //     let arr = [1, 2, 3, 4, 5, 6, 7, 8, 10];
-        //     const findNum = (arr) => {
-        //         for (var i = 0; i < arr.length - 1; i++) {
-        //             if (arr[i] + 1 != arr[i + 1]) {
-        //                 return arr[i] + 1;
-        //             }
-        //         }
-
-        //         return false;
-        //     }
-        //     document.write(findNum(arr));    //9
-        // }
-
-        // //sample3
-        // //변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
-        // {
-        //     const arr = ['a', 'b', 'c'];
-
-        //     const result = arr.reduceRight(function (str, currValue) {
-        //         return str + currValue;
-        //     }, '');
-
-        //     document.write(result); //cba
-        // }
-
-        // //sample4
-        // //상수 : 데이터 저장소 : 데이터 값이 변하지 않음
-        // {
-        //     const arr = [1, 2, 3];
-
-        //     const result = arr.reduce(function add(sum, currValue) {
-        //         return sum + currValue;
-        //     }, 0);
-
-        //     const average = result / arr.length;
-
-        //     document.write(average); //2
-        // }
-
-        // //sample5
-        // //배열 : 여러 개의 데이터 저장 : 표현 방법1
-        // {
-        //     const arr = ['a', 'b', 'c', 'a', 'd', 'd'];
-
-        //     let count = arr.filter(element => 'a' === element).length;
-
-        //     document.write(count);  //2
-        // }
 
         // //sample06
         // //배열 : 표현 방법2
@@ -694,6 +629,75 @@ https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javasc
         //     }
         //     func(); //3
         // }
+        
+        // //sample1
+        // //01. 변수 : 데이터 저장소
+        // {
+        //     let arr = [1, 3, 5, 7];
+        //     const sum = list => {
+        //         let result = [list[0]];
+
+        //         for (let i = 1; i < list.length; i++) {
+        //             result.push(list[i] + result[i - 1]);
+        //         }
+
+        //         return result;
+        //     }
+        //     document.write(sum(arr)); //1,4,9,16
+        // }
+
+        // //sample2
+        //02. 변수 : 데이터 저장 + 데이터 변경
+        // {
+        //     let arr = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+        //     const findNum = (arr) => {
+        //         for (var i = 0; i < arr.length - 1; i++) {
+        //             if (arr[i] + 1 != arr[i + 1]) {
+        //                 return arr[i] + 1;
+        //             }
+        //         }
+
+        //         return false;
+        //     }
+        //     document.write(findNum(arr));    //9
+        // }
+
+        // //sample3
+        // //변수 : 데이터 저장 + 데이터 변경 + 데이터 추가
+        // {
+        //     const arr = ['a', 'b', 'c'];
+
+        //     const result = arr.reduceRight(function (str, currValue) {
+        //         return str + currValue;
+        //     }, '');
+
+        //     document.write(result); //cba
+        // }
+
+        // //sample4
+        // //상수 : 데이터 저장소 : 데이터 값이 변하지 않음
+        // {
+        //     const arr = [1, 2, 3];
+
+        //     const result = arr.reduce(function add(sum, currValue) {
+        //         return sum + currValue;
+        //     }, 0);
+
+        //     const average = result / arr.length;
+
+        //     document.write(average); //2
+        // }
+
+        // //sample5
+        // //배열 : 여러 개의 데이터 저장 : 표현 방법1
+        // {
+        //     const arr = ['a', 'b', 'c', 'a', 'd', 'd'];
+
+        //     let count = arr.filter(element => 'a' === element).length;
+
+        //     document.write(count);  //2
+        // }
+
 
 
 

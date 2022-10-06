@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .login__inner {
+        width: 450px;
+        height: 417px;
+        background-color: #fff;
+    }
+
+    .login__header {
+        padding-top: 50px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <!-- 로그인 가입 팝업 -->
+    <div class="login__popup">
+        <div class="login__inner">
+            <div class="login__header">
+                <h3>Log-in</h3>
+            </div>
+            <div class="login__contents">
+                <form name="login" method="post">
+                    <fieldset>
+                        <legend class="blind">로그인 입력폼</legend>
+                        <figure>
+                            <img src="" alt="">
+                        </figure>
+                        <div>
+                            <label for="youID">아이디</label>
+                            <input type="id" name="youID" id="youID" placeholder="아이디" class="input__style" required>
+                        </div>
+                        <figure>
+                            <img src="" alt="">
+                        </figure>
+                        <div>
+                            <label for="youPass">비밀번호</label>
+                            <input type="password" name="youPass" id="youPass" placeholder="비밀번호" class="input__style"
+                                required>
+                        </div>
+                        <button type="submit" class="input__button">로그인</button>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="login__footer">
+                <div class="btn">
+                    <a href="#">비밀번호 찾기</a>
+                    <a href="#">아이디 찾기</a>
+                    <a href="#">회원가입</a>
+                </div>
+                <button type="button" class="btn-close"><span>닫기</span></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
