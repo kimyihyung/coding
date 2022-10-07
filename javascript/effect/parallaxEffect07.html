@@ -241,7 +241,7 @@
         top: 0;
         width: 0%;
         height: 100%;
-        background: #fff;
+        background: rgb(43, 43, 43);
         z-index: 1;
     }
 
@@ -252,7 +252,7 @@
         top: 0;
         width: 0;
         height: 100%;
-        background: blue;
+        background: rgb(20, 20, 20);
         z-index: 1;
     }
 
@@ -411,11 +411,6 @@
             top: auto;
         }
     }
-
-    .content__item__num,
-    .content__item__title {
-        display: none;
-    }
 </style>
 
 
@@ -444,7 +439,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc reveal"><span>얕은 사람은 행운을 믿으며, 강한 사람은 원인과 결과를 믿는다.</span></p>
+                <p class="content__item__desc reveal">얕은 사람은 행운을 믿으며, 강한 사람은 원인과 결과를 믿는다.</p>
             </section>
             <!-- // section1 -->
 
@@ -455,8 +450,8 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc reveal reveal-RTL" data-delay="500"><span>지난 일은 어쩔 수 없는 바 슬퍼한들 이미 엎질러진
-                        물이다.</span></p>
+                <p class="content__item__desc reveal reveal-RTL" data-delay="500">지난 일은 어쩔 수 없는 바 슬퍼한들 이미 엎질러진
+                    물이다.</p>
             </section>
             <!-- // section2 -->
 
@@ -467,8 +462,8 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc reveal reveal-TTB" data-delay="500"><span>행동하는 사람처럼 생각하고, 생각하는 사람처럼
-                        행동하라.</span></p>
+                <p class="content__item__desc reveal reveal-TTB" data-delay="500">행동하는 사람처럼 생각하고, 생각하는 사람처럼
+                    행동하라.</p>
             </section>
             <!-- // section3 -->
 
@@ -479,7 +474,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc reveal reveal-BTT"><span>실수할 자유가 없는 자유란 가치가 없다.</span></p>
+                <p class="content__item__desc reveal reveal-BTT">실수할 자유가 없는 자유란 가치가 없다.</p>
             </section>
             <!-- // section4 -->
 
@@ -490,7 +485,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc reveal reveal-TWO"><span>끝까지 해보기 전까지는 늘 불가능해 보입니다.</span></p>
+                <p class="content__item__desc reveal reveal-TWO">끝까지 해보기 전까지는 늘 불가능해 보입니다.</p>
             </section>
             <!-- // section5 -->
 
@@ -501,7 +496,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc reveal reveal-TWO reveal-RTL"><span>고통은 잠깐이다. 포기는 영원히 남는다.</span></p>
+                <p class="content__item__desc reveal reveal-TWO reveal-RTL">고통은 잠깐이다. 포기는 영원히 남는다.</p>
             </section>
             <!-- // section6 -->
 
@@ -512,7 +507,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc reveal reveal-TWO reveal-TTB"><span>희망을 품지 않은 자는 절망도 할 수 없다.</span></p>
+                <p class="content__item__desc reveal reveal-TWO reveal-TTB">희망을 품지 않은 자는 절망도 할 수 없다.</p>
             </section>
             <!-- // section7 -->
 
@@ -523,8 +518,8 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc reveal reveal-TWO reveal-BTT"><span>뭔가를 위해 시도조차하려는 용기가 없다면 삶이 무슨 의미가
-                        있을까?</span></p>
+                <p class="content__item__desc reveal reveal-TWO reveal-BTT">뭔가를 위해 시도조차하려는 용기가 없다면 삶이 무슨 의미가
+                    있을까?</p>
             </section>
             <!-- // section8 -->
 
@@ -535,7 +530,7 @@
                     <div class="content__item__img"></div>
                 </figure>
 
-                <p class="content__item__desc reveal"><span>꿈을 꾸세요. 그러면 그 꿈이 당신을 만들 것입니다.</span></p>
+                <p class="content__item__desc reveal">꿈을 꾸세요. 그러면 그 꿈이 당신을 만들 것입니다.</p>
             </section>
             <!-- // section9 -->
         </div>
@@ -1033,11 +1028,20 @@ transform: translateY(0);
     <script src="../assets/js/common.js"></script>
     <script>
 
+        const reveal = document.querySelectorAll(".reveal");
+
+        reveal.forEach((el) => {
+            let splitText = el.innerText;
+            if (splitText) {
+                el.innerHTML = "<span>" + splitText + "</span>";
+            }
+        });
+
         // reveal 클래스 자식에 글씨만 있다면, 가상으로 spa태그를 만들어서 넣어주세요! (6번의 내용 참고)
         function scroll() {
             let scrollTop = window.scrollY;
 
-            const reveal = document.querySelectorAll(".reveal");
+
 
             reveal.forEach(el => {
                 let revealOffset = el.offsetTop + el.parentElement.offsetTop;
@@ -1057,7 +1061,7 @@ transform: translateY(0);
                 }
             })
 
-            document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+            document.querySelector(".scroll span").innerText = Math.round(scrollTop);
             requestAnimationFrame(scroll);
         }
         scroll();
