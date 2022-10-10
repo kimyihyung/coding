@@ -1,3 +1,34 @@
-default:
-listCSS += `<li>${data.name} : ${data.desc}<em>값이 없습니다.</em></li>`;
-break;
+const reveal = document.querySelectorAll(".reveal");
+reveal.forEach((el) =&gt; {
+let splitText = el.innerText;
+if (splitText) {
+el.innerHTML = "&lt;span&gt;" + splitText + "&lt;/span&gt;";
+}
+});
+
+// reveal 클래스 자식에 글씨만 있다면, 가상으로 spa태그를 만들어서 넣어주세요! (6번의 내용 참고)
+function scroll() {
+let scrollTop = window.scrollY;
+
+reveal.forEach(el =&gt; {
+let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+let revealDelay = el.dataset.delay;
+
+// if (scrollTop &gt; revealOffset - window.innerHeight) {
+// el.classList.add("show");
+// }
+if (scrollTop &gt;= revealOffset - window.innerHeight) {
+if (revealDelay == undefined) {
+el.classList.add("show");
+} else {
+setTimeout(() =&gt; {
+el.classList.add("show");
+}, revealDelay)
+}
+}
+})
+
+document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+requestAnimationFrame(scroll);
+}
+scroll();

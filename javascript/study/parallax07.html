@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">패럴렉스 이펙트 - 리빌 효과</h2>
+            <p class="t_desc2">
+                스크롤 하면서 가려져있던 사진과 글이 보이는 효과
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/parallaxEffect07.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/blob/main/javascript/effect/parallaxEffect07.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/parallaxEffect07.html">원본 사이트</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">html</h3>
+            <p class="t_desc2">
+                효과를 부여하기 위해서, 효과가 나타나기를 원하는 content__item__imgWrap, content__item__desc에 reveal클래스를 부여합니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;main id="parallax__cont"&gt;
+    &lt;div id="contents"&gt;
+        &lt;section id="section1" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;01&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+
+            &lt;p class="content__item__desc reveal"&gt;얕은 사람은 행운을 믿으며, 강한 사람은 원인과 결과를 믿는다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- // section1 --&gt;
+
+        &lt;section id="section2" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;02&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-RTL"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+
+            &lt;p class="content__item__desc reveal reveal-RTL" data-delay="500"&gt;지난 일은 어쩔 수 없는 바 슬퍼한들 이미 엎질러진
+                물이다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- // section2 --&gt;
+
+        &lt;section id="section3" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;03&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TTB"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+
+            &lt;p class="content__item__desc reveal reveal-TTB" data-delay="500"&gt;행동하는 사람처럼 생각하고, 생각하는 사람처럼
+                행동하라.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- // section3 --&gt;
+
+        &lt;section id="section4" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;04&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-BTT" data-delay="1500"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+
+            &lt;p class="content__item__desc reveal reveal-BTT"&gt;실수할 자유가 없는 자유란 가치가 없다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- // section4 --&gt;
+
+        &lt;section id="section5" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;05&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+
+            &lt;p class="content__item__desc reveal reveal-TWO"&gt;끝까지 해보기 전까지는 늘 불가능해 보입니다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- // section5 --&gt;
+
+        &lt;section id="section6" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;06&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-RTL"&gt;고통은 잠깐이다. 포기는 영원히 남는다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- // section6 --&gt;
+
+        &lt;section id="section7" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;07&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-TTB"&gt;희망을 품지 않은 자는 절망도 할 수 없다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- // section7 --&gt;
+
+        &lt;section id="section8" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;08&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-BTT"&gt;뭔가를 위해 시도조차하려는 용기가 없다면 삶이 무슨 의미가
+                있을까?&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- // section8 --&gt;
+
+        &lt;section id="section9" class="content__item"&gt;
+            &lt;span class="content__item__num"&gt;09&lt;/span&gt;
+            &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
+            &lt;figure class="content__item__imgWrap reveal"&gt;
+                &lt;div class="content__item__img"&gt;&lt;/div&gt;
+            &lt;/figure&gt;
+
+            &lt;p class="content__item__desc reveal"&gt;꿈을 꾸세요. 그러면 그 꿈이 당신을 만들 것입니다.&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;!-- // section9 --&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">css</h3>
+            <p class="t_desc2">
+                reveal이 부여되었을 때에 동작할 애니메이션을 만들어줍니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-css">/* parallax */
+/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top 0.4s ease;
+}
+
+#parallax__nav li {
+    display: inline;
+    margin: 0 5px;
+}
+
+#parallax__nav li a {
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+#parallax__nav li.active a {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
+}
+
+#parallax__cont {
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+}
+
+.content__item {
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 8vw;
+}
+
+.content__item:nth-child(even) {
+    margin-left: 0;
+    text-align: right;
+}
+
+.content__item__num {
+    font-size: 35vw;
+    font-weight: 100;
+    font-family: 'Lato';
+    position: absolute;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
+}
+
+.content__item:nth-child(even) .content__item__num {
+    left: auto;
+    right: -5vw;
+}
+
+.content__item__title {
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.content__item__imgWrap {
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.content__item__img {
+    position: absolute;
+    background: url(../assets/img/effect_bg19-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    filter: saturate(0%);
+    /* transition: all 1s; */
+}
+
+.content__item:nth-child(1) .content__item__img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg20-min.jpg);
+}
+
+.content__item:nth-child(2) .content__item__img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg19-min.jpg);
+}
+
+.content__item:nth-child(3) .content__item__img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg18-min.jpg);
+}
+
+.content__item:nth-child(4) .content__item__img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg17-min.jpg);
+}
+
+.content__item:nth-child(5) .content__item__img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg16-min.jpg);
+}
+
+.content__item:nth-child(6) .content__item__img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg11-min.jpg);
+}
+
+.content__item:nth-child(7) .content__item__img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg14-min.jpg);
+}
+
+.content__item:nth-child(8) .content__item__img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg13-min.jpg);
+}
+
+.content__item:nth-child(9) .content__item__img {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg12-min.jpg);
+}
+
+.content__item__desc {
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
+}
+
+.content__item:nth-child(even) .content__item__desc {
+    /* 2n도 가능 */
+    margin-left: auto;
+    margin-right: -4vw;
+}
+
+#parallax__info {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#parallax__info li,
+.scroll {
+    line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+
+    #parallax__info {
+        left: 10px;
+        bottom: 10px;
+    }
+}
+
+/* option */
+.reveal>div,
+.reveal>span {
+    opacity: 0;
+}
+
+.reveal.show>div,
+.reveal.show>span {
+    animation: opacity 1s linear forwards;
+}
+
+.reveal {
+    position: relative;
+}
+
+.reveal::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: rgb(43, 43, 43);
+    z-index: 1;
+}
+
+.reveal.reveal-TWO::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(20, 20, 20);
+    z-index: 1;
+}
+
+/* 1개 */
+.reveal.show::before {
+    animation: reveal 1s;
+}
+
+.reveal.reveal-RTL.show::before {
+    animation: reveal-RTL 1s;
+}
+
+.reveal.reveal-TTB.show::before {
+    animation: reveal-TTB 1s;
+}
+
+.reveal.reveal-BTT.show::before {
+    animation: reveal-BTT 1s;
+}
+
+/* 2개 */
+.reveal.show::after {
+    animation: reveal 1s 0.3s;
+}
+
+.reveal.reveal-RTL.show::after {
+    animation: reveal-RTL 1s 0.3s;
+}
+
+.reveal.reveal-TTB.show::after {
+    animation: reveal-TTB 1s 0.3s;
+}
+
+.reveal.reveal-BTT.show::after {
+    animation: reveal-BTT 1s 0.3s;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        width: 0;
+        left: 0;
+    }
+
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    80% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes reveal-RTL {
+    0% {
+        width: 0;
+        right: 0;
+        left: auto;
+    }
+
+    50% {
+        width: 100%;
+        right: 0;
+        left: auto;
+    }
+
+    80% {
+        width: 100%;
+        right: 0;
+        left: auto;
+    }
+
+    100% {
+        width: 0;
+        right: 100%;
+        left: auto;
+    }
+}
+
+@keyframes reveal-TTB {
+    0% {
+        width: 100%;
+        height: 0;
+        top: 0;
+    }
+
+    50% {
+        width: 100%;
+        height: 100%;
+        top: 0;
+    }
+
+    80% {
+        width: 100%;
+        height: 100%;
+        top: 0;
+    }
+
+    100% {
+        width: 100%;
+        height: 0;
+        top: 100%;
+    }
+}
+
+@keyframes reveal-BTT {
+    0% {
+        width: 100%;
+        height: 0;
+        bottom: 0;
+        top: auto;
+    }
+
+    50% {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        top: auto;
+    }
+
+    80% {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        top: auto;
+    }
+
+    100% {
+        width: 100%;
+        height: 0;
+        bottom: 100%;
+        top: auto;
+    }
+}
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">js</h3>
+            <p class="t_desc2">
+                p태그 내에 reveal이 부여된 글들을 span으로 묶을 것입니다. reveal이 부여된 것을 querySelectorAll로 모두 찾아서 forEach로 진행을 합니다.
+                splitText에 텍스트를 저장하고, 텍스트를 span으로 묶어줍니다. 스크롤에대한 이벤트를 만듭니다. revealDelay는 각 html에 부여된 dataset-delay의 값입니다.
+                없는경우 undefined 보여주고, 그렇지않은 경우에는 정해진 딜레이에맞게 show.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">const reveal = document.querySelectorAll(".reveal");
+reveal.forEach((el) =&gt; {
+    let splitText = el.innerText;
+    if (splitText) {
+        el.innerHTML = "&lt;span&gt;" + splitText + "&lt;/span&gt;";
+    }
+});
+
+// reveal 클래스 자식에 글씨만 있다면, 가상으로 spa태그를 만들어서 넣어주세요! (6번의 내용 참고)
+function scroll() {
+    let scrollTop = window.scrollY;
+
+    reveal.forEach(el =&gt; {
+        let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+        let revealDelay = el.dataset.delay;
+
+        // if (scrollTop &gt; revealOffset - window.innerHeight) {
+        //     el.classList.add("show");
+        // }
+        if (scrollTop &gt;= revealOffset - window.innerHeight) {
+            if (revealDelay == undefined) {
+                el.classList.add("show");
+            } else {
+                setTimeout(() =&gt; {
+                    el.classList.add("show");
+                }, revealDelay)
+            }
+        }
+    })
+
+    document.querySelector(".scroll span").innerText = Math.round(scrollTop);
+    requestAnimationFrame(scroll);
+}
+scroll();
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

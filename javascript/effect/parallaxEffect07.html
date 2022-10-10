@@ -635,53 +635,38 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-                            <pre><code class="language-js">// 글씨 분리하기
-// let text = document.querySelector("#section1 .content__item__desc");
-// let splitText = text.innerText;
-// let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span&gt;')
-// text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
-
-// 클씨 분리(다중이) (하나만 바꾸는게 아니라 9개 전부를 forEach)
-document.querySelectorAll(".split").forEach(text => {
-    let splitText = text.innerText;
-    let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span aria-hidden="true"&gt;');
-    splitWrap = "&lt;span aria-hidden='true'&gt;" + splitWrap + "&lt;/span&gt;";
-    text.innerHTML = splitWrap;
-    text.setAttribute("aria-label", splitText);
+                            <pre><code class="language-js">const reveal = document.querySelectorAll(".reveal");
+reveal.forEach((el) =&gt; {
+    let splitText = el.innerText;
+    if (splitText) {
+        el.innerHTML = "&lt;span&gt;" + splitText + "&lt;/span&gt;";
+    }
 });
 
+// reveal 클래스 자식에 글씨만 있다면, 가상으로 spa태그를 만들어서 넣어주세요! (6번의 내용 참고)
 function scroll() {
     let scrollTop = window.scrollY;
 
-    document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
+    reveal.forEach(el =&gt; {
+        let revealOffset = el.offsetTop + el.parentElement.offsetTop;
+        let revealDelay = el.dataset.delay;
 
-    // CSS 클래스 추가 (비효율)
-    // document.querySelectorAll(".content__item").forEach(item => {
-    //     if (scrollTop >= item.offsetTop) {
-    //         item.querySelector(".split").classList.add("show");
-    //     };
-    // });
-
-    document.querySelectorAll(".content__item").forEach(item => {
-        if (scrollTop >= item.offsetTop) {
-            item.querySelectorAll(".split span").forEach((span, index) => {
-                span.classList.add("show");
-
-                span.style.transitionDelay = `${index * 50}ms`
-            });
+        // if (scrollTop &gt; revealOffset - window.innerHeight) {
+        //     el.classList.add("show");
+        // }
+        if (scrollTop &gt;= revealOffset - window.innerHeight) {
+            if (revealDelay == undefined) {
+                el.classList.add("show");
+            } else {
+                setTimeout(() =&gt; {
+                    el.classList.add("show");
+                }, revealDelay)
+            }
         }
     })
 
+    document.querySelector(".scroll span").innerText = Math.round(scrollTop);
     requestAnimationFrame(scroll);
-
-    //index에 있음. 시간에 따라서 순서대로 글자가 나타나게
-    //첫번째 span ---> 0.01
-    //두번째 span ---> 0.02
-    //세번째 span ---> 0.03
-    //네번째 span ---> 0.04
-    //다섯번째 span ---> 0.05
-    //여섯번째 span ---> 0.06
-    //일곱번째 span ---> 0.07
 }
 scroll();
 </code></pre>
@@ -692,99 +677,102 @@ scroll();
         &lt;section id="section1" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;01&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section1&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;얕은 사람은 행운을 믿으며, 강한 사람은 원인과 결과를 믿는다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal"&gt;얕은 사람은 행운을 믿으며, 강한 사람은 원인과 결과를 믿는다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section1 --&gt;
 
         &lt;section id="section2" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;02&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section2&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-RTL"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;지난 일은 어쩔 수 없는 바 슬퍼한들 이미 엎질러진 물이다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-RTL" data-delay="500"&gt;지난 일은 어쩔 수 없는 바 슬퍼한들 이미 엎질러진
+                물이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section2 --&gt;
 
         &lt;section id="section3" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;03&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section3&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TTB"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;행동하는 사람처럼 생각하고, 생각하는 사람처럼 행동하라.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-TTB" data-delay="500"&gt;행동하는 사람처럼 생각하고, 생각하는 사람처럼
+                행동하라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section3 --&gt;
 
         &lt;section id="section4" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;04&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section4&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-BTT" data-delay="1500"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;실수할 자유가 없는 자유란 가치가 없다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-BTT"&gt;실수할 자유가 없는 자유란 가치가 없다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section4 --&gt;
 
         &lt;section id="section5" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;05&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section5&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;끝까지 해보기 전까지는 늘 불가능해 보입니다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO"&gt;끝까지 해보기 전까지는 늘 불가능해 보입니다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section5 --&gt;
 
         &lt;section id="section6" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;06&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section6&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;고통은 잠깐이다. 포기는 영원히 남는다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-RTL"&gt;고통은 잠깐이다. 포기는 영원히 남는다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section6 --&gt;
 
         &lt;section id="section7" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;07&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section7&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;희망을 품지 않은 자는 절망도 할 수 없다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-TTB"&gt;희망을 품지 않은 자는 절망도 할 수 없다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section7 --&gt;
 
         &lt;section id="section8" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;08&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section8&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;뭔가를 위해 시도조차하려는 용기가 없다면 삶이 무슨 의미가 있을까?&lt;/p&gt;
+            &lt;p class="content__item__desc reveal reveal-TWO reveal-BTT"&gt;뭔가를 위해 시도조차하려는 용기가 없다면 삶이 무슨 의미가
+                있을까?&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section8 --&gt;
 
         &lt;section id="section9" class="content__item"&gt;
             &lt;span class="content__item__num"&gt;09&lt;/span&gt;
             &lt;h2 class="content__item__title"&gt;section9&lt;/h2&gt;
-            &lt;figure class="content__item__imgWrap"&gt;
+            &lt;figure class="content__item__imgWrap reveal"&gt;
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;꿈을 꾸세요. 그러면 그 꿈이 당신을 만들 것입니다.&lt;/p&gt;
+            &lt;p class="content__item__desc reveal"&gt;꿈을 꾸세요. 그러면 그 꿈이 당신을 만들 것입니다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section9 --&gt;
     &lt;/div&gt;
@@ -792,219 +780,400 @@ scroll();
 </code></pre>
                         </div>
                         <div>
-                            <pre><code class="language-css">#parallax__nav {
-position: fixed;
-right: 20px;
-top: 20px;
-z-index: 2000;
-background-color: rgba(0, 0, 0, 0.4);
-padding: 20px 30px;
-border-radius: 50px;
-transition: top 0.4s ease;
+                            <pre><code class="language-css">/* parallax */
+/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top 0.4s ease;
 }
 
 #parallax__nav li {
-display: inline;
-margin: 0 5px;
+    display: inline;
+    margin: 0 5px;
 }
 
 #parallax__nav li a {
-display: inline-block;
-height: 30px;
-padding: 5px 20px;
-text-align: center;
-line-height: 30px;
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
 }
 
 #parallax__nav li.active a {
-background: #fff;
-color: #000;
-border-radius: 20px;
-box-sizing: content-box;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
 }
 
 #parallax__cont {
-max-width: 1600px;
-width: 98%;
-margin: 0 auto;
-/* background-color: rgba(255, 255, 255, 0.1); */
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255, 255, 255, 0.1); */
 }
 
 .content__item {
-width: 1000px;
-max-width: 70vw;
-margin: 30vw auto;
-/* background-color: rgba(255, 255, 255, 0.3); */
-text-align: left;
-margin-right: 0;
-position: relative;
-padding-top: 8vw;
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 8vw;
 }
 
 .content__item:nth-child(even) {
-margin-left: 0;
-text-align: right;
+    margin-left: 0;
+    text-align: right;
 }
 
 .content__item__num {
-font-size: 35vw;
-font-weight: 100;
-font-family: 'Lato';
-position: absolute;
-left: -5vw;
-top: -16vw;
-opacity: 0.07;
-z-index: -2;
+    font-size: 35vw;
+    font-weight: 100;
+    font-family: 'Lato';
+    position: absolute;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
 }
 
 .content__item:nth-child(even) .content__item__num {
-left: auto;
-right: -5vw;
+    left: auto;
+    right: -5vw;
 }
 
 .content__item__title {
-font-weight: 400;
-text-transform: capitalize;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 
 .content__item__imgWrap {
-width: 100%;
-padding-bottom: 56.25%;
-background: #000;
-position: relative;
-overflow: hidden;
-z-index: -1;
+    width: 100%;
+    padding-bottom: 56.25%;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
 }
 
 .content__item__img {
-position: absolute;
-background: url(../assets/img/effect_bg19-min.jpg);
-background-repeat: no-repeat;
-background-position: center center;
-background-size: cover;
-width: 110%;
-height: 110%;
-left: -5%;
-top: -5%;
-filter: saturate(0%);
-/* transition: all 1s; */
+    position: absolute;
+    background: url(../assets/img/effect_bg19-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    filter: saturate(0%);
+    /* transition: all 1s; */
 }
 
 .content__item:nth-child(1) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg20-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg20-min.jpg);
 }
 
 .content__item:nth-child(2) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg19-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg19-min.jpg);
 }
 
 .content__item:nth-child(3) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg18-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg18-min.jpg);
 }
 
 .content__item:nth-child(4) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg17-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg17-min.jpg);
 }
 
 .content__item:nth-child(5) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg16-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg16-min.jpg);
 }
 
 .content__item:nth-child(6) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg11-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg11-min.jpg);
 }
 
 .content__item:nth-child(7) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg14-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg14-min.jpg);
 }
 
 .content__item:nth-child(8) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg13-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg13-min.jpg);
 }
 
 .content__item:nth-child(9) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg12-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg12-min.jpg);
 }
 
 .content__item__desc {
-font-size: 4vw;
-line-height: 1.4;
-margin-top: -5vw;
-margin-left: -4vw;
-word-break: keep-all;
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
 }
 
 .content__item:nth-child(even) .content__item__desc {
-/* 2n도 가능 */
-margin-left: auto;
-margin-right: -4vw;
+    /* 2n도 가능 */
+    margin-left: auto;
+    margin-right: -4vw;
 }
 
 #parallax__info {
-position: fixed;
-left: 20px;
-bottom: 20px;
-z-index: 2000;
-background: rgba(0, 0, 0, 0.6);
-color: #fff;
-padding: 20px;
-border-radius: 10px;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 #parallax__info li,
 .scroll {
-line-height: 1.4;
+    line-height: 1.4;
 }
 
 @media (max-width: 800px) {
-#parallax__cont {
-    margin-top: 70vw;
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+
+    #parallax__info {
+        left: 10px;
+        bottom: 10px;
+    }
 }
 
-#parallax__nav {
-    padding: 10px;
-    right: auto;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
+/* option */
+.reveal>div,
+.reveal>span {
+    opacity: 0;
 }
 
-#parallax__nav li {
-    display: block;
-    margin: 5px;
+.reveal.show>div,
+.reveal.show>span {
+    animation: opacity 1s linear forwards;
 }
 
-#parallax__nav li a {
-    font-size: 14px;
-    padding: 5px;
-    border-radius: 5px;
-    height: auto;
-    line-height: 1;
+.reveal {
+    position: relative;
 }
 
-#parallax__nav li.active a {
-    border-radius: 5px;
+.reveal::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: rgb(43, 43, 43);
+    z-index: 1;
 }
 
-#parallax__info {
-    left: 10px;
-    bottom: 10px;
-}
-}
-
-.split span {
-opacity: 0;
-transform: translateY(50px);
-transition: all 0.6s cubic-bezier(0, 0.71, 0.11, 1.66);
-display: inline-block;
-min-width: 1vw;
+.reveal.reveal-TWO::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(20, 20, 20);
+    z-index: 1;
 }
 
-.split span.show {
-opacity: 1;
-transform: translateY(0);
+/* 1개 */
+.reveal.show::before {
+    animation: reveal 1s;
+}
+
+.reveal.reveal-RTL.show::before {
+    animation: reveal-RTL 1s;
+}
+
+.reveal.reveal-TTB.show::before {
+    animation: reveal-TTB 1s;
+}
+
+.reveal.reveal-BTT.show::before {
+    animation: reveal-BTT 1s;
+}
+
+/* 2개 */
+.reveal.show::after {
+    animation: reveal 1s 0.3s;
+}
+
+.reveal.reveal-RTL.show::after {
+    animation: reveal-RTL 1s 0.3s;
+}
+
+.reveal.reveal-TTB.show::after {
+    animation: reveal-TTB 1s 0.3s;
+}
+
+.reveal.reveal-BTT.show::after {
+    animation: reveal-BTT 1s 0.3s;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        width: 0;
+        left: 0;
+    }
+
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    80% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes reveal-RTL {
+    0% {
+        width: 0;
+        right: 0;
+        left: auto;
+    }
+
+    50% {
+        width: 100%;
+        right: 0;
+        left: auto;
+    }
+
+    80% {
+        width: 100%;
+        right: 0;
+        left: auto;
+    }
+
+    100% {
+        width: 0;
+        right: 100%;
+        left: auto;
+    }
+}
+
+@keyframes reveal-TTB {
+    0% {
+        width: 100%;
+        height: 0;
+        top: 0;
+    }
+
+    50% {
+        width: 100%;
+        height: 100%;
+        top: 0;
+    }
+
+    80% {
+        width: 100%;
+        height: 100%;
+        top: 0;
+    }
+
+    100% {
+        width: 100%;
+        height: 0;
+        top: 100%;
+    }
+}
+
+@keyframes reveal-BTT {
+    0% {
+        width: 100%;
+        height: 0;
+        bottom: 0;
+        top: auto;
+    }
+
+    50% {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        top: auto;
+    }
+
+    80% {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        top: auto;
+    }
+
+    100% {
+        width: 100%;
+        height: 0;
+        bottom: 100%;
+        top: auto;
+    }
 }
 </code></pre>
                         </div>
@@ -1027,9 +1196,7 @@ transform: translateY(0);
     <script src="../assets/js/gsap.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
-
         const reveal = document.querySelectorAll(".reveal");
-
         reveal.forEach((el) => {
             let splitText = el.innerText;
             if (splitText) {
@@ -1040,8 +1207,6 @@ transform: translateY(0);
         // reveal 클래스 자식에 글씨만 있다면, 가상으로 spa태그를 만들어서 넣어주세요! (6번의 내용 참고)
         function scroll() {
             let scrollTop = window.scrollY;
-
-
 
             reveal.forEach(el => {
                 let revealOffset = el.offsetTop + el.parentElement.offsetTop;

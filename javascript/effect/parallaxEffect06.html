@@ -394,8 +394,11 @@
     /* 순차적으로 나타나기 */
     .style1.split span {
         opacity: 0;
+        transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.66);
+        /* transform은 block 구조만 먹힌다! */
+        display: inline-block;
+        /* block 구조로 바꾸면 띄어쓰기가 사라지므로, 최소 너비를 지정해주기 */
         min-width: 1vw;
-        transition: all 0.3s ease-in-out;
     }
 
     .style1.split span.show {
@@ -404,10 +407,10 @@
 
     .style2.split span {
         opacity: 0;
-        min-width: 1vw;
         transform: translateY(50px);
-        display: inline-block;
         transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.66);
+        display: inline-block;
+        min-width: 1vw;
     }
 
     .style2.split span.show {
@@ -417,26 +420,25 @@
 
     .style3.split span {
         opacity: 0;
-        min-width: 1vw;
-        transform: translateY(50px) translateX(100px);
-        display: inline-block;
+        transform: translateY(50px) translateX(30px) rotate(360deg);
         transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.66);
+        display: inline-block;
+        min-width: 1vw;
     }
 
     .style3.split span.show {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) translateX(0) rotate(0);
     }
 
     .style4.split span {
+        display: inline-block;
         opacity: 0;
         min-width: 1vw;
-        display: inline-block;
     }
 
     .style4.split span.show {
-        opacity: 1;
-        animation: wobble 0.5s 1 ease-in forwards;
+        animation: wobble 1s 1 ease-in forwards;
     }
 
     @keyframes wobble {
@@ -472,50 +474,151 @@
     }
 
     .style5.split span {
+        display: inline-block;
         opacity: 0;
         min-width: 1vw;
-        display: inline-block;
     }
 
     .style5.split span.show {
-        opacity: 1;
-        animation: wobble 0.5s 1 ease-in forwards;
+        animation: flash 1s 1 ease-in forwards;
     }
 
-    @keyframes bounce {
+    @keyframes flash {
 
-        from,
-        20%,
-        53%,
-        to {
-            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        0%,
+        50%,
+        100% {
+            opacity: 1;
+        }
+
+        25%,
+        75% {
+            opacity: 0;
+        }
+    }
+
+    .style6.split span {
+        display: inline-block;
+        opacity: 0;
+        min-width: 1vw;
+    }
+
+    .style6.split span.show {
+        animation: shakeY 1s 1 ease-in forwards;
+    }
+
+    @keyframes shakeY {
+
+        0%,
+        100% {
             transform: translate3d(0, 0, 0);
         }
 
-        40%,
-        43% {
-            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-            transform: translate3d(0, -30px, 0) scaleY(1.1);
-        }
-
-        70% {
-            animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-            transform: translate3d(0, -15px, 0) scaleY(1.05);
-        }
-
-        80% {
-            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-            transform: translate3d(0, 0, 0) scaleY(0.95);
-        }
-
+        10%,
+        30%,
+        50%,
+        70%,
         90% {
-            transform: translate3d(0, -4px, 0) scaleY(1.02);
+            transform: translate3d(0, -10px, 0);
+        }
+
+        20%,
+        40%,
+        60%,
+        80% {
+            transform: translate3d(0, 10px, 0);
+        }
+
+        100% {
+            opacity: 1;
         }
     }
 
-    .bounce {
-        animation-name: bounce;
-        transform-origin: center bottom;
+    .style7.split span {
+        display: inline-block;
+        opacity: 0;
+        min-width: 1vw;
+    }
+
+    .style7.split span.show {
+        animation: rotateInDownLeft 1s 1 ease-in forwards;
+    }
+
+    @keyframes rotateInDownLeft {
+        0% {
+            transform: rotate3d(0, 0, 1, -45deg);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+        }
+    }
+
+    .style8.split span {
+        display: inline-block;
+        opacity: 0;
+        min-width: 1vw;
+    }
+
+    .style8.split span.show {
+        animation: flip 1s 1 ease-in forwards;
+    }
+
+    @keyframes flip {
+        0% {
+            transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+            animation-timing-function: ease-out;
+            opacity: 0;
+        }
+
+        40% {
+            transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+            animation-timing-function: ease-out;
+        }
+
+        50% {
+            transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+            animation-timing-function: ease-in;
+        }
+
+        80% {
+            transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+            animation-timing-function: ease-in;
+        }
+
+        100% {
+            transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+            animation-timing-function: ease-in;
+            opacity: 1;
+        }
+    }
+
+    .style9.split span {
+        display: inline-block;
+        opacity: 0;
+        min-width: 1vw;
+    }
+
+    .style9.split span.show {
+        animation: pulse 1s 1 ease-in forwards;
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 0;
+            transform: scale3d(1, 1, 1);
+        }
+
+        50% {
+            transform: scale3d(1.05, 1.05, 1.05);
+        }
+
+        100% {
+            transform: scale3d(1, 1, 1);
+            opacity: 1;
+        }
     }
 </style>
 
@@ -744,8 +847,16 @@
 // let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span&gt;')
 // text.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
 
+// 글씨 쪼개기(다중이)
+// let texts = document.querySelectorAll(".content__item__desc");
+// texts.forEach((desc) =&gt; {
+//     let splitdesc = desc.innerText;
+//     let splitWrap = splitdesc.split("").join("&lt;/span&gt;&lt;span&gt;");
+//     desc.innerHTML = splitWrap = "&lt;span&gt;" + splitWrap + "&lt;/span&gt;";
+// });
+
 // 클씨 분리(다중이) (하나만 바꾸는게 아니라 9개 전부를 forEach)
-document.querySelectorAll(".split").forEach(text => {
+document.querySelectorAll(".split").forEach(text =&gt; {
     let splitText = text.innerText;
     let splitWrap = splitText.split('').join('&lt;/span&gt;&lt;span aria-hidden="true"&gt;');
     splitWrap = "&lt;span aria-hidden='true'&gt;" + splitWrap + "&lt;/span&gt;";
@@ -759,18 +870,18 @@ function scroll() {
     document.querySelector("#parallax__info .scroll").innerText = Math.round(scrollTop);
 
     // CSS 클래스 추가 (비효율)
-    // document.querySelectorAll(".content__item").forEach(item => {
-    //     if (scrollTop >= item.offsetTop) {
+    // document.querySelectorAll(".content__item").forEach(item =&gt; {
+    //     if (scrollTop &gt;= item.offsetTop) {
     //         item.querySelector(".split").classList.add("show");
     //     };
     // });
 
-    document.querySelectorAll(".content__item").forEach(item => {
-        if (scrollTop >= item.offsetTop) {
-            item.querySelectorAll(".split span").forEach((span, index) => {
-                span.classList.add("show");
-
-                span.style.transitionDelay = `${index * 50}ms`
+    document.querySelectorAll(".content__item").forEach(item =&gt; {
+        if (scrollTop &gt;= item.offsetTop) {
+            item.querySelectorAll(".split span").forEach((span, index) =&gt; {
+                setTimeout(() =&gt; {
+                    span.classList.add("show");
+                }, 50 * index);
             });
         }
     })
@@ -778,13 +889,13 @@ function scroll() {
     requestAnimationFrame(scroll);
 
     //index에 있음. 시간에 따라서 순서대로 글자가 나타나게
-    //첫번째 span ---> 0.01
-    //두번째 span ---> 0.02
-    //세번째 span ---> 0.03
-    //네번째 span ---> 0.04
-    //다섯번째 span ---> 0.05
-    //여섯번째 span ---> 0.06
-    //일곱번째 span ---> 0.07
+    //첫번째 span ---&gt; 0.01
+    //두번째 span ---&gt; 0.02
+    //세번째 span ---&gt; 0.03
+    //네번째 span ---&gt; 0.04
+    //다섯번째 span ---&gt; 0.05
+    //여섯번째 span ---&gt; 0.06
+    //일곱번째 span ---&gt; 0.07
 }
 scroll();
 </code></pre>
@@ -799,7 +910,7 @@ scroll();
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;얕은 사람은 행운을 믿으며, 강한 사람은 원인과 결과를 믿는다.&lt;/p&gt;
+            &lt;p class="content__item__desc split style1"&gt;얕은 사람은 행운을 믿으며, 강한 사람은 원인과 결과를 믿는다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section1 --&gt;
 
@@ -810,7 +921,7 @@ scroll();
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;지난 일은 어쩔 수 없는 바 슬퍼한들 이미 엎질러진 물이다.&lt;/p&gt;
+            &lt;p class="content__item__desc split style2"&gt;지난 일은 어쩔 수 없는 바 슬퍼한들 이미 엎질러진 물이다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section2 --&gt;
 
@@ -821,7 +932,7 @@ scroll();
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;행동하는 사람처럼 생각하고, 생각하는 사람처럼 행동하라.&lt;/p&gt;
+            &lt;p class="content__item__desc split style3"&gt;행동하는 사람처럼 생각하고, 생각하는 사람처럼 행동하라.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section3 --&gt;
 
@@ -832,7 +943,7 @@ scroll();
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;실수할 자유가 없는 자유란 가치가 없다.&lt;/p&gt;
+            &lt;p class="content__item__desc split style4"&gt;실수할 자유가 없는 자유란 가치가 없다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section4 --&gt;
 
@@ -843,7 +954,7 @@ scroll();
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;끝까지 해보기 전까지는 늘 불가능해 보입니다.&lt;/p&gt;
+            &lt;p class="content__item__desc split style5"&gt;끝까지 해보기 전까지는 늘 불가능해 보입니다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section5 --&gt;
 
@@ -854,7 +965,7 @@ scroll();
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;고통은 잠깐이다. 포기는 영원히 남는다.&lt;/p&gt;
+            &lt;p class="content__item__desc split style6"&gt;고통은 잠깐이다. 포기는 영원히 남는다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section6 --&gt;
 
@@ -865,7 +976,7 @@ scroll();
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;희망을 품지 않은 자는 절망도 할 수 없다.&lt;/p&gt;
+            &lt;p class="content__item__desc split style7"&gt;희망을 품지 않은 자는 절망도 할 수 없다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section7 --&gt;
 
@@ -876,7 +987,7 @@ scroll();
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;뭔가를 위해 시도조차하려는 용기가 없다면 삶이 무슨 의미가 있을까?&lt;/p&gt;
+            &lt;p class="content__item__desc split style8"&gt;뭔가를 위해 시도조차하려는 용기가 없다면 삶이 무슨 의미가 있을까?&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section8 --&gt;
 
@@ -887,7 +998,7 @@ scroll();
                 &lt;div class="content__item__img"&gt;&lt;/div&gt;
             &lt;/figure&gt;
 
-            &lt;p class="content__item__desc split"&gt;꿈을 꾸세요. 그러면 그 꿈이 당신을 만들 것입니다.&lt;/p&gt;
+            &lt;p class="content__item__desc split style9"&gt;꿈을 꾸세요. 그러면 그 꿈이 당신을 만들 것입니다.&lt;/p&gt;
         &lt;/section&gt;
         &lt;!-- // section9 --&gt;
     &lt;/div&gt;
@@ -895,219 +1006,609 @@ scroll();
 </code></pre>
                         </div>
                         <div>
-                            <pre><code class="language-css">#parallax__nav {
-position: fixed;
-right: 20px;
-top: 20px;
-z-index: 2000;
-background-color: rgba(0, 0, 0, 0.4);
-padding: 20px 30px;
-border-radius: 50px;
-transition: top 0.4s ease;
+                            <pre><code class="language-css">/* parallax */
+/* parallax__nav */
+#parallax__nav {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    border-radius: 50px;
+    transition: top 0.4s ease;
 }
 
 #parallax__nav li {
-display: inline;
-margin: 0 5px;
+    display: inline;
+    margin: 0 5px;
 }
 
 #parallax__nav li a {
-display: inline-block;
-height: 30px;
-padding: 5px 20px;
-text-align: center;
-line-height: 30px;
+    display: inline-block;
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+    line-height: 30px;
 }
 
 #parallax__nav li.active a {
-background: #fff;
-color: #000;
-border-radius: 20px;
-box-sizing: content-box;
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    box-sizing: content-box;
 }
 
 #parallax__cont {
-max-width: 1600px;
-width: 98%;
-margin: 0 auto;
-/* background-color: rgba(255, 255, 255, 0.1); */
+    max-width: 1600px;
+    width: 98%;
+    margin: 0 auto;
+    /* background-color: rgba(255, 255, 255, 0.1); */
 }
 
 .content__item {
-width: 1000px;
-max-width: 70vw;
-margin: 30vw auto;
-/* background-color: rgba(255, 255, 255, 0.3); */
-text-align: left;
-margin-right: 0;
-position: relative;
-padding-top: 8vw;
+    width: 1000px;
+    max-width: 70vw;
+    margin: 30vw auto;
+    /* background-color: rgba(255, 255, 255, 0.3); */
+    text-align: left;
+    margin-right: 0;
+    position: relative;
+    padding-top: 8vw;
 }
 
 .content__item:nth-child(even) {
-margin-left: 0;
-text-align: right;
+    margin-left: 0;
+    text-align: right;
 }
 
 .content__item__num {
-font-size: 35vw;
-font-weight: 100;
-font-family: 'Lato';
-position: absolute;
-left: -5vw;
-top: -16vw;
-opacity: 0.07;
-z-index: -2;
+    font-size: 35vw;
+    font-weight: 100;
+    font-family: 'Lato';
+    position: absolute;
+    left: -5vw;
+    top: -16vw;
+    opacity: 0.07;
+    z-index: -2;
 }
 
 .content__item:nth-child(even) .content__item__num {
-left: auto;
-right: -5vw;
+    left: auto;
+    right: -5vw;
 }
 
 .content__item__title {
-font-weight: 400;
-text-transform: capitalize;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 
 .content__item__imgWrap {
-width: 100%;
-padding-bottom: 56.25%;
-background: #000;
-position: relative;
-overflow: hidden;
-z-index: -1;
+    width: 100%;
+    padding-bottom: 56.25%;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
 }
 
 .content__item__img {
-position: absolute;
-background: url(../assets/img/effect_bg19-min.jpg);
-background-repeat: no-repeat;
-background-position: center center;
-background-size: cover;
-width: 110%;
-height: 110%;
-left: -5%;
-top: -5%;
-filter: saturate(0%);
-/* transition: all 1s; */
+    position: absolute;
+    background: url(../assets/img/effect_bg19-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 110%;
+    height: 110%;
+    left: -5%;
+    top: -5%;
+    filter: saturate(0%);
+    /* transition: all 1s; */
 }
 
 .content__item:nth-child(1) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg20-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg20-min.jpg);
 }
 
 .content__item:nth-child(2) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg19-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg19-min.jpg);
 }
 
 .content__item:nth-child(3) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg18-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg18-min.jpg);
 }
 
 .content__item:nth-child(4) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg17-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg17-min.jpg);
 }
 
 .content__item:nth-child(5) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg16-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg16-min.jpg);
 }
 
 .content__item:nth-child(6) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg11-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg11-min.jpg);
 }
 
 .content__item:nth-child(7) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg14-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg14-min.jpg);
 }
 
 .content__item:nth-child(8) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg13-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg13-min.jpg);
 }
 
 .content__item:nth-child(9) .content__item__img {
-background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg12-min.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/img/effect_bg12-min.jpg);
 }
 
 .content__item__desc {
-font-size: 4vw;
-line-height: 1.4;
-margin-top: -5vw;
-margin-left: -4vw;
-word-break: keep-all;
+    font-size: 4vw;
+    line-height: 1.4;
+    margin-top: -5vw;
+    margin-left: -4vw;
+    word-break: keep-all;
 }
 
 .content__item:nth-child(even) .content__item__desc {
-/* 2n도 가능 */
-margin-left: auto;
-margin-right: -4vw;
+    /* 2n도 가능 */
+    margin-left: auto;
+    margin-right: -4vw;
 }
 
 #parallax__info {
-position: fixed;
-left: 20px;
-bottom: 20px;
-z-index: 2000;
-background: rgba(0, 0, 0, 0.6);
-color: #fff;
-padding: 20px;
-border-radius: 10px;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 #parallax__info li,
 .scroll {
-line-height: 1.4;
+    line-height: 1.4;
 }
 
 @media (max-width: 800px) {
-#parallax__cont {
-    margin-top: 70vw;
+    #parallax__cont {
+        margin-top: 70vw;
+    }
+
+    #parallax__nav {
+        padding: 10px;
+        right: auto;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    #parallax__nav li {
+        display: block;
+        margin: 5px;
+    }
+
+    #parallax__nav li a {
+        font-size: 14px;
+        padding: 5px;
+        border-radius: 5px;
+        height: auto;
+        line-height: 1;
+    }
+
+    #parallax__nav li.active a {
+        border-radius: 5px;
+    }
+
+    #parallax__info {
+        left: 10px;
+        bottom: 10px;
+    }
 }
 
-#parallax__nav {
-    padding: 10px;
-    right: auto;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-#parallax__nav li {
-    display: block;
-    margin: 5px;
-}
-
-#parallax__nav li a {
-    font-size: 14px;
-    padding: 5px;
-    border-radius: 5px;
-    height: auto;
-    line-height: 1;
-}
-
-#parallax__nav li.active a {
-    border-radius: 5px;
-}
-
-#parallax__info {
-    left: 10px;
-    bottom: 10px;
-}
-}
-
-.split span {
-opacity: 0;
-transform: translateY(50px);
-transition: all 0.6s cubic-bezier(0, 0.71, 0.11, 1.66);
-display: inline-block;
-min-width: 1vw;
+/* .split span {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s cubic-bezier(0, 0.71, 0.11, 1.66);
+    display: inline-block;
+    min-width: 1vw;
 }
 
 .split span.show {
-opacity: 1;
-transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
+} */
+
+/* option */
+/* .split span {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s cubic-bezier(0, 0.71, 0.11, 1.66);
+    display: inline-block;
+    min-width: 1vw;
+}
+
+.split.show span {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.split span:nth-child(1) {
+    transition-delay: 100ms;
+}
+
+.split span:nth-child(2) {
+    transition-delay: 150ms;
+}
+
+.split span:nth-child(3) {
+    transition-delay: 200ms;
+}
+
+.split span:nth-child(4) {
+    transition-delay: 250ms;
+}
+
+.split span:nth-child(5) {
+    transition-delay: 300ms;
+}
+
+.split span:nth-child(6) {
+    transition-delay: 350ms;
+}
+
+.split span:nth-child(7) {
+    transition-delay: 400ms;
+}
+
+.split span:nth-child(8) {
+    transition-delay: 450ms;
+}
+
+.split span:nth-child(9) {
+    transition-delay: 500ms;
+}
+
+.split span:nth-child(10) {
+    transition-delay: 550ms;
+}
+
+.split span:nth-child(11) {
+    transition-delay: 600ms;
+}
+
+.split span:nth-child(12) {
+    transition-delay: 650ms;
+}
+
+.split span:nth-child(13) {
+    transition-delay: 700ms;
+}
+
+.split span:nth-child(14) {
+    transition-delay: 750ms;
+}
+
+.split span:nth-child(15) {
+    transition-delay: 800ms;
+}
+
+.split span:nth-child(16) {
+    transition-delay: 850ms;
+}
+
+.split span:nth-child(17) {
+    transition-delay: 900ms;
+}
+
+.split span:nth-child(18) {
+    transition-delay: 950ms;
+}
+
+.split span:nth-child(19) {
+    transition-delay: 1000ms;
+}
+
+.split span:nth-child(20) {
+    transition-delay: 1050ms;
+}
+
+.split span:nth-child(20) {
+    transition-delay: 1100ms;
+}
+
+.split span:nth-child(21) {
+    transition-delay: 1150ms;
+}
+
+.split span:nth-child(22) {
+    transition-delay: 1200ms;
+}
+
+.split span:nth-child(23) {
+    transition-delay: 1250ms;
+}
+
+.split span:nth-child(24) {
+    transition-delay: 1300ms;
+}
+
+.split span:nth-child(25) {
+    transition-delay: 1350ms;
+}
+
+.split span:nth-child(26) {
+    transition-delay: 1400ms;
+}
+
+.split span:nth-child(27) {
+    transition-delay: 1450ms;
+}
+
+.split span:nth-child(28) {
+    transition-delay: 1500ms;
+}
+
+.split span:nth-child(29) {
+    transition-delay: 1550ms;
+}
+
+.split span:nth-child(30) {
+    transition-delay: 1600ms;
+}
+
+.split span:nth-child(31) {
+    transition-delay: 1650ms;
+}
+
+.split span:nth-child(32) {
+    transition-delay: 1700ms;
+}
+
+.split span:nth-child(33) {
+    transition-delay: 1750ms;
+}
+
+.split span:nth-child(34) {
+    transition-delay: 1800ms;
+}
+
+.split span:nth-child(35) {
+    transition-delay: 1850ms;
+} */
+
+/* 순차적으로 나타나기 */
+.style1.split span {
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.66);
+    /* transform은 block 구조만 먹힌다! */
+    display: inline-block;
+    /* block 구조로 바꾸면 띄어쓰기가 사라지므로, 최소 너비를 지정해주기 */
+    min-width: 1vw;
+}
+
+.style1.split span.show {
+    opacity: 1;
+}
+
+.style2.split span {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.66);
+    display: inline-block;
+    min-width: 1vw;
+}
+
+.style2.split span.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.style3.split span {
+    opacity: 0;
+    transform: translateY(50px) translateX(30px) rotate(360deg);
+    transition: all 0.3s cubic-bezier(0, 0.71, 0.11, 1.66);
+    display: inline-block;
+    min-width: 1vw;
+}
+
+.style3.split span.show {
+    opacity: 1;
+    transform: translateY(0) translateX(0) rotate(0);
+}
+
+.style4.split span {
+    display: inline-block;
+    opacity: 0;
+    min-width: 1vw;
+}
+
+.style4.split span.show {
+    animation: wobble 1s 1 ease-in forwards;
+}
+
+@keyframes wobble {
+    0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0;
+    }
+
+    15% {
+        transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+
+    30% {
+        transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+
+    45% {
+        transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+
+    60% {
+        transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+
+    75% {
+        transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+.style5.split span {
+    display: inline-block;
+    opacity: 0;
+    min-width: 1vw;
+}
+
+.style5.split span.show {
+    animation: flash 1s 1 ease-in forwards;
+}
+
+@keyframes flash {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.style6.split span {
+    display: inline-block;
+    opacity: 0;
+    min-width: 1vw;
+}
+
+.style6.split span.show {
+    animation: shakeY 1s 1 ease-in forwards;
+}
+
+@keyframes shakeY {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translate3d(0, -10px, 0);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translate3d(0, 10px, 0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.style7.split span {
+    display: inline-block;
+    opacity: 0;
+    min-width: 1vw;
+}
+
+.style7.split span.show {
+    animation: rotateInDownLeft 1s 1 ease-in forwards;
+}
+
+@keyframes rotateInDownLeft {
+    0% {
+        transform: rotate3d(0, 0, 1, -45deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+
+.style8.split span {
+    display: inline-block;
+    opacity: 0;
+    min-width: 1vw;
+}
+
+.style8.split span.show {
+    animation: flip 1s 1 ease-in forwards;
+}
+
+@keyframes flip {
+    0% {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, -360deg);
+        animation-timing-function: ease-out;
+        opacity: 0;
+    }
+
+    40% {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+        animation-timing-function: ease-in;
+    }
+
+    80% {
+        transform: perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        transform: perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+}
+
+.style9.split span {
+    display: inline-block;
+    opacity: 0;
+    min-width: 1vw;
+}
+
+.style9.split span.show {
+    animation: pulse 1s 1 ease-in forwards;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    100% {
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+    }
 }
 </code></pre>
                         </div>
@@ -1135,6 +1636,14 @@ transform: translateY(0);
         // let splitText = text.innerText;
         // let splitWrap = splitText.split('').join('</span><span>')
         // text.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+
+        // 글씨 쪼개기(다중이)
+        // let texts = document.querySelectorAll(".content__item__desc");
+        // texts.forEach((desc) => {
+        //     let splitdesc = desc.innerText;
+        //     let splitWrap = splitdesc.split("").join("</span><span>");
+        //     desc.innerHTML = splitWrap = "<span>" + splitWrap + "</span>";
+        // });
 
         // 클씨 분리(다중이) (하나만 바꾸는게 아니라 9개 전부를 forEach)
         document.querySelectorAll(".split").forEach(text => {
