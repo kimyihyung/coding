@@ -1,0 +1,230 @@
+@import url("https://webfontworld.github.io/neodgm/NeoDunggeunmo.css");
+
+.music__wrap {
+}
+
+.music__inner {
+  width: 450px;
+  background: #000;
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  padding: 10px;
+  padding-top: 0;
+}
+
+.music__header {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.music__header h2 {
+  font-size: 14px;
+}
+
+.music__contents {
+  background: #c4c4c4;
+  width: 100%;
+}
+
+.music__view {
+  display: flex;
+  padding: 20px;
+}
+
+.music__view .img {
+  width: 30%;
+}
+.music__view .img img {
+  width: 100%;
+}
+
+.music__view .title {
+  width: 70%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.music__view .title h3 {
+  margin-bottom: 5px;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+
+.music__view .title p {
+  color: red;
+  font-family: "NeoDunggeunmo";
+  font-weight: 500;
+}
+
+.music__control {
+  width: 100%;
+  height: 100px;
+  padding: 20px;
+  padding-top: 0;
+}
+
+.music__control .progress {
+  width: 100%;
+  height: 6px;
+  background: #000;
+  border-radius: 5px;
+}
+.music__control .progress .bar {
+  width: 0%;
+  height: inherit;
+  background: #7fff5b;
+  border-radius: 5px;
+}
+.music__control .progress .timer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3px;
+}
+.music__control .control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 0 100px;
+}
+
+.music__control .control .repeat {
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
+  background-position: -125px 0;
+}
+.music__control .control .repeat_one {
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
+  background-position: -150px 0;
+}
+.music__control .control .shuffle {
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
+  background-position: -175px 0;
+}
+.music__control .control .prev {
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
+  background-position: -50px 0;
+}
+.music__control .control > div {
+  display: flex;
+}
+.music__control .control .play {
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
+  background-position: 0px 0;
+}
+.music__control .control .stop {
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
+  background-position: -25px 0;
+}
+
+.music__control .control .next {
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
+  background-position: -75px 0;
+}
+.music__control .control .list {
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
+  background-position: -100px 0;
+}
+
+.music__footer {
+  background: #c4c4c4;
+}
+.music__list {
+  padding: 20px;
+}
+.music__list h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  border-top: 2px solid #000;
+}
+.music__list h3 .list {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
+  background-position: -100px 0;
+}
+.music__list ul {
+  max-height: 200px;
+  overflow-y: auto;
+}
+.music__list li {
+  border-bottom: 1px solid #000;
+  list-style: none;
+  position: relative;
+  padding: 10px 10px;
+}
+.music__list li strong {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 4px;
+}
+.music__list li em {
+  font-style: normal;
+  margin-bottom: 4px;
+}
+.music__list li span {
+  position: absolute;
+  right: 10px;
+  top: 31px;
+}
+/* scrollbar */
+.music__list ul::-webkit-scrollbar {
+  background: #353435;
+  width: 10px;
+  border-radius: 10px;
+}
+.music__list ul::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid #888;
+}
+
+.music__list ul::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #000000;
+  border: 1px solid #4b4a4b;
+}
+
+.music__list ul::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
+
+.music__list ul::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(left, #22add4, #1e98ba);
+}
+/* //scrollbar */
