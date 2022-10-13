@@ -120,6 +120,10 @@ function nextMusic() {
   playMusic();
   playListMusic();
 }
+// 볼륨 조절바
+document.querySelector("#ex-in").addEventListener("input", (e) => {
+  document.querySelector("#ex-out").innerHTML = e.target.value;
+});
 
 // 뮤직 진행바
 musicAudio.addEventListener("timeupdate", (e) => {

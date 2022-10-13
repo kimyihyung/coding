@@ -112,6 +112,12 @@
   margin-top: 40px;
   padding: 0 100px;
 }
+.music__control .progress .volume {
+  width: 0%;
+  height: inherit;
+  background: #7fff5b;
+  border-radius: 5px;
+}
 
 .music__control .control .repeat {
   width: 24px;
