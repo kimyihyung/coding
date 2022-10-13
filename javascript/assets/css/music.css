@@ -209,9 +209,9 @@
   position: absolute;
   top: 3px;
   right: 2px;
-  color: #000;
-  display: inline-block;
-  font-family: "LABDigital";
+  width: 24px;
+  height: 24px;
+  background: url(../img/close.svg);
 }
 .music__list ul {
   max-height: 200px;
