@@ -104,7 +104,7 @@
             </div>
             <div class="music__footer">
                 <div class="music__list">
-                    <h3><span class="list"></span>Music List</h3>
+                    <h3><span class="list"></span>Music List <a href="#" class="close">X</a></h3>
                     <ul>
                         <!-- <li>
                             <strong>제목</strong>
@@ -162,7 +162,6 @@
         function printTime() {
             const clock = document.querySelector(".time");
             const now = new Date();
-            // let nowDate = now.getDate();
             // if (nowDate < 10) nowDate = `0${nowDate}`;
             // let nowHours = now.getHours();
             // if (nowHours > 12) {nowHours = `오후 ${now.getHours() - 12}`} else {`오전 ${now.getHours()}`};
@@ -193,7 +192,7 @@
             const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + hour + "시 " + minute + "분 " + second + "초";
 
             clock.innerText = nowTime;
-            setTimeout("printTime()", 1000);
+            setTimeout("printTime()", 1000);    //setTimeout 한번만 하고 끝
         }
         function printAgent() {
             const agent = document.querySelector(".agent");

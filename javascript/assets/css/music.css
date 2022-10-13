@@ -1,4 +1,19 @@
 @import url("https://webfontworld.github.io/neodgm/NeoDunggeunmo.css");
+@font-face {
+  font-family: "LABDigital";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf")
+      format("truetype");
+  font-display: swap;
+}
 
 .music__wrap {
 }
@@ -60,7 +75,7 @@
 }
 
 .music__view .title p {
-  color: red;
+  color: rgb(34, 34, 121);
   font-family: "NeoDunggeunmo";
   font-weight: 500;
 }
@@ -154,7 +169,7 @@
 .music__control .control .list {
   width: 24px;
   height: 24px;
-  background: url(../img/music_control.svg) no-repeat;
+  background: url(../img/close.png) no-repeat;
   background-size: 200px;
   background-position: -100px 0;
 }
@@ -164,11 +179,16 @@
 }
 .music__list {
   padding: 20px;
+  display: none;
+}
+.music__list.show {
+  display: block;
 }
 .music__list h3 {
   font-size: 24px;
   margin-bottom: 10px;
   border-top: 2px solid #000;
+  position: relative;
 }
 .music__list h3 .list {
   display: inline-block;
@@ -176,7 +196,22 @@
   height: 24px;
   background: url(../img/music_control.svg) no-repeat;
   background-size: 200px;
+  background-position: -100px 3px;
+}
+.music__control .control .list {
+  width: 24px;
+  height: 24px;
+  background: url(../img/music_control.svg) no-repeat;
+  background-size: 200px;
   background-position: -100px 0;
+}
+.music__list h3 .close {
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  color: #000;
+  display: inline-block;
+  font-family: "LABDigital";
 }
 .music__list ul {
   max-height: 200px;
@@ -187,6 +222,9 @@
   list-style: none;
   position: relative;
   padding: 10px 10px;
+}
+.music__list li.playing {
+  color: #7fff5b;
 }
 .music__list li strong {
   font-size: 20px;
@@ -202,6 +240,7 @@
   right: 10px;
   top: 31px;
 }
+
 /* scrollbar */
 .music__list ul::-webkit-scrollbar {
   background: #353435;
@@ -221,10 +260,10 @@
 }
 
 .music__list ul::-webkit-scrollbar-thumb:hover {
-  background: #fff;
+  background: #000000;
 }
 
 .music__list ul::-webkit-scrollbar-thumb:active {
   background: linear-gradient(left, #22add4, #1e98ba);
 }
-/* //scrollbar */
+/* scrollbar */
