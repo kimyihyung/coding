@@ -79,6 +79,8 @@
   font-family: "NeoDunggeunmo";
   font-weight: 500;
 }
+.music__view .volume {
+}
 
 .music__control {
   width: 100%;
@@ -273,3 +275,10 @@
   background: linear-gradient(left, #22add4, #1e98ba);
 }
 /* scrollbar */
+
+.volume {
+  position: absolute;
+  left: 50%;
+  top: 72%;
+  transform: translate(-50%, -50%);
+}
