@@ -25,7 +25,6 @@
                 <li><a href="searchEffect05.html">5</a></li>
                 <li class="active"><a href="searchEffect06.html">6</a></li>
                 <li><a href="searchEffect07.html">7</a></li>
-                <li><a href="searchEffect08.html">8</a></li>
             </ul>
         </nav>
     </header>
@@ -33,8 +32,8 @@
 
     <main id="main">
         <div class="search__wrap">
-            <span>sort(), reverse()를 이용하여 정렬하기</span>
-            <h1><a href="searchEffect.html">CSS 속성 정렬하기</a></h1>
+            <span><a href="searchEffect.html">sort(), reverse()를 이용하여 정렬하기</a></span>
+            <h1>CSS 속성 정렬하기</h1>
 
             <div class="search__click">
                 <ul>
@@ -573,37 +572,38 @@
 
         const cssList = document.querySelector(".search__list .line");
 
-        // 데이터 출력하기
+        //데이터 출력하기
         const updateList = () => {
             let listCSS = "";
+
             cssProperty.forEach((data, index) => {
                 listCSS += `<li>${data.num}. ${data.name} : ${data.desc}</li>`;
             });
+
             cssList.innerHTML = listCSS;
         }
         updateList();
-        // 반대로 정렬 클릭
-        document.querySelector(".btn1").addEventListener("click", (e) => {
-            e.preventDefault();
+
+        function sortReverse() {
             cssProperty.reverse();
             updateList();
-        });
-        // 오름차순 정렬 클릭
-        document.querySelector(".btn2").addEventListener("click", (e) => {
-            e.preventDefault();
-            cssProperty.sort((a, b) => {
-                return a.num - b.num;
-            });
-            updateList();
-        });
-        // 내림차순 정렬 클릭
-        document.querySelector(".btn3").addEventListener("click", (e) => {
-            e.preventDefault();
+        }
+
+        //내림차순 정렬
+        function sortDescending() {
             cssProperty.sort((a, b) => {
                 return b.num - a.num;
             });
             updateList();
-        });
+        }
+        //오름차순 정렬
+        function sortAscending() {
+            cssProperty.sort((a, b) => {
+                return a.num - b.num;
+            });
+            updateList();
+        }
+
         // 알파벳 정렬(a~z) 클릭
         document.querySelector(".btn4").addEventListener("click", (e) => {
             e.preventDefault();
@@ -624,19 +624,31 @@
             });
             updateList();
         });
-        // 랜덤 정렬
-        document.querySelector(".btn6").addEventListener("click", (e) => {
-            e.preventDefault();
-            for (let i = cssProperty.length - 1; i >= 0; i--) {
-                const randomIndex = Math.floor(Math.random() * (i + 1));
-                // console.log(randomIndex); 여기까지만은 중복발생
-                // [1,2,3] = [3,2,1]; // 객체구조분해할당
-                [cssProperty[i], cssProperty[randomIndex]] = [cssProperty[randomIndex], cssProperty[i]];//중복 되는 숫자 나오지 않고 무작위
-                cssProperty.innerHTML += cssProperty[i]
-            }
-            updateList();
+
+        //반대로 정렬 클릭
+        document.querySelector(".btn1").addEventListener("click", () => {
+            sortReverse();
         });
 
+        //오름차순 정렬 클릭
+        document.querySelector(".btn3").addEventListener("click", () => {
+            sortAscending();
+        });
+
+        //내림차순 정렬 클릭
+        document.querySelector(".btn2").addEventListener("click", () => {
+            sortDescending();
+        });
+
+        //알파벳순 (a~z)
+        document.querySelector(".btn4").addEventListener("click", () => {
+            sortAlphabet();
+        });
+
+        //알파벳순 (z~a)
+        document.querySelector(".btn5").addEventListener("click", () => {
+            sortAlphabetZ();
+        });
     </script>
 
 </body>
