@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>검색 이펙트</title>
 
+    <link rel="icon" href="data:,">
     <link rel="stylesheet" href="../assets/css/search.css">
     <link rel="stylesheet" href="../assets/css/dracula.css">
 
@@ -155,15 +156,369 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-                            <pre><code class="language-js">
+                            <pre><code class="language-js">const cssList = document.querySelector(".search__list .line");
+
+// 데이터 출력하기
+const updateList = () =&gt; {
+    let listCSS = "";
+    cssProperty.forEach((data, index) =&gt; {
+        listCSS += `&lt;li&gt;${data.num}. ${data.name} : ${data.desc}&lt;/li&gt;`;
+    });
+    cssList.innerHTML = listCSS;
+}
+updateList();
+// 반대로 정렬 클릭
+document.querySelector(".btn1").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.reverse();
+    updateList();
+});
+// 오름차순 정렬 클릭
+document.querySelector(".btn2").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.sort((a, b) =&gt; {
+        return a.num - b.num;
+    });
+    updateList();
+});
+// 내림차순 정렬 클릭
+document.querySelector(".btn3").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.sort((a, b) =&gt; {
+        return b.num - a.num;
+    });
+    updateList();
+});
+// 알파벳 정렬(a~z) 클릭
+document.querySelector(".btn4").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.sort((a, b) =&gt; {
+        let x = a.name;
+        let y = b.name;
+        return x.localeCompare(y);
+    });
+    updateList();
+});
+// 알파벳 정렬(z~a) 클릭
+document.querySelector(".btn5").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    cssProperty.sort((a, b) =&gt; {
+        let x = a.name;
+        let y = b.name;
+        return y.localeCompare(x);
+    });
+    updateList();
+});
+// 랜덤 정렬
+document.querySelector(".btn6").addEventListener("click", (e) =&gt; {
+    e.preventDefault();
+    for (let i = cssProperty.length - 1; i &gt;= 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        // console.log(randomIndex); 여기까지만은 중복발생
+        // [1,2,3] = [3,2,1]; // 객체구조분해할당
+        [cssProperty[i], cssProperty[randomIndex]] = [cssProperty[randomIndex], cssProperty[i]];//중복 되는 숫자 나오지 않고 무작위
+        cssProperty.innerHTML += cssProperty[i]
+    }
+    updateList();
+});
 </code></pre>
                         </div>
                         <div>
-                            <pre><code class="language-html">
+                            <pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;span&gt;sort(), reverse()를 이용하여 정렬하기&lt;/span&gt;
+        &lt;h1&gt;&lt;a href="searchEffect.html"&gt;CSS 속성 정렬하기&lt;/a&gt;&lt;/h1&gt;
+
+        &lt;div class="search__click"&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#" class="btn1"&gt;반대로 정렬하기&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn2"&gt;오름차순 정렬하기&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn3"&gt;내림차순 정렬하기&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn4"&gt;알파벳순 (a~z)&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn5"&gt;알파벳순 (z~a)&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#" class="btn6"&gt;랜덤 정렬하기&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__info"&gt;
+            &lt;div&gt;
+                전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__list"&gt;
+            &lt;ul class="line"&gt;
+
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
 </code></pre>
                         </div>
                         <div>
-                            <pre><code class="language-css">
+                            <pre><code class="language-css">/* header */
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+#header nav {
+    margin: 10px;
+}
+#header nav li {
+    position: relative;
+    display: inline;
+}
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: "NexonLv1Gothic";
+}
+#header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+#header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    padding: 30px;
+    text-align: center;
+}
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__wrap > h1 a {
+    font-family: "Tmon";
+    color: var(--htmlColor);
+    font-size: 5vw;
+    margin-bottom: 10px;
+}
+.search__wrap .desc {
+    line-height: 1.4;
+    padding: 20px 0;
+}
+.search__wrap .time {
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: var(--htmlColor);
+}
+.search__wrap .time span {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 100;
+}
+.search__box {
+    margin-bottom: 20px;
+    position: relative;
+}
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.search__box .start {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: #223547;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    color: #fff;
+    cursor: pointer;
+}
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+.search__list li.show {
+    display: block;
+}
+.search__list li.hide {
+    display: none;
+}
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.search__list span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+.search__list em {
+    float: right;
+    font-style: normal;
+}
+.search__list .line {
+    margin: 50px 0;
+}
+.search__list .line li {
+    background: #e3eaf5;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+}
+.search__list .line li:hover {
+    background: #d3e2fa;
+    cursor: pointer;
+}
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+.search__info.center {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 40px;
+}
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+.search__desc {
+    padding: 20px 40px 20px 60px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    background-color: var(--htmlColor);
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
+}
+.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.search__click li {
+    display: inline;
+}
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .search__wrap {
+    padding: 20px;
+    }
+    .search__wrap > span {
+    font-size: 16px;
+    margin-bottom: 10px;
+    }
+    .search__wrap > h1 {
+    font-size: 44px;
+    }
+    .search__box input {
+    font-size: 16px;
+    padding: 12px 30px;
+    }
+}
+
+/* footer */
+#footer {
+    position: relative;
+    text-align: center;
+}
+
+#footer a {
+    color: #000;
+    font-family: "NexonLv1Gothic";
+    padding-bottom: 50px;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+#footer .source {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-size: 14px;
+}
 </code></pre>
                         </div>
                     </div>

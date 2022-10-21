@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">슬라이드 이펙트 - 이미지 슬라이드(버튼, 닷메뉴, 무한)</h2>
+            <p class="t_desc2">
+                이전에 방식인 버튼과 닷메뉴 방식에서 지속적으로 페이지가 넘어가는 방식을 추가하였습니다.
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/sliderEffect06.html"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/blob/main/javascript/effect/sliderEffect06.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/sliderEffect06.html">원본 사이트</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">html</h3>
+            <p class="t_desc2">
+                slider__btn에 prev, next 버튼을 만들어 줍니다. 닷 메뉴 추가를 위해서 slider__dot을 추가합니다. 개별적인 이미지에 slider 클래스를 부여했습니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;section id="sliderType03"&gt;
+        &lt;div class="slider__wrap"&gt;
+            &lt;div class="slider__img"&gt;
+                &lt;div class="slider__inner"&gt;
+                    &lt;div class="slider"&gt;&lt;span&gt;이미지1&lt;/span&gt;&lt;img src="../assets/img/effect_bg01-min.jpg" alt="이미지1"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;span&gt;이미지2&lt;/span&gt;&lt;img src="../assets/img/effect_bg02-min.jpg" alt="이미지2"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;span&gt;이미지3&lt;/span&gt;&lt;img src="../assets/img/effect_bg03-min.jpg" alt="이미지3"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;span&gt;이미지4&lt;/span&gt;&lt;img src="../assets/img/effect_bg04-min.jpg" alt="이미지4"&gt;
+                    &lt;/div&gt;
+                    &lt;div class="slider"&gt;&lt;span&gt;이미지5&lt;/span&gt;&lt;img src="../assets/img/effect_bg05-min.jpg" alt="이미지5"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__btn"&gt;
+                &lt;button href="#" class="prev"&gt;prev&lt;/button&gt;
+                &lt;button href="#" class="next"&gt;next&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="slider__dot"&gt;
+                &lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+                &lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt; --&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">css</h3>
+            <p class="t_desc2">
+                생성한 버튼과 닷 메뉴에 대한 css를 진행합니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-css">/* slider */
+.slider__wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider__img {
+    /* 이미지 보이는 영역 */
+    position: relative;
+    width: 800px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.slider__inner {
+    /* 이미지를 감싸고 있는 부모 : 움직이는 부분 */
+    display: flex;
+    flex-wrap: wrap;
+    width: 10000px;
+    height: 450px;
+    position: relative;
+    left: -800px;
+    /* transition: all 0.3s; */
+}
+
+.slider__inner.transition {
+    transition: all 0.3s;
+}
+
+.slider {
+    /* 개별적인 이미지 */
+    position: relative;
+    width: 800px;
+    height: 450px;
+}
+
+.slider span {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 5px 10px;
+}
+
+@media (max-width: 800px) {
+    .slider__img {
+        width: 400px;
+        height: 225px;
+    }
+}
+
+.slider__btn button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    line-height: 50px;
+    transition: all 0.2s;
+    display: block;
+    color: #fff;
+    pointer-events: auto;
+    border: 0;
+    cursor: pointer;
+}
+
+.slider__btn.disable button {
+    pointer-events: none;
+}
+
+.slider__btn button:hover {
+    border-radius: 50%;
+    background: rgba(241, 96, 86, 1);
+}
+
+.slider__btn button.prev {
+    left: 0;
+}
+
+.slider__btn button.next {
+    right: 0;
+}
+
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+
+.slider__dot .dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 3px;
+}
+
+.slider__dot .dot.active {
+    background: rgba(255, 255, 255, 0.9);
+}
+</code></pre>
+                </div>
+            </details>
+
+            <h3 class="t_tit2">js</h3>
+            <p class="t_desc2">
+                선택자를 생성하며, 사용될 변수들에 대한 선언을 진행합니다. 각각의 변수에 대한 설명은 주석을 참고하면됩니다.
+                appendChild를 사용하여 첫번째 이미지를 복사하는 cloneFirst를 의미하며 그것을 이용하여 첫번째 이미지를 복사하여 마지막 자식요소에 추가합니다.
+                insertBefore를 사용하여 마지막 이미지를 복사한 것을 처음 이미지 앞에 넣어줍니다.
+                init()함수로 닷 메뉴를 이미지 개수에 맞게 생성하며, 첫 번째 닷 메뉴에 active 상태를 부여합니다.
+                gotoSlider()함수로 이미지가 움직이는 영역의 offsetLeft값을 변수에 저장하고 조건문을 사용하여 이미지의 이동값을 지정해줍니다.
+                이미지의 이동 시에 인덱스값을 확인하여 마지막과 처음 이미지가 반복하여합니다.
+                setTimeout을 사용해 버튼을 한 번 클릭하면 0.3초간 비활성화되게합니다.
+                transitionend로 트랜지션이 종료되기 전에 이미지가 넘어가는 것을 방지합니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = document.querySelector(".slider__img");       // 보여지는 영역
+const sliderInner = document.querySelector(".slider__inner");   // 움직이는 영역
+const slider = document.querySelectorAll(".slider");            // 각각 이미지
+const sliderDot = document.querySelector(".slider__dot");      // 닷 메뉴
+const sliderBtn = document.querySelector(".slider__btn");      // 닷 메뉴
+const sliderBtnPrev = document.querySelector(".slider__btn .prev"); //왼쪽 버튼
+const sliderBtnNext = document.querySelector(".slider__btn .next"); //오른쪽 버튼
+
+let currentIndex = 0,
+    sliderLength = slider.length,   // 슬라이더 갯수
+    sliderWidth = slider[0].offsetWidth,
+    sliderFirst = slider[0],    // 첫번째 이미지
+    sliderLast = slider[sliderLength - 1],  // 마지막 이미지
+    cloneFirst = sliderFirst.cloneNode(true),    // 첫번째 이미지 복사
+    cloneLast = sliderLast.cloneNode(true),    // 마지막 이미지 복사
+    dotIndex = '',
+    num = 0;
+
+
+sliderInner.appendChild(cloneFirst);
+sliderInner.insertBefore(cloneLast, sliderFirst);
+
+function init() {
+    // 이미지 갯수 만큼 닷메뉴 생기게
+    for (let i = 0; i &lt; sliderLength; i++) {
+        dotIndex += "&lt;a href='#' class='dot'&gt;&lt;/a&gt;";
+    }
+    sliderDot.innerHTML = dotIndex;
+    sliderDot.firstElementChild.classList.add("active");
+}
+init();
+
+function gotoSlider(direction) {
+    sliderInner.classList.add("transition");
+    sliderBtn.classList.add("disable");
+
+    posInitial = sliderInner.offsetLeft;
+    //console.log(posInitial)
+
+    if (direction == -1) {
+        sliderInner.style.left = (posInitial + sliderWidth) + "px";
+        currentIndex--;
+        dotActive(direction);
+    } else if (direction == 1) {
+        sliderInner.style.left = (posInitial - sliderWidth) + "px";
+        currentIndex++;
+        dotActive(direction);
+    }
+}
+
+// 순간이동 이미지 슬라이드
+function checkIndex() {
+    sliderInner.classList.remove("transition");
+    //console.log(currentIndex);
+
+    // 마지막 이미지
+    if (currentIndex == sliderLength) {
+        sliderInner.style.left = -(1 * sliderWidth) + "px";
+        currentIndex = 0;
+    }
+
+    //처음 이미지
+    if (currentIndex == -1) {
+        sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
+        currentIndex = sliderLength - 1;
+    }
+}
+
+//닷 엑티브
+function dotActive(act) {
+    document.querySelectorAll(".dot").forEach((e, i) =&gt; {
+        e.classList.remove("active");
+    });
+
+    if (act === -1) {
+        num == 0 ? (num = 4) : (num = (num - 1) % sliderLength);
+        sliderDot.children[num].classList.add("active");
+    } else if (act === 1) {
+        num = (num + 1) % sliderLength;
+        sliderDot.children[num].classList.add("active");
+    }
+}
+
+sliderBtnPrev.addEventListener("click", () =&gt; {
+    gotoSlider(-1);
+    setTimeout(() =&gt; {
+        sliderBtn.classList.remove("disable");
+    }, 300)
+})
+sliderBtnNext.addEventListener("click", () =&gt; {
+    gotoSlider(1);
+    setTimeout(() =&gt; {
+        sliderBtn.classList.remove("disable");
+    }, 300)
+})
+sliderInner.addEventListener("transitionend", checkIndex);
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>

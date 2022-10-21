@@ -1,34 +1,31 @@
-const reveal = document.querySelectorAll(".reveal");
-reveal.forEach((el) =&gt; {
-let splitText = el.innerText;
-if (splitText) {
-el.innerHTML = "&lt;span&gt;" + splitText + "&lt;/span&gt;";
-}
-});
-
-// reveal 클래스 자식에 글씨만 있다면, 가상으로 spa태그를 만들어서 넣어주세요! (6번의 내용 참고)
-function scroll() {
-let scrollTop = window.scrollY;
-
-reveal.forEach(el =&gt; {
-let revealOffset = el.offsetTop + el.parentElement.offsetTop;
-let revealDelay = el.dataset.delay;
-
-// if (scrollTop &gt; revealOffset - window.innerHeight) {
-// el.classList.add("show");
-// }
-if (scrollTop &gt;= revealOffset - window.innerHeight) {
-if (revealDelay == undefined) {
-el.classList.add("show");
-} else {
-setTimeout(() =&gt; {
-el.classList.add("show");
-}, revealDelay)
-}
-}
-})
-
-document.querySelector(".scroll span").innerText = Math.round(scrollTop);
-requestAnimationFrame(scroll);
-}
-scroll();
+&lt;main id="main"&gt;
+&lt;section id="sliderType03"&gt;
+&lt;div class="slider__wrap"&gt;
+&lt;div class="slider__img"&gt;
+&lt;div class="slider__inner"&gt;
+&lt;div class="slider s1"&gt;&lt;span&gt;이미지1&lt;/span&gt;&lt;img src="../assets/img/effect_bg01-min.jpg" alt="이미지1"&gt;
+&lt;/div&gt;
+&lt;div class="slider s2"&gt;&lt;span&gt;이미지2&lt;/span&gt;&lt;img src="../assets/img/effect_bg02-min.jpg" alt="이미지2"&gt;
+&lt;/div&gt;
+&lt;div class="slider s3"&gt;&lt;span&gt;이미지3&lt;/span&gt;&lt;img src="../assets/img/effect_bg03-min.jpg" alt="이미지3"&gt;
+&lt;/div&gt;
+&lt;div class="slider s4"&gt;&lt;span&gt;이미지4&lt;/span&gt;&lt;img src="../assets/img/effect_bg04-min.jpg" alt="이미지4"&gt;
+&lt;/div&gt;
+&lt;div class="slider s5"&gt;&lt;span&gt;이미지5&lt;/span&gt;&lt;img src="../assets/img/effect_bg05-min.jpg" alt="이미지5"&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="slider__btn"&gt;
+&lt;button href="#" class="prev"&gt;prev&lt;/button&gt;
+&lt;button href="#" class="next"&gt;next&lt;/button&gt;
+&lt;/div&gt;
+&lt;div class="slider__dot"&gt;
+&lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+&lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+&lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+&lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+&lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt; --&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/section&gt;
+&lt;/main&gt;

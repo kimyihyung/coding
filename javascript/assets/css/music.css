@@ -40,6 +40,10 @@
 .music__header h2 {
   font-size: 14px;
 }
+.music__header img {
+  filter: invert(1);
+  width: 22px;
+}
 
 .music__contents {
   background: #c4c4c4;

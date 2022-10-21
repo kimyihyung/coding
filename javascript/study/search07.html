@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">searchEffect07</h2>
+            <div class="t_desc2">
+                2분 동안 CSS 속성 검색하기
+            </div>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/searchEffect07.html"
+                    frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/javascript/effect/searchEffect07.html" target="blank">원본
+                    소스 보기</a>
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/searchEffect07.html" target="_blank">원본
+                    사이트</a>
+            </div>
+
+            <hr>
+
+            <h3 class="t_tit2">HTML</h3>
+            <p class="t_desc">
+                검색을 진행하는 동안에 진행 될 음악, 진행 시에 사용되는 타이머 등의 필요한 구조를 구성합니다.
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-html">&lt;main id="main"&gt;
+    &lt;div class="search__wrap"&gt;
+        &lt;div class="search__audio"&gt;
+            &lt;span&gt;
+                &lt;span class="play"&gt;
+                    
+                &lt;/span&gt;
+                &lt;span class="stop"&gt;
+                    
+                &lt;/span&gt;
+            &lt;/span&gt;
+            &lt;audio id="audio" src="../assets/audio/music_audio08.mp3" loop="loop"&gt;&lt;/audio&gt;
+            &lt;!--loop="loop" : 계속 반복되게 해줌--&gt;
+            &lt;audio id="correctAudio" src="../assets/audio/searchCorrect-.mp3"&gt;&lt;/audio&gt;
+            &lt;audio id="incorrectAudio" src=""&gt;&lt;/audio&gt;
+        &lt;/div&gt;
+        &lt;span&gt;CSS 속성 검색 이벤트&lt;/span&gt;
+        &lt;h1&gt;&lt;a href="searchEffect.html"&gt;2분 동안 CSS 속성 검색하기&lt;/a&gt;&lt;/h1&gt;
+        &lt;p class="desc"&gt;
+            2분 동안 CSS 속성을 많이 검색하면 점수가 올라갑니다.&lt;br&gt;
+            힌트보기는 한번 이용할 수 있습니다.
+        &lt;/p&gt;
+        &lt;div class="time"&gt;
+            &lt;span&gt;2:00&lt;/span&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__box"&gt;
+            &lt;label for="search"&gt;검색하기&lt;/label&gt;
+            &lt;input type="text" id="search" placeholder="CSS 속성을 입력해주세요!"&gt;
+            &lt;div class="start"&gt;버튼을 누르면 게임이 시작됩니다.&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="search__info center"&gt;
+            &lt;div&gt;전체 속성 갯수 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
+            &lt;div&gt;현재 맞춘 갯수 : &lt;span class="answer__num"&gt;0&lt;/span&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="search__answers"&gt;
+
+        &lt;/div&gt;
+        &lt;div class="search__missAnswers"&gt;
+
+        &lt;/div&gt;
+        &lt;div class="search__list"&gt;
+
+        &lt;/div&gt;
+        &lt;div class="search__result"&gt;
+            &lt;div class="svg__wrap"&gt;
+                
+                &lt;div class="result"&gt;&lt;/div&gt;
+                &lt;button class="restart"&gt;다시 도전하기&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="restart"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+</code></pre>
+                </div>
+            </details>
+            <h3 class="t_tit2">CSS</h3>
+            <p class="t_desc">
+                css 구조를 구성합니다
+            </p>
+            <details>
+                <summary>코드보기</summary>
+                <div class="t_code">
+                    <pre><code class="language-css">#header {
+    display: flex;
+    justify-content: space-between;
+}
+#header nav {
+    margin: 10px;
+}
+#header nav li {
+    position: relative;
+    display: inline;
+}
+#header nav li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-family: "NexonLv1Gothic";
+}
+#header nav li.active a {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+#header nav li .sub {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 400px;
+}
+#header nav li .sub li a {
+    width: auto;
+    background-color: transparent;
+    color: var(--htmlColor);
+    border: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+#header nav li .sub li.active a {
+    text-decoration: underline;
+}
+/* main */
+#main {
+    margin: 50px 10px;
+}
+.search__wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    border: 3px solid var(--htmlColor);
+    border-radius: 20px;
+    background-color: #f1f3f6;
+    padding: 30px;
+    text-align: center;
+}
+.search__wrap > span {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+.search__wrap > h1 a {
+    font-family: "Tmon";
+    color: var(--htmlColor);
+    font-size: 5vw;
+    margin-bottom: 10px;
+}
+.search__wrap .desc {
+    line-height: 1.4;
+    padding: 20px 0;
+}
+.search__wrap .time {
+    width: 140px;
+    height: 140px;
+    line-height: 140px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: var(--htmlColor);
+}
+.search__wrap .time span {
+    color: #fff;
+    font-size: 34px;
+    font-weight: 100;
+}
+.search__box {
+    margin-bottom: 20px;
+    position: relative;
+}
+.search__box label {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+}
+.search__box input {
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.search__box .start {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: #223547;
+    width: 30%;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 2px solid var(--htmlColor);
+    padding: 15px 40px;
+    color: #fff;
+    cursor: pointer;
+}
+.search__list li {
+    text-align: left;
+    line-height: 1.7;
+}
+.search__list li.show {
+    display: block;
+}
+.search__list li.hide {
+    display: none;
+}
+.search__list span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    margin: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.search__list span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+.search__list em {
+    float: right;
+    font-style: normal;
+}
+.search__list .line {
+    margin: 50px 0;
+}
+.search__list .line li {
+    background: #e3eaf5;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 50px;
+}
+.search__list .line li:hover {
+    background: #d3e2fa;
+    cursor: pointer;
+}
+.search__info {
+    text-align: right;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed var(--htmlColor);
+}
+.search__info.center {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 40px;
+}
+.search__info .type {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search__info .keyword span {
+    border: 2px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.search__info .keyword span:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+    cursor: pointer;
+}
+.search__desc {
+    padding: 20px 40px 20px 60px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    background-color: var(--htmlColor);
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='11' cy='11' r='8' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5 16.958L21.5 21.958' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: 22px 17px;
+}
+.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.search__click li {
+    display: inline;
+}
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .search__wrap {
+    padding: 20px;
+    }
+    .search__wrap > span {
+    font-size: 16px;
+    margin-bottom: 10px;
+    }
+    .search__wrap > h1 {
+    font-size: 44px;
+    }
+    .search__box input {
+    font-size: 16px;
+    padding: 12px 30px;
+    }
+}
+
+.search__answers {
+    border-bottom: 2px dashed var(--htmlColor);
+    padding-bottom: 40px;
+}
+.search__answers span {
+    display: inline-block;
+    background: var(--htmlColor);
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 30px;
+    margin: 3px;
+}
+.search__missAnswers {
+    border-bottom: 2px dashed var(--htmlColor);
+    padding: 40px 0;
+}
+.search__missAnswers span {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    color: var(--htmlColor);
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 3px;
+}
+.search__audio {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.search__audio > span {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 6.3706C14 4.65827 11.9884 3.73774 10.6926 4.85712L7.36317 7.73321C6.99989 8.04704 6.53583 8.21972 6.05576 8.21973L4.49998 8.21974C3.11928 8.21975 2 9.33903 2 10.7197V14.0127C2 15.3934 3.11929 16.5127 4.5 16.5127H6.0558C6.53587 16.5127 6.99993 16.6854 7.36322 16.9992L10.6926 19.8753C11.9884 20.9947 14 20.0741 14 18.3618V12.3662V6.3706Z' fill='%23223547' stroke='%23223547' stroke-width='1.5'/%3E%3Cpath d='M18 14.1215L22.2427 9.87891' stroke='%23223547' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M18 9.87894L22.2427 14.1216' stroke='%23223547' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.search__audio .playing {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 6.3706C15 4.65827 12.9884 3.73774 11.6926 4.85712L8.36317 7.73321C7.99989 8.04704 7.53583 8.21972 7.05576 8.21973L5.49998 8.21974C4.11928 8.21975 3 9.33903 3 10.7197V14.0127C3 15.3934 4.11929 16.5127 5.5 16.5127H7.0558C7.53587 16.5127 7.99993 16.6854 8.36322 16.9992L11.6926 19.8753C12.9884 20.9947 15 20.0741 15 18.3618V12.3662V6.3706Z' fill='%23223547' stroke='%23223547' stroke-width='1.5'/%3E%3Cpath d='M18 15.3667C18.6279 14.531 19 13.4923 19 12.3667C19 11.2411 18.6279 10.2024 18 9.3667' stroke='%23223547' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M20 18.3667C21.2558 16.6954 22 14.6179 22 12.3667C22 10.1155 21.2558 8.03802 20 6.3667' stroke='%23223547' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.search__result {
+    position: fixed;
+    right: 1vw;
+    top: 1vw;
+    transform: scale3d(0, 0, 0);
+    width: 40vw;
+    height: 40vw;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    border: 6px solid #946bc5;
+}
+.search__result.show {
+    display: flex;
+    animation: rubberBand 1s 0.6s ease forwards;
+}
+.search__result .result {
+    margin-top: 30px;
+    font-size: 1.4vw;
+    line-height: 1.4;
+}
+.search__result .restart {
+    background: #946bc5;
+    color: #fff;
+    border: 0;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+@keyframes rubberBand {
+    from {
+    transform: scale3d(0, 0, 0);
+    }
+    20% {
+    transform: scale3d(1, 1, 1);
+    }
+    30% {
+    transform: scale3d(1.25, 0.75, 1);
+    }
+    40% {
+    transform: scale3d(0.75, 1.25, 1);
+    }
+    50% {
+    transform: scale3d(1.15, 0.85, 1);
+    }
+    65% {
+    transform: scale3d(0.95, 1.05, 1);
+    }
+    75% {
+    transform: scale3d(1.05, 0.95, 1);
+    }
+    to {
+    transform: scale3d(1, 1, 1);
+    }
+}
+</code></pre>
+
+                </div>
+            </details>
+            <h3 class="t_tit2">JAVASCRIPT</h3>
+            <p class="t_desc">
+                이전 처럼 cssProperty 안에 속성에 대한 정보를 배열 안의 객체로 만들어두었습니다.진행을 위한 선택자와 변수를 구성합니다. 그 위에 먼저 데이터를 출력합니다.
+                오디오를 addEventListener를 이용해서 play에 대한 컨트롤을 할 수 있게합니다. 인풋체크 함수로 정답을 표시,반영, 초기화합니다. 정답체크, 오답보여주기, 시간설정을 할 수
+                있도록 구성합니다.
+                게임이 끝났을때 endQuiz 함수에 발생해야하는 이벤트를 구성합니다. 다시 시작할때 restart함수로 초기화합니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">const searchTime = document.querySelector(".time span");
+const searchList = document.querySelector(".search__list");
+const searchAnswers = document.querySelector(".search__answers");
+const searchMissAnswers = document.querySelector(".search__missAnswers");
+const searchStart = document.querySelector(".search__box .start");
+const searchInput = document.querySelector("#search");
+const searchAudio = document.querySelector("#audio");
+const searchAudioBtn = document.querySelector(".search__audio &gt; span");
+const searchScoreTotal = document.querySelector(".search__info .num");
+const searchScoreNow = document.querySelector(".search__info .now");
+const searchResult = document.querySelector(".search__result .result");
+const searchResultWrap = document.querySelector(".search__result");
+const searchRestart = document.querySelector(".search__result .restart");
+
+let timeReamining = 120,      //남은 시간
+    timeInterval = "",
+    score = 0,              //점수
+    answers = {};           //새로운 정답
+function updateList() {
+    cssProperty.forEach(data =&gt; {
+        searchList.innerHTML += `&lt;span&gt;${data.name}&lt;/span&gt;`;
+    });
+}
+updateList();
+// 게임 시작하기
+function startQuiz() {
+    // 시작 버튼 없애기 & 속성 리스트 없애기
+    searchStart.style.display = "none";
+    searchList.style.display = "none";
+    // 다시 시작할 때 기존 데이터 초기화
+    searchAnswers.innerHTML = "";
+    searchMissAnswers.innerHTML = "";
+    // 시간 설정
+    timeInterval = setInterval(reduceTime, 1000);
+    // 뮤직 추가하기
+    searchAudioBtn.classList.add("playing");
+    audio();
+    // 점수 계산
+    searchScoreTotal.innerText = cssProperty.length;
+    // 정답 체크
+    checkAnswers();
+}
+// 음악 설정
+function audio() {
+    searchAudioBtn.addEventListener("click", () =&gt; {
+        searchAudioBtn.classList.toggle("playing");
+        if (searchAudioBtn.classList.contains("playing")) {
+            searchAudio.play();
+        } else {
+            searchAudio.pause();
+        }
+    })
+    searchAudio.play();
+}
+// 인풋 체크하기
+function checkInput() {
+    let input = event.currentTarget.value.trim().toLowerCase();
+    if (answers.hasOwnProperty(input) && !answers[input]) {
+        answers[input] = true;
+        //정답 표시
+        searchAnswers.style.display = "block";
+        searchAnswers.innerHTML += `&lt;span&gt;${input}&lt;/span&gt;`;
+        //점수 반영
+        score++;
+        searchScoreNow.innerText = score;
+        //정답 초기화
+        searchInput.value = "";
+    }
+}
+// 정답 체크하기 : 정답을 객체 파일로 만들기
+function checkAnswers() {
+    cssProperty.forEach(item =&gt; {
+        let answer = item.name.trim().toLocaleLowerCase();
+        answers[answer] = false;
+    });
+    console.log(answers)
+}
+// 오답 보여주기
+function missAnswers() {
+    searchMissAnswers.style.display = "block";
+    cssProperty.forEach(item =&gt; {
+        let answer = item.name.trim().toLocaleLowerCase();
+        if (!answers[answer]) {
+            searchMissAnswers.innerHTML += `&lt;span&gt;${answer}&lt;/span&gt;`;
+        }
+    });
+}
+// 시간 설정하기
+function reduceTime() {
+    timeReamining--;
+    if (timeReamining == 0) endQuiz();
+    searchTime.innerText = displayTime();
+}
+// 시간 표시하기
+function displayTime() {
+    if (timeReamining &lt;= 0) {
+        return "0:00";
+    } else {
+        let minutes = Math.floor(timeReamining / 60);
+        let seconds = timeReamining % 60;
+        //초 단위가 한자리수 일 때 0을 추가
+        if (seconds &lt; 10) seconds = "0" + seconds;
+        return minutes + ":" + seconds;
+    }
+}
+// 게임 끝났을 때
+function endQuiz() {
+    // alert("게임이 끝났습니다.!!!");
+    // 시작 버튼 만들기
+    searchStart.style.display = "block";
+    searchStart.style.pointerEvents = "none";
+    // 오답 보여주기
+    missAnswers();
+    // 음악 끄기
+    searchAudio.pause();
+    searchAudioBtn.classList.remove("playing");
+    // 시간 정지
+    clearInterval(timeInterval);
+    // 메세지 출력
+    searchResultWrap.classList.add("show");
+    let point = Math.round((score / cssProperty.length) * 100);
+    searchResult.innerHTML = `게임이 끝났습니다.&lt;br&gt; 당신은 ${cssProperty.length} 개중에 ${score} 개를 맞추었습니다.&lt;br&gt; 당신의 점수는 몇 ${point}점입니다.`;
+}
+// 다시 시작하기
+function restart() {
+    searchResultWrap.classList.remove("show");
+    searchAudioBtn.classList.remove("playing");
+    searchAudio.play();
+    startQuiz();
+    timeReamining = 120;
+    score = 0;
+    searchScoreNow.innerText = "0";
+}
+// 버튼 이벤트
+searchStart.addEventListener("click", startQuiz);
+searchInput.addEventListener("input", checkInput);
+searchRestart.addEventListener("click", restart);
+</code></pre>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
