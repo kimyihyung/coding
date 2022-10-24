@@ -54,29 +54,30 @@ const allMusic = [
     audio: "music_audio09",
   },
 ];
-
+//음악 정보
 const musicWrap = document.querySelector(".music__wrap");
 const musicView = musicWrap.querySelector(".music__view .img img");
 const musicName = musicWrap.querySelector(".music__view .title h3");
 const musicArtist = musicWrap.querySelector(".music__view .title p");
 const musicAudio = musicWrap.querySelector("#main-audio");
+//컨트롤
 const musicPlay = musicWrap.querySelector("#control-play");
 const musicPrevBtn = musicWrap.querySelector("#control-prev");
 const musicNextBtn = musicWrap.querySelector("#control-next");
+const musicRepeat = musicWrap.querySelector("#control-repeat");
+const musicListBtn = musicWrap.querySelector("#control-list");
+//뮤직 리스트
+const musicList = musicWrap.querySelector(".music__list");
+const musicListUl = musicWrap.querySelector(".music__list ul");
+// 음악 진행바, 시간
 const musicProgress = musicWrap.querySelector(".progress");
 const musicProgressBar = musicWrap.querySelector(".progress .bar");
 const musicProgressCurrent = musicWrap.querySelector(
   ".progress .timer .current"
 );
-
 const musicProgressDuration = musicWrap.querySelector(
   ".progress .timer .duration"
 );
-
-const musicRepeat = musicWrap.querySelector("#control-repeat");
-const musicListBtn = musicWrap.querySelector("#control-list");
-const musicList = musicWrap.querySelector(".music__list");
-const musicListUl = musicWrap.querySelector(".music__list ul");
 
 let musicIndex = 1; //현재 음악 인덱스
 

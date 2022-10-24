@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 기본 규칙</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/dracula.css">
+
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="element.html">요소 선택</a></li>
+                <li><a href="method.html">join(), push(), pop()</a></li>
+                <li><a href="quiz01.html">QuizEffect01</a></li>
+                <li><a href="quiz02.html">QuizEffect02</a></li>
+                <li><a href="quiz03.html">QuizEffect03</a></li>
+                <li class="active"><a href="quiz04.html">QuizEffect04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">게임이펙트-뮤직플레이어</h2>
+            <p class="t_desc2">
+                게임이펙트의의 초기 설정과 뮤직플레이어
+            </p>
+
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://kimyihyung.github.io/coding/javascript/effect/gameEffect01"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/kimyihyung/coding/blob/main/javascript/effect/gameEffect01.html"
+                    target="_blank">원본 소스 보기</a>
+            </div>
+            <div class="t_link">
+                <a href="https://kimyihyung.github.io/coding/javascript/effect/gameEffect01.html">원본 사이트</a>
+            </div>
+            <hr>
+
+            <h3 class="t_tit2">js01</h3>
+            <p class="t_desc2">
+                아이콘들의 드래그가 가능하도록 jquery를 사용하였습니다. draggable메서드를 활용하여 드래그를 진행하고 그에 따른 마우스의 변경을 위한 attr메서드를 사용하였습니다. 시간에
+                대한 변경을 printTime() 함수 내에서 진행합니다. 연도는 getFullYear(), 월은 getMonth(), 일은 getDate()를 이용합니다. getMonth()는
+                0~11로 1을 더해줘야 현재의 달에 대한 정보가 출력됩니다. 시간은 getHours(), 분은 getMinutes(), 초는 getSeconds()를 이용합니다. setTimeout를
+                이용해서 1초 단위로 업데이트 되도록 했습니다. 이후
+                사용자의 기기에 대한 정보들 제공하도록 했습니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">$(".music__wrap").draggable();
+$(".icon1").draggable({
+    drag: function () {
+        $(".cursor img").attr("src", "../assets/img/game_mouse01.png")
+    },
+});
+$(".icon2").draggable({
+    drag: function () {
+        $(".cursor img").attr("src", "../assets/img/game_mouse02.png")
+    },
+});
+$(".icon3").draggable({
+    drag: function () {
+        $(".cursor img").attr("src", "../assets/img/game_mouse03.png")
+    },
+});
+$(".icon4").draggable({
+    drag: function () {
+        $(".cursor img").attr("src", "../assets/img/game_mouse04.png")
+    },
+});
+$(".icon5").draggable({
+    drag: function () {
+        $(".cursor img").attr("src", "../assets/img/game_mouse05.png")
+    },
+});
+$(".icon6").draggable({
+    drag: function () {
+        $(".cursor img").attr("src", "../assets/img/game_mouse01.png")
+    },
+});
+$(".sourceCont").draggable();
+$(".search__wrap").draggable();
+
+window.addEventListener("mousemove", e =&gt; {
+    gsap.to(".cursor", { duration: 0, left: e.pageX + 3, top: e.pageY - 3 });
+});
+
+function printTime() {
+    const clock = document.querySelector(".time");
+    const now = new Date();
+    // if (nowDate &lt; 10) nowDate = `0${nowDate}`;
+    // let nowHours = now.getHours();
+    // if (nowHours &gt; 12) {nowHours = `오후 ${now.getHours() - 12}`} else {`오전 ${now.getHours()}`};
+    // let nowMinutes = now.getHours();
+    // if (nowMinutes &lt; 10) nowMinutes = `0${nowMinutes}`;
+    // let nowSeconds = now.getSeconds();
+    // if (nowSeconds &lt; 10) nowSeconds = `0${nowSeconds}`;
+
+    let hour = now.getHours();
+    if (hour &gt; 12) {
+        hour = hour % 12;
+        if (hour &gt; 10) {
+            hour = "오후 " + hour;
+        } else if (hour &lt; 10) {
+            hour = "오후 " + `0${hour}`;
+        }
+    } else if (hour &lt;= 12) {
+        if (hour &gt; 10) {
+            hour = "오전 " + hour;
+        } else if (hour &lt; 10) {
+            hour = "오전 " + `0${hour}`;
+        }
+    }
+    let minute = now.getMinutes();
+    if (minute &lt; 10) minute = `0${minute}`;
+    let second = now.getSeconds();
+    if (second &lt; 10) second = `0${second}`;
+    const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + hour + "시 " + minute + "분 " + second + "초";
+
+    clock.innerText = nowTime;
+    setTimeout("printTime()", 1000);    //setTimeout 한번만 하고 끝
+}
+function printAgent() {
+    const agent = document.querySelector(".agent");
+    const os = navigator.userAgent.toLocaleLowerCase();
+
+    if (os.indexOf("window") &gt;= 0) {
+        agent.innerText = "현재 윈도우를 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다."
+        document.querySelector("body").classList.add("window");
+    } else if (os.indexOf("macintosh") &gt;= 0) {
+        agent.innerText = "현재 맥을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다."
+        document.querySelector("body").classList.add("mac");
+    } else if (os.indexOf("iphone") &gt;= 0) {
+        agent.innerText = "현재 아이폰을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다."
+        document.querySelector("body").classList.add("iphone");
+    } else if (os.indexOf("android") &gt;= 0) {
+        agent.innerText = "현재 안드로이드폰 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다."
+        document.querySelector("body").classList.add("android");
+    }
+}
+
+window.onload = function () {
+    printTime();
+    printAgent();
+}            
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">js02</h3>
+            <p class="t_desc2">
+                아이콘 클릭에 따라서 나타나도록 설정합니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">//뮤직 플레이어
+const musicIcon = document.querySelector(".icon1");
+const musicOpen = document.querySelector(".music__wrap");
+const musicClose = document.querySelector(".music__header img");
+
+musicIcon.addEventListener("click", () =&gt; {
+    musicOpen.style.display = "block";
+});
+musicClose.addEventListener("click", () =&gt; {
+    musicOpen.style.display = "none";
+});
+//서치 게임
+const searchIcon = document.querySelector(".icon5");
+const searchOpen = document.querySelector(".search__wrap");
+const searchClose = document.querySelector(".search__header img");
+
+searchIcon.addEventListener("click", () =&gt; {
+    searchOpen.style.display = "block";
+});
+searchClose.addEventListener("click", () =&gt; {
+    searchOpen.style.display = "none";
+});
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">js03</h3>
+            <p class="t_desc2">
+                음악 리스트를 제목, 아티스트, 이미지, 오디오를 배열과 객체로 작성
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">const allMusic = [
+{
+    name: "1. Lament Of The Ancients",
+    artist: "Asher Fulero",
+    img: "music_view01",
+    audio: "music_audio01",
+},
+{
+    name: "2. Glimpsing Infinity",
+    artist: "Asher Fulero",
+    img: "music_view02",
+    audio: "music_audio02",
+},
+{
+    name: "3. Play Dead",
+    artist: "NEFFEX",
+    img: "music_view03",
+    audio: "music_audio03",
+},
+{
+    name: "4. As You Fade Away",
+    artist: "NEFFEX",
+    img: "music_view04",
+    audio: "music_audio04",
+},
+{
+    name: "5. Ocean View",
+    artist: "Patrick Patrikios",
+    img: "music_view05",
+    audio: "music_audio05",
+},
+{
+    name: "6. Moons",
+    artist: "Patrick Patrikios",
+    img: "music_view06",
+    audio: "music_audio06",
+},
+{
+    name: "7. Find Me Here",
+    artist: "Patrick Patrikios",
+    img: "music_view07",
+    audio: "music_audio07",
+},
+{
+    name: "8. Dark Side",
+    artist: "Patrick Patrikios",
+    img: "music_view08",
+    audio: "music_audio08",
+},
+{
+    name: "9. Average",
+    artist: "Patrick Patrikios",
+    img: "music_view09",
+    audio: "music_audio09",
+},
+];
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">js04</h3>
+            <p class="t_desc2">
+                선택자를 생성합니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">//음악 정보
+const musicWrap = document.querySelector(".music__wrap");
+const musicView = musicWrap.querySelector(".music__view .img img");
+const musicName = musicWrap.querySelector(".music__view .title h3");
+const musicArtist = musicWrap.querySelector(".music__view .title p");
+const musicAudio = musicWrap.querySelector("#main-audio");
+//컨트롤
+const musicPlay = musicWrap.querySelector("#control-play");
+const musicPrevBtn = musicWrap.querySelector("#control-prev");
+const musicNextBtn = musicWrap.querySelector("#control-next");
+const musicRepeat = musicWrap.querySelector("#control-repeat");
+const musicListBtn = musicWrap.querySelector("#control-list");
+//뮤직 리스트
+const musicList = musicWrap.querySelector(".music__list");
+const musicListUl = musicWrap.querySelector(".music__list ul");
+// 음악 진행바, 시간
+const musicProgress = musicWrap.querySelector(".progress");
+const musicProgressBar = musicWrap.querySelector(".progress .bar");
+const musicProgressCurrent = musicWrap.querySelector(
+    ".progress .timer .current"
+);
+const musicProgressDuration = musicWrap.querySelector(
+    ".progress .timer .duration"
+);        
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">js05</h3>
+            <p class="t_desc2">
+                음악 재생과 버튼에 대한 설정을 합니다. num - 1은 인덱스값의 시작값이 0이기 때문
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">
+let musicIndex = 1; //현재 음악 인덱스
+
+// 음악 재생
+function loadMusic(num) {
+    musicName.innerText = allMusic[num - 1].name; //뮤직 이름 로드
+    musicArtist.innerText = allMusic[num - 1].artist; //뮤직 아티스트 로드
+    musicView.src = `../assets/img/${allMusic[num - 1].img}.png`; //뮤직 이미지 로드
+    musicView.alt = allMusic[num - 1].name; //뮤직 이미지 alt 로드
+    musicAudio.src = `../assets/audio/${allMusic[num - 1].audio}.mp3`; //뮤직 로드
+}
+
+// 재생 버튼
+function playMusic() {
+    musicWrap.classList.add("paused");
+    musicPlay.setAttribute("title", "정지");
+    musicPlay.setAttribute("class", "stop");
+    musicAudio.play();
+}
+
+// 정지 버튼
+function pauseMusic() {
+    musicWrap.classList.remove("paused");
+    musicPlay.setAttribute("title", "재생");
+    musicPlay.setAttribute("class", "play");
+    musicAudio.pause();
+}
+
+// 이전 곡 듣기 버튼(
+function prevMusic() {
+    musicIndex == 1 ? (musicIndex = allMusic.length) : musicIndex--; //첫 곡일때
+    loadMusic(musicIndex);
+    playMusic();
+    playListMusic();
+}
+
+// 다음 곡 듣기 버튼(
+function nextMusic() {
+    musicIndex == allMusic.length ? (musicIndex = 1) : musicIndex++;
+    loadMusic(musicIndex);
+    playMusic();
+    playListMusic();
+}
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">js06</h3>
+            <p class="t_desc2">
+                진행바에 대한 설정입니다. 오디오 길이를 나눠서 게이지가 채워지도록 만듭니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">// 뮤직 진행바
+musicAudio.addEventListener("timeupdate", (e) =&gt; {
+    // console.log(e)
+    const currentTime = e.target.currentTime; //현재 재생되는 시간
+    const duration = e.target.duration; //오디오의 총 길이
+    let progressWidth = (currentTime / duration) * 100; //전체 길에이서 현재 진행되는 시간을 백분위로 나눔
+    musicProgressBar.style.width = `${progressWidth}%`;
+
+    // 전체시간
+    musicAudio.addEventListener("loadeddata", () =&gt; {
+    let audioDuration = musicAudio.duration;
+    let totalMin = Math.floor(audioDuration / 60); //전체 시간(초)을 분단위로 쪼갬
+    let totalSec = Math.floor(audioDuration % 60); //남은 초를 저장
+    if (totalSec &lt; 10) totalSec = `0${totalSec}`; //초가 한 자릿수 일때 앞에 0을 붙임
+    musicProgressDuration.innerText = `${totalMin}:${totalSec}`; //완성된 시간 문자열을 출력
+    });
+
+    // 진행시간
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if (currentSec &lt; 10) currentSec = `0${currentSec}`;
+    musicProgressCurrent.innerText = `${currentMin}:${currentSec}`;
+});
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">js07</h3>
+            <p class="t_desc2">
+                진행바를 기준으로 측정되는 x 좌표값을 구하고, 오디오 전체 길이와 진행바 전체 길이에 따라서 진행바를 클릭하면 해당하는 부분을 재생하도록 클릭 이벤트를 만들어 줍니다. switch으로
+                반복 설정을 합니다. getAttribute로 현재의 버튼을 확인하고, 사용자의 선택한 것에 맞게 진행. while 무조건 한 번은 실행, do while 조건에 맞을 때만 실행.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">// 진행 버튼 클릭
+musicProgress.addEventListener("click", (e) => {
+    let progressWidth = musicProgress.clientWidth; //진행바 전체 길이
+    let clickedOffsetX = e.offsetX; //진행바 기준으로 측정되는 X좌표
+    let songDuration = musicAudio.duration; //오디오 전체 길이
+    musicAudio.currentTime = (clickedOffsetX / progressWidth) * songDuration; //백분위로 나눈 숫자에 다시 전체 길이를 곱해서 현재 재생값으로 바꿈
+});
+
+// 반복 버튼 클릭
+musicRepeat.addEventListener("click", () => {
+    let getAttr = musicRepeat.getAttribute("class");
+    switch (getAttr) {
+    case "repeat":
+        musicRepeat.setAttribute("class", "repeat_one");
+        musicRepeat.setAttribute("title", "한곡 반복");
+        break;
+    case "repeat_one":
+        musicRepeat.setAttribute("class", "shuffle");
+        musicRepeat.setAttribute("title", "랜덤 반복");
+        break;
+    case "shuffle":
+        musicRepeat.setAttribute("class", "repeat");
+        musicRepeat.setAttribute("title", "전체 반복");
+        break;
+    }
+});
+</code></pre>
+            </div>
+
+            <h3 class="t_tit2">js08</h3>
+            <p class="t_desc2">
+                뮤직리스트에 대한 설정을 진행합니다. 마지막에는 볼륨에 대한 설정을 했습니다.
+            </p>
+            <div class="t_code">
+                <pre><code class="language-js">// 뮤직 리스트 버튼
+musicListBtn.addEventListener("click", () =&gt; {
+    if (musicList.getAttribute("class").includes("show")) {
+    musicList.classList.remove("show");
+    } else {
+    musicList.classList.add("show");
+    }
+});
+document.querySelector(".close").addEventListener("click", () =&gt; {
+    musicList.classList.remove("show");
+});
+
+// 뮤직 리스트 구현하기
+for (let i = 0; i &lt; allMusic.length; i++) {
+    let li = `
+        &lt;li data-index="${i + 1}"&gt;
+            &lt;strong&gt;${allMusic[i].name}&lt;/strong&gt;
+            &lt;em&gt;${allMusic[i].artist}&lt;/em&gt;
+            &lt;audio class="${allMusic[i].audio}" src="../assets/audio/${
+    allMusic[i].audio
+    }.mp3"&gt;&lt;/audio&gt;
+            &lt;span class="audio-duration" id="${
+                allMusic[i].audio
+            }"&gt;재생시간&lt;/span&gt;
+        &lt;/li&gt;
+    `;
+
+    //   musicListUl.innerHTML += li; // 한번에 로딩을 해서 각각의 아잉디 클래스 인식 못함.
+    musicListUl.insertAdjacentHTML("beforeend", li); //다 로딩 후 그 사이에 데이터를 넣는, 그래서 각각의 데이터를 따로 인식
+
+    //리스트에 음악 시간 불러오기
+    let liAudioDuration = musicListUl.querySelector(`#${allMusic[i].audio}`); //리스트에서 시간을 표시랑 선택자 가져옴
+    let liAudio = musicListUl.querySelector(`.${allMusic[i].audio}`); //리스트에서 오디오를 가져옴
+    liAudio.addEventListener("loadeddata", () =&gt; {
+    let audioDuration = liAudio.duration; //오디오 전체 길이
+    let totalMin = Math.floor(audioDuration / 60); //전체 길이를 분 단위로
+    let totalSec = Math.floor(audioDuration % 60); //초 계산
+    if (totalSec &lt; 10) totalSec = `0${totalSec}`; //앞 자리에 0추가
+    liAudioDuration.innerText = `${totalMin}:${totalSec}`; //문자열 출력
+    liAudioDuration.setAttribute("data-duration", `${totalMin}:${totalSec}`); //속성에 오디오 길이 기록
+    });
+}
+
+// 뮤직 리스트를 클릭하면 재생
+function playListMusic() {
+    const musicListAll = musicListUl.querySelectorAll("li"); //뮤직 리스트 목록
+
+    for (let i = 0; i &lt; musicListAll.length; i++) {
+    let audioTag = musicListAll[i].querySelector(".audio-duration");
+
+    if (musicListAll[i].classList.contains("playing")) {
+        musicListAll[i].classList.remove("playing"); //클래스가 존재하면 삭제
+        let adDuration = audioTag.getAttribute("data-duration"); //오디오 길이 값 가져오기
+        audioTag.innerText = adDuration; //오디오 길이 값 출력
+    }
+
+    if (musicListAll[i].getAttribute("data-index") == musicIndex) {
+        //현재 뮤직인덱스와 리스트 인덱스 길이 같으면
+        musicListAll[i].classList.add("playing"); //클래스 playing 추가
+        audioTag.innerText = "재생중"; //재생 중일 경우 멘트 추가
+    }
+
+    musicListAll[i].setAttribute("onclick", "clicked(this)"); //this의미를 들었는데 확인 필요
+    }
+}
+
+// 뮤직 리스트를 클릭하면...
+function clicked(el) {
+    let geetLiIndex = el.getAttribute("data-index"); //클릭한 리스트의 인덱스값을 저장
+    musicIndex = geetLiIndex; //클릭한 인덱스 값을 뮤직 인덱스 저장
+    loadMusic(musicIndex); //해당 인덱스 뮤직 로드
+    playMusic(); //음악 재생
+    playListMusic(); //음악 리스트 업데이트
+}}
+
+// 볼륨
+const audio = document.getElementById("main-audio");
+const audioVolume = document.getElementById("volume-control");
+audioVolume.addEventListener("change", function (e) {
+  audio.volume = this.value / 10;
+});
+
+window.addEventListener("load", () =&gt; {
+  loadMusic(musicIndex); //음악 재생
+  playListMusic(); //리스트 초기화
+});
+
+</code></pre>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:kimlh3743@gmail.com">kimlh3743@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+
+</html>
