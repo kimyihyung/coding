@@ -7,8 +7,8 @@
     <meta name="author" content="YH">
     <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
     <meta name="keywords"
-        content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, YH, publisher, css3, html, markup, design, Webstoryboy">
-    <title>Webstoryboy | MySQL</title>
+        content="웹 퍼블리셔, 웹 표준, 웹 접근성, 퍼블리싱, publisher, css3, html, markup, design, YH">
+    <title>김이형 | MySQL</title>
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <link href="../assets/css/docs.min.css" rel="stylesheet">
@@ -24,17 +24,17 @@
     <link rel="icon" href="../assets/ico/favicon_114.png" sizes="128x128">
     <!-- Facebook meta tags -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="웹스토리보이" />
+    <meta property="og:title" content="김이형 | YH" />
     <meta property="og:url" content="https://YH.co.kr/" />
-    <meta property="og:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
-    <meta property="og:site_name" content="웹스토리보이" />
+    <meta property="og:image" content="https://kimyihyung.github.io/coding/assets/ico/icon.png" />
+    <meta property="og:site_name" content="김이형 | YH" />
     <meta property="og:description" content="웹과 관련된 정보를 제공합니다." />
     <!-- twitter meta tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@YH" />
-    <meta name="twitter:title" content="웹스토리보이" />
+    <meta name="twitter:title" content="김이형 | YH" />
     <meta name="twitter:description" content="웹과 관련된 정보를 제공합니다." />
-    <meta property="twitter:image" content="http://richclub8.dothome.co.kr/assets/ico/icon.png" />
+    <meta property="twitter:image" content="https://kimyihyung.github.io/coding/assets/ico/icon.png" />
     <!-- 웹 폰트 -->
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
@@ -250,7 +250,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
                     <div class="bs-callout bs-callout-info">
                         INSERT INTO 테이블이름(필드명) VALUE(데이터)
                     </div>
-                    <pre><code class="language-js">INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('webstoryboy@naver.com','황상연','1234','19990303','20', '1234567');
+                    <pre><code class="language-js">INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('hong@example.com','홍길동','1234','19990303','20', '1234567');
 INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('thdtjdgml415@naver.com', '송성희', '1234', '19970415','20', '1234567');
 INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('mo0647@naver.com', '김민정', '1234', '19970530','20', '1234567');
 INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('tjrwnsrkdtj@naver.com', '김석준', '1234', '19941009','20', '1234567');
@@ -279,7 +279,7 @@ INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES
 | myMemberID | youEmail                 | youName | youPass | youBirth | regTime |
 +------------+--------------------------+---------+---------+----------+---------+
 |          1 | kimlh3743@gmail.com      |  김이형  | 1234    | 20011009 | 1234567 |
-|          2 | webstoryboy@naver.com    |  황상연  | 1234    | 19990303 | 1234567 |
+|          2 | hong@example.com       |  홍길동  | 1234    | 19990303 | 1234567 |
 |          3 | thdtjdgml415@naver.com   |  송성희  | 1234    | 19970415 | 1234567 |
 |          4 | mo0647@naver.com         |  김민정  | 1234    | 19970530 | 1234567 |
 |          5 | tjrwnsrkdtj@naver.com    |  김석준  | 1234    | 19941009 | 1234567 |
@@ -462,7 +462,7 @@ create table myReview (
     PRIMARY KEY (myReviewID)
 ) charset=utf8;
 
-INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('webstoryboy@naver.com','황상연','1234','19990303','20', '01099991111', '1234567');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('hong@example.com','홍길동','1234','19990303','20', '01099991111', '1234567');
 INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('thdtjdgml415@naver.com', '송성희', '1234', '19970415','20', '01099991111', '1234567');
 INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('mo0647@naver.com', '김민정', '1234', '19970530','20', '01099991111', '1234567');
 INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('tjrwnsrkdtj@naver.com', '김석준', '1234', '19941009','20', '01099991111', '1234567');
@@ -557,7 +557,7 @@ SELECT m.youName, m.youEmail, r.youText, r.regTime FROM myMember m JOIN myReview
             <ul class="footer-links muted">
                 <li>Currently v2.0</li>
                 <li>&middot;</li>
-                <li><a href="https://webstoryboy.github.io/w9/html/">webstoryboy</a></li>
+                <li><a href="https://github.com/kimyihyung">김이형</a></li>
                 <li>&middot;</li>
                 <li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
                 <li>&middot;</li>
